@@ -1,0 +1,585 @@
+
+/* ─── Force WOW.js elements visible (WOW.js is not installed) ─── */
+.wow {
+    visibility: visible !important;
+    animation-name: none !important;
+}
+
+/* Ensure animated elements are always visible on first render */
+.animated {
+    visibility: visible !important;
+}
+
+/* ─── Global Section Padding Reduction ─── */
+.servces-one,
+.about-one,
+.about-two,
+.about-three,
+.about-four,
+.why-choose-one,
+.why-choose-two,
+.why-choose-three,
+.process-one,
+.process-two,
+.process-three,
+.portfolio-one,
+.portfolio-two,
+.portfolio-three,
+.pricing-one,
+.pricing-two,
+.contact-one,
+.contact-two,
+.team-one,
+.team-two,
+.testimonial-one,
+.testimonial-two,
+.blog-one,
+.blog-two,
+.newsletter-one,
+.newsletter-two,
+.event-one,
+.who-is-for,
+.implementation,
+.services-details {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+}
+
+.pt-60 { padding-top: 60px !important; }
+.pb-60 { padding-bottom: 60px !important; }
+
+/* Adjusting specific sections that need different padding */
+.banner-one {
+    padding-top: 180px !important;
+}
+
+/* responsive adjustments */
+@media only screen and (max-width: 767px) {
+    .section-title__title {
+        font-size: 28px !important;
+        line-height: 38px !important;
+    }
+    .thm-btn {
+        padding: 12px 20px !important;
+        font-size: 14px !important;
+    }
+}
+
+/* ─── Modern SaaS Product Landing Page Styles ─── */
+.product-hero {
+    background: radial-gradient(circle at top right, rgba(255, 210, 93, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at bottom left, rgba(61, 114, 252, 0.03) 0%, transparent 50%);
+}
+
+.product-hero__title {
+    font-size: 56px;
+    line-height: 1.1;
+    font-weight: 900;
+    color: white;
+}
+
+.product-hero__title span {
+    color: var(--techguru-base);
+    background: linear-gradient(90deg, #FFD25D, #FF9C2A);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.product-hero__text {
+    font-size: 19px;
+    line-height: 1.7;
+    color: #97a2b0;
+}
+
+.badge-glow {
+    background: rgba(255, 210, 93, 0.1);
+    color: var(--techguru-base);
+    border: 1px solid rgba(255, 210, 93, 0.2);
+    padding: 6px 16px;
+    border-radius: 40px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.glass-stats {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transform: perspective(1000px) rotateY(-5deg);
+}
+
+.hero-data-point h4 {
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.thm-btn-secondary {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.thm-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--techguru-base);
+}
+
+/* Redesigned Mini Cards */
+.product-mini-card {
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.product-mini-card:hover {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: var(--techguru-base) !important;
+    transform: translateY(-8px);
+}
+
+.product-mini-card:hover .text-gradient-yellow {
+    transform: scale(1.1);
+}
+/* ─── Premium Page Header (Breadcrumb Section) ─── */
+.page-header {
+    background-color: #030a15 !important;
+    padding: 160px 0 80px !important;
+}
+
+.page-header__bg::before {
+    background: linear-gradient(180deg, rgba(3, 10, 21, 0.9) 0%, rgba(3, 10, 21, 0.6) 100%) !important;
+}
+
+.page-header h2 {
+    font-size: 42px !important;
+    font-weight: 800 !important;
+    letter-spacing: -1px !important;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.thm-breadcrumb__box-refined {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(12px) !important;
+}
+
+.product-hero {
+    margin-top: -40px; /* Blend with breadcrumb */
+}
+
+.text-gradient-yellow {
+    font-size: 32px;
+    background: linear-gradient(135deg, #FFD25D, #FF9C2A);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.4s;
+    display: inline-block;
+}
+
+.arrow-reveal {
+    transition: all 0.4s;
+    display: inline-block;
+}
+
+.product-mini-card:hover .arrow-reveal {
+    opacity: 1 !important;
+    transform: translateX(5px);
+}
+
+/* Strategic Flow Section */
+.flow-number {
+    font-size: 48px;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.04);
+    line-height: 1;
+}
+
+.border-lg-x {
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* CTA Glass Module */
+.cta-glass-box {
+    background: linear-gradient(135deg, rgba(255, 210, 93, 0.06), rgba(96, 101, 212, 0.06));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cta-overlay-glow {
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 210, 93, 0.1) 0%, transparent 70%);
+    filter: blur(50px);
+}
+
+.color-gray-text {
+    color: #97a2b0;
+}
+
+@media only screen and (max-width: 991px) {
+    .product-hero__title {
+        font-size: 38px;
+    }
+    .border-lg-x {
+        border: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+}
+
+/* ─── Creative Ecosystem Visual (Product Hero) ─── */
+.hero-ecosystem-visual {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.central-core {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    background: rgba(255, 210, 93, 0.05);
+    border: 1px solid rgba(255, 210, 93, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+}
+
+.gear-icon {
+    font-size: 100px;
+    color: var(--techguru-base);
+    opacity: 0.8;
+}
+
+.core-glow {
+    position: absolute;
+    inset: -30px;
+    background: radial-gradient(circle, rgba(255, 210, 93, 0.15) 0%, transparent 70%);
+    filter: blur(40px);
+    z-index: -1;
+}
+
+.floating-node {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 15px 25px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 10;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.node-content i {
+    font-size: 20px;
+}
+
+.node-content span {
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.node-1 { top: 10%; left: 0%; }
+.node-2 { bottom: 15%; right: -5%; }
+.node-3 { top: 20%; right: 10%; }
+
+/* Flow Bridges */
+.data-bridge {
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--techguru-base) 50%, transparent 100%);
+    opacity: 0.15;
+    z-index: 1;
+}
+
+.bridge-1 { width: 150px; top: 110px; left: 100px; transform: rotate(-30deg); }
+.bridge-2 { width: 150px; bottom: 120px; right: 80px; transform: rotate(-45deg); }
+.bridge-3 { width: 120px; top: 140px; right: 150px; transform: rotate(15deg); }
+
+/* Premium Flow Step */
+.flow-step-premium {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px dashed rgba(255, 255, 255, 0.1) !important;
+    position: relative;
+    transition: all 0.4s;
+}
+
+.flow-step-premium:hover {
+    background: rgba(255, 210, 93, 0.03);
+    border-color: var(--techguru-base) !important;
+    transform: translateY(-5px);
+}
+
+.step-count {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--techguru-base);
+    background: rgba(255, 210, 93, 0.1);
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* Animations */
+.pulsate-slow {
+    animation: pulsateGlow 6s infinite ease-in-out;
+}
+
+.float-bob-y-reverse {
+    animation: floatBobYReverse 5s infinite ease-in-out;
+}
+
+@keyframes pulsateGlow {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 1; }
+}
+
+@keyframes floatBobYReverse {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(15px); }
+}
+
+.mt-negative-40 { margin-top: -40px !important; }
+
+/* Product Hub Footer CTA Override */
+.cta-premium-box {
+    background: linear-gradient(135deg, rgba(23, 27, 43, 0.8) 0%, rgba(3, 10, 21, 0.9) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cta-bg-glow {
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 210, 93, 0.08) 0%, transparent 70%);
+    filter: blur(80px);
+    z-index: -1;
+}
+
+/* ─── High-Fidelity Product UI (Hero Mockup) ─── */
+.hero-mockup-wrapper {
+    transform: perspective(1200px) rotateY(-8deg) rotateX(2deg);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.hero-mockup-wrapper:hover {
+    transform: perspective(1200px) rotateY(-3deg) rotateX(0deg) scale(1.02);
+}
+
+.shadow-3xl {
+    box-shadow: 0 50px 100px -20px rgba(0,0,0,0.5), 0 30px 60px -30px rgba(0,0,0,0.6);
+}
+
+.product-module-card {
+    transition: all 0.4s ease;
+}
+
+.hover-glow-base:hover {
+    background: rgba(255, 210, 93, 0.03) !important;
+    border-color: rgba(255, 210, 93, 0.2) !important;
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.hover-glow-base:hover .module-icon-box {
+    background: rgba(255, 210, 93, 0.1) !important;
+    transform: scale(1.1);
+}
+
+.hover-glow-base:hover i {
+    transform: rotate(-5deg);
+}
+
+.cta-glow-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 210, 93, 0.05) 0%, transparent 70%);
+    filter: blur(60px);
+    z-index: 1;
+}
+
+.border-start-base {
+    border-left: 4px solid var(--techguru-base) !important;
+}
+
+.small-heading {
+    font-size: 38px !important;
+    line-height: 48px !important;
+}
+
+.tracking-wider {
+    letter-spacing: 2px !important;
+}
+
+@media only screen and (max-width: 991px) {
+    .hero-mockup-wrapper {
+        transform: none !important;
+    }
+}
+/* ─── Creative Workflow & Node Animations ─── */
+@keyframes flowLine {
+    0% { left: 0%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+}
+
+.workflow-line {
+    position: absolute;
+    top: 40px; 
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: rgba(255, 210, 93, 0.15);
+    z-index: 0;
+}
+
+.workflow-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 150px;
+    background: #FFD25D;
+    box-shadow: 0 0 15px #FFD25D;
+    animation: flowLine 4s linear infinite;
+}
+
+.creative-capability-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 0;
+    background: linear-gradient(180deg, #FA5674 0%, #6065D4 100%);
+    transition: height 0.4s ease;
+}
+
+.creative-capability-card:hover::before {
+    height: 100%;
+}
+
+.creative-capability-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.04) !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.hexagon-icon-box {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    transition: all 0.3s ease;
+}
+
+.hexagon-node:hover .hexagon-icon-box {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.benefit-pill {
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent !important;
+}
+
+.benefit-pill:hover {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-left: 3px solid #10B981 !important;
+    transform: translateX(10px);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+.animate-float {
+    animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float-horizontal {
+    0% { transform: translateX(0px); }
+    50% { transform: translateX(15px); }
+    100% { transform: translateX(0px); }
+}
+
+.animate-float-horizontal {
+    animation: float-horizontal 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 210, 93, 0.4); }
+    70% { box-shadow: 0 0 0 20px rgba(255, 210, 93, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 210, 93, 0); }
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+/* MARQUEE INFINITE SCROLL */
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.marquee-content {
+    display: inline-flex;
+    animation: marquee 30s linear infinite;
+    gap: 30px;
+}
+
+.marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+.meswork-glass {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.shadow-glow-blue {
+    box-shadow: 0 10px 40px -10px rgba(61, 114, 252, 0.2);
+}
+

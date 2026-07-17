@@ -1,0 +1,120 @@
+   ▲ Next.js 15.5.12
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 25.1s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/98) ...
+   Generating static pages (24/98) 
+   Generating static pages (48/98) 
+   Generating static pages (73/98) 
+ ✓ Generating static pages (98/98)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                                                             Size  First Load JS
+┌ ○ /                                                                                24.2 kB         225 kB
+├ ○ /_not-found                                                                        244 B         102 kB
+├ ○ /advanced-technology                                                               245 B         203 kB
+├ ƒ /api/contact                                                                       244 B         102 kB
+├ ○ /backup-recovery                                                                   245 B         203 kB
+├ ○ /book-demo                                                                         201 B         122 kB
+├ ○ /cloud-managed-services                                                            245 B         203 kB
+├ ○ /coming-soon                                                                       767 B         103 kB
+├ ○ /company/about                                                                   7.12 kB         178 kB
+├ ○ /company/careers                                                                 5.32 kB         176 kB
+├ ○ /company/leadership                                                              5.66 kB         176 kB
+├ ○ /contact                                                                         1.79 kB         173 kB
+├ ○ /customers/case-studies                                                          6.28 kB         177 kB
+├ ○ /customers/case-studies/automotive-traceability                                  2.81 kB         126 kB
+├ ○ /customers/case-studies/cnc-machine-downtime                                      2.8 kB         126 kB
+├ ○ /customers/case-studies/engineering-visibility                                    2.8 kB         126 kB
+├ ○ /customers/case-studies/fabrication-dispatch                                     2.82 kB         126 kB
+├ ○ /data-protection-privacy                                                           245 B         203 kB
+├ ○ /endpoint-device-security                                                          238 B         203 kB
+├ ○ /error                                                                             996 B         123 kB
+├ ○ /faq                                                                             2.34 kB         171 kB
+├ ○ /features                                                                        5.47 kB         176 kB
+├ ○ /features/dispatch-tracking                                                      7.07 kB         177 kB
+├ ○ /features/machine-monitoring                                                     7.34 kB         178 kB
+├ ○ /features/production-analytics-reports                                           6.91 kB         177 kB
+├ ○ /features/production-dashboard                                                   7.06 kB         177 kB
+├ ○ /features/production-order-management                                            7.95 kB         178 kB
+├ ○ /features/production-planning-scheduling                                         7.05 kB         177 kB
+├ ○ /features/quality-inspection-management                                          7.13 kB         178 kB
+├ ○ /features/shop-floor-data-collection                                             7.18 kB         178 kB
+├ ○ /features/work-order-tracking                                                    7.74 kB         178 kB
+├ ○ /gallery                                                                         2.01 kB         124 kB
+├ ○ /industries                                                                      2.65 kB         173 kB
+├ ○ /industries/automotive-component-manufacturing                                    6.8 kB         177 kB
+├ ○ /industries/cnc-machining-engineering                                            6.67 kB         177 kB
+├ ○ /industries/electronics-manufacturing                                            6.39 kB         177 kB
+├ ○ /industries/fabrication-industry                                                 6.33 kB         177 kB
+├ ○ /industries/general-manufacturing-smes                                            6.2 kB         177 kB
+├ ○ /industries/plastic-injection-molding                                            6.38 kB         177 kB
+├ ○ /login                                                                             996 B         123 kB
+├ ○ /mes-blog                                                                        4.55 kB         175 kB
+├ ○ /mes-blog/blog-carousel                                                          2.33 kB         155 kB
+├ ○ /mes-blog/blog-details                                                           4.93 kB         127 kB
+├ ○ /mes-blog/blog-list                                                                996 B         123 kB
+├ ○ /mes-blog/blog-list-2                                                              996 B         123 kB
+├ ○ /mes-blog/machine-utilization/how-to-improve-machine-utilization                  3.3 kB         177 kB
+├ ○ /mes-blog/manufacturing-efficiency/7-ways-to-improve-manufacturing-productivity  3.05 kB         177 kB
+├ ○ /mes-blog/manufacturing-technology/mes-vs-erp                                    3.64 kB         177 kB
+├ ○ /mes-blog/production-tracking/what-is-production-tracking-in-manufacturing       3.66 kB         178 kB
+├ ○ /mes-blog/quality-control/how-to-track-quality-inspections                       3.25 kB         177 kB
+├ ○ /mes-blog/shop-floor-visibility/how-to-improve-shop-floor-visibility             3.52 kB         177 kB
+├ ○ /portfolio                                                                       1.47 kB         170 kB
+├ ○ /portfolio-details                                                                 996 B         123 kB
+├ ○ /privacy-policy                                                                    208 B         122 kB
+├ ○ /product                                                                           808 B         169 kB
+├ ○ /product-details                                                                 4.85 kB         157 kB
+├ ○ /product/how-micraft-mes-works                                                   9.09 kB         180 kB
+├ ○ /product/mes-features                                                              821 B         169 kB
+├ ○ /product/mes-implementation                                                      7.51 kB         209 kB
+├ ○ /product/mes-pricing                                                             7.38 kB         178 kB
+├ ○ /product/micraft-mes                                                             10.6 kB         212 kB
+├ ○ /products                                                                        4.21 kB         126 kB
+├ ○ /resources                                                                       6.68 kB         212 kB
+├ ○ /resources/manufacturing-productivity-guide                                      7.97 kB         178 kB
+├ ○ /resources/mes-implementation-guide                                                10 kB         180 kB
+├ ○ /resources/production-monitoring-guide                                           10.7 kB         181 kB
+├ ○ /resources/shop-floor-digitization-benefits                                      10.7 kB         181 kB
+├ ○ /resources/what-is-mes                                                           7.61 kB         178 kB
+├ ○ /services                                                                        3.95 kB         175 kB
+├ ○ /services-carousel                                                               1.88 kB         154 kB
+├ ○ /sign-up                                                                           996 B         123 kB
+├ ○ /solutions                                                                         808 B         169 kB
+├ ○ /solutions/digital-production-dashboard                                          8.04 kB         209 kB
+├ ○ /solutions/factory-production-monitoring-system                                  11.7 kB         213 kB
+├ ○ /solutions/machine-utilization-tracking                                          7.81 kB         209 kB
+├ ○ /solutions/manufacturing-performance-tracking                                    8.78 kB         210 kB
+├ ○ /solutions/manufacturing-process-tracking                                        8.65 kB         210 kB
+├ ○ /solutions/packing-dispatch-tracking                                             8.52 kB         210 kB
+├ ○ /solutions/production-tracking-software                                          12.7 kB         214 kB
+├ ○ /solutions/quality-inspection-tracking                                           8.54 kB         210 kB
+├ ○ /solutions/real-time-production-monitoring                                       8.76 kB         210 kB
+├ ○ /solutions/shop-floor-visibility-software                                        9.46 kB         211 kB
+├ ○ /success-stories                                                                 4.94 kB         180 kB
+├ ○ /team                                                                              996 B         123 kB
+├ ○ /team-carousel                                                                   1.62 kB         154 kB
+├ ○ /team-details                                                                    2.57 kB         202 kB
+├ ○ /terms-of-use                                                                      208 B         122 kB
+├ ○ /testimonials                                                                      996 B         123 kB
+├ ○ /testimonials-carousel                                                           1.67 kB         154 kB
+├ ○ /threat-detection-prevention                                                       245 B         203 kB
+├ ○ /why-micraft                                                                     6.69 kB         177 kB
+├ ○ /why-micraft/manual-vs-digital-production-tracking                               10.6 kB         184 kB
+├ ○ /why-micraft/mes-benefits-small-manufacturers                                    8.67 kB         182 kB
+├ ○ /why-micraft/mes-vs-erp                                                            12 kB         213 kB
+├ ○ /why-micraft/micraft-vs-traditional-mes                                          10.9 kB         181 kB
+└ ○ /wishlist                                                                          996 B         123 kB
++ First Load JS shared by all                                                         102 kB
+  ├ chunks/1255-85e39993d28588db.js                                                  45.4 kB
+  ├ chunks/4bd1b696-182b6b13bdad92e3.js                                              54.2 kB
+  └ other shared chunks (total)                                                      2.13 kB
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
