@@ -5,8 +5,46 @@ import Link from "next/link"
 import Image from "next/image"
 import AnimatedTitle from "../../../components/elements/AnimatedTitle"
 import FinalCTA from "../../../components/sections/home1/FinalCTA"
+import { useState } from "react"
 
 export default function CareersPage() {
+    const [status, setStatus] = useState<string | null>(null);
+    const [fileName, setFileName] = useState<string | null>(null);
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setStatus("loading");
+        
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+        
+        try {
+            const res = await fetch("/api/careers", {
+                method: "POST",
+                body: formData,
+            });
+            if (res.ok) {
+                setStatus("success");
+                form.reset();
+                setFileName(null);
+            } else {
+                setStatus("error");
+            }
+        } catch (error) {
+            console.error(error);
+            setStatus("error");
+        }
+    };
+
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        if (file) {
+            setFileName(file.name);
+        } else {
+            setFileName(null);
+        }
+    };
+
     return (
         <Layout headerStyle={1} footerStyle={2}>
             <Breadcrumb breadcrumbTitle="Careers at Micraft" />
@@ -202,18 +240,18 @@ export default function CareersPage() {
                                     <h3 className="text-white mb-2">Interested in Working with Micraft?</h3>
                                     <p className="text-white-50">Send your resume to: <strong style={{ color: '#FA5674' }}>careers@micraft.co.in</strong> or use the form below.</p>
                                 </div>
-                                <form className="row g-3" onSubmit={(e) => e.preventDefault()}>
+                                <form className="row g-3" onSubmit={handleSubmit}>
                                     <div className="col-12">
-                                        <input type="text" className="form-control career-input" placeholder="Name" required />
+                                        <input type="text" name="name" className="form-control career-input" placeholder="Enter your full name" required />
                                     </div>
                                     <div className="col-md-6">
-                                        <input type="email" className="form-control career-input" placeholder="Email" required />
+                                        <input type="email" name="email" className="form-control career-input" placeholder="Enter your email address" required />
                                     </div>
                                     <div className="col-md-6">
-                                        <input type="tel" className="form-control career-input" placeholder="Phone" required />
+                                        <input type="tel" name="phone" className="form-control career-input" placeholder="Enter your phone number" required />
                                     </div>
                                     <div className="col-12">
-                                        <select className="form-select career-input" defaultValue="">
+                                        <select name="role" className="form-select career-input" defaultValue="" required>
                                             <option value="" disabled>Role of Interest</option>
                                             <option value="software">Software Developer</option>
                                             <option value="product">Product Engineer</option>
@@ -226,13 +264,17 @@ export default function CareersPage() {
                                     <div className="col-12">
                                         <div className="upload-wrapper position-relative p-4 text-center rounded-3 border border-dashed" style={{ border: '1px dashed rgba(255,255,255,0.2)', background: 'rgba(255,255,255,0.01)' }}>
                                             <i className="fas fa-cloud-upload-alt text-white-50 mb-2"></i>
-                                            <p className="text-white-50 small mb-0">Upload Resume (PDF/Doc)</p>
-                                            <input type="file" className="d-none" id="resumeUpload" />
+                                            <p className="text-white-50 small mb-0">{fileName || "Upload Resume (PDF/Doc)"}</p>
+                                            <input type="file" name="resume" accept=".pdf,.doc,.docx" className="d-none" id="resumeUpload" onChange={handleFileChange} />
                                             <label htmlFor="resumeUpload" className="stretched-link cursor-pointer d-block"></label>
                                         </div>
                                     </div>
                                     <div className="col-12 mt-4 text-center">
-                                        <button type="submit" className="thm-btn w-100 justify-content-center">Submit Application</button>
+                                        <button type="submit" className="thm-btn w-100 justify-content-center" disabled={status === "loading"}>
+                                            {status === "loading" ? "Submitting..." : "Submit Application"}
+                                        </button>
+                                        {status === "success" && <p className="text-success mt-3 mb-0">Application submitted successfully! ✅</p>}
+                                        {status === "error" && <p className="text-danger mt-3 mb-0">Failed to submit application. Please try again.</p>}
                                     </div>
                                 </form>
                             </div>

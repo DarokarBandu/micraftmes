@@ -79,17 +79,19 @@ export default function SuccessStoriesPage() {
                             { val: 100, unit: "%", label: "Improved on-time order dispatch", icon: "shipping-fast", isPlus: true }
                         ].map((m, i) => (
                             <div key={i} className="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay={`${i * 100}ms`}>
-                                <div className="counter-one__single bg-glass-dark border border-white border-opacity-05 p-4 rounded-5 h-100 text-center">
-                                    <div className="counter-one__icon mb-3">
-                                        <i className={`fas fa-${m.icon} text-accent fs-2`}></i>
+                                <div className="counter-one__single p-5 rounded-4 h-100 text-center shadow-lg transition-all" style={{ background: 'linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%)', border: '1px solid rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)' }}
+                                    onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-10px)'; e.currentTarget.style.borderColor = 'rgba(250,86,116,0.5)' }}
+                                    onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)' }}>
+                                    <div className="counter-one__icon mb-4 d-inline-flex align-items-center justify-content-center rounded-circle" style={{ width: '80px', height: '80px', background: 'rgba(250,86,116,0.1)', border: '1px solid rgba(250,86,116,0.2)' }}>
+                                        <i className={`fas fa-${m.icon}`} style={{ fontSize: '32px', color: '#FA5674' }}></i>
                                     </div>
-                                    <div className="counter-one__count-box mb-2">
-                                        <h3 className="odometer text-white d-inline-block" style={{ fontSize: '48px' }}>
+                                    <div className="counter-one__count-box mb-3 d-flex align-items-baseline justify-content-center gap-1">
+                                        <h3 className="odometer text-white mb-0" style={{ fontSize: '56px', fontWeight: '800', lineHeight: 1 }}>
                                             <CountUp end={m.val} duration={2.5} />
                                         </h3>
-                                        <span className="text-accent fw-bold" style={{ fontSize: '24px' }}>{m.unit}</span>
+                                        <span style={{ fontSize: '32px', color: '#FA5674', fontWeight: '700' }}>{m.unit}</span>
                                     </div>
-                                    <p className="text-white-50 fw-bold small text-uppercase tracking-wider">{m.label}</p>
+                                    <p className="text-white-50 m-0 fw-bold text-uppercase tracking-wider" style={{ fontSize: '14px', letterSpacing: '1px' }}>{m.label}</p>
                                 </div>
                             </div>
                         ))}
@@ -111,49 +113,49 @@ export default function SuccessStoriesPage() {
                                 s: "Achieving Real-Time Production Visibility",
                                 c: "Production status was unclear across machines and operations.",
                                 r: ["Live tracking of work orders", "Immediate visibility into production progress", "Faster decision-making on the shop floor"],
-                                img: "prodcutiondashboard"
+                                img: "prodcutiondashboard.jpg"
                             },
                             {
                                 t: "Machine Utilization",
                                 s: "Improving Machine Utilization",
                                 c: "Frequent machine downtime with no visibility into causes.",
                                 r: ["Better tracking of machine activity", "Reduced downtime events", "Increased machine productivity"],
-                                img: "DowntimeTracking"
+                                img: "DowntimeTracking.jpg"
                             },
                             {
                                 t: "Quality Control",
                                 s: "Strengthening Quality Control",
                                 c: "Quality issues were detected late, leading to rework.",
                                 r: ["In-process quality inspections", "Early defect detection", "Reduced rejection rates"],
-                                img: "InspectionQualityRecording"
+                                img: "InspectionQualityRecording.jpg"
                             },
                             {
                                 t: "Material Visibility",
                                 s: "Improving Material Tracking",
                                 c: "Lack of visibility into material availability and usage.",
                                 r: ["Real-time inventory tracking", "Better material planning", "Reduced production delays"],
-                                img: "feat_process_monitoring"
+                                img: "feat_process_monitoring.png"
                             },
                             {
                                 t: "Traceability",
                                 s: "Achieving Complete Production Traceability",
                                 c: "Difficulty tracking product history and batch details.",
                                 r: ["Full product genealogy", "Faster root cause analysis", "Improved compliance"],
-                                img: "feat_factory_monitoring"
+                                img: "feat_factory_monitoring.png"
                             },
                             {
                                 t: "Dispatch Efficiency",
                                 s: "Improving Dispatch Accuracy",
                                 c: "Manual dispatch processes caused errors and delays.",
                                 r: ["Accurate packing verification", "Better dispatch coordination", "Improved on-time delivery"],
-                                img: "DispatchTracking"
+                                img: "DispatchTracking.jpg"
                             }
                         ].map((story, idx) => (
                             <div key={idx} className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay={`${idx * 150}ms`}>
                                 <div className="case-card-premium h-100 rounded-5 overflow-hidden bg-glass-dark border border-white border-opacity-05 hover-lift transition-5s shadow-2xl">
                                     <div className="case-card__image-wrap position-relative" style={{ height: '200px' }}>
                                         <Image
-                                            src={`/assets/images/project/${story.img}.jpg`}
+                                            src={`/assets/images/project/${story.img}`}
                                             alt={story.t}
                                             fill
                                             className="img-cover"
