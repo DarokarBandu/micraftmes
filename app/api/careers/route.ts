@@ -1,15 +1,5 @@
 import { NextResponse } from "next/server";
-<<<<<<< HEAD
 import { transporter, DEFAULT_RECIPIENT, SENDER_ADDRESS } from "@/lib/mailer";
-=======
-import sgMail from "@sendgrid/mail";
-
-
-const apiKey = process.env.SENDGRID_API_KEY;
-if (apiKey) {
-  sgMail.setApiKey(apiKey);
-}
->>>>>>> aa5c15ba013298643fde7bfdfb70b4110fd0611e
 
 export async function POST(request: Request) {
   try {
