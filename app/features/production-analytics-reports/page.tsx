@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 import { Fragment, useState, useEffect } from 'react'
 import Layout from "@/components/layout/Layout"
 import Breadcrumb from "@/components/layout/Breadcrumb"
@@ -83,7 +83,7 @@ export default function ProductionAnalyticsPage() {
               <div className="nav-links d-flex align-items-center justify-content-center gap-2 flex-wrap">
                 {[
                   { id: "step-1-capture", label: "Data Capture", icon: "sensor", color: "#FA5674" },
-                  { id: "step-2-processing", label: "Processing", icon: "cogs", color: "#FFD25D" },
+                  { id: "step-2-processing", label: "Processing", icon: "cogs", color: "#7366CA" },
                   { id: "step-3-viz", label: "Visualization", icon: "chart-area", color: "#6065D4" },
                   { id: "step-4-trend", label: "Trend Analysis", icon: "chart-line", color: "#3D72FC" },
                   { id: "step-5-decide", label: "Operational Decisions", icon: "check-circle", color: "#00D094" },
@@ -143,7 +143,7 @@ export default function ProductionAnalyticsPage() {
             {[
               { title: "Production Dashboards", desc: "View real-time dashboards showing production output and performance", icon: "desktop", color: "#FA5674", gradient: "linear-gradient(135deg, rgba(250,86,116,0.12), rgba(250,86,116,0.04))" },
               { title: "KPI Monitoring", desc: "Track manufacturing KPIs such as production efficiency and OEE levels", icon: "bullseye", color: "#6065D4", gradient: "linear-gradient(135deg, rgba(96,101,212,0.12), rgba(96,101,212,0.04))" },
-              { title: "Trend Analysis", desc: "Analyze performance across shifts, machines, and long-term time periods", icon: "chart-line", color: "#FFD25D", gradient: "linear-gradient(135deg, rgba(255,210,93,0.12), rgba(255,210,93,0.04))" },
+              { title: "Trend Analysis", desc: "Analyze performance across shifts, machines, and long-term time periods", icon: "chart-line", color: "#7366CA", gradient: "linear-gradient(135deg, rgba(255,210,93,0.12), rgba(255,210,93,0.04))" },
               { title: "Machine Insights", desc: "Evaluate machine productivity and downtime patterns for planning", icon: "microchip", color: "#00D094", gradient: "linear-gradient(135deg, rgba(0,208,148,0.12), rgba(0,208,148,0.04))" }
             ].map((item, idx) => (
               <div key={idx} className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay={`${idx * 100 + 100}ms`}>
@@ -199,7 +199,7 @@ export default function ProductionAnalyticsPage() {
 
             {[
               { title: "Floor Data Capture", icon: "sensor", color: "#3D72FC", desc: "Digital capture of output, downtime, and quality events directly from operator terminals and machines." },
-              { title: "Data Processing & Sync", icon: "sync", color: "#FFD25D", desc: "Micraft MES structures fragmented floor signals into clean, queryable operational datasets instantly." },
+              { title: "Data Processing & Sync", icon: "sync", color: "#7366CA", desc: "Micraft MES structures fragmented floor signals into clean, queryable operational datasets instantly." },
               { title: "Real-time Visualization", icon: "chart-area", color: "#FA5674", desc: "Visualize current floor health via live KPI dashboards accessible on the office floor and plant displays." },
               { title: "Deep Trend Analysis", icon: "chart-line", color: "#6065D4", desc: "Identify long-term performance patterns across machine groups, shifts, and specific product categories." },
               { title: "Informed Decision Support", icon: "check-circle", color: "#00D094", desc: "Provide supervisors with factual evidence to adjust schedules and resolve shop floor bottlenecks." },
@@ -347,7 +347,7 @@ export default function ProductionAnalyticsPage() {
           </div>
 
           {/* FEATURE 2: HISTORICAL TREND ANALYSIS */}
-          <div className="meswork-step-detail mb-5 wow fadeInUp" id="step-4-trend" style={{ borderLeft: '4px solid #FFD25D' }}>
+          <div className="meswork-step-detail mb-5 wow fadeInUp" id="step-4-trend" style={{ borderLeft: '4px solid #7366CA' }}>
             <div style={{ position: 'absolute', top: 0, right: 0, width: 200, height: 200, background: 'rgba(255,210,93,0.06)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none' }}></div>
             <div className="row align-items-center g-4">
               <div className="col-lg-5 order-2 order-lg-1">
@@ -356,7 +356,7 @@ export default function ProductionAnalyticsPage() {
                 </div>
               </div>
               <div className="col-lg-7 order-1 order-lg-2">
-                <div className="meswork-cycle-num mb-3" style={{ background: 'linear-gradient(135deg, #FFD25D, #FA5674)' }}>02</div>
+                <div className="meswork-cycle-num mb-3" style={{ background: 'linear-gradient(135deg, #7366CA, #FA5674)' }}>02</div>
                 <AnimatedTitle>
                   <h2 className="section-title__title text-white mb-3" style={{ fontSize: '30px' }}>Deep <span>Operational Trend Analysis</span></h2>
                 </AnimatedTitle>
@@ -369,7 +369,7 @@ export default function ProductionAnalyticsPage() {
                   <li>Seasonal output trends and demand planning alignment</li>
                   <li>Downtime Pareto charts to prioritize equipment maintenance</li>
                 </ul>
-                <Link href="#capabilities" className="meswork-link" style={{ color: '#FFD25D' }}>
+                <Link href="#capabilities" className="meswork-link" style={{ color: '#7366CA' }}>
                   Explore Trend Metrics <i className="icon-right-arrow"></i>
                 </Link>
               </div>
@@ -393,7 +393,7 @@ export default function ProductionAnalyticsPage() {
           <div className="row g-4 justify-content-center">
             {[
               { title: "Factual Evidence", text: "End reliance on assumptions; make choices based on 100% accurate shop floor data.", icon: "balance-scale", color: "#FA5674" },
-              { title: "Predictive Bottlenecking", text: "Identify where work orders will slow down before they actually stop.", icon: "bolt", color: "#FFD25D" },
+              { title: "Predictive Bottlenecking", text: "Identify where work orders will slow down before they actually stop.", icon: "bolt", color: "#7366CA" },
               { title: "Consistent Quality", text: "Find the root causes of quality deviations across different shifts and machines.", icon: "shield-check", color: "#6065D4" },
               { title: "OEE Maximization", text: "Systematically increase machine availability and performance scoring.", icon: "chart-line", color: "#3D72FC" },
               { title: "Frictionless Reporting", text: "Automate daily and monthly production reports for management meetings.", icon: "file-signature", color: "#00D094" }
@@ -424,10 +424,10 @@ export default function ProductionAnalyticsPage() {
             {[
               { name: "Live Dashboard Hub", path: "/features/production-dashboard", icon: "desktop", color: "#FA5674" },
               { name: "Machine OEE Tracking", path: "/features/machine-monitoring", icon: "tachometer-alt", color: "#00D094" },
-              { name: "Order Tracking", path: "/features/work-order-tracking", icon: "tasks", color: "#FFD25D" },
+              { name: "Order Tracking", path: "/features/work-order-tracking", icon: "tasks", color: "#7366CA" },
               { name: "Quality Control Insights", path: "/features/quality-inspection-management", icon: "shield-alt", color: "#00D094" },
               { name: "Operator Hub SFDC", path: "/features/shop-floor-data-collection", icon: "tablet-alt", color: "#6065D4" },
-              { name: "Execution Recording", path: "/features/production-order-management", icon: "file-chart-line", color: "#FFD25D" }
+              { name: "Execution Recording", path: "/features/production-order-management", icon: "file-chart-line", color: "#7366CA" }
             ].map((solution, i) => (
               <div key={i} className="col-xl-4 col-lg-4 col-md-6">
                 <Link href={solution.path} className="d-block p-4 h-100 text-decoration-none"

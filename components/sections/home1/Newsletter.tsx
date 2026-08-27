@@ -6,7 +6,7 @@ export default function Newsletter() {
     <>
         <section className="newsletter-one newsletter-three">
             <div className="container">
-                <div className="newsletter-one__inner" style={{ background: 'linear-gradient(90deg, #FA5674 0%, #6065D4 100%)' }}>
+                <div className="newsletter-one__inner" style={{ background: '#7366CA' }}>
                     <div className="newsletter-one__shape-bg"
                         style={{ backgroundImage: "url(/assets/images/shapes/newsletter-one-shape-bg.png)" }}></div>
                     <div className="newsletter-one__shape-1 float-bob-x">

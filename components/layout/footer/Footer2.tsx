@@ -14,7 +14,7 @@ export default function Footer2() {
                             <div className="col-xl-4 col-lg-5 wow fadeInUp" data-wow-delay="100ms">
                                 <div className="site-footer-two__about">
                                     <div className="site-footer-two__logo">
-                                        <Link href="/"><Image src="/assets/images/logo/Micraftmeslogo.svg" alt="Micraft MES Logo" width={190} height={50} priority /></Link>
+                                        <Link href="/"><Image src="/assets/images/logo/light.png" alt="Micraft MES Logo" width={190} height={50} priority style={{ height: 'auto', maxHeight: '50px', width: 'auto' }} /></Link>
                                     </div>
                                     <ul className="site-footer-two__contact-list list-unstyled">
                                         <li>
@@ -76,6 +76,7 @@ export default function Footer2() {
                                         <li><Link href="/customers/case-studies">Case Studies</Link></li>
                                         <li><Link href="/company/about">About Us</Link></li>
                                         <li><Link href="/company/careers">Careers</Link></li>
+                                        <li><Link href="/sitemap">Sitemap</Link></li>
                                         <li><Link href="/contact">Contact Sales</Link></li>
                                     </ul>
                                 </div>
@@ -91,7 +92,8 @@ export default function Footer2() {
                                     ⓒ Copyright {new Date().getFullYear()} <Link href="https://micraftsolutions.com/">Micraft Solutions</Link>. All rights reserved.
                                     <span className="ms-3">
                                         <Link href="/privacy-policy" className="me-3">Privacy Policy</Link>
-                                        <Link href="/terms-of-use">Terms of Use</Link>
+                                        <Link href="/terms-of-use" className="me-3">Terms of Use</Link>
+                                        <Link href="/sitemap">Sitemap</Link>
                                     </span>
                                 </p>
                             </div>

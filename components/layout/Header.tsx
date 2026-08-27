@@ -6,6 +6,7 @@ import BackToTop from "../elements/BackToTop";
 import DataBg from "../elements/DataBg";
 import SearchPopup from "./SearchPopup";
 import SidebarPopup from "./SidebarPopup";
+import ThemeToggle from "../elements/ThemeToggle";
 
 import Header1 from "./header/Header1";
 
@@ -67,6 +68,9 @@ export default function Header({ style = 1 }: HeaderProps) {
 
       {/* sidebar popup */}
       <SidebarPopup isOpen={isSidebar} onClose={handleSidebar} />
+
+      {/* Floating Theme Toggle (Bottom Side) */}
+      <ThemeToggle floating />
 
       {/* Back to top button */}
       <BackToTop scroll={isScrolled} />

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from 'react';
 import Layout from '@/components/layout/Layout';
@@ -532,18 +532,18 @@ export default function MESBenefitsForSmallManufacturersPage() {
                         .bg-gold-opacity-10 { background: rgba(255, 210, 93, 0.1); }
                         .border-gold-glow { border-color: rgba(255, 210, 93, 0.3) !important; }
                         .border-red-glow { border-color: rgba(255, 82, 82, 0.2); }
-                        .text-gold { color: #FFD25D; }
+                        .text-gold { color: #7366CA; }
                         .text-red { color: #FF5252; }
                         .bg-glass-dark { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); }
                         
                         .bg-gold-glow-radial { background: radial-gradient(circle, rgba(255, 210, 93, 0.2) 0%, transparent 70%); }
                         .bg-red-glow-radial { background: radial-gradient(circle, rgba(251, 86, 116, 0.15) 0%, transparent 70%); }
-                        .text-gold-gradient { color: #FFD25D; } /* Reverted to solid gold for better accessibility and stability */
+                        .text-gold-gradient { color: #7366CA; } /* Reverted to solid gold for better accessibility and stability */
                         .section-title h1 span, .section-title h2 span, h1 span, h2 span { background-color: transparent !important; background-image: none !important; -webkit-background-clip: initial !important; -webkit-text-fill-color: initial !important; color: inherit; }
-                        .text-gold { color: #FFD25D !important; }
+                        .text-gold { color: #7366CA !important; }
                         .smaller { font-size: 11px; }
                         .max-w-500 { max-w-width: 500px; }
-                        .btn-glass-gold { background: linear-gradient(90deg, #FFD25D 0%, #B58B24 100%); color: black; border: none; }
+                        .btn-glass-gold { background: linear-gradient(90deg, #7366CA 0%, #B58B24 100%); color: black; border: none; }
                         .btn-glass-gold:hover { transform: scale(1.05); filter: brightness(1.1); box-shadow: 0 15px 30px rgba(255, 210, 93, 0.3); }
 
                         .hero-visual-perspective { perspective: 1000px; }
@@ -564,7 +564,7 @@ export default function MESBenefitsForSmallManufacturersPage() {
 
                         /* Industry Minimal Cards */
                         .industry-img-circle { position: relative; width: 100px; height: 100px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(255, 210, 93, 0.1); margin: 0 auto; transition: 0.5s; background: #04070D; }
-                        .industry-minimal-card:hover .industry-img-circle { border-color: #FFD25D; transform: scale(1.1); box-shadow: 0 0 30px rgba(255, 210, 93, 0.2); }
+                        .industry-minimal-card:hover .industry-img-circle { border-color: #7366CA; transform: scale(1.1); box-shadow: 0 0 30px rgba(255, 210, 93, 0.2); }
 
                         /* HUD & Scan */
                         .hud-line-scanner { position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(to right, transparent, rgba(255,210,93,0.5), transparent); animation: scanV 5s linear infinite; }
@@ -572,7 +572,7 @@ export default function MESBenefitsForSmallManufacturersPage() {
                         .live-dot-hero { width: 8px; height: 8px; background: #4ADE80; border-radius: 50%; box-shadow: 0 0 10px #4ADE80; animation: pulseG 2s infinite; }
                         @keyframes pulseG { 0% { opacity: 0.4; transform: scale(1); } 50% { opacity: 1; transform: scale(1.4); } 100% { opacity: 0.4; transform: scale(1); } }
                         
-                        .hover-gold:hover { background: #FFD25D !important; color: black !important; }
+                        .hover-gold:hover { background: #7366CA !important; color: black !important; }
 
                         /* Marquee Styles */
                         .diagnostic-marquee-container { width: 100%; overflow: hidden; display: flex; }

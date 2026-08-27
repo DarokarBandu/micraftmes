@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -16,7 +16,7 @@ export default function MesImplementationPage() {
     const [activeStep, setActiveStep] = useState(0);
 
     const steps = [
-        { num: "01", title: "Process Assessment", icon: "search", color: "#FFD25D", desc: "Understanding Your Manufacturing Operations. Analyzing the existing production environment including workflows, workstations, and inspection checkpoints." },
+        { num: "01", title: "Process Assessment", icon: "search", color: "#7366CA", desc: "Understanding Your Manufacturing Operations. Analyzing the existing production environment including workflows, workstations, and inspection checkpoints." },
         { num: "02", title: "System Configuration", icon: "tools", color: "#3D72FC", desc: "MES System Configuration based on defined factory workflows, machine setups, and production monitoring dashboards." },
         { num: "03", title: "Floor Deployment", icon: "industry", color: "#FA5674", desc: "Deploying MES on the Shop Floor through production tracking interfaces and enabling shop floor operator updates." },
         { num: "04", title: "Teams Training", icon: "users", color: "#00D094", desc: "Training Shop Floor Teams for successful adoption. Learning to update production status and monitor digital dashboards." },
@@ -60,7 +60,7 @@ export default function MesImplementationPage() {
                                 </AnimatedTitle>
                             </div>
 
-                            <p className="text-white mb-2 fw-bold" style={{ fontSize: '18px', color: '#FFD25D' }}>
+                            <p className="text-white mb-2 fw-bold" style={{ fontSize: '18px', color: '#7366CA' }}>
                                 Learn how Micraft MES can be implemented in your manufacturing environment quickly and efficiently with minimal disruption to factory operations.
                             </p>
                             <p className="text-white-50 mb-5" style={{ fontSize: '16px', lineHeight: '1.8', maxWidth: '550px' }}>
@@ -80,7 +80,7 @@ export default function MesImplementationPage() {
                         <div className="col-lg-6 wow fadeInRight" data-wow-delay="300ms">
                             <div className="staircase-flow-wrapper">
                                 {[
-                                    { num: "01", title: "Process Assessment", desc: "Mapping manufacturing operations and production workflow mapping.", color: "#FFD25D", icon: "search" },
+                                    { num: "01", title: "Process Assessment", desc: "Mapping manufacturing operations and production workflow mapping.", color: "#7366CA", icon: "search" },
                                     { num: "02", title: "System Configuration", desc: "Configuring production tracking processes and dashboards.", color: "#3D72FC", icon: "tools" },
                                     { num: "03", title: "Floor Deployment", desc: "Enabling shop floor teams with data collection interfaces.", color: "#FA5674", icon: "industry" },
                                     { num: "04", title: "Teams Training", desc: "Simplifying adoption for operators and digital shop floor monitoring.", color: "#00D094", icon: "chalkboard-teacher" },
@@ -153,7 +153,7 @@ export default function MesImplementationPage() {
                     <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mt-2">
                         {[
                             { title: "Flow Assessment", icon: "project-diagram", color: "#3D72FC", desc: "Understanding existing manufacturing workflows and workstations.", num: "01" },
-                            { title: "Configuration", icon: "cog", color: "#FFD25D", desc: "Configuring production order workflows and dashboards.", num: "02" },
+                            { title: "Configuration", icon: "cog", color: "#7366CA", desc: "Configuring production order workflows and dashboards.", num: "02" },
                             { title: "Data Collection", icon: "user-cog", color: "#FA5674", desc: "Enabling shop floor operator data collection processes.", num: "03" },
                             { title: "Real-time Dashboards", icon: "chart-line", color: "#00D094", desc: "Deploying real-time monitoring and production dashboards.", num: "04" }
                         ].map((card, idx) => (
@@ -223,7 +223,7 @@ export default function MesImplementationPage() {
 
                 <div className="container position-relative z-1">
                     <div className="section-title text-center mb-4 pb-lg-2">
-                        <span className="section-title__tagline" style={{ color: '#FFD25D' }}>Deep Dive</span>
+                        <span className="section-title__tagline" style={{ color: '#7366CA' }}>Deep Dive</span>
                         <AnimatedTitle>
                             <h2 className="section-title__title text-white">Execution <span>Strategy Lifecycle</span></h2>
                         </AnimatedTitle>
@@ -363,7 +363,7 @@ export default function MesImplementationPage() {
                             <div className="row g-2">
                                 {[
                                     { text: "Identify production bottlenecks", icon: "exclamation-triangle", color: "#FA5674" },
-                                    { text: "Improve machine utilization", icon: "tachometer-alt", color: "#FFD25D" },
+                                    { text: "Improve machine utilization", icon: "tachometer-alt", color: "#7366CA" },
                                     { text: "Optimize production workflows", icon: "project-diagram", color: "#3D72FC" },
                                     { text: "Analyze production performance", icon: "chart-bar", color: "#00D094" }
                                 ].map((item, idx) => (
@@ -433,7 +433,7 @@ export default function MesImplementationPage() {
                                 <div className="d-flex flex-column gap-4 mt-5">
                                     <div className="d-flex flex-column">
                                         <span className="text-white fw-bold mb-1" style={{ fontSize: '18px' }}>Small Units</span>
-                                        <span style={{ fontSize: '22px', color: '#FFD25D', fontWeight: 'bold' }}>2–3 weeks</span>
+                                        <span style={{ fontSize: '22px', color: '#7366CA', fontWeight: 'bold' }}>2–3 weeks</span>
                                     </div>
                                     <div className="d-flex flex-column">
                                         <span className="text-white fw-bold mb-1" style={{ fontSize: '18px' }}>Medium Plants</span>
@@ -484,7 +484,7 @@ export default function MesImplementationPage() {
                     <div className="row g-4 justify-content-center">
                         {[
                             { name: "CNC Machining & Engineering", icon: "cogs", color: "#3D72FC" },
-                            { name: "Automotive Component Manufacturing", icon: "car", color: "#FFD25D" },
+                            { name: "Automotive Component Manufacturing", icon: "car", color: "#7366CA" },
                             { name: "Fabrication & Metal Processing", icon: "hammer", color: "#FA5674" },
                             { name: "Plastic Injection Molding", icon: "vial", color: "#00D094" },
                             { name: "Electronics Manufacturing", icon: "microchip", color: "#6065D4" }

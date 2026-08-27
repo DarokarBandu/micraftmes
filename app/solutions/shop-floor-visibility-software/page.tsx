@@ -1,5 +1,5 @@
-"use client"
-import { useState, useEffect } from 'react'
+﻿"use client"
+import { useScrollSpy } from '@/hooks/useScrollSpy'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -25,36 +25,14 @@ const sections = [
 ]
 
 export default function ShopFloorVisibilitySoftwarePage() {
-    const [activeSection, setActiveSection] = useState("hero")
-
-    useEffect(() => {
-        // Metadata is now managed via layout.tsx
-    }, []);
-
-    const scrollTo = (id: string) => {
-        setActiveSection(id);
-
-        setTimeout(() => {
-            const contentArea = document.getElementById('main-content-area');
-            if (contentArea) {
-                const headerOffset = 120;
-                const elementPosition = contentArea.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.scrollY - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        }, 50);
-    }
+    const { activeId: activeSection, scrollTo } = useScrollSpy(sections.map(s => s.id));
 
     return (
         <Layout headerStyle={1} footerStyle={2}>
 
             <Breadcrumb breadcrumbTitle="Shop Floor Visibility Software" />
 
-            <section className="services-details pt-0" style={{ background: '#02050A', minHeight: '100vh', paddingBottom: '0' }}>
+            <section className="services-details pt-0 pt-lg-0" style={{ background: '#02050A', minHeight: '100vh', paddingBottom: '0' }}>
                 <div className="services-details__shape-1"></div>
                 <div className="services-details__shape-2">
                     <Image src="/assets/images/shapes/services-details-shape-2.png" alt="Shape" width={1920} height={1332} style={{ opacity: 0.1 }} priority />
@@ -62,11 +40,11 @@ export default function ShopFloorVisibilitySoftwarePage() {
                 <div className="container-fluid px-xl-5">
                     <div className="row g-4 align-items-start pt-0">
                         {/* Sidebar */}
-                        <div className="col-xl-3 col-lg-4 order-1 sticky-lg-top mt-1 mt-lg-0" style={{ height: 'fit-content', zIndex: 10 }}>
-                            <div className="services-details__left">
-                                <div className="services-details__services-list-box p-0 overflow-hidden mb-4 mb-lg-0" style={{ background: 'rgba(61, 114, 252, 0.03)', border: '1px solid rgba(61, 114, 252, 0.1)' }}>
-                                    <div className="p-4" style={{ background: 'linear-gradient(90deg, rgba(61, 114, 252, 0.1), transparent)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                                        <h3 style={{ fontSize: '14px', margin: 0, color: '#3D72FC', textTransform: 'uppercase', letterSpacing: '3px', fontWeight: '900' }}>
+                        <div className="col-xl-3 col-lg-4 order-1 solution-sidebar-col">
+                            <div className="services-details__left mt-0 pt-0">
+                                <div className="services-details__services-list-box p-0 overflow-hidden mb-4 mb-lg-0" style={{ background: '#080D1A', border: '1px solid rgba(61, 114, 252, 0.25)', boxShadow: '0 15px 35px rgba(0, 0, 0, 0.6)', borderRadius: '16px' }}>
+                                    <div className="p-4" style={{ background: 'linear-gradient(90deg, rgba(61, 114, 252, 0.15), rgba(8, 13, 26, 0.95))', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+                                        <h3 style={{ fontSize: '14px', margin: 0, color: '#7366CA', textTransform: 'uppercase', letterSpacing: '3px', fontWeight: '900' }}>
                                             Solutions Menu
                                         </h3>
                                     </div>
@@ -95,12 +73,11 @@ export default function ShopFloorVisibilitySoftwarePage() {
                         </div>
 
                         {/* Main Content */}
-                        <div className="col-xl-9 col-lg-8 order-2 mt-5 mt-lg-0 pt-0">
-                            <div id="main-content-area" key={activeSection} className="services-details__right mt-0 pt-0 pb-5 pe-xl-5">
+                        <div className="col-xl-9 col-lg-8 order-2 pt-0">
+                            <div id="main-content-area" suppressHydrationWarning className="services-details__right mt-0 pt-0 pb-5 pe-xl-5">
 
                                 {/* 1. Hero Section */}
-                                {activeSection === 'hero' && (
-                                    <section id="hero" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="hero" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="row g-4 align-items-center">
                                             <div className="col-lg-12">
                                                 <div className="section-title text-left mb-4">
@@ -109,7 +86,7 @@ export default function ShopFloorVisibilitySoftwarePage() {
                                                     </div>
                                                     <AnimatedTitle>
                                                         <h1 className="section-title__title title-animation mb-4" style={{ lineHeight: '1.0', fontSize: '48px' }}>
-                                                            Shop Floor <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Visibility Software for Real-Time Production Monitoring</span>
+                                                            Shop Floor <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Visibility Software for Real-Time Production Monitoring</span>
                                                         </h1>
                                                     </AnimatedTitle>
                                                 </div>
@@ -141,17 +118,15 @@ export default function ShopFloorVisibilitySoftwarePage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 2. Problem Section */}
-                                {activeSection === 'problems' && (
-                                    <section id="problems" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="problems" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="section-title text-left mb-4">
                                             <div className="section-title__tagline-box">
                                                 <span className="section-title__tagline" style={{ color: '#FA5674' }}>The Hidden Problem</span>
                                             </div>
                                             <AnimatedTitle>
-                                                <h2 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.2' }}>The Hidden Problem in <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Most Factory Floors</span></h2>
+                                                <h2 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.2' }}>The Hidden Problem in <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Most Factory Floors</span></h2>
                                             </AnimatedTitle>
                                         </div>
                                         <p className="text-white-50 mb-3 opacity-80 pe-xl-5" style={{ fontSize: '16px' }}>Many manufacturing units still rely on manual production updates, paper-based reporting, and delayed communication between shop floor operators and management. This leads to:</p>
@@ -160,7 +135,7 @@ export default function ShopFloorVisibilitySoftwarePage() {
                                             {[
                                                 { text: "Lack of Visibility", sub: "Lack of real-time production visibility.", icon: "fas fa-eye-slash", color: "#6065D4", label: "BLIND SPOT" },
                                                 { text: "Delayed Bottlenecks", sub: "Delayed identification of bottlenecks.", icon: "fas fa-exclamation-triangle", color: "#FA5674", label: "LATENCY" },
-                                                { text: "Inaccurate Reporting", sub: "Inaccurate production reporting data.", icon: "fas fa-file-invoice", color: "#FFD25D", label: "DATA GAP" },
+                                                { text: "Inaccurate Reporting", sub: "Inaccurate production reporting data.", icon: "fas fa-file-invoice", color: "#7366CA", label: "DATA GAP" },
                                                 { text: "Work Order Drift", sub: "Difficulty tracking work order progress.", icon: "fas fa-tasks", color: "#00D261", label: "INERTIA" },
                                                 { text: "Missed Commitments", sub: "Production delays leading to missed delivery commitments.", icon: "fas fa-calendar-times", color: "#3D72FC", label: "RISK" }
                                             ].map((item, i) => (
@@ -185,11 +160,9 @@ export default function ShopFloorVisibilitySoftwarePage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 3. What is Section */}
-                                {activeSection === 'what-is' && (
-                                    <section id="what-is" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="what-is" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="row g-5 align-items-center">
                                             <div className="col-xl-6">
                                                 <div className="section-title text-left mb-5">
@@ -197,7 +170,7 @@ export default function ShopFloorVisibilitySoftwarePage() {
                                                         <span className="section-title__tagline text-primary">Core Definition</span>
                                                     </div>
                                                     <AnimatedTitle>
-                                                        <h2 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>What is Shop Floor <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Visibility Software?</span></h2>
+                                                        <h2 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>What is Shop Floor <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Visibility Software?</span></h2>
                                                     </AnimatedTitle>
                                                     <p className="text-white-50 mt-4 opacity-80 lh-lg" style={{ fontSize: '15px' }}>
                                                         Shop Floor Visibility Software is a digital system that allows manufacturers to monitor and track production activities in real time across the factory floor. It provides centralized insights into every operational pulse, helping manufacturers detect production delays early, optimize resources, and improve operational efficiency. <strong>Micraft MES provides a simple and powerful shop floor monitoring platform designed specifically for small and mid-sized manufacturing units.</strong>
@@ -209,7 +182,7 @@ export default function ShopFloorVisibilitySoftwarePage() {
                                                         { t: "Work order progress", icon: "fas fa-chart-line", gradient: "linear-gradient(135deg, #3D72FC 0%, #6065D4 100%)" },
                                                         { t: "Machine activity", icon: "fas fa-robot", gradient: "linear-gradient(135deg, #FFB01F 0%, #FA5674 100%)" },
                                                         { t: "Production output", icon: "fas fa-box-open", gradient: "linear-gradient(135deg, #00D261 0%, #3D72FC 100%)" },
-                                                        { t: "Inspection results", icon: "fas fa-vial", gradient: "linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%)" },
+                                                        { t: "Inspection results", icon: "fas fa-vial", gradient: "linear-gradient(135deg, #8B7DEC 0%, #7366CA 100%)" },
                                                         { t: "Packing status", icon: "fas fa-archive", gradient: "linear-gradient(135deg, #5EEAD4 0%, #3D72FC 100%)" },
                                                         { t: "Dispatch readiness", icon: "fas fa-truck-loading", gradient: "linear-gradient(135deg, #FA5674 0%, #FFB01F 100%)" }
                                                     ].map((box, i) => (
@@ -234,17 +207,15 @@ export default function ShopFloorVisibilitySoftwarePage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 4. How it Works Section */}
-                                {activeSection === 'how-it-works' && (
-                                    <section id="how-it-works" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="how-it-works" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="section-title text-center mb-4">
                                             <div className="section-title__tagline-box mx-auto">
                                                 <span className="section-title__tagline text-info">Operational Flow</span>
                                             </div>
                                             <AnimatedTitle>
-                                                <h2 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.2' }}>How Micraft MES Gives You <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Complete Shop Floor Control</span></h2>
+                                                <h2 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.2' }}>How Micraft MES Gives You <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Complete Shop Floor Control</span></h2>
                                             </AnimatedTitle>
                                         </div>
 
@@ -277,17 +248,15 @@ export default function ShopFloorVisibilitySoftwarePage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 5. Key Features Section */}
-                                {activeSection === 'key-features' && (
-                                    <section id="key-features" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="key-features" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="section-title text-left mb-4">
                                             <div className="section-title__tagline-box">
                                                 <span className="section-title__tagline text-primary">Toolkit</span>
                                             </div>
                                             <AnimatedTitle>
-                                                <h2 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.2' }}>Key Features of <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Micraft Shop Floor Visibility Software</span></h2>
+                                                <h2 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.2' }}>Key Features of <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Micraft Shop Floor Visibility Software</span></h2>
                                             </AnimatedTitle>
                                         </div>
                                         <div className="row g-4">
@@ -317,11 +286,9 @@ export default function ShopFloorVisibilitySoftwarePage() {
                                             ))}
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 6. Benefits Section */}
-                                {activeSection === 'benefits' && (
-                                    <section id="benefits" className="pt-0 pb-4 section-anchor section-fade-in premium-flow-section">
+                                <section id="benefits" className="pt-0 pb-4 section-anchor section-fade-in premium-flow-section">
                                         <div className="p-xl-5 ps-3 pe-3 p-4 rounded-5 position-relative overflow-hidden"
                                             style={{ background: 'rgba(7, 11, 20, 0.9)', border: '1px solid rgba(61, 114, 252, 0.25)', boxShadow: '0 30px 60px rgba(0,0,0,0.6)' }}>
 
@@ -330,7 +297,7 @@ export default function ShopFloorVisibilitySoftwarePage() {
                                                     <span className="section-title__tagline text-primary" style={{ letterSpacing: '4px', fontWeight: '900' }}>VALUE GENERATION</span>
                                                 </div>
                                                 <AnimatedTitle>
-                                                    <h2 className="section-title__title title-animation mb-3" style={{ lineHeight: '1.2' }}>Benefits of Implementing <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Shop Floor Visibility Software</span></h2>
+                                                    <h2 className="section-title__title title-animation mb-3" style={{ lineHeight: '1.2' }}>Benefits of Implementing <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Shop Floor Visibility Software</span></h2>
                                                 </AnimatedTitle>
                                                 <p className="text-white-50 extra-small opacity-60 mx-auto" style={{ maxWidth: '650px' }}>
                                                     Manufacturers using Micraft MES gain significant operational advantages through deep-floor transparency.
@@ -343,7 +310,7 @@ export default function ShopFloorVisibilitySoftwarePage() {
                                                         { b: "Improved Production Transparency", d: "Know exactly what is happening on the factory floor at any moment.", i: "fas fa-eye", c1: "#3D72FC", c2: "#00D2FF" },
                                                         { b: "Faster Decision Making", d: "Real-time insights enable quicker production adjustments.", i: "fas fa-bolt", c1: "#00D261", c2: "#3D72FC" },
                                                         { b: "Reduced Production Delays", d: "Detect bottlenecks early and prevent disruptions.", i: "fas fa-clock", c1: "#FA5674", c2: "#FB923C" },
-                                                        { b: "Better Resource Utilization", d: "Optimize machine and manpower usage efficiently.", i: "fas fa-sync-alt", c1: "#8B5CF6", c2: "#EC4899" },
+                                                        { b: "Better Resource Utilization", d: "Optimize machine and manpower usage efficiently.", i: "fas fa-sync-alt", c1: "#8B7DEC", c2: "#7366CA" },
                                                         { b: "Accurate Production Reporting", d: "Generate reliable production reports for management.", i: "fas fa-chart-line", c1: "#FFB01F", c2: "#FDE047" },
                                                         { b: "Improved Delivery Commitments", d: "Ensure production schedules align with dispatch timelines.", i: "fas fa-truck-loading", c1: "#00D2FF", c2: "#3D72FC" }
                                                     ].map((item, i) => (
@@ -362,17 +329,15 @@ export default function ShopFloorVisibilitySoftwarePage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 7. Industries Section */}
-                                {activeSection === 'industries' && (
-                                    <section id="industries" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="industries" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="text-left mb-5">
                                             <div className="section-title__tagline-box mb-3">
                                                 <span className="section-title__tagline text-primary">Vertical Segments</span>
                                             </div>
                                             <AnimatedTitle>
-                                                <h2 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.2' }}>Designed for <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Manufacturing SMEs</span></h2>
+                                                <h2 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.2' }}>Designed for <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Manufacturing SMEs</span></h2>
                                             </AnimatedTitle>
                                             <p className="text-white-50 mt-4 opacity-70 lh-relaxed max-w-700">Micraft MES is ideal for small and mid-sized manufacturing companies such as Automotive, CNC, Fabrication, Plastic, and Electronics manufacturing units. The platform is designed to be easy to implement, scalable, and cost-effective.</p>
                                         </div>
@@ -399,18 +364,16 @@ export default function ShopFloorVisibilitySoftwarePage() {
                                             ))}
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 8. Why Micraft Section */}
-                                {activeSection === 'why-micraft' && (
-                                    <section id="why-micraft" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="why-micraft" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="p-4 p-xl-5 rounded-5 shadow-2xl position-relative overflow-hidden" style={{ background: 'rgba(15, 23, 42, 0.3)', border: '1px solid rgba(61, 114, 252, 0.1)' }}>
                                             <div className="section-title text-center mb-5 max-w-800 mx-auto">
                                                 <div className="section-title__tagline-box mx-auto mb-3">
                                                     <span className="section-title__tagline text-primary">The Micraft Edge</span>
                                                 </div>
                                                 <AnimatedTitle>
-                                                    <h2 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.2' }}>Why Manufacturers Choose <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Micraft MES</span></h2>
+                                                    <h2 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.2' }}>Why Manufacturers Choose <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Micraft MES</span></h2>
                                                 </AnimatedTitle>
                                                 <p className="text-white-50 mt-4 opacity-70 lh-relaxed max-w-700 mx-auto" style={{ fontSize: '15px' }}>
                                                     Unlike complex enterprise systems, Micraft MES is built specifically for manufacturing SMEs requiring practical shop floor visibility without implementation overhead.
@@ -423,7 +386,7 @@ export default function ShopFloorVisibilitySoftwarePage() {
                                                     { t: "Intuitive Interface", d: "Designed for rapid, zero-friction adoption by shop floor operators.", i: "fas fa-mouse-pointer", c: "#00D261" },
                                                     { t: "Live Visibility", d: "Real-time accurate data for immediate floor control and decisioning.", i: "fas fa-chart-line", c: "#FA5674" },
                                                     { t: "Modular Core", d: "Scalable architecture that grows and adapts with your production volume.", i: "fas fa-expand-arrows-alt", c: "#8B5CF6" },
-                                                    { t: "Localized Design", d: "Purpose-built specifically for Indian manufacturing shop floor environments.", i: "fas fa-shield-alt", c: "#FFD25D" },
+                                                    { t: "Localized Design", d: "Purpose-built specifically for Indian manufacturing shop floor environments.", i: "fas fa-shield-alt", c: "#7366CA" },
                                                     { t: "Cost-Effective", d: "High-impact digital transformation optimized for SME capital efficiency.", i: "fas fa-hand-holding-usd", c: "#3D72FC" }
                                                 ].map((adv, i) => (
                                                     <div key={i} className="col-lg-4 col-md-6">
@@ -441,17 +404,15 @@ export default function ShopFloorVisibilitySoftwarePage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 10. Related Solutions - The Industry Ecosystem Carousel */}
-                                {activeSection === 'related' && (
-                                    <section id="related" className="py-4 section-anchor section-fade-in">
+                                <section id="related" className="py-4 section-anchor section-fade-in">
                                         <div className="section-title text-center mb-5">
                                             <div className="section-title__tagline-box mx-auto">
                                                 <span className="section-title__tagline text-primary">Related Ecosystem</span>
                                             </div>
                                             <AnimatedTitle>
-                                                <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>Explore Related <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Micraft MES Solutions</span></h3>
+                                                <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>Explore Related <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Micraft MES Solutions</span></h3>
                                             </AnimatedTitle>
                                         </div>
 
@@ -504,7 +465,6 @@ export default function ShopFloorVisibilitySoftwarePage() {
                                             </Swiper>
                                         </div>
                                     </section>
-                                )}
 
                             </div>
                         </div>
@@ -525,7 +485,7 @@ export default function ShopFloorVisibilitySoftwarePage() {
                                 <AnimatedTitle>
                                     <h2 className="newsletter-one__title text-white mb-20" style={{ lineHeight: '1.2', fontSize: '36px', fontWeight: '700' }}>
                                         Get Complete Visibility of <br />
-                                        <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Your Shop Floor</span>
+                                        <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Your Shop Floor</span>
                                     </h2>
                                 </AnimatedTitle>
                                 <p className="newsletter-one__text text-white mb-40 mx-auto" style={{ maxWidth: '750px' }}>
@@ -551,7 +511,7 @@ export default function ShopFloorVisibilitySoftwarePage() {
 
             <style dangerouslySetInnerHTML={{
                 __html: `
-                .services-details { overflow: hidden; position: relative; }
+                .services-details { overflow: visible !important; position: relative; }
                 .shadow-2xl { box-shadow: 0 40px 100px -20px rgba(0,0,0,0.9); }
                 .shadow-primary-light { box-shadow: 0 15px 45px -10px rgba(61, 114, 252, 0.5); }
                 .rounded-5 { border-radius: 32px !important; }

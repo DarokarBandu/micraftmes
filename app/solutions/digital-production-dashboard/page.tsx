@@ -1,5 +1,5 @@
-"use client"
-import { useState, useEffect } from 'react'
+﻿"use client"
+import { useScrollSpy } from '@/hooks/useScrollSpy'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -26,30 +26,13 @@ const sections = [
 ]
 
 export default function DigitalDashboardPage() {
-    const [activeSection, setActiveSection] = useState("hero")
-
-    useEffect(() => {
-        // Metadata is now managed via layout.tsx
-    }, []);
-
-    const scrollTo = (id: string) => {
-        setActiveSection(id);
-        setTimeout(() => {
-            const contentArea = document.getElementById('main-content-area');
-            if (contentArea) {
-                const headerOffset = 120;
-                const elementPosition = contentArea.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.scrollY - headerOffset;
-                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-            }
-        }, 50);
-    }
+    const { activeId: activeSection, scrollTo } = useScrollSpy(sections.map(s => s.id));
 
     return (
         <Layout headerStyle={1} footerStyle={2}>
             <Breadcrumb breadcrumbTitle="Digital Production Dashboard" />
 
-            <section className="services-details pt-0" style={{ background: '#02050A', minHeight: '100vh', paddingBottom: '0' }}>
+            <section className="services-details pt-0 pt-lg-0" style={{ background: '#02050A', minHeight: '100vh', paddingBottom: '0' }}>
                 <div className="services-details__shape-1"></div>
                 <div className="services-details__shape-2">
                     <Image src="/assets/images/shapes/services-details-shape-2.png" alt="Shape" width={1920} height={1332} style={{ opacity: 0.1 }} priority />
@@ -57,11 +40,11 @@ export default function DigitalDashboardPage() {
                 <div className="container-fluid px-xl-5">
                     <div className="row g-4 align-items-start pt-0">
                         {/* Sidebar */}
-                        <div className="col-xl-3 col-lg-4 order-1 sticky-lg-top mt-1 mt-lg-0" style={{ height: 'fit-content', zIndex: 10 }}>
-                            <div className="services-details__left">
-                                <div className="services-details__services-list-box p-0 overflow-hidden mb-4 mb-lg-0" style={{ background: 'rgba(61, 114, 252, 0.03)', border: '1px solid rgba(61, 114, 252, 0.1)' }}>
-                                    <div className="p-4" style={{ background: 'linear-gradient(90deg, rgba(61, 114, 252, 0.1), transparent)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                                        <h3 style={{ fontSize: '14px', margin: 0, color: '#3D72FC', textTransform: 'uppercase', letterSpacing: '3px', fontWeight: '900' }}>
+                        <div className="col-xl-3 col-lg-4 order-1 solution-sidebar-col">
+                            <div className="services-details__left mt-0 pt-0">
+                                <div className="services-details__services-list-box p-0 overflow-hidden mb-4 mb-lg-0" style={{ background: '#080D1A', border: '1px solid rgba(61, 114, 252, 0.25)', boxShadow: '0 15px 35px rgba(0, 0, 0, 0.6)', borderRadius: '16px' }}>
+                                    <div className="p-4" style={{ background: 'linear-gradient(90deg, rgba(61, 114, 252, 0.15), rgba(8, 13, 26, 0.95))', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+                                        <h3 style={{ fontSize: '14px', margin: 0, color: '#7366CA', textTransform: 'uppercase', letterSpacing: '3px', fontWeight: '900' }}>
                                             Dashboard Menu
                                         </h3>
                                     </div>
@@ -87,11 +70,10 @@ export default function DigitalDashboardPage() {
                         </div>
 
                         {/* Main Content */}
-                        <div className="col-xl-9 col-lg-8 order-2 mt-5 mt-lg-0 pt-0">
-                            <div id="main-content-area" key={activeSection} className="services-details__right mt-0 pt-0 pb-5 pe-xl-5">
+                        <div className="col-xl-9 col-lg-8 order-2 pt-0">
+                            <div id="main-content-area" suppressHydrationWarning className="services-details__right mt-0 pt-0 pb-5 pe-xl-5">
                                 {/* 1. Hero Section */}
-                                {activeSection === 'hero' && (
-                                    <section id="hero" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="hero" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="row g-4 align-items-center">
                                             <div className="col-lg-12">
                                                 <div className="section-title text-left mb-4">
@@ -100,7 +82,7 @@ export default function DigitalDashboardPage() {
                                                     </div>
                                                     <AnimatedTitle>
                                                         <h1 className="section-title__title title-animation mb-4" style={{ lineHeight: '1.0', fontSize: '48px' }}>
-                                                            Digital Production <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Dashboards</span> for Factory Visibility
+                                                            Digital Production <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Dashboards</span> for Factory Visibility
                                                         </h1>
                                                     </AnimatedTitle>
                                                 </div>
@@ -129,17 +111,15 @@ export default function DigitalDashboardPage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 2. Problems Section */}
-                                {activeSection === 'problems' && (
-                                    <section id="problems" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="problems" className="pt-0 pb-4 section-anchor section-fade-in">
                                          <div className="section-title text-left mb-4">
                                             <div className="section-title__tagline-box">
                                                 <span className="section-title__tagline" style={{ color: '#FA5674' }}>Pain Points</span>
                                             </div>
                                             <AnimatedTitle>
-                                                <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>Challenges in Gaining <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Production Visibility</span></h3>
+                                                <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>Challenges in Gaining <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Production Visibility</span></h3>
                                             </AnimatedTitle>
                                         </div>
                                         <p className="text-white-50 mb-3 opacity-80 pe-xl-5" style={{ fontSize: '16px' }}>Without real-time digital dashboards, manufacturers often struggle with fragmented data and delayed reporting:</p>
@@ -147,7 +127,7 @@ export default function DigitalDashboardPage() {
                                             {[
                                                 { text: "Manual Data Silos", sub: "Information trapped in paper registers and disjointed excels.", icon: "fas fa-database", color: "#6065D4", label: "CRITICAL" },
                                                 { text: "Late Reporting", sub: "Production status is only known after shifts or days later.", icon: "fas fa-clock", color: "#FA5674", label: "DELAYED" },
-                                                { text: "Inaccurate KPIs", sub: "Manual calculation errors lead to faulty performance metrics.", icon: "fas fa-exclamation-circle", color: "#FFD25D", label: "DATA GAP" },
+                                                { text: "Inaccurate KPIs", sub: "Manual calculation errors lead to faulty performance metrics.", icon: "fas fa-exclamation-circle", color: "#7366CA", label: "DATA GAP" },
                                                 { text: "Reactive Decisions", sub: "Issues are only fixed after high-cost delays have occurred.", icon: "fas fa-fire-extinguisher", color: "#00D261", label: "RISK" }
                                             ].map((item, i) => (
                                                 <div key={i} className="col-lg-6">
@@ -166,17 +146,15 @@ export default function DigitalDashboardPage() {
                                             ))}
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 3. How it Works */}
-                                {activeSection === 'how-it-works' && (
-                                    <section id="how-it-works" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="how-it-works" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="p-4 p-xl-5 rounded-5 shadow-2xl position-relative overflow-hidden" 
                                              style={{ background: 'rgba(11, 15, 25, 0.4)', border: '1px solid rgba(61, 114, 252, 0.1)', backdropFilter: 'blur(10px)' }}>
                                             <div className="section-title text-center mb-5">
                                                 <span className="section-title__tagline text-primary">REAL-TIME DATA HUB</span>
                                                 <AnimatedTitle>
-                                                    <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>How Micraft MES <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Dashboards Work</span></h3>
+                                                    <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>How Micraft MES <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Dashboards Work</span></h3>
                                                 </AnimatedTitle>
                                             </div>
                                             <div className="row g-4 align-items-center mb-5">
@@ -214,15 +192,13 @@ export default function DigitalDashboardPage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 4. Capabilities */}
-                                {activeSection === 'capabilities' && (
-                                    <section id="capabilities" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="capabilities" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="section-title text-left mb-5">
                                             <span className="section-title__tagline text-primary">KPI ENGINE</span>
                                             <AnimatedTitle>
-                                                <h2 className="section-title__title title-animation mb-4" style={{ lineHeight: '1.1' }}>Advanced <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Dashboard Capabilities</span></h2>
+                                                <h2 className="section-title__title title-animation mb-4" style={{ lineHeight: '1.1' }}>Advanced <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Dashboard Capabilities</span></h2>
                                             </AnimatedTitle>
                                         </div>
                                         <div className="row g-4">
@@ -248,16 +224,14 @@ export default function DigitalDashboardPage() {
                                             ))}
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 5. Benefits */}
-                                {activeSection === 'benefits' && (
-                                    <section id="benefits" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="benefits" className="pt-0 pb-4 section-anchor section-fade-in">
                                          <div className="p-xl-5 p-4 rounded-5 position-relative overflow-hidden shadow-2xl" style={{ background: 'rgba(7, 11, 20, 0.95)', border: '1px solid rgba(139, 92, 246, 0.2)' }}>
                                              <div className="section-title text-center mb-5">
                                                  <span className="section-title__tagline text-primary">STRATEGIC BENEFITS</span>
                                                  <AnimatedTitle>
-                                                     <h2 className="section-title__title title-animation mb-3" style={{ lineHeight: '1.1' }}>Factory <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Performance Gains</span></h2>
+                                                     <h2 className="section-title__title title-animation mb-3" style={{ lineHeight: '1.1' }}>Factory <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Performance Gains</span></h2>
                                                  </AnimatedTitle>
                                              </div>
                                              <div className="row g-5 align-items-center">
@@ -294,15 +268,13 @@ export default function DigitalDashboardPage() {
                                              </div>
                                          </div>
                                     </section>
-                                )}
 
                                 {/* 6. Role-Based Views */}
-                                {activeSection === 'roles' && (
-                                     <section id="roles" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="roles" className="pt-0 pb-4 section-anchor section-fade-in">
                                          <div className="section-title text-left mb-5">
                                             <span className="section-title__tagline text-primary">PERSONA-DRIVEN VIEWS</span>
                                             <AnimatedTitle>
-                                                <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>Dashboards for <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Every Role</span></h3>
+                                                <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>Dashboards for <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Every Role</span></h3>
                                             </AnimatedTitle>
                                         </div>
                                         <div className="row g-4">
@@ -326,15 +298,13 @@ export default function DigitalDashboardPage() {
                                             ))}
                                         </div>
                                      </section>
-                                )}
 
                                 {/* 7. Industries */}
-                                {activeSection === 'industries' && (
-                                    <section id="industries" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="industries" className="pt-0 pb-4 section-anchor section-fade-in">
                                          <div className="section-title text-left mb-5">
                                             <span className="section-title__tagline text-primary">VERSATILE APPLICATIONS</span>
                                             <AnimatedTitle>
-                                                <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>Optimizing <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Global Operations</span></h3>
+                                                <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>Optimizing <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Global Operations</span></h3>
                                             </AnimatedTitle>
                                         </div>
                                         <div className="row g-4 row-cols-lg-3 row-cols-md-2 row-cols-1">
@@ -357,11 +327,9 @@ export default function DigitalDashboardPage() {
                                             ))}
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 8. Integration */}
-                                {activeSection === 'integration' && (
-                                     <section id="integration" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="integration" className="pt-0 pb-4 section-anchor section-fade-in">
                                          <div className="p-4 p-xl-5 rounded-5 border-primary-glow bg-dark shadow-2xl">
                                              <div className="row g-4 align-items-center">
                                                  <div className="col-lg-7">
@@ -391,11 +359,9 @@ export default function DigitalDashboardPage() {
                                              </div>
                                          </div>
                                      </section>
-                                )}
 
                                 {/* 9. Why Micraft */}
-                                {activeSection === 'why-micraft' && (
-                                    <section id="why-micraft" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="why-micraft" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="p-4 p-xl-5 rounded-5 shadow-2xl" style={{ background: 'rgba(15, 23, 42, 0.4)', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
                                             <div className="row g-4 justify-content-center">
                                                 {[
@@ -416,17 +382,15 @@ export default function DigitalDashboardPage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
 
                                  {/* 10. Related Solutions - The Industry Ecosystem Carousel */}
-                                 {activeSection === 'related' && (
-                                     <section id="related" className="pt-0 pb-4 section-anchor section-fade-in">
+                                 <section id="related" className="pt-0 pb-4 section-anchor section-fade-in">
                                          <div className="section-title text-center mb-5">
                                              <div className="section-title__tagline-box mx-auto">
                                                  <span className="section-title__tagline text-primary">Related Ecosystem</span>
                                              </div>
                                              <AnimatedTitle>
-                                                 <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>Explore Related <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Micraft MES Solutions</span></h3>
+                                                 <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>Explore Related <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Micraft MES Solutions</span></h3>
                                              </AnimatedTitle>
                                          </div>
                                          
@@ -479,7 +443,6 @@ export default function DigitalDashboardPage() {
                                              </Swiper>
                                          </div>
                                      </section>
-                                 )}
 
                             </div>
                         </div>
@@ -506,7 +469,7 @@ export default function DigitalDashboardPage() {
                                 <AnimatedTitle>
                                     <h2 className="newsletter-one__title text-white mb-20" style={{ lineHeight: '1.0', fontSize: '32px', fontWeight: '700' }}>
                                         Monitor Your Factory <br />
-                                        <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Production in Real Time</span>
+                                        <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Production in Real Time</span>
                                     </h2>
                                 </AnimatedTitle>
                                 <p className="newsletter-one__text text-white mb-40 mx-auto" style={{ maxWidth: '750px', fontSize: '16px', opacity: 0.9 }}>
@@ -536,7 +499,7 @@ export default function DigitalDashboardPage() {
 
             <style dangerouslySetInnerHTML={{
                 __html: `
-                .services-details { overflow: hidden; position: relative; }
+                .services-details { overflow: visible !important; position: relative; }
                 .shadow-2xl { box-shadow: 0 40px 100px -20px rgba(0,0,0,0.9); }
                 .shadow-primary-light { box-shadow: 0 15px 45px -10px rgba(61, 114, 252, 0.5); }
                 .rounded-5 { border-radius: 32px !important; }

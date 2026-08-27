@@ -1,5 +1,5 @@
-"use client"
-import { useState, useEffect } from 'react'
+﻿"use client"
+import { useScrollSpy } from '@/hooks/useScrollSpy'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -26,30 +26,13 @@ const sections = [
 ]
 
 export default function ProcessTrackingPage() {
-    const [activeSection, setActiveSection] = useState("hero")
-
-    useEffect(() => {
-        // Metadata is now managed via layout.tsx
-    }, []);
-
-    const scrollTo = (id: string) => {
-        setActiveSection(id);
-        setTimeout(() => {
-            const contentArea = document.getElementById('main-content-area');
-            if (contentArea) {
-                const headerOffset = 120;
-                const elementPosition = contentArea.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.scrollY - headerOffset;
-                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-            }
-        }, 50);
-    }
+    const { activeId: activeSection, scrollTo } = useScrollSpy(sections.map(s => s.id));
 
     return (
         <Layout headerStyle={1} footerStyle={2}>
             <Breadcrumb breadcrumbTitle="Manufacturing Process Tracking" />
 
-            <section className="services-details pt-0" style={{ background: '#02050A', minHeight: '100vh', paddingBottom: '0' }}>
+            <section className="services-details pt-0 pt-lg-0" style={{ background: '#02050A', minHeight: '100vh', paddingBottom: '0' }}>
                 <div className="services-details__shape-1"></div>
                 <div className="services-details__shape-2">
                     <Image src="/assets/images/shapes/services-details-shape-2.png" alt="Shape" width={1920} height={1332} style={{ opacity: 0.1 }} priority />
@@ -57,11 +40,11 @@ export default function ProcessTrackingPage() {
                 <div className="container-fluid px-xl-5">
                     <div className="row g-4 align-items-start pt-0">
                         {/* Sidebar */}
-                        <div className="col-xl-3 col-lg-4 order-1 sticky-lg-top mt-1 mt-lg-0" style={{ height: 'fit-content', zIndex: 10 }}>
-                            <div className="services-details__left">
-                                <div className="services-details__services-list-box p-0 overflow-hidden mb-4 mb-lg-0" style={{ background: 'rgba(61, 114, 252, 0.03)', border: '1px solid rgba(61, 114, 252, 0.1)' }}>
-                                    <div className="p-4" style={{ background: 'linear-gradient(90deg, rgba(61, 114, 252, 0.1), transparent)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                                        <h3 style={{ fontSize: '14px', margin: 0, color: '#3D72FC', textTransform: 'uppercase', letterSpacing: '3px', fontWeight: '900' }}>
+                        <div className="col-xl-3 col-lg-4 order-1 solution-sidebar-col">
+                            <div className="services-details__left mt-0 pt-0">
+                                <div className="services-details__services-list-box p-0 overflow-hidden mb-4 mb-lg-0" style={{ background: '#080D1A', border: '1px solid rgba(61, 114, 252, 0.25)', boxShadow: '0 15px 35px rgba(0, 0, 0, 0.6)', borderRadius: '16px' }}>
+                                    <div className="p-4" style={{ background: 'linear-gradient(90deg, rgba(61, 114, 252, 0.15), rgba(8, 13, 26, 0.95))', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+                                        <h3 style={{ fontSize: '14px', margin: 0, color: '#7366CA', textTransform: 'uppercase', letterSpacing: '3px', fontWeight: '900' }}>
                                             Process Menu
                                         </h3>
                                     </div>
@@ -87,12 +70,11 @@ export default function ProcessTrackingPage() {
                         </div>
 
                         {/* Main Content */}
-                        <div className="col-xl-9 col-lg-8 order-2 mt-5 mt-lg-0 pt-0">
-                            <div id="main-content-area" key={activeSection} className="services-details__right mt-0 pt-0 pb-5 pe-xl-5">
+                        <div className="col-xl-9 col-lg-8 order-2 pt-0">
+                            <div id="main-content-area" suppressHydrationWarning className="services-details__right mt-0 pt-0 pb-5 pe-xl-5">
 
                                 {/* 1. Hero Section */}
-                                {activeSection === 'hero' && (
-                                    <section id="hero" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="hero" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="row g-4 align-items-center">
                                             <div className="col-lg-12">
                                                 <div className="section-title text-left mb-4">
@@ -133,11 +115,9 @@ export default function ProcessTrackingPage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 2. Problems Section */}
-                                {activeSection === 'problems' && (
-                                    <section id="problems" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="problems" className="pt-0 pb-4 section-anchor section-fade-in">
                                          <div className="section-title text-left mb-4">
                                             <div className="section-title__tagline-box">
                                                 <span className="section-title__tagline" style={{ color: '#FA5674' }}>Workflow Fragmentation</span>
@@ -154,7 +134,7 @@ export default function ProcessTrackingPage() {
                                             {[
                                                 { text: "Lack of Visibility", sub: "No real-time insight into work order progress across different stages.", icon: "fas fa-eye-slash", color: "#6065D4" },
                                                 { text: "Process Bottlenecks", sub: "Difficulty identifying exactly where production is stalling.", icon: "fas fa-hourglass-half", color: "#FA5674" },
-                                                { text: "Production Delays", sub: "Significant downtime between production steps due to poor tracking.", icon: "fas fa-clock", color: "#FFD25D" },
+                                                { text: "Production Delays", sub: "Significant downtime between production steps due to poor tracking.", icon: "fas fa-clock", color: "#7366CA" },
                                                 { text: "Reporting Inaccuracy", sub: "Manual updates leading to unreliable production progress reports.", icon: "fas fa-file-excel", color: "#00D261" },
                                                 { text: "Poor Coordination", sub: "Lack of synchronization between different factory departments.", icon: "fas fa-users-slash", color: "#00D2FF" }
                                             ].map((item, i) => (
@@ -177,11 +157,9 @@ export default function ProcessTrackingPage() {
                                             <p className="text-white mb-0 text-center fw-medium">Manufacturing process tracking software eliminates these challenges by providing real-time visibility across every production stage.</p>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 3. What is Section */}
-                                {activeSection === 'what-is' && (
-                                    <section id="what-is" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="what-is" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="row g-4 align-items-center">
                                             <div className="col-lg-7">
                                                 <div className="section-title text-left mb-4">
@@ -224,11 +202,9 @@ export default function ProcessTrackingPage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 4. How it Works Section */}
-                                {activeSection === 'how-it-works' && (
-                                    <section id="how-it-works" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="how-it-works" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="p-4 p-xl-5 rounded-5 shadow-2xl position-relative overflow-hidden" 
                                              style={{ background: 'rgba(11, 15, 25, 0.4)', border: '1px solid rgba(61, 114, 252, 0.1)', backdropFilter: 'blur(10px)' }}>
                                             <div className="section-title text-center mb-5">
@@ -269,11 +245,9 @@ export default function ProcessTrackingPage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 5. Capabilities Section */}
-                                {activeSection === 'capabilities' && (
-                                    <section id="capabilities" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="capabilities" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="section-title text-left mb-5">
                                             <span className="section-title__tagline text-primary">SHOP FLOOR CONTROL</span>
                                             <AnimatedTitle>
@@ -304,11 +278,9 @@ export default function ProcessTrackingPage() {
                                             ))}
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 6. Benefits Section */}
-                                {activeSection === 'benefits' && (
-                                    <section id="benefits" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="benefits" className="pt-0 pb-4 section-anchor section-fade-in">
                                          <div className="p-xl-5 p-4 rounded-5 position-relative overflow-hidden shadow-2xl" style={{ background: 'rgba(7, 11, 20, 0.95)', border: '1px solid rgba(139, 92, 246, 0.2)' }}>
                                              <div className="section-title text-center mb-5">
                                                  <span className="section-title__tagline text-primary">BUSINESS IMPACT</span>
@@ -348,11 +320,9 @@ export default function ProcessTrackingPage() {
                                              </div>
                                          </div>
                                     </section>
-                                )}
 
                                 {/* 7. Industries Section */}
-                                {activeSection === 'industries' && (
-                                    <section id="industries" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="industries" className="pt-0 pb-4 section-anchor section-fade-in">
                                          <div className="section-title text-left mb-5">
                                             <span className="section-title__tagline text-primary">SCALABLE WORKFLOWS</span>
                                             <AnimatedTitle>
@@ -380,11 +350,9 @@ export default function ProcessTrackingPage() {
                                             ))}
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 8. Integration Section */}
-                                {activeSection === 'integration' && (
-                                     <section id="integration" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="integration" className="pt-0 pb-4 section-anchor section-fade-in">
                                          <div className="p-4 p-xl-5 rounded-5 border-primary-glow bg-dark shadow-2xl">
                                              <div className="row g-4 align-items-center">
                                                  <div className="col-lg-7">
@@ -416,11 +384,9 @@ export default function ProcessTrackingPage() {
                                              </div>
                                          </div>
                                      </section>
-                                )}
 
                                 {/* 9. Why Micraft Section */}
-                                {activeSection === 'why-micraft' && (
-                                    <section id="why-micraft" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="why-micraft" className="pt-0 pb-4 section-anchor section-fade-in">
                                          <div className="section-title text-left mb-5">
                                             <span className="section-title__tagline text-primary">THE MICRAFT EDGE</span>
                                             <AnimatedTitle>
@@ -448,11 +414,9 @@ export default function ProcessTrackingPage() {
                                             ))}
                                         </div>
                                     </section>
-                                )}
 
                                  {/* 10. Related Solutions Section */}
-                                 {activeSection === 'related' && (
-                                     <section id="related" className="pt-0 pb-4 section-anchor section-fade-in">
+                                 <section id="related" className="pt-0 pb-4 section-anchor section-fade-in">
                                          <div className="section-title text-center mb-5">
                                              <div className="section-title__tagline-box mx-auto">
                                                  <span className="section-title__tagline text-primary">Related Ecosystem</span>
@@ -511,7 +475,6 @@ export default function ProcessTrackingPage() {
                                              </Swiper>
                                          </div>
                                      </section>
-                                 )}
 
                             </div>
                         </div>
@@ -568,7 +531,7 @@ export default function ProcessTrackingPage() {
 
             <style dangerouslySetInnerHTML={{
                 __html: `
-                .services-details { overflow: hidden; position: relative; }
+                .services-details { overflow: visible !important; position: relative; }
                 .shadow-2xl { box-shadow: 0 40px 100px -20px rgba(0,0,0,0.9); }
                 .shadow-primary-light { box-shadow: 0 15px 45px -10px rgba(61, 114, 252, 0.5); }
                 .rounded-5 { border-radius: 32px !important; }

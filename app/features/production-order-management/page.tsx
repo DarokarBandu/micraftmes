@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 import { Fragment, useState, useEffect } from 'react'
 import Layout from "@/components/layout/Layout"
 import Breadcrumb from "@/components/layout/Breadcrumb"
@@ -83,7 +83,7 @@ export default function ProductionOrderManagementPage() {
               <div className="nav-links d-flex align-items-center justify-content-center gap-2 flex-wrap">
                 {[
                   { id: "step-1-creation", label: "Order Creation", icon: "plus-circle", color: "#FA5674" },
-                  { id: "step-2-breakdown", label: "Technical Breakdown", icon: "layer-group", color: "#FFD25D" },
+                  { id: "step-2-breakdown", label: "Technical Breakdown", icon: "layer-group", color: "#7366CA" },
                   { id: "step-3-prioritization", label: "Prioritization", icon: "sort-amount-up", color: "#6065D4" },
                   { id: "step-4-routing", label: "Workstation Routing", icon: "route", color: "#3D72FC" },
                   { id: "step-5-recording", label: "Progress Recording", icon: "history", color: "#00D094" },
@@ -174,7 +174,7 @@ export default function ProductionOrderManagementPage() {
             {[
               { title: "Centralized Order Hub", desc: "Access all production orders in a single, real-time dashboard", icon: "database", color: "#FA5674", gradient: "linear-gradient(135deg, rgba(250,86,116,0.12), rgba(250,86,116,0.04))" },
               { title: "Dynamic Scheduling", desc: "Adjust job priorities instantly based on shop floor realities", icon: "sliders-h", color: "#6065D4", gradient: "linear-gradient(135deg, rgba(96,101,212,0.12), rgba(96,101,212,0.04))" },
-              { title: "Stage-Wise Tracking", desc: "Monitor work order progress across every operation stage", icon: "stream", color: "#FFD25D", gradient: "linear-gradient(135deg, rgba(255,210,93,0.12), rgba(255,210,93,0.04))" },
+              { title: "Stage-Wise Tracking", desc: "Monitor work order progress across every operation stage", icon: "stream", color: "#7366CA", gradient: "linear-gradient(135deg, rgba(255,210,93,0.12), rgba(255,210,93,0.04))" },
               { title: "Seamless Visibility", desc: "Connect office planners with shop floor execution loops", icon: "eye", color: "#00D094", gradient: "linear-gradient(135deg, rgba(0,208,148,0.12), rgba(0,208,148,0.04))" }
             ].map((item, idx) => (
               <div key={idx} className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay={`${idx * 100 + 100}ms`}>
@@ -235,7 +235,7 @@ export default function ProductionOrderManagementPage() {
 
             {[
               { title: "Digital Order Creation", icon: "plus-circle", color: "#3D72FC", desc: "New production orders are generated instantly via ERP sync or manual input, capturing core job requirements." },
-              { title: "Resource Alignment", icon: "layer-group", color: "#FFD25D", desc: "Individual work orders are broken down into technical stages with precise quantity and material specs." },
+              { title: "Resource Alignment", icon: "layer-group", color: "#7366CA", desc: "Individual work orders are broken down into technical stages with precise quantity and material specs." },
               { title: "Queue Prioritization", icon: "sort-amount-up", color: "#FA5674", desc: "Planners rank job execution based on customer urgency, material availability, and factory lead times." },
               { title: "Workstation Routing", icon: "route", color: "#6065D4", desc: "Jobs are routed to specific shop floor workstations and machine groups to optimize factory throughput." },
               { title: "Execution Progress", icon: "history", color: "#00D094", desc: "Operators log progress in real-time, providing immediate visibility into job status and operational speed." },
@@ -400,7 +400,7 @@ export default function ProductionOrderManagementPage() {
           </div>
 
           {/* FEATURE 2: DYNAMIC PRIORITIZATION */}
-          <div className="meswork-step-detail mb-5 wow fadeInUp" id="step-3-prioritization" style={{ borderLeft: '4px solid #FFD25D' }}>
+          <div className="meswork-step-detail mb-5 wow fadeInUp" id="step-3-prioritization" style={{ borderLeft: '4px solid #7366CA' }}>
             <div style={{ position: 'absolute', top: 0, right: 0, width: 200, height: 200, background: 'rgba(255,210,93,0.06)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none' }}></div>
             <div className="row align-items-center g-4">
               <div className="col-lg-5 order-2 order-lg-1">
@@ -409,7 +409,7 @@ export default function ProductionOrderManagementPage() {
                 </div>
               </div>
               <div className="col-lg-7 order-1 order-lg-2">
-                <div className="meswork-cycle-num mb-3" style={{ background: 'linear-gradient(135deg, #FFD25D, #FA5674)' }}>02</div>
+                <div className="meswork-cycle-num mb-3" style={{ background: 'linear-gradient(135deg, #7366CA, #FA5674)' }}>02</div>
                 <AnimatedTitle>
                   <h2 className="section-title__title text-white mb-3" style={{ fontSize: '30px' }}>Dynamic <span>Queue Prioritization</span></h2>
                 </AnimatedTitle>
@@ -422,7 +422,7 @@ export default function ProductionOrderManagementPage() {
                   <li>Urgency scoring based on delivery dates and customer tiers</li>
                   <li>Bottleneck detection during the planning phase</li>
                 </ul>
-                <Link href="/solutions/shop-floor-visibility-software" className="meswork-link" style={{ color: '#FFD25D' }}>
+                <Link href="/solutions/shop-floor-visibility-software" className="meswork-link" style={{ color: '#7366CA' }}>
                   Agility Tracking Systems <i className="icon-right-arrow"></i>
                 </Link>
               </div>
@@ -476,7 +476,7 @@ export default function ProductionOrderManagementPage() {
           <div className="row g-4 justify-content-center">
             {[
               { title: "Zero Paper Dependency", text: "Replace physical travelers with digital job sheets and instant updates.", icon: "file-invoice", color: "#FA5674" },
-              { title: "Precise Delivery Estimates", text: "Provide customers with reliable dates based on actual lead times.", icon: "calendar-check", color: "#FFD25D" },
+              { title: "Precise Delivery Estimates", text: "Provide customers with reliable dates based on actual lead times.", icon: "calendar-check", color: "#7366CA" },
               { title: "Reduced Administrative Load", text: "Save hours of data entry and status checking for plant managers.", icon: "user-clock", color: "#6065D4" },
               { title: "Order History Insight", text: "Analyze historical job data to optimize future production runs.", icon: "history", color: "#3D72FC" },
               { title: "Scalable Operations", text: "Manage 10x more orders without increasing overhead or confusion.", icon: "expand-arrows-alt", color: "#00D094" }
@@ -510,13 +510,13 @@ export default function ProductionOrderManagementPage() {
           <div className="row g-3 justify-content-center">
             {[
               { name: "Smarter Scheduling", path: "/features/production-planning-scheduling", icon: "calendar-alt", color: "#FA5674" },
-              { name: "Real-time Dashboards", path: "/features/production-dashboard", icon: "chart-bar", color: "#FFD25D" },
+              { name: "Real-time Dashboards", path: "/features/production-dashboard", icon: "chart-bar", color: "#7366CA" },
               { name: "Operator Workstations", path: "/features/shop-floor-data-collection", icon: "desktop", color: "#6065D4" },
               { name: "Live Progress Monitor", path: "/solutions/real-time-production-monitoring", icon: "pulse", color: "#00D094" },
               { name: "Quality Recording", path: "/features/quality-inspection-management", icon: "shield-alt", color: "#3D72FC" },
               { name: "Technical Traceability", path: "/solutions/manufacturing-process-tracking", icon: "link", color: "#00D094" },
               { name: "Planning Agility", path: "/solutions/shop-floor-visibility-software", icon: "bolt", color: "#FA5674" },
-              { name: "Closing & Archiving", path: "/features/production-analytics-reports", icon: "file-archive", color: "#FFD25D" }
+              { name: "Closing & Archiving", path: "/features/production-analytics-reports", icon: "file-archive", color: "#7366CA" }
             ].map((solution, i) => (
               <div key={i} className="col-xl-3 col-lg-4 col-md-6">
                 <Link href={solution.path} className="d-block p-4 h-100 text-decoration-none"

@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 import { Fragment, useState, useEffect } from 'react'
 import Layout from "@/components/layout/Layout"
 import Breadcrumb from "@/components/layout/Breadcrumb"
@@ -83,7 +83,7 @@ export default function MachineMonitoringPage() {
               <div className="nav-links d-flex align-items-center justify-content-center gap-2 flex-wrap">
                 {[
                   { id: "step-1-mapping", label: "Asset Mapping", icon: "tools", color: "#FA5674" },
-                  { id: "step-2-sync", label: "Live Status Sync", icon: "sync", color: "#FFD25D" },
+                  { id: "step-2-sync", label: "Live Status Sync", icon: "sync", color: "#7366CA" },
                   { id: "step-3-throughput", label: "Throughput Monitoring", icon: "tachometer-alt", color: "#6065D4" },
                   { id: "step-4-downtime", label: "Downtime Logging", icon: "pause-circle", color: "#3D72FC" },
                   { id: "step-5-oee", label: "OEE Calculation", icon: "calculator", color: "#00D094" },
@@ -143,7 +143,7 @@ export default function MachineMonitoringPage() {
             {[
               { title: "Live Status Dashboard", desc: "View running, idle, or stopped status for every machine instantly", icon: "desktop", color: "#FA5674", gradient: "linear-gradient(135deg, rgba(250,86,116,0.12), rgba(250,86,116,0.04))" },
               { title: "Idle Time Detection", desc: "Log reasons for machine stops to eliminate recurring inefficiencies", icon: "hourglass-half", color: "#6065D4", gradient: "linear-gradient(135deg, rgba(96,101,212,0.12), rgba(96,101,212,0.04))" },
-              { title: "Accurate OEE Data", desc: "Automated calculations of Availability, Performance, and Quality", icon: "percentage", color: "#FFD25D", gradient: "linear-gradient(135deg, rgba(255,210,93,0.12), rgba(255,210,93,0.04))" },
+              { title: "Accurate OEE Data", desc: "Automated calculations of Availability, Performance, and Quality", icon: "percentage", color: "#7366CA", gradient: "linear-gradient(135deg, rgba(255,210,93,0.12), rgba(255,210,93,0.04))" },
               { title: "Bottleneck Analysis", desc: "Identify workstations that restrict your factory throughput", icon: "search-location", color: "#00D094", gradient: "linear-gradient(135deg, rgba(0,208,148,0.12), rgba(0,208,148,0.04))" }
             ].map((item, idx) => (
               <div key={idx} className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay={`${idx * 100 + 100}ms`}>
@@ -198,7 +198,7 @@ export default function MachineMonitoringPage() {
 
             {[
               { title: "Asset Digital Mapping", icon: "tools", color: "#3D72FC", desc: "Configure machine profiles, capacity limits, and operational parameters within the MES." },
-              { title: "Live Activity Sync", icon: "sync", color: "#FFD25D", desc: "Sub-second synchronization of machine status between shop floor and management dashboard." },
+              { title: "Live Activity Sync", icon: "sync", color: "#7366CA", desc: "Sub-second synchronization of machine status between shop floor and management dashboard." },
               { title: "Real-Time Throughput", icon: "tachometer-alt", color: "#FA5674", desc: "Monitor production rates instantly to ensure output targets are being met per hour." },
               { title: "Downtime Categorization", icon: "pause-circle", color: "#6065D4", desc: "Log and categorize downtime reasons (Mechanical, Material, Changeover) for deeper analysis." },
               { title: "Automated OEE Engine", icon: "calculator", color: "#00D094", desc: "Instant calculation of Overall Equipment Effectiveness based on live production data." },
@@ -344,7 +344,7 @@ export default function MachineMonitoringPage() {
           </div>
 
           {/* FEATURE 2: OEE SCORECARDS */}
-          <div className="meswork-step-detail mb-5 wow fadeInUp" id="step-5-oee" style={{ borderLeft: '4px solid #FFD25D' }}>
+          <div className="meswork-step-detail mb-5 wow fadeInUp" id="step-5-oee" style={{ borderLeft: '4px solid #7366CA' }}>
             <div className="row align-items-center g-4">
               <div className="col-lg-5 order-2 order-lg-1">
                 <div className="meswork-img-card meswork-img-glow p-2">
@@ -352,7 +352,7 @@ export default function MachineMonitoringPage() {
                 </div>
               </div>
               <div className="col-lg-7 order-1 order-lg-2">
-                <div className="meswork-cycle-num mb-3" style={{ background: 'linear-gradient(135deg, #FFD25D, #FA5674)' }}>02</div>
+                <div className="meswork-cycle-num mb-3" style={{ background: 'linear-gradient(135deg, #7366CA, #FA5674)' }}>02</div>
                 <AnimatedTitle>
                   <h2 className="section-title__title text-white mb-3" style={{ fontSize: '30px' }}>Automated <span>OEE Scorecards</span></h2>
                 </AnimatedTitle>
@@ -365,7 +365,7 @@ export default function MachineMonitoringPage() {
                   <li>Predictive trend analysis for machine performance decay</li>
                   <li>Customizable performance thresholds and target setting</li>
                 </ul>
-                <Link href="#oee-analytics" className="meswork-link" style={{ color: '#FFD25D' }}>
+                <Link href="#oee-analytics" className="meswork-link" style={{ color: '#7366CA' }}>
                    View OEE Architecture <i className="icon-right-arrow"></i>
                 </Link>
               </div>
@@ -418,7 +418,7 @@ export default function MachineMonitoringPage() {
             <div className="row g-4">
                 {[
                     { title: "Availability", val: "92%", desc: "Percentage of scheduled time the machine is actually producing parts.", color: "#FA5674" },
-                    { title: "Performance", val: "85%", desc: "The speed of operation vs the maximum theoretical capacity.", color: "#FFD25D" },
+                    { title: "Performance", val: "85%", desc: "The speed of operation vs the maximum theoretical capacity.", color: "#7366CA" },
                     { title: "Quality", val: "97%", desc: "Percentage of produced parts meeting strict technical tolerances.", color: "#6065D4" }
                 ].map((stat, i) => (
                     <div key={i} className="col-lg-4 wow fadeInUp" data-wow-delay={`${i * 100}ms`}>
@@ -447,7 +447,7 @@ export default function MachineMonitoringPage() {
           <div className="row g-4 justify-content-center">
             {[
               { title: "100% Machine Visibility", text: "Total transparency across every asset in your factory floor.", icon: "eye", color: "#FA5674" },
-              { title: "Reduced Idle Intervals", text: "Identify and eliminate unrecorded machine downtime instantly.", icon: "clock", color: "#FFD25D" },
+              { title: "Reduced Idle Intervals", text: "Identify and eliminate unrecorded machine downtime instantly.", icon: "clock", color: "#7366CA" },
               { title: "Optimized Asset Usage", text: "Maximize machine lifecycle through data-driven operational control.", icon: "cogs", color: "#6065D4" },
               { title: "Data-Driven Planning", text: "Plan production based on actual machine capacity and speed.", icon: "calendar-check", color: "#3D72FC" },
               { title: "Scalable Monitoring", text: "Add more machines and sensors as your factory grows effortlessly.", icon: "network-wired", color: "#00D094" }
@@ -476,9 +476,9 @@ export default function MachineMonitoringPage() {
           </div>
           <div className="row g-3 justify-content-center">
             {[
-              { name: "Smarter Scheduling", path: "/features/production-planning-scheduling", icon: "calendar-alt", color: "#FFD25D" },
+              { name: "Smarter Scheduling", path: "/features/production-planning-scheduling", icon: "calendar-alt", color: "#7366CA" },
               { name: "Order Tracking", path: "/features/work-order-tracking", icon: "tasks", color: "#FA5674" },
-              { name: "Performance Reports", path: "/features/production-analytics-reports", icon: "file-chart-line", color: "#FFD25D" },
+              { name: "Performance Reports", path: "/features/production-analytics-reports", icon: "file-chart-line", color: "#7366CA" },
               { name: "Factory Dashboard", path: "/features/production-dashboard", icon: "tachometer-alt", color: "#3D72FC" },
               { name: "Quality Control", path: "/features/quality-inspection-management", icon: "shield-alt", color: "#00D094" },
               { name: "Operator Hub", path: "/features/shop-floor-data-collection", icon: "tablet-alt", color: "#6065D4" }

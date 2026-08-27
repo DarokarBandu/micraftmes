@@ -1,4 +1,4 @@
-import Layout from "@/components/layout/Layout"
+﻿import Layout from "@/components/layout/Layout"
 import Breadcrumb from "@/components/layout/Breadcrumb"
 import Link from "next/link"
 import Image from "next/image"
@@ -79,7 +79,7 @@ export default function ProductMicraftMesPage() {
                     <div className="row g-4 justify-content-center">
                         {[
                             { title: "Production Unclear", desc: "Production status is unclear across shifts", icon: "exclamation-triangle", color: "#FA5674" },
-                            { title: "Untracked Downtime", desc: "Machine downtime is not tracked or analyzed", icon: "clock", color: "#FFD25D" },
+                            { title: "Untracked Downtime", desc: "Machine downtime is not tracked or analyzed", icon: "clock", color: "#7366CA" },
                             { title: "Late Quality Checks", desc: "Quality issues are detected too late in the cycle", icon: "search", color: "#6065D4" },
                             { title: "Limited Visibility", desc: "Material visibility is limited across the floor", icon: "eye-slash", color: "#00D094" },
                             { title: "Manual Dispatch", desc: "Dispatch coordination is entirely manual", icon: "clipboard-list", color: "#3D72FC" }
@@ -130,7 +130,7 @@ export default function ProductMicraftMesPage() {
                         </div>
                         {/* ARROW */}
                         <div className="col-lg-2 text-center">
-                            <div className="d-inline-flex align-items-center justify-content-center rounded-circle" style={{ width: 60, height: 60, background: 'rgba(255,255,255,0.05)', color: '#FFD25D', fontSize: '24px' }}>
+                            <div className="d-inline-flex align-items-center justify-content-center rounded-circle" style={{ width: 60, height: 60, background: 'rgba(255,255,255,0.05)', color: '#7366CA', fontSize: '24px' }}>
                                 <i className="fas fa-arrow-right d-none d-lg-block"></i>
                                 <i className="fas fa-arrow-down d-lg-none"></i>
                             </div>
@@ -212,10 +212,10 @@ export default function ProductMicraftMesPage() {
                             { title: "Production Planning", desc: "Plan and schedule production efficiently.", icon: "calendar-check", color: "#3D72FC" },
                             { title: "Shop Floor Tracking", desc: "Monitor production in real time.", icon: "tasks", color: "#FA5674" },
                             { title: "Quality Management", desc: "Control quality across operations.", icon: "shield-check", color: "#00D094" },
-                            { title: "Material Tracking", desc: "Track materials across production stages.", icon: "cubes", color: "#FFD25D" },
+                            { title: "Material Tracking", desc: "Track materials across production stages.", icon: "cubes", color: "#7366CA" },
                             { title: "Traceability", desc: "Maintain complete product history.", icon: "barcode", color: "#6065D4" },
                             { title: "Machine Monitoring", desc: "Track machine performance and downtime.", icon: "cogs", color: "#FA5674" },
-                            { title: "Analytics", desc: "Gain insights into production performance.", icon: "chart-line", color: "#FFD25D" },
+                            { title: "Analytics", desc: "Gain insights into production performance.", icon: "chart-line", color: "#7366CA" },
                             { title: "Dispatch", desc: "Ensure accurate and timely shipments.", icon: "truck-loading", color: "#3D72FC" }
                         ].map((cap, i) => (
                             <div key={i} className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay={`${i * 50}ms`}>
@@ -350,7 +350,7 @@ export default function ProductMicraftMesPage() {
                                         { t: "Auto Components", i: "car", c: "linear-gradient(135deg, #FA5674 0%, #6065D4 100%)" },
                                         { t: "Precision Engg.", i: "cogs", c: "linear-gradient(135deg, #3D72FC 0%, #5CB0E9 100%)" },
                                         { t: "Fabrication Industry", i: "tools", c: "linear-gradient(135deg, #00D094 0%, #009D70 100%)" },
-                                        { t: "Heavy Equipment", i: "industry", c: "linear-gradient(135deg, #FFD25D 0%, #FF9C2A 100%)" }
+                                        { t: "Heavy Equipment", i: "industry", c: "linear-gradient(135deg, #7366CA 0%, #FF9C2A 100%)" }
                                     ].map((ind, i) => (
                                         <div key={i} className="col-sm-6">
                                             <div className="meswork-glass p-4 rounded-4 text-center h-100 border border-white border-opacity-05 shadow-lg group hover-translate-y transition-all">

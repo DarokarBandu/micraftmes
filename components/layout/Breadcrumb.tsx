@@ -39,21 +39,27 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ breadcrumbTitle }) => {
       <div className="page-header__bg" style={{ backgroundImage: "url(/assets/images/backgrounds/breadcrumb.jpg)" }}>
       </div>
       <div className="container">
-        <div className="page-header__inner">
-          <h2 className="mb-3 text-white" style={{ fontSize: '3rem', fontWeight: '700', letterSpacing: '-0.02em' }}>{displayTitle}</h2>
+        <div className="page-header__inner text-center">
+          <h1 className="page-header__title mb-3" style={{ color: '#FFFFFF' }}>{displayTitle}</h1>
           <div className="thm-breadcrumb__box-refined">
-            <ul className="thm-breadcrumb list-unstyled d-inline-flex align-items-center flex-wrap">
-              <li><Link href="/" className="text-white text-decoration-none opacity-100 hover-base transition-all d-flex align-items-center">
-                <i className="fas fa-home me-2"></i>Home
-              </Link></li>
+            <ul className="thm-breadcrumb list-unstyled d-inline-flex align-items-center justify-content-center flex-wrap mb-0">
+              <li>
+                <Link href="/" className="breadcrumb-nav-link text-decoration-none hover-base transition-all d-flex align-items-center" style={{ color: '#FFFFFF' }}>
+                  <i className="fas fa-home me-1"></i>Home
+                </Link>
+              </li>
               {crumbs.map((crumb, index) => (
                 <React.Fragment key={index}>
-                  <li className="mx-3"><span className="icon-right-arrow-1 text-white opacity-50" style={{ fontSize: '10px' }}></span></li>
-                  <li className={crumb.isLast ? "text-white fw-bold" : ""}>
+                  <li className="crumb-sep" style={{ color: 'rgba(255, 255, 255, 0.6)' }}>
+                    <span className="icon-right-arrow-1"></span>
+                  </li>
+                  <li className={crumb.isLast ? "fw-bold active-crumb" : ""}>
                     {crumb.isLast ? (
-                      <span className="opacity-75">{crumb.label}</span>
+                      <span className="active-crumb-label" style={{ color: '#FFFFFF', opacity: 0.95 }}>{crumb.label}</span>
                     ) : (
-                      <Link href={crumb.href} className="text-white text-decoration-none opacity-100 hover-base transition-all">{crumb.label}</Link>
+                      <Link href={crumb.href} className="breadcrumb-nav-link text-decoration-none hover-base transition-all" style={{ color: '#FFFFFF' }}>
+                        {crumb.label}
+                      </Link>
                     )}
                   </li>
                 </React.Fragment>
@@ -65,7 +71,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ breadcrumbTitle }) => {
       <style jsx>{`
         .page-header {
           position: relative;
-          padding: 180px 0 100px;
+          padding: 175px 0 75px;
           background-color: #030a15;
           overflow: hidden;
         }
@@ -84,47 +90,113 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ breadcrumbTitle }) => {
           content: '';
           position: absolute;
           inset: 0;
-          background: linear-gradient(180deg, rgba(3, 10, 21, 0.8) 0%, rgba(3, 10, 21, 0.4) 100%);
+          background: linear-gradient(180deg, rgba(3, 10, 21, 0.85) 0%, rgba(3, 10, 21, 0.6) 100%);
           z-index: 1;
         }
         .page-header__inner {
           position: relative;
           z-index: 2;
+          max-width: 900px;
+          margin: 0 auto;
+        }
+        .page-header__title {
+          color: #ffffff !important;
+          font-size: 32px;
+          font-weight: 700;
+          letter-spacing: -0.5px;
+          line-height: 1.25;
+          margin-bottom: 16px;
+          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+        }
+        :global([data-theme="light"] .page-header .page-header__title),
+        :global([data-theme="light"] .page-header h1),
+        :global([data-theme="dark"] .page-header .page-header__title),
+        :global([data-theme="dark"] .page-header h1) {
+          color: #ffffff !important;
         }
         .thm-breadcrumb__box-refined {
           position: relative;
-          display: inline-block;
-          background: rgba(255, 255, 255, 0.05);
-          backdrop-filter: blur(4px);
-          padding: 8px 20px;
-          border-radius: 50px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(255, 255, 255, 0.08);
+          backdrop-filter: blur(10px);
+          padding: 8px 22px;
+          border-radius: 40px;
+          border: 1px solid rgba(255, 255, 255, 0.18);
+          max-width: 100%;
+          font-size: 13.5px;
         }
-        :global(.hover-base:hover) {
-          color: #FA5674 !important;
+        :global(.thm-breadcrumb li),
+        :global(.thm-breadcrumb li a),
+        :global(.thm-breadcrumb li span),
+        :global(.breadcrumb-nav-link),
+        :global(.active-crumb-label),
+        :global([data-theme="light"] .page-header .breadcrumb-nav-link),
+        :global([data-theme="light"] .page-header .active-crumb-label),
+        :global([data-theme="light"] .page-header .thm-breadcrumb a),
+        :global([data-theme="light"] .page-header .thm-breadcrumb span) {
+          color: #ffffff !important;
+        }
+        :global(.crumb-sep) {
+          margin: 0 8px;
+          font-size: 9px;
+          display: flex;
+          align-items: center;
+          color: rgba(255, 255, 255, 0.6) !important;
+        }
+        :global(.hover-base:hover),
+        :global([data-theme="light"] .page-header .breadcrumb-nav-link:hover) {
+          color: #FFD25D !important;
           opacity: 1 !important;
         }
         :global(.transition-all) {
-          transition: all 0.3s ease;
+          transition: all 0.25s ease;
         }
         @media (max-width: 991px) {
           .page-header {
-            padding: 150px 0 80px;
+            padding: 140px 0 60px;
           }
-          .page-header__inner h2 {
-            font-size: 2.2rem !important;
+          .page-header__title {
+            font-size: 26px;
+            margin-bottom: 14px;
           }
         }
         @media (max-width: 767px) {
           .page-header {
-            padding: 130px 0 70px;
-            text-align: center;
+            padding: 125px 0 50px;
           }
-          .page-header__inner h2 {
-            font-size: 1.8rem !important;
+          .page-header__title {
+            font-size: 22px;
+            letter-spacing: -0.3px;
+            margin-bottom: 12px;
           }
           .thm-breadcrumb__box-refined {
-            padding: 6px 15px;
+            padding: 6px 16px;
+            font-size: 12px;
+            border-radius: 20px;
+          }
+          :global(.crumb-sep) {
+            margin: 0 5px;
+            font-size: 8px;
+          }
+        }
+        @media (max-width: 480px) {
+          .page-header {
+            padding: 115px 0 40px;
+          }
+          .page-header__title {
+            font-size: 19px;
+            line-height: 1.3;
+            margin-bottom: 10px;
+          }
+          .thm-breadcrumb__box-refined {
+            padding: 5px 12px;
+            font-size: 11.5px;
+          }
+          :global(.crumb-sep) {
+            margin: 0 4px;
+            font-size: 7.5px;
           }
         }
       `}</style>

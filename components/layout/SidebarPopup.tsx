@@ -20,7 +20,10 @@ const SidebarPopup: React.FC<SidebarPopupProps> = ({ isOpen, onClose }) => {
                     <div className="sidebar-info-contents">
                         <div className="content-inner">
                             <div className="logo">
-                                <Link href="/"><Image src="/assets/images/resources/logo-1.png" alt="Logo" width={150} height={50} /></Link>
+                                <Link href="/" aria-label="Micraft MES">
+                                    <Image src="/assets/images/logo/light.png" alt="Micraft MES" width={150} height={40} className="logo-dark-theme" style={{ height: 'auto', maxHeight: '45px', width: 'auto' }} />
+                                    <Image src="/assets/images/logo/dark.png" alt="Micraft MES" width={150} height={40} className="logo-light-theme" style={{ height: 'auto', maxHeight: '45px', width: 'auto' }} />
+                                </Link>
                             </div>
                             <div className="content-box">
                                 <h4>About Us</h4>

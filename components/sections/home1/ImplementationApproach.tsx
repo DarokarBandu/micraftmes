@@ -40,7 +40,7 @@ const ImplementationApproach = () => {
                 left: 0,
                 right: 0,
                 bottom: 0,
-                background: 'linear-gradient(180deg, #0B192C 0%, #080A0E 100%)',
+                background: '#0B192C',
                 zIndex: -1
             }}></div>
 
@@ -52,7 +52,7 @@ const ImplementationApproach = () => {
                         <div className="section-title__tagline-shape-2"></div>
                     </div>
                     <AnimatedTitle>
-                        <h2 className="section-title__title title-animation text-white" style={{ fontSize: '38px', fontWeight: '800' }}>
+                        <h2 className="section-title__title title-animation mt-2">
                             A Practical Manufacturing Execution <br />
                             <span style={{ color: '#FFD25D' }}>System Implementation</span>
                         </h2>
@@ -69,7 +69,7 @@ const ImplementationApproach = () => {
                         left: '10%',
                         right: '10%',
                         height: '2px',
-                        background: 'linear-gradient(90deg, transparent, rgba(255,210,93,0.3), transparent)',
+                        background: 'rgba(255, 210, 93, 0.2)',
                         zIndex: 0
                     }}></div>
 
@@ -91,14 +91,14 @@ const ImplementationApproach = () => {
                                     width: '70px',
                                     height: '70px',
                                     borderRadius: '20px',
-                                    background: `linear-gradient(135deg, ${item.color}22, ${item.color}44)`,
+                                    background: 'rgba(115, 102, 202, 0.12)',
                                     border: `1px solid ${item.color}55`,
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
                                     fontSize: '24px',
                                     color: item.color,
-                                    boxShadow: `0 10px 20px ${item.color}11`
+                                    boxShadow: `0 10px 20px rgba(0,0,0,0.2)`
                                 }}>
                                     <i className={item.icon}></i>
                                 </div>
@@ -133,7 +133,7 @@ const ImplementationApproach = () => {
                         display: 'inline-flex',
                         alignItems: 'center',
                         gap: '15px',
-                        background: 'linear-gradient(90deg, rgba(255,210,93,0.05), rgba(255,210,93,0.15), rgba(255,210,93,0.05))',
+                        background: 'rgba(255, 210, 93, 0.08)',
                         border: '1px solid rgba(255,210,93,0.3)',
                         borderRadius: '100px',
                         padding: '15px 40px',

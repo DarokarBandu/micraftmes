@@ -44,7 +44,7 @@ export default function Services() {
                 text: "Gain real-time visibility of shop floor operations, production progress, and operator activities from a centralized dashboard.",
                 href: "/solutions/shop-floor-visibility-software",
                 icon: "fas fa-eye",
-                color: "#FA5674"
+                color: "#7366CA"
               },
               {
                 title: "Factory Production Monitoring System",
@@ -65,7 +65,7 @@ export default function Services() {
                 text: "Track machine usage, idle time, and productivity to maximize equipment efficiency and reduce production delays.",
                 href: "/solutions/machine-utilization-tracking",
                 icon: "fas fa-microchip",
-                color: "#6065D4"
+                color: "#7366CA"
               },
               {
                 title: "Quality Inspection Tracking System",
@@ -84,7 +84,7 @@ export default function Services() {
                   <p className="flex-grow-1" style={{ color: 'rgba(255,255,255,0.45)', fontSize: '15px', lineHeight: '1.6' }}>{sol.text}</p>
                   <div className="mt-4 pt-3 border-top border-white border-opacity-05">
                     <Link href={sol.href} className="text-white-50 text-decoration-none d-flex align-items-center gap-2 hover-base fw-bold extra-small letter-spacing-2">
-                       LEARN MORE <i className="icon-right-arrow-1" style={{ fontSize: '10px', marginTop: '1px' }}></i>
+                      LEARN MORE <i className="icon-right-arrow-1" style={{ fontSize: '10px', marginTop: '1px' }}></i>
                     </Link>
                   </div>
                 </div>
@@ -93,12 +93,12 @@ export default function Services() {
           </div>
 
           <div className="homepage-section-cta mt-5 pt-5 text-center wow fadeInUp" data-wow-delay="700ms">
-            <div className="px-4 py-5 rounded-5 shadow-2xl border-primary-glow mx-auto" style={{ background: 'linear-gradient(90deg, #3D72FC 0%, #070B14 100%)', maxWidth: '1000px' }}>
-               <h3 className="text-white h4 mb-3 fw-bold">Transform Your Factory with Real-Time Production Visibility</h3>
-               <p className="text-white-50 mb-4 mx-auto" style={{ maxWidth: '700px' }}>Discover how Micraft MES helps manufacturing companies digitize shop floor operations and gain complete production visibility.</p>
-               <Link href="/book-demo" className="thm-btn" style={{ background: '#FFD25D', color: '#0B192C' }}>
-                 Schedule a Live Demo <span className="icon-right-arrow-1"></span>
-               </Link>
+            <div className="px-4 py-5 rounded-5 shadow-2xl border-primary-glow mx-auto" style={{ background: '#101D30', border: '1px solid rgba(115, 102, 202, 0.35)', maxWidth: '1000px', boxShadow: '0 20px 50px rgba(0, 0, 0, 0.4)' }}>
+              <h3 className="text-white h4 mb-3 fw-bold">Transform Your Factory with Real-Time Production Visibility</h3>
+              <p className="text-white-50 mb-4 mx-auto" style={{ maxWidth: '700px' }}>Discover how Micraft MES helps manufacturing companies digitize shop floor operations and gain complete production visibility.</p>
+              <Link href="/book-demo" className="thm-btn" style={{ background: '#FFD25D', color: '#0B192C' }}>
+                Schedule a Live Demo <span className="icon-right-arrow-1"></span>
+              </Link>
             </div>
           </div>
         </div>

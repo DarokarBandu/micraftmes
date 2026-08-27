@@ -16,7 +16,7 @@ export default function LegalContentSection({ title, lastUpdated, children }: Le
               <div className="legal-header mb-5">
                 <h1 className="text-white mb-3" style={{ fontSize: '36px', fontWeight: '700' }}>{title}</h1>
                 <p className="text-white-50" style={{ fontSize: '14px' }}>Last Updated: {lastUpdated}</p>
-                <div className="separator mt-4" style={{ height: '2px', width: '60px', background: '#FA5674' }}></div>
+                <div className="separator mt-4" style={{ height: '2px', width: '60px', background: '#7366CA' }}></div>
               </div>
               <div className="legal-body text-white-50" style={{ lineHeight: '1.8', fontSize: '16px' }}>
                 {children}
@@ -55,7 +55,7 @@ export default function LegalContentSection({ title, lastUpdated, children }: Le
         }
         .legal-body li::before {
           content: '•';
-          color: #FA5674;
+          color: #7366CA;
           font-weight: bold;
         }
         .legal-card {

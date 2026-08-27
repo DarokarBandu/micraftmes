@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 export default function MainMenu() {
@@ -14,270 +15,469 @@ export default function MainMenu() {
         <Link href="/">Home</Link>
       </li>
 
-      {/* Product */}
+      {/* 1. Product Mega Menu */}
       <li className={`dropdown ${isActive("/product", false) ? "current" : ""}`}>
         <Link href="/product">Product</Link>
-        <ul className="shadow-box" style={{
-          display: 'grid',
-          gridTemplateColumns: '300px 1fr 1fr',
-          minWidth: '850px',
-          alignItems: 'start',
-          padding: '0px',
-          overflow: 'hidden',
-          backgroundColor: '#0B192C',
-          border: '2px solid rgba(255,255,255,0.2)',
-          boxShadow: '0 20px 50px rgba(0,0,0,0.6)',
-          borderRadius: '12px'
-        }}>
-          <li style={{ gridColumn: '1', padding: '25px 30px', borderRight: '1px solid rgba(255,255,255,0.08)', background: 'linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%)', alignSelf: 'stretch' }}>
-            <div style={{ width: '40px', height: '40px', background: 'var(--techguru-base)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '15px', fontSize: '18px', color: 'white' }}>
-              <i className="fas fa-layer-group"></i>
-            </div>
-            <h4 style={{ color: 'white', fontSize: '18px', fontWeight: '700', marginBottom: '8px', letterSpacing: '-0.5px' }}>Product Excellence</h4>
-            <p style={{ color: '#97a2b0', fontSize: '13px', lineHeight: '1.5', margin: 0 }}>
-              Flagship Manufacturing Execution System to bridge the gap between planning and the shop floor.
-            </p>
+        <ul className="mega-menu-container shadow-box">
+          {/* Column 1: Core Platform */}
+          <li className="mega-menu-column">
+            <span className="mega-menu-suite-title">Manufacturing Suite</span>
+            <Link href="/product/micraft-mes" className={`mega-menu-item-link ${isActive("/product/micraft-mes") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Micraft MES</div>
+              <p className="mega-menu-item-sub">Real-time production monitoring and execution system.</p>
+            </Link>
+            <Link href="/product/how-micraft-mes-works" className={`mega-menu-item-link ${isActive("/product/how-micraft-mes-works") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">How Micraft Works</div>
+              <p className="mega-menu-item-sub">Data capture, workflow dispatch and logic execution.</p>
+            </Link>
+            <Link href="/product/mes-features" className={`mega-menu-item-link ${isActive("/product/mes-features") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">MES Features & Modules</div>
+              <p className="mega-menu-item-sub">Complete modular suite of 8+ smart shop floor tools.</p>
+            </Link>
           </li>
-          <li style={{ padding: '15px 10px', gridColumn: '2' }}>
-            <div style={{ padding: 0, margin: 0, display: 'flex', flexDirection: 'column' }}>
-              <div style={{ padding: '1px' }}><Link href="/product/micraft-mes" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/product/micraft-mes") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/product/micraft-mes") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/product/micraft-mes") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-eye" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Micraft MES Overview</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/product/how-micraft-mes-works" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/product/how-micraft-mes-works") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/product/how-micraft-mes-works") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/product/how-micraft-mes-works") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-cogs" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> How Micraft MES Works</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/product/mes-features" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/product/mes-features") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/product/mes-features") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/product/mes-features") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-star" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> MES Features</Link></div>
-            </div>
+
+          {/* Column 2: Rollout & Implementation */}
+          <li className="mega-menu-column">
+            <span className="mega-menu-suite-title">Implementation Suite</span>
+            <Link href="/product/mes-implementation" className={`mega-menu-item-link ${isActive("/product/mes-implementation") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">MES Implementation</div>
+              <p className="mega-menu-item-sub">Step-by-step factory rollout in 2–4 weeks.</p>
+            </Link>
+            <Link href="/product/mes-pricing" className={`mega-menu-item-link ${isActive("/product/mes-pricing") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Pricing & Plans</div>
+              <p className="mega-menu-item-sub">Transparent modular subscriptions tailored for SME ROI.</p>
+            </Link>
+            <Link href="/resources/mes-implementation-guide" className={`mega-menu-item-link ${isActive("/resources/mes-implementation-guide") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Deployment Roadmap</div>
+              <p className="mega-menu-item-sub">Checklist and milestones for smooth shop floor adoption.</p>
+            </Link>
           </li>
-          <li style={{ padding: '15px 10px', gridColumn: '3', borderLeft: '1px solid rgba(255,255,255,0.08)', alignSelf: 'stretch' }}>
-            <div style={{ padding: 0, margin: 0, display: 'flex', flexDirection: 'column' }}>
-              <div style={{ padding: '1px' }}><Link href="/product/mes-implementation" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/product/mes-implementation") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/product/mes-implementation") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/product/mes-implementation") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-rocket" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> MES Implementation Process</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/product/mes-pricing" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/product/mes-pricing") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/product/mes-pricing") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/product/mes-pricing") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-tag" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> MES Pricing / Request Quote</Link></div>
+
+          {/* Column 3: Capabilities & Hardware */}
+          <li className="mega-menu-column">
+            <span className="mega-menu-suite-title">Workplace Suite</span>
+            <Link href="/features/shop-floor-data-collection" className={`mega-menu-item-link ${isActive("/features/shop-floor-data-collection") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Operator Terminals</div>
+              <p className="mega-menu-item-sub">Touchscreen paperless job logs & barcode scanners.</p>
+            </Link>
+            <Link href="/features/machine-monitoring" className={`mega-menu-item-link ${isActive("/features/machine-monitoring") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Machine IoT Sync</div>
+              <p className="mega-menu-item-sub">PLC signal capture, spindle uptime & idle codes.</p>
+            </Link>
+            <Link href="/contact" className={`mega-menu-item-link ${isActive("/contact") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Request Live Demo</div>
+              <p className="mega-menu-item-sub">Interactive walkthrough configured to your plant parts.</p>
+            </Link>
+          </li>
+
+          {/* Column 4: Right Featured Promo Card */}
+          <li className="mega-menu-featured-col">
+            <div>
+              <span className="mega-menu-suite-title">Our Product Suite</span>
+              <div className="mega-menu-featured-card">
+                <Image
+                  src="/assets/images/solutions/micraft-product-suite-ecosystem.png"
+                  alt="Our Product Suite - MES QMS DMS CRM WMS"
+                  width={300}
+                  height={170}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                  priority
+                />
+              </div>
+              <p className="mega-menu-featured-desc mt-2">
+                Scalable Micraft architecture built for high-performance enterprise operations.
+              </p>
             </div>
+            <Link href="/product" className="mega-menu-featured-link">
+              Explore More <i className="fas fa-arrow-right"></i>
+            </Link>
           </li>
         </ul>
       </li>
 
-      {/* Solutions */}
+      {/* 2. Solutions Mega Menu */}
       <li className={`dropdown ${isActive("/solutions", false) ? "current" : ""}`}>
         <Link href="/solutions">Solutions</Link>
-        <ul className="shadow-box" style={{
-          display: 'grid',
-          gridTemplateColumns: '300px 1fr 1fr',
-          minWidth: '950px',
-          alignItems: 'start',
-          padding: '0px',
-          overflow: 'hidden',
-          backgroundColor: '#0B192C',
-          border: '2px solid rgba(255,255,255,0.2)',
-          boxShadow: '0 20px 50px rgba(0,0,0,0.6)',
-          borderRadius: '12px'
-        }}>
-          <li style={{ gridColumn: '1', padding: '25px 30px', borderRight: '1px solid rgba(255,255,255,0.08)', background: 'linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%)', alignSelf: 'stretch' }}>
-            <div style={{ width: '40px', height: '40px', background: 'var(--techguru-base)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '15px', fontSize: '18px', color: 'white' }}>
-              <i className="fas fa-lightbulb"></i>
-            </div>
-            <h4 style={{ color: 'white', fontSize: '18px', fontWeight: '700', marginBottom: '8px', letterSpacing: '-0.5px' }}>Tailored Solutions</h4>
-            <p style={{ color: '#97a2b0', fontSize: '13px', lineHeight: '1.5', margin: 0 }}>
-              Discover digital tools designed to supercharge your factory&apos;s performance and visibility.
-            </p>
+        <ul className="mega-menu-container shadow-box">
+          {/* Column 1: Shop Floor & Production */}
+          <li className="mega-menu-column">
+            <span className="mega-menu-suite-title">Production Suite</span>
+            <Link href="/solutions/production-tracking-software" className={`mega-menu-item-link ${isActive("/solutions/production-tracking-software") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Production Tracking</div>
+              <p className="mega-menu-item-sub">Work order tracking and live stage visibility.</p>
+            </Link>
+            <Link href="/solutions/shop-floor-visibility-software" className={`mega-menu-item-link ${isActive("/solutions/shop-floor-visibility-software") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Shop Floor Visibility</div>
+              <p className="mega-menu-item-sub">Live operations feed & workstation monitors.</p>
+            </Link>
+            <Link href="/solutions/factory-production-monitoring-system" className={`mega-menu-item-link ${isActive("/solutions/factory-production-monitoring-system") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Factory Monitoring</div>
+              <p className="mega-menu-item-sub">Connected plant metrics & shift-level dashboards.</p>
+            </Link>
           </li>
-          <li style={{ padding: '15px 10px', gridColumn: '2' }}>
-            <div style={{ padding: 0, margin: 0, display: 'flex', flexDirection: 'column' }}>
-              <div style={{ padding: '1px' }}><Link href="/solutions/production-tracking-software" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/solutions/production-tracking-software") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/solutions/production-tracking-software") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/solutions/production-tracking-software") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-chart-line" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Production Tracking</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/solutions/shop-floor-visibility-software" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/solutions/shop-floor-visibility-software") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/solutions/shop-floor-visibility-software") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/solutions/shop-floor-visibility-software") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-laptop-code" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Shop Floor Visibility</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/solutions/factory-production-monitoring-system" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/solutions/factory-production-monitoring-system") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/solutions/factory-production-monitoring-system") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/solutions/factory-production-monitoring-system") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-industry" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Factory Monitoring</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/solutions/digital-production-dashboard" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/solutions/digital-production-dashboard") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/solutions/digital-production-dashboard") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/solutions/digital-production-dashboard") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-tachometer-alt" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Digital Dashboard</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/solutions/machine-utilization-tracking" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/solutions/machine-utilization-tracking") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/solutions/machine-utilization-tracking") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/solutions/machine-utilization-tracking") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-microchip" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Machine Utilization</Link></div>
-            </div>
+
+          {/* Column 2: Quality & Machine Asset */}
+          <li className="mega-menu-column">
+            <span className="mega-menu-suite-title">Quality & Asset Suite</span>
+            <Link href="/solutions/quality-inspection-tracking" className={`mega-menu-item-link ${isActive("/solutions/quality-inspection-tracking") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Quality Inspection</div>
+              <p className="mega-menu-item-sub">Digital QA sheets, first-piece & defect logging.</p>
+            </Link>
+            <Link href="/solutions/machine-utilization-tracking" className={`mega-menu-item-link ${isActive("/solutions/machine-utilization-tracking") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Machine Utilization</div>
+              <p className="mega-menu-item-sub">Downtime tracking, idle codes & efficiency.</p>
+            </Link>
+            <Link href="/solutions/manufacturing-performance-tracking" className={`mega-menu-item-link ${isActive("/solutions/manufacturing-performance-tracking") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Performance (OEE)</div>
+              <p className="mega-menu-item-sub">Availability, performance & quality OEE metrics.</p>
+            </Link>
           </li>
-          <li style={{ padding: '15px 10px', gridColumn: '3', borderLeft: '1px solid rgba(255,255,255,0.08)', alignSelf: 'stretch' }}>
-            <div style={{ padding: 0, margin: 0, display: 'flex', flexDirection: 'column' }}>
-              <div style={{ padding: '1px' }}><Link href="/solutions/manufacturing-process-tracking" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/solutions/manufacturing-process-tracking") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/solutions/manufacturing-process-tracking") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/solutions/manufacturing-process-tracking") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-sync" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Process Tracking</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/solutions/quality-inspection-tracking" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/solutions/quality-inspection-tracking") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/solutions/quality-inspection-tracking") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/solutions/quality-inspection-tracking") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-vial" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Quality Inspection</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/solutions/packing-dispatch-tracking" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/solutions/packing-dispatch-tracking") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/solutions/packing-dispatch-tracking") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/solutions/packing-dispatch-tracking") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-box-open" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Packing & Dispatch</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/solutions/real-time-production-monitoring" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/solutions/real-time-production-monitoring") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/solutions/real-time-production-monitoring") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/solutions/real-time-production-monitoring") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-clock" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Real-Time Production</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/solutions/manufacturing-performance-tracking" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/solutions/manufacturing-performance-tracking") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/solutions/manufacturing-performance-tracking") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/solutions/manufacturing-performance-tracking") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-award" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Performance Tracking</Link></div>
+
+          {/* Column 3: Logistics & Insights */}
+          <li className="mega-menu-column">
+            <span className="mega-menu-suite-title">Logistics & Insight Suite</span>
+            <Link href="/solutions/packing-dispatch-tracking" className={`mega-menu-item-link ${isActive("/solutions/packing-dispatch-tracking") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Packing & Dispatch</div>
+              <p className="mega-menu-item-sub">Barcoded box verification & pallet tracking.</p>
+            </Link>
+            <Link href="/solutions/digital-production-dashboard" className={`mega-menu-item-link ${isActive("/solutions/digital-production-dashboard") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Digital KPI Dashboard</div>
+              <p className="mega-menu-item-sub">Visual boards for plant managers & supervisors.</p>
+            </Link>
+            <Link href="/solutions/manufacturing-process-tracking" className={`mega-menu-item-link ${isActive("/solutions/manufacturing-process-tracking") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Process Tracking</div>
+              <p className="mega-menu-item-sub">Stage-by-stage routing & cycle timing logs.</p>
+            </Link>
+          </li>
+
+          {/* Column 4: Right Featured Promo Card */}
+          <li className="mega-menu-featured-col">
+            <div>
+              <span className="mega-menu-suite-title">Tailored Solutions</span>
+              <div className="mega-menu-featured-card">
+                <Image
+                  src="/assets/images/solutions/micraft-solutions-ecosystem.png"
+                  alt="Micraft End-to-End MES Solutions"
+                  width={300}
+                  height={170}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                  priority
+                />
+              </div>
+              <p className="mega-menu-featured-desc mt-2">
+                High-impact tracking software configured to your factory&apos;s unique process routing.
+              </p>
             </div>
+            <Link href="/solutions" className="mega-menu-featured-link">
+              Explore More <i className="fas fa-arrow-right"></i>
+            </Link>
           </li>
         </ul>
       </li>
 
-      {/* Industries */}
+      {/* 3. Industries Mega Menu */}
       <li className={`dropdown ${isActive("/industries", false) ? "current" : ""}`}>
         <Link href="/industries">Industries</Link>
-        <ul className="shadow-box" style={{
-          display: 'grid',
-          gridTemplateColumns: '300px 1fr 1fr',
-          minWidth: '850px',
-          alignItems: 'start',
-          padding: '0px',
-          overflow: 'hidden',
-          backgroundColor: '#0B192C',
-          border: '2px solid rgba(255,255,255,0.2)',
-          boxShadow: '0 20px 50px rgba(0,0,0,0.6)',
-          borderRadius: '12px'
-        }}>
-          <li style={{ gridColumn: '1', padding: '25px 30px', borderRight: '1px solid rgba(255,255,255,0.08)', background: 'linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%)', alignSelf: 'stretch' }}>
-            <div style={{ width: '40px', height: '40px', background: 'var(--techguru-base)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '15px', fontSize: '18px', color: 'white' }}>
-              <i className="fas fa-microchip"></i>
-            </div>
-            <h4 style={{ color: 'white', fontSize: '18px', fontWeight: '700', marginBottom: '8px', letterSpacing: '-0.5px' }}>Industry Expertise</h4>
-            <p style={{ color: '#97a2b0', fontSize: '13px', lineHeight: '1.5', margin: 0 }}>
-              Specialized MES implementations for automotive, electronics, and general manufacturing.
-            </p>
+        <ul className="mega-menu-container shadow-box">
+          {/* Column 1: Discrete & Automotive */}
+          <li className="mega-menu-column">
+            <span className="mega-menu-suite-title">Discrete Manufacturing</span>
+            <Link href="/industries/automotive-component-manufacturing" className={`mega-menu-item-link ${isActive("/industries/automotive-component-manufacturing") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Automotive Components</div>
+              <p className="mega-menu-item-sub">Traceability, batch control & OEM compliance.</p>
+            </Link>
+            <Link href="/industries/cnc-machining-engineering" className={`mega-menu-item-link ${isActive("/industries/cnc-machining-engineering") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">CNC Machining</div>
+              <p className="mega-menu-item-sub">Cycle timing, spindle runtime & tool tracking.</p>
+            </Link>
           </li>
-          <li style={{ padding: '15px 10px', gridColumn: '2' }}>
-            <div style={{ padding: 0, margin: 0, display: 'flex', flexDirection: 'column' }}>
-              <div style={{ padding: '1px' }}><Link href="/industries/automotive-component-manufacturing" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/industries/automotive-component-manufacturing") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/industries/automotive-component-manufacturing") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/industries/automotive-component-manufacturing") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-car" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Automotive</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/industries/cnc-machining-engineering" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/industries/cnc-machining-engineering") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/industries/cnc-machining-engineering") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/industries/cnc-machining-engineering") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-hammer" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> CNC Machining</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/industries/fabrication-industry" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/industries/fabrication-industry") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/industries/fabrication-industry") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/industries/fabrication-industry") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-tools" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Fabrication</Link></div>
-            </div>
+
+          {/* Column 2: Precision & Molding */}
+          <li className="mega-menu-column">
+            <span className="mega-menu-suite-title">Process & Tooling</span>
+            <Link href="/industries/plastic-injection-molding" className={`mega-menu-item-link ${isActive("/industries/plastic-injection-molding") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Plastic Injection Molding</div>
+              <p className="mega-menu-item-sub">Shot counting, mold maintenance & cycle logs.</p>
+            </Link>
+            <Link href="/industries/fabrication-industry" className={`mega-menu-item-link ${isActive("/industries/fabrication-industry") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Fabrication & Sheet Metal</div>
+              <p className="mega-menu-item-sub">Cutting, bending, welding & stage routing.</p>
+            </Link>
           </li>
-          <li style={{ padding: '15px 10px', gridColumn: '3', borderLeft: '1px solid rgba(255,255,255,0.08)', alignSelf: 'stretch' }}>
-            <div style={{ padding: 0, margin: 0, display: 'flex', flexDirection: 'column' }}>
-              <div style={{ padding: '1px' }}><Link href="/industries/plastic-injection-molding" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/industries/plastic-injection-molding") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/industries/plastic-injection-molding") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/industries/plastic-injection-molding") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-flask" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Injection Molding</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/industries/electronics-manufacturing" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/industries/electronics-manufacturing") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/industries/electronics-manufacturing") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/industries/electronics-manufacturing") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-bolt" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Electronics</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/industries/general-manufacturing-smes" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/industries/general-manufacturing-smes") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/industries/general-manufacturing-smes") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/industries/general-manufacturing-smes") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-building" style={{ fontSize: '14px', width: '18px', color: 'var(--techguru-base)' }}></i> General Manufacturing</Link></div>
+
+          {/* Column 3: Electronics & SMEs */}
+          <li className="mega-menu-column">
+            <span className="mega-menu-suite-title">High-Tech & SMEs</span>
+            <Link href="/industries/electronics-manufacturing" className={`mega-menu-item-link ${isActive("/industries/electronics-manufacturing") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Electronics (EMS)</div>
+              <p className="mega-menu-item-sub">SMT line monitoring, component serials & rework.</p>
+            </Link>
+            <Link href="/industries/general-manufacturing-smes" className={`mega-menu-item-link ${isActive("/industries/general-manufacturing-smes") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">General SME Plants</div>
+              <p className="mega-menu-item-sub">Affordable paperless tracking with rapid ROI.</p>
+            </Link>
+          </li>
+
+          {/* Column 4: Right Featured Promo Card */}
+          <li className="mega-menu-featured-col">
+            <div>
+              <span className="mega-menu-suite-title">Industry Expertise</span>
+              <div className="mega-menu-featured-card">
+                <Image
+                  src="/assets/images/solutions/micraft-industries-ecosystem.png"
+                  alt="Built for Every Industry. Engineered for Excellence."
+                  width={300}
+                  height={170}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                  priority
+                />
+              </div>
+              <p className="mega-menu-featured-desc mt-2">
+                Domain-specific workflows tailored for your operational compliance standards.
+              </p>
             </div>
+            <Link href="/industries" className="mega-menu-featured-link">
+              Explore More <i className="fas fa-arrow-right"></i>
+            </Link>
           </li>
         </ul>
       </li>
 
-      {/* Features */}
+      {/* 4. Features Mega Menu */}
       <li className={`dropdown ${isActive("/features", false) ? "current" : ""}`}>
         <Link href="/features">Features</Link>
-        <ul className="shadow-box" style={{
-          display: 'grid',
-          gridTemplateColumns: '300px 1fr 1fr',
-          minWidth: '850px',
-          alignItems: 'start',
-          padding: '0px',
-          overflow: 'hidden',
-          backgroundColor: '#0B192C',
-          border: '2px solid rgba(255,255,255,0.2)',
-          boxShadow: '0 20px 50px rgba(0,0,0,0.6)',
-          borderRadius: '12px'
-        }}>
-          <li style={{ gridColumn: '1', padding: '25px 30px', borderRight: '1px solid rgba(255,255,255,0.08)', background: 'linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%)', alignSelf: 'stretch' }}>
-            <div style={{ width: '40px', height: '40px', background: 'var(--techguru-base)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '15px', fontSize: '18px', color: 'white' }}>
-              <i className="fas fa-magic"></i>
-            </div>
-            <h4 style={{ color: 'white', fontSize: '18px', fontWeight: '700', marginBottom: '8px', letterSpacing: '-0.5px' }}>Powerful Platform</h4>
-            <p style={{ color: '#97a2b0', fontSize: '13px', lineHeight: '1.5', margin: 0 }}>
-              Work orders and machine utilization tracking with our digitization tools.
-            </p>
+        <ul className="mega-menu-container shadow-box">
+          {/* Column 1: Shop Floor Control */}
+          <li className="mega-menu-column">
+            <span className="mega-menu-suite-title">Shop Floor Control</span>
+            <Link href="/features/production-order-management" className={`mega-menu-item-link ${isActive("/features/production-order-management") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Planning & Scheduling</div>
+              <p className="mega-menu-item-sub">Work order sequencing & machine allocations.</p>
+            </Link>
+            <Link href="/features/work-order-tracking" className={`mega-menu-item-link ${isActive("/features/work-order-tracking") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Work Order Tracking</div>
+              <p className="mega-menu-item-sub">Barcode & QR-based job card management.</p>
+            </Link>
+            <Link href="/features/shop-floor-data-collection" className={`mega-menu-item-link ${isActive("/features/shop-floor-data-collection") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Data Collection Terminals</div>
+              <p className="mega-menu-item-sub">Touchscreen operator inputs & IoT sync.</p>
+            </Link>
           </li>
-          <li style={{ padding: '15px 10px', gridColumn: '2' }}>
-            <div style={{ padding: 0, margin: 0, display: 'flex', flexDirection: 'column' }}>
-              <div style={{ padding: '1px' }}><Link href="/features/production-order-management" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/features/production-order-management") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/features/production-order-management") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/features/production-order-management") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-calendar-alt" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Planning & Scheduling</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/features/work-order-tracking" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/features/work-order-tracking") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/features/work-order-tracking") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/features/work-order-tracking") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-file-invoice" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Work Order Tracking</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/features/shop-floor-data-collection" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/features/shop-floor-data-collection") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/features/shop-floor-data-collection") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/features/shop-floor-data-collection") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-database" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Data Collection</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/features/machine-monitoring" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/features/machine-monitoring") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/features/machine-monitoring") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/features/machine-monitoring") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-video" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Machine Monitoring</Link></div>
-            </div>
+
+          {/* Column 2: Quality & Machine IoT */}
+          <li className="mega-menu-column">
+            <span className="mega-menu-suite-title">Quality & Machine IoT</span>
+            <Link href="/features/quality-inspection-management" className={`mega-menu-item-link ${isActive("/features/quality-inspection-management") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Quality Inspection</div>
+              <p className="mega-menu-item-sub">Digital inspections, defect logs & CAPA reports.</p>
+            </Link>
+            <Link href="/features/machine-monitoring" className={`mega-menu-item-link ${isActive("/features/machine-monitoring") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Machine Monitoring</div>
+              <p className="mega-menu-item-sub">Spindle runtime, idle codes & fault alerts.</p>
+            </Link>
+            <Link href="/features/production-dashboard" className={`mega-menu-item-link ${isActive("/features/production-dashboard") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Live Floor Dashboard</div>
+              <p className="mega-menu-item-sub">Factory floor big-screen & mobile monitors.</p>
+            </Link>
           </li>
-          <li style={{ padding: '15px 10px', gridColumn: '3', borderLeft: '1px solid rgba(255,255,255,0.08)', alignSelf: 'stretch' }}>
-            <div style={{ padding: 0, margin: 0, display: 'flex', flexDirection: 'column' }}>
-              <div style={{ padding: '1px' }}><Link href="/features/quality-inspection-management" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/features/quality-inspection-management") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/features/quality-inspection-management") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/features/quality-inspection-management") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-check-circle" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Quality Management</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/features/production-analytics-reports" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/features/production-analytics-reports") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/features/production-analytics-reports") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/features/production-analytics-reports") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-chart-bar" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Production Analytics</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/features/production-dashboard" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/features/production-dashboard") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/features/production-dashboard") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/features/production-dashboard") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-tv" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Production Dashboard</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/features/dispatch-tracking" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/features/dispatch-tracking") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/features/dispatch-tracking") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/features/dispatch-tracking") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-shipping-fast" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Dispatch Tracking</Link></div>
+
+          {/* Column 3: Analytics & Shipping */}
+          <li className="mega-menu-column">
+            <span className="mega-menu-suite-title">Analytics & Logistics</span>
+            <Link href="/features/production-analytics-reports" className={`mega-menu-item-link ${isActive("/features/production-analytics-reports") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Production Analytics</div>
+              <p className="mega-menu-item-sub">Automated shift reports & scrap Pareto charts.</p>
+            </Link>
+            <Link href="/features/dispatch-tracking" className={`mega-menu-item-link ${isActive("/features/dispatch-tracking") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Dispatch Tracking</div>
+              <p className="mega-menu-item-sub">Finished goods verification & packing lists.</p>
+            </Link>
+            <Link href="/product/micraft-mes" className={`mega-menu-item-link ${isActive("/product/micraft-mes") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Audit & Traceability</div>
+              <p className="mega-menu-item-sub">Complete forward & backward batch history.</p>
+            </Link>
+          </li>
+
+          {/* Column 4: Right Featured Promo Card */}
+          <li className="mega-menu-featured-col">
+            <div>
+              <span className="mega-menu-suite-title">Our Feature Suite</span>
+              <div className="mega-menu-featured-card">
+                <Image
+                  src="/assets/images/solutions/micraft-features-ecosystem.png"
+                  alt="Powerful Features. Intelligent Manufacturing."
+                  width={300}
+                  height={170}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                  priority
+                />
+              </div>
+              <p className="mega-menu-featured-desc mt-2">
+                Everything required to digitize and connect every machine and operator.
+              </p>
             </div>
+            <Link href="/features/production-order-management" className="mega-menu-featured-link">
+              Explore More <i className="fas fa-arrow-right"></i>
+            </Link>
           </li>
         </ul>
       </li>
 
-      {/* Why Micraft */}
+      {/* 5. Why Micraft Mega Menu */}
       <li className={`dropdown ${isActive("/why-micraft", false) ? "current" : ""}`}>
         <Link href="/why-micraft">Why Micraft</Link>
-        <ul className="shadow-box" style={{
-          display: 'grid',
-          gridTemplateColumns: '300px 1fr 1fr',
-          minWidth: '850px',
-          alignItems: 'start',
-          padding: '0px',
-          overflow: 'hidden',
-          left: 'auto',
-          right: '0px',
-          transform: 'translateX(0)',
-          transformOrigin: 'top right',
-          backgroundColor: '#0B192C',
-          border: '2px solid rgba(255,255,255,0.2)',
-          boxShadow: '0 20px 50px rgba(0,0,0,0.6)',
-          borderRadius: '12px'
-        }}>
-          <li style={{ gridColumn: '1', padding: '25px 30px', borderRight: '1px solid rgba(255,255,255,0.08)', background: 'linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%)', alignSelf: 'stretch' }}>
-            <div style={{ width: '40px', height: '40px', background: 'var(--techguru-base)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '15px', fontSize: '18px', color: 'white' }}>
-              <i className="fas fa-shield-alt"></i>
-            </div>
-            <h4 style={{ color: 'white', fontSize: '18px', fontWeight: '700', marginBottom: '8px', letterSpacing: '-0.5px' }}>The Micraft Edge</h4>
-            <p style={{ color: '#97a2b0', fontSize: '13px', lineHeight: '1.5', margin: 0 }}>
-              Practical, scalable digital transformation built specifically for manufacturing SMEs.
-            </p>
+        <ul className="mega-menu-container shadow-box">
+          {/* Column 1: Comparisons */}
+          <li className="mega-menu-column">
+            <span className="mega-menu-suite-title">The Micraft Edge</span>
+            <Link href="/why-micraft/mes-vs-erp" className={`mega-menu-item-link ${isActive("/why-micraft/mes-vs-erp") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">MES vs ERP</div>
+              <p className="mega-menu-item-sub">Why ERP alone isn&apos;t enough for shop floor execution.</p>
+            </Link>
+            <Link href="/why-micraft/manual-vs-digital-production-tracking" className={`mega-menu-item-link ${isActive("/why-micraft/manual-vs-digital-production-tracking") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Manual vs Digital</div>
+              <p className="mega-menu-item-sub">Eliminate paper sheets, Excel errors & hidden delays.</p>
+            </Link>
           </li>
-          <li style={{ padding: '15px 10px', gridColumn: '2' }}>
-            <div style={{ padding: 0, margin: 0, display: 'flex', flexDirection: 'column' }}>
-              <div style={{ padding: '1px' }}><Link href="/why-micraft/mes-vs-erp" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/why-micraft/mes-vs-erp") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/why-micraft/mes-vs-erp") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/why-micraft/mes-vs-erp") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-exchange-alt" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> MES vs ERP</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/why-micraft/manual-vs-digital-production-tracking" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/why-micraft/manual-vs-digital-production-tracking") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/why-micraft/manual-vs-digital-production-tracking") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/why-micraft/manual-vs-digital-production-tracking") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-fingerprint" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Manual vs Digital</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/why-micraft/micraft-vs-traditional-mes" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/why-micraft/micraft-vs-traditional-mes") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/why-micraft/micraft-vs-traditional-mes") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/why-micraft/micraft-vs-traditional-mes") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-shield-alt" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Micraft vs Traditional</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/why-micraft/mes-benefits-small-manufacturers" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/why-micraft/mes-benefits-small-manufacturers") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/why-micraft/mes-benefits-small-manufacturers") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/why-micraft/mes-benefits-small-manufacturers") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-smile" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> MES Benefits</Link></div>
-            </div>
+
+          {/* Column 2: Business Value */}
+          <li className="mega-menu-column">
+            <span className="mega-menu-suite-title">Business Value</span>
+            <Link href="/why-micraft/micraft-vs-traditional-mes" className={`mega-menu-item-link ${isActive("/why-micraft/micraft-vs-traditional-mes") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Micraft vs Legacy MES</div>
+              <p className="mega-menu-item-sub">Fast 2-week launch without heavy capital lock-ins.</p>
+            </Link>
+            <Link href="/why-micraft/mes-benefits-small-manufacturers" className={`mega-menu-item-link ${isActive("/why-micraft/mes-benefits-small-manufacturers") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">MES Benefits for SMEs</div>
+              <p className="mega-menu-item-sub">Lower scrap rates, faster cycle times & clear ROI.</p>
+            </Link>
           </li>
-          <li style={{ padding: '15px 10px', gridColumn: '3', borderLeft: '1px solid rgba(255,255,255,0.08)', alignSelf: 'stretch' }}>
-            <div style={{ padding: 0, margin: 0, display: 'flex', flexDirection: 'column' }}>
-              <div style={{ padding: '1px' }}><Link href="/company/about" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/company/about") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/company/about") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/company/about") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-info-circle" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> About Us</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/company/leadership" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/company/leadership") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/company/leadership") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/company/leadership") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-user-friends" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Leadership Team</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/company/careers" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/company/careers") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/company/careers") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/company/careers") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-briefcase" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Careers & Growth</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/contact" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/contact") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/contact") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/contact") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-envelope" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Contact Support</Link></div>
+
+          {/* Column 3: Company & Team */}
+          <li className="mega-menu-column">
+            <span className="mega-menu-suite-title">Company & Team</span>
+            <Link href="/company/about" className={`mega-menu-item-link ${isActive("/company/about") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">About Micraft</div>
+              <p className="mega-menu-item-sub">Our mission to democratize smart Industry 4.0 MES.</p>
+            </Link>
+            <Link href="/company/leadership" className={`mega-menu-item-link ${isActive("/company/leadership") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Leadership Team</div>
+              <p className="mega-menu-item-sub">Manufacturing engineers & software architects.</p>
+            </Link>
+            <Link href="/company/careers" className={`mega-menu-item-link ${isActive("/company/careers") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Careers & Growth</div>
+              <p className="mega-menu-item-sub">Join our fast-growing industrial automation team.</p>
+            </Link>
+            <Link href="/contact" className={`mega-menu-item-link ${isActive("/contact") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Contact Support</div>
+              <p className="mega-menu-item-sub">24/7 dedicated factory assistance & specialists.</p>
+            </Link>
+          </li>
+
+          {/* Column 4: Right Featured Promo Card */}
+          <li className="mega-menu-featured-col">
+            <div>
+              <span className="mega-menu-suite-title">Why Micraft</span>
+              <div className="mega-menu-featured-card">
+                <Image
+                  src="/assets/images/solutions/micraft-why-micraft-ecosystem.png"
+                  alt="Why Micraft MES: The Modern Edge"
+                  width={300}
+                  height={170}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                  priority
+                />
+              </div>
+              <p className="mega-menu-featured-desc mt-2">
+                Purpose-built software designed for shop-floor operators and plant heads.
+              </p>
             </div>
+            <Link href="/why-micraft" className="mega-menu-featured-link">
+              Explore More <i className="fas fa-arrow-right"></i>
+            </Link>
           </li>
         </ul>
       </li>
 
-      {/* Resources */}
+      {/* 6. Resources Mega Menu */}
       <li className={`dropdown ${isActive("/resources", false) ? "current" : ""}`}>
         <Link href="/resources">Resources</Link>
-        <ul className="shadow-box" style={{
-          display: 'grid',
-          gridTemplateColumns: '300px 1fr 1fr',
-          minWidth: '850px',
-          alignItems: 'start',
-          padding: '0px',
-          overflow: 'hidden',
-          left: 'auto',
-          right: '0px',
-          transform: 'translateX(0)',
-          transformOrigin: 'top right',
-          backgroundColor: '#0B192C',
-          border: '2px solid rgba(255,255,255,0.2)',
-          boxShadow: '0 20px 50px rgba(0,0,0,0.6)',
-          borderRadius: '12px'
-        }}>
-          <li style={{ gridColumn: '1', padding: '25px 30px', borderRight: '1px solid rgba(255,255,255,0.08)', background: 'linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%)', alignSelf: 'stretch' }}>
-            <div style={{ width: '40px', height: '40px', background: 'var(--techguru-base)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '15px', fontSize: '18px', color: 'white' }}>
-              <i className="fas fa-bookmark"></i>
-            </div>
-            <h4 style={{ color: 'white', fontSize: '18px', fontWeight: '700', marginBottom: '8px', letterSpacing: '-0.5px' }}>Knowledge Hub</h4>
-            <p style={{ color: '#97a2b0', fontSize: '13px', lineHeight: '1.5', margin: 0 }}>
-              Access case studies, implementation guides, and manufacturing insights.
-            </p>
+        <ul className="mega-menu-container shadow-box">
+          {/* Column 1: Guides & Primers */}
+          <li className="mega-menu-column">
+            <span className="mega-menu-suite-title">Guides & Primers</span>
+            <Link href="/resources/what-is-mes" className={`mega-menu-item-link ${isActive("/resources/what-is-mes") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">What is MES (Guide)</div>
+              <p className="mega-menu-item-sub">The definitive manufacturing execution primer.</p>
+            </Link>
+            <Link href="/resources/production-monitoring-guide" className={`mega-menu-item-link ${isActive("/resources/production-monitoring-guide") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Production Monitoring</div>
+              <p className="mega-menu-item-sub">How to set up telemetry & live factory KPIs.</p>
+            </Link>
+            <Link href="/resources/shop-floor-digitization-benefits" className={`mega-menu-item-link ${isActive("/resources/shop-floor-digitization-benefits") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Digitization Benefits</div>
+              <p className="mega-menu-item-sub">Strategic impact on scrap, throughput & OEE.</p>
+            </Link>
           </li>
-          <li style={{ padding: '15px 10px', gridColumn: '2' }}>
-            <div style={{ padding: 0, margin: 0, display: 'flex', flexDirection: 'column' }}>
-              <div style={{ padding: '1px' }}><Link href="/resources/what-is-mes" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/resources/what-is-mes") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/resources/what-is-mes") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/resources/what-is-mes") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-question-circle" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> What is MES</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/resources/shop-floor-digitization-benefits" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/resources/shop-floor-digitization-benefits") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/resources/shop-floor-digitization-benefits") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/resources/shop-floor-digitization-benefits") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-mobile-alt" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Shop Floor Digitization</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/resources/manufacturing-productivity-guide" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/resources/manufacturing-productivity-guide") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/resources/manufacturing-productivity-guide") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/resources/manufacturing-productivity-guide") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-book-open" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Productivity Guide</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/resources/mes-implementation-guide" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/resources/mes-implementation-guide") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/resources/mes-implementation-guide") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/resources/mes-implementation-guide") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-map-signs" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Implementation Guide</Link></div>
-            </div>
+
+          {/* Column 2: Implementation Playbooks */}
+          <li className="mega-menu-column">
+            <span className="mega-menu-suite-title">Implementation</span>
+            <Link href="/resources/manufacturing-productivity-guide" className={`mega-menu-item-link ${isActive("/resources/manufacturing-productivity-guide") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Productivity Playbook</div>
+              <p className="mega-menu-item-sub">Strategies to eliminate shift bottlenecks.</p>
+            </Link>
+            <Link href="/resources/mes-implementation-guide" className={`mega-menu-item-link ${isActive("/resources/mes-implementation-guide") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Implementation Guide</div>
+              <p className="mega-menu-item-sub">Step-by-step checklist from audit to go-live.</p>
+            </Link>
+            <Link href="/resources/what-is-mes" className={`mega-menu-item-link ${isActive("/resources/what-is-mes") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">ROI Calculator</div>
+              <p className="mega-menu-item-sub">Calculate cost savings from paperless tracking.</p>
+            </Link>
           </li>
-          <li style={{ padding: '15px 10px', gridColumn: '3', borderLeft: '1px solid rgba(255,255,255,0.08)', alignSelf: 'stretch' }}>
-            <div style={{ padding: 0, margin: 0, display: 'flex', flexDirection: 'column' }}>
-              <div style={{ padding: '1px' }}><Link href="/resources/production-monitoring-guide" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/resources/production-monitoring-guide") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/resources/production-monitoring-guide") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/resources/production-monitoring-guide") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-broadcast-tower" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Monitoring Guide</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/customers/case-studies" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/customers/case-studies") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/customers/case-studies") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/customers/case-studies") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-search" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Case Studies</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/success-stories" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/success-stories") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/success-stories") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/success-stories") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-medal" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Success Stories</Link></div>
-              <div style={{ padding: '1px' }}><Link href="/mes-blog" style={{ display: 'flex', alignItems: 'center', gap: '12px', padding: '8px 15px', borderRadius: '8px', borderLeft: isActive("/mes-blog") ? '3px solid var(--techguru-base)' : '3px solid transparent', background: isActive("/mes-blog") ? 'rgba(255,255,255,0.05)' : 'transparent', color: isActive("/mes-blog") ? 'white' : 'white', fontSize: '14px' }}><i className="fas fa-pen-nib" style={{ fontSize: '13px', width: '18px', color: 'var(--techguru-base)' }}></i> Blogs</Link></div>
+
+          {/* Column 3: Case Studies & Articles */}
+          <li className="mega-menu-column">
+            <span className="mega-menu-suite-title">Stories & Articles</span>
+            <Link href="/customers/case-studies" className={`mega-menu-item-link ${isActive("/customers/case-studies") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Customer Case Studies</div>
+              <p className="mega-menu-item-sub">Real turnaround numbers from client factories.</p>
+            </Link>
+            <Link href="/success-stories" className={`mega-menu-item-link ${isActive("/success-stories") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Success Stories</div>
+              <p className="mega-menu-item-sub">Transformational journeys of plant leaders.</p>
+            </Link>
+            <Link href="/mes-blog" className={`mega-menu-item-link ${isActive("/mes-blog") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">MES & Industry Blog</div>
+              <p className="mega-menu-item-sub">Articles on lean manufacturing & Industry 4.0.</p>
+            </Link>
+          </li>
+
+          {/* Column 4: Right Featured Promo Card */}
+          <li className="mega-menu-featured-col">
+            <div>
+              <span className="mega-menu-suite-title">Knowledge Hub</span>
+              <div className="mega-menu-featured-card">
+                <Image
+                  src="/assets/images/solutions/micraft-resources-ecosystem.png"
+                  alt="MES Knowledge & Resource Hub"
+                  width={300}
+                  height={170}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                  priority
+                />
+              </div>
+              <p className="mega-menu-featured-desc mt-2">
+                Practical resources and actionable best practices from plant managers.
+              </p>
             </div>
+            <Link href="/resources" className="mega-menu-featured-link">
+              Explore More <i className="fas fa-arrow-right"></i>
+            </Link>
           </li>
         </ul>
       </li>
-
     </ul>
   );
 }
-

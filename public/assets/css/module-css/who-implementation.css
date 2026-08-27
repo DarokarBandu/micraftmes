@@ -208,7 +208,7 @@
 
 .timeline-badge-v2 {
     position: relative;
-    background: linear-gradient(135deg, rgba(250, 86, 116, 0.1) 0%, rgba(96, 101, 212, 0.1) 100%);
+    background: rgba(115, 102, 202, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     padding: 20px 40px;
@@ -419,13 +419,13 @@
 .industry-card-compact__icon-box {
     min-width: 45px;
     height: 45px;
-    background: linear-gradient(270deg, rgb(250, 86, 116) 0%, rgb(96, 101, 212) 100%);
+    background: #7366CA;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(115, 102, 202, 0.35);
 }
 
 .industry-card-compact__title {

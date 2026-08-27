@@ -141,7 +141,7 @@
     right: 2px;
     bottom: 2px;
     border-radius: 50%;
-    background: linear-gradient(270deg, #FA5674 0%, #6065D4 100%);
+    background: var(--techguru-base, #7366CA);
     opacity: 0;
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
@@ -156,10 +156,7 @@
     position: relative;
     display: inline-block;
     font-size: 36px;
-    background: linear-gradient(90deg, #6065D4 0%, #FA5674 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--techguru-base, #7366CA);
     -webkit-transition: all 500ms linear;
     transition: all 500ms linear;
     transition-delay: 0.1s;
@@ -265,7 +262,7 @@
     align-items: center;
     width: 65px;
     height: 65px;
-    background: linear-gradient(135deg, rgba(250, 86, 116, 0.1) 0%, rgba(96, 101, 213, 0.1) 100%);
+    background: rgba(115, 102, 202, 0.12);
     border-radius: 50%;
     margin-bottom: 20px;
 }
@@ -277,9 +274,9 @@
     align-items: center;
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #FA5674 0%, #6065D4 100%);
+    background: #7366CA;
     border-radius: 50%;
-    box-shadow: 0 5px 15px rgba(250, 86, 116, 0.3);
+    box-shadow: 0 5px 15px rgba(115, 102, 202, 0.35);
 }
 
 .counter-two__icon span {
@@ -290,10 +287,7 @@
 .counter-number {
     font-size: 40px;
     font-weight: 800;
-    background: linear-gradient(270deg, #FA5674 0%, #6065D4 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #7366CA;
     margin-bottom: 5px;
     line-height: 1;
 }

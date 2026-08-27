@@ -26,7 +26,7 @@ export default function MesFeaturesPage() {
             linkText: "Production Tracking Software",
             linkUrl: "/solutions/production-tracking-software",
             icon: "fas fa-clipboard-list",
-            img: "/assets/images/project/mes_3d_vector_hero.png"
+            img: "/assets/images/project/feat_order_tracking_ui.jpg"
         },
         {
             num: "02",
@@ -38,7 +38,7 @@ export default function MesFeaturesPage() {
             linkText: "Shop Floor Visibility Software",
             linkUrl: "/solutions/shop-floor-visibility-software",
             icon: "fas fa-industry",
-            img: "/assets/images/project/feat_shopfloor_visibility.png"
+            img: "/assets/images/resources/mes-features-master-overview.png"
         },
         {
             num: "03",
@@ -50,7 +50,7 @@ export default function MesFeaturesPage() {
             linkText: "Machine Utilization Tracking",
             linkUrl: "/solutions/machine-utilization-tracking",
             icon: "fas fa-cogs",
-            img: "/assets/images/project/feat_machine_utilization.png"
+            img: "/assets/images/project/feat_machine_oee_ui.jpg"
         },
         {
             num: "04",
@@ -62,7 +62,7 @@ export default function MesFeaturesPage() {
             linkText: "Manufacturing Process Tracking",
             linkUrl: "/solutions/manufacturing-process-tracking",
             icon: "fas fa-project-diagram",
-            img: "/assets/images/project/feat_process_monitoring.png"
+            img: "/assets/images/resources/mes-benefits-overview.jpg"
         },
         {
             num: "05",
@@ -74,7 +74,7 @@ export default function MesFeaturesPage() {
             linkText: "Quality Inspection Tracking",
             linkUrl: "/solutions/quality-inspection-tracking",
             icon: "fas fa-shield-alt",
-            img: "/assets/images/project/feat_quality_inspection.png"
+            img: "/assets/images/project/feat_quality_inspection_ui.jpg"
         },
         {
             num: "06",
@@ -86,7 +86,7 @@ export default function MesFeaturesPage() {
             linkText: "Digital Production Dashboard",
             linkUrl: "/solutions/digital-production-dashboard",
             icon: "fas fa-chart-bar",
-            img: "/assets/images/project/feat_production_dashboards.png"
+            img: "/assets/images/resources/smart-assembly-monitoring-system.png"
         },
         {
             num: "07",
@@ -98,7 +98,7 @@ export default function MesFeaturesPage() {
             linkText: "Packing & Dispatch Tracking",
             linkUrl: "/solutions/packing-dispatch-tracking",
             icon: "fas fa-truck-loading",
-            img: "/assets/images/project/feat_packing_dispatch.png"
+            img: "/assets/images/project/feat_dispatch_monitoring_ui.jpg"
         },
         {
             num: "08",
@@ -110,7 +110,7 @@ export default function MesFeaturesPage() {
             linkText: "Real-Time Production Monitoring",
             linkUrl: "/solutions/real-time-production-monitoring",
             icon: "fas fa-network-wired",
-            img: "/assets/images/project/feat_factory_monitoring.png"
+            img: "/assets/images/resources/mes-integrated-platform-vector.jpg"
         },
         {
             num: "09",
@@ -122,7 +122,7 @@ export default function MesFeaturesPage() {
             linkText: "",
             linkUrl: "",
             icon: "fas fa-chart-pie",
-            img: "/assets/images/project/feat_analytics_reporting.png"
+            img: "/assets/images/resources/key-advantages-platform.jpg"
         }
     ];
 
@@ -162,16 +162,28 @@ export default function MesFeaturesPage() {
                             </div>
 
                             {/* Subheading */}
-                            <p className="wow fadeInUp mx-auto mb-5" data-wow-delay="200ms" style={{ color: 'rgba(255,255,255,0.7)', lineHeight: '1.8', fontSize: '18px', maxWidth: '780px', fontWeight: 500 }}>
+                            <p className="wow fadeInUp mx-auto mb-4" data-wow-delay="200ms" style={{ color: 'rgba(255,255,255,0.7)', lineHeight: '1.8', fontSize: '18px', maxWidth: '780px', fontWeight: 500 }}>
                                 Discover the powerful features of Micraft MES designed to help manufacturers track production, monitor shop floor operations, improve machine utilization, and gain real-time factory visibility.
-                                <br /><br />
-                                Micraft MES provides a comprehensive set of tools that enable manufacturing companies to digitize production operations and monitor factory performance in real time. From production tracking to quality inspection management, the platform connects every stage of the manufacturing process.
                             </p>
 
                             {/* CTAs */}
-                            <div className="d-flex flex-wrap justify-content-center gap-3 wow fadeInUp" data-wow-delay="400ms">
+                            <div className="d-flex flex-wrap justify-content-center gap-3 wow fadeInUp mb-5" data-wow-delay="400ms">
                                 <Link href="/book-demo" className="thm-btn">Book a Live Demo<span className="icon-right-arrow"></span></Link>
-                                <Link href="/solutions" className="thm-btn" style={{ background: 'rgba(255,255,255,0.04)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)' }}>Explore Solutions<span className="icon-right-arrow"></span></Link>
+                                <Link href="/solutions" className="thm-btn thm-btn--two">Explore Solutions<span className="icon-right-arrow"></span></Link>
+                            </div>
+                        </div>
+
+                        {/* Master Overview Graphic Showcase */}
+                        <div className="col-xl-11 col-lg-12 wow fadeInUp" data-wow-delay="500ms">
+                            <div className="p-2 rounded-4 shadow-lg overflow-hidden position-relative" style={{ background: '#FFFFFF', border: '1px solid rgba(255,255,255,0.15)' }}>
+                                <Image 
+                                    src="/assets/images/resources/mes-features-master-overview.png" 
+                                    alt="Micraft MES Smart Industry 4.0 Ready Manufacturing Execution System Features" 
+                                    width={1200} 
+                                    height={750} 
+                                    className="img-fluid rounded-3 w-100" 
+                                    priority 
+                                />
                             </div>
                         </div>
                     </div>
@@ -199,7 +211,7 @@ export default function MesFeaturesPage() {
 
                                             <span className="feat-subtitle">{feature.subtitle}</span>
                                             <AnimatedTitle>
-                                                <h2 className="section-title__title text-white mb-3" dangerouslySetInnerHTML={{ __html: feature.title }} style={{ fontSize: '38px', lineHeight: '1.2' }}></h2>
+                                                <h2 className="section-title__title mb-3" dangerouslySetInnerHTML={{ __html: feature.title }} style={{ fontSize: '38px', lineHeight: '1.2' }}></h2>
                                             </AnimatedTitle>
                                             <p className="feat-desc-clean">{feature.desc}</p>
 
@@ -244,7 +256,7 @@ export default function MesFeaturesPage() {
             </section>
 
             {/* ═══════════════ UNIFIED PLATFORM ═══════════════ */}
-            <section className="feat-unified-wrap position-relative overflow-hidden" style={{ background: 'var(--techguru-black)', border: 'none' }}>
+            <section className="feat-unified-wrap position-relative overflow-hidden" style={{ border: 'none' }}>
                 {/* Same Animated Background Shapes as Hero */}
                 <div className="meswork-hero__glow-1"></div>
                 <div className="meswork-hero__glow-2"></div>
@@ -271,7 +283,7 @@ export default function MesFeaturesPage() {
                                     </h2>
                                 </AnimatedTitle>
                             </div>
-                            <p className="wow fadeInUp mx-auto" data-wow-delay="200ms" style={{ color: 'rgba(255,255,255,0.45)', lineHeight: '1.8', fontSize: '17px', maxWidth: '720px', fontWeight: 400 }}>
+                            <p className="wow fadeInUp mx-auto" data-wow-delay="200ms" style={{ lineHeight: '1.8', fontSize: '17px', maxWidth: '720px', fontWeight: 400 }}>
                                 Micraft MES integrates multiple manufacturing capabilities into a single platform:
                             </p>
                         </div>
@@ -298,7 +310,7 @@ export default function MesFeaturesPage() {
             </section>
 
             {/* ═══════════════ FINAL CTA ═══════════════ */}
-            <section className="newsletter-one newsletter-three" style={{ padding: '80px 0 0 0' }}>
+            <section className="newsletter-one newsletter-three" style={{ padding: '60px 0 0 0' }}>
                 <div className="container">
                     <div className="newsletter-one__inner" style={{ background: 'linear-gradient(90deg, #FA5674 0%, #6065D4 100%)' }}>
                         <div className="newsletter-one__shape-bg"
@@ -313,19 +325,19 @@ export default function MesFeaturesPage() {
                         </div>
 
                         <div className="row justify-content-center text-center">
-                            <div className="col-lg-10" style={{ position: 'relative', zIndex: 5 }}>
+                            <div className="col-lg-9 col-md-11" style={{ position: 'relative', zIndex: 5 }}>
                                 <AnimatedTitle>
-                                    <h2 className="newsletter-one__title text-white mb-20" style={{ fontSize: '42px', lineHeight: '1.2' }}>
+                                    <h2 className="newsletter-one__title text-white mb-3" style={{ fontSize: '34px', lineHeight: '1.3', fontWeight: 800 }}>
                                         Explore Micraft MES Features <br />
                                         <span>in Action</span>
                                     </h2>
                                 </AnimatedTitle>
-                                <p className="newsletter-one__text text-white mb-40 mx-auto" style={{ maxWidth: '750px' }}>
+                                <p className="newsletter-one__text text-white mb-4 mx-auto" style={{ maxWidth: '700px', fontSize: '16px', lineHeight: '1.65', color: 'rgba(255,255,255,0.92)' }}>
                                     See how Micraft MES helps manufacturing companies monitor production operations and improve factory performance. Schedule a Live Demo to explore the platform features.
                                 </p>
 
-                                <div className="cta-btns d-flex flex-wrap justify-content-center gap-4">
-                                    <Link href="/contact" className="thm-btn" style={{ background: '#0B192C', color: '#fff' }}>
+                                <div className="cta-btns d-flex flex-wrap justify-content-center gap-3 mt-4">
+                                    <Link href="/contact" className="thm-btn" style={{ background: '#FFFFFF', color: '#0B192C', fontWeight: 700, padding: '14px 36px', borderRadius: '12px', boxShadow: '0 10px 25px rgba(0,0,0,0.2)' }}>
                                         Book Your Demo <span className="icon-arrow-right"></span>
                                     </Link>
                                 </div>

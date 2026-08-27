@@ -16,7 +16,7 @@ const swiperOptions = {
         delay: 5000,
         disableOnInteraction: false,
     },
-    loop: true,
+    loop: false,
 
     // Navigation
     navigation: {
@@ -138,17 +138,17 @@ export default function Portfolio() {
                                                             style={{ backgroundImage: `url(${slides[idx]?.src})` }}>
                                                         </div>
                                                         <div className="portfolio-two__title">
-                                                            <h3><Link href={item.href}>{item.title}</Link></h3>
+                                                            <h3 style={{ color: '#FFFFFF' }}><Link href={item.href} style={{ color: '#FFFFFF' }}>{item.title}</Link></h3>
                                                         </div>
                                                         <div className="portfolio-two__content-box">
                                                             <div onClick={() => { setIndex(idx); setOpen(true); }} className="portfolio-two__icon">
                                                                 <Link href={item.href} className="img-popup"><span className="icon-right-arrow-1"></span></Link>
                                                             </div>
                                                             <div className="portfolio-two__title-box">
-                                                                 <h3 className="portfolio-two__title-2">
-                                                                    <Link href={item.href}>{item.title}</Link>
+                                                                 <h3 className="portfolio-two__title-2" style={{ color: '#FFFFFF' }}>
+                                                                    <Link href={item.href} style={{ color: '#FFFFFF' }}>{item.title}</Link>
                                                                 </h3>
-                                                                <p className="portfolio-two__text">{item.text}</p>
+                                                                <p className="portfolio-two__text" style={{ color: '#E2E8F0', fontSize: '15px', lineHeight: '1.6' }}>{item.text}</p>
                                                             </div>
                                                         </div>
                                                     </div>

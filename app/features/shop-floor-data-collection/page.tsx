@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 import { Fragment, useState, useEffect } from 'react'
 import Layout from "@/components/layout/Layout"
 import Breadcrumb from "@/components/layout/Breadcrumb"
@@ -83,7 +83,7 @@ export default function SFDCPage() {
               <div className="nav-links d-flex align-items-center justify-content-center gap-2 flex-wrap">
                 {[
                   { id: "step-1-login", label: "Operator Login", icon: "user-lock", color: "#FA5674" },
-                  { id: "step-2-sync", label: "Order Sync", icon: "sync", color: "#FFD25D" },
+                  { id: "step-2-sync", label: "Order Sync", icon: "sync", color: "#7366CA" },
                   { id: "step-3-log", label: "Activity Logging", icon: "pen-nib", color: "#6065D4" },
                   { id: "step-4-yield", label: "Yield Entry", icon: "chart-line", color: "#3D72FC" },
                   { id: "step-5-down", label: "Downtime Reporting", icon: "exclamation-circle", color: "#00D094" },
@@ -143,7 +143,7 @@ export default function SFDCPage() {
             {[
               { title: "Paperless Workplace", desc: "Eliminate manual data entry and paper travel job sheets across the floor", icon: "file-alt", color: "#FA5674", gradient: "linear-gradient(135deg, rgba(250,86,116,0.12), rgba(250,86,116,0.04))" },
               { title: "Instant Progress Board", desc: "Live production bars showing exactly which work orders are at which operation", icon: "tasks", color: "#6065D4", gradient: "linear-gradient(135deg, rgba(96,101,212,0.12), rgba(96,101,212,0.04))" },
-              { title: "Quality at Source", desc: "Digital verification gates that force operators to check quality before moving", icon: "shield-check", color: "#FFD25D", gradient: "linear-gradient(135deg, rgba(255,210,93,0.12), rgba(255,210,93,0.04))" },
+              { title: "Quality at Source", desc: "Digital verification gates that force operators to check quality before moving", icon: "shield-check", color: "#7366CA", gradient: "linear-gradient(135deg, rgba(255,210,93,0.12), rgba(255,210,93,0.04))" },
               { title: "Real-time Feedback", desc: "Instant sync of production counts, scrap rates, and downtime intervals", icon: "stopwatch", color: "#00D094", gradient: "linear-gradient(135deg, rgba(0,208,148,0.12), rgba(0,208,148,0.04))" }
             ].map((item, idx) => (
               <div key={idx} className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay={`${idx * 100 + 100}ms`}>
@@ -198,7 +198,7 @@ export default function SFDCPage() {
 
             {[
               { title: "Operator Station Login", icon: "user-lock", color: "#3D72FC", desc: "Secure operator identification at each workstation terminal using PIN or badge scan." },
-              { title: "Live Work Order Sync", icon: "sync", color: "#FFD25D", desc: "Instant access to assigned work orders, technical drawings, and job instructions." },
+              { title: "Live Work Order Sync", icon: "sync", color: "#7366CA", desc: "Instant access to assigned work orders, technical drawings, and job instructions." },
               { title: "Real-Time Activity Log", icon: "edit", color: "#FA5674", desc: "Continuous recording of operation start times, cycle counts, and machine heartbeat." },
               { title: "Yield & Quality Entry", icon: "chart-line", color: "#6065D4", desc: "Immediate data entry for good parts vs rejected parts with reasons for scrap." },
               { title: "Downtime Reporting", icon: "pause-circle", color: "#00D094", desc: "Quick-log buttons for machine breakdowns, material shortage, or changeover intervals." },
@@ -344,7 +344,7 @@ export default function SFDCPage() {
           </div>
 
           {/* FEATURE 2: ORDER STATUS */}
-          <div className="meswork-step-detail mb-5 wow fadeInUp" id="step-2-sync" style={{ borderLeft: '4px solid #FFD25D' }}>
+          <div className="meswork-step-detail mb-5 wow fadeInUp" id="step-2-sync" style={{ borderLeft: '4px solid #7366CA' }}>
             <div className="row align-items-center g-4">
               <div className="col-lg-5 order-2 order-lg-1">
                 <div className="meswork-img-card meswork-img-glow p-2">
@@ -352,7 +352,7 @@ export default function SFDCPage() {
                 </div>
               </div>
               <div className="col-lg-7 order-1 order-lg-2">
-                <div className="meswork-cycle-num mb-3" style={{ background: 'linear-gradient(135deg, #FFD25D, #FA5674)' }}>02</div>
+                <div className="meswork-cycle-num mb-3" style={{ background: 'linear-gradient(135deg, #7366CA, #FA5674)' }}>02</div>
                 <AnimatedTitle>
                   <h2 className="section-title__title text-white mb-3" style={{ fontSize: '30px' }}>Live <span>Work Order Status</span></h2>
                 </AnimatedTitle>
@@ -365,7 +365,7 @@ export default function SFDCPage() {
                   <li>Automatic tracking of shift-wise production velocity</li>
                   <li>Stage-wise tracking for complex assembly sequences</li>
                 </ul>
-                <Link href="/features/work-order-tracking" className="meswork-link" style={{ color: '#FFD25D' }}>
+                <Link href="/features/work-order-tracking" className="meswork-link" style={{ color: '#7366CA' }}>
                    Order Tracking Insights <i className="icon-right-arrow"></i>
                 </Link>
               </div>
@@ -418,7 +418,7 @@ export default function SFDCPage() {
           <div className="row g-4 justify-content-center">
             {[
               { title: "100% Data Accuracy", text: "Capture precise timestamps and counts directly at the machine source.", icon: "check-double", color: "#FA5674" },
-              { title: "Reduced Admin Overhead", text: "Eliminate hours of manual data entry from paper logs to spreadsheets.", icon: "file-invoice", color: "#FFD25D" },
+              { title: "Reduced Admin Overhead", text: "Eliminate hours of manual data entry from paper logs to spreadsheets.", icon: "file-invoice", color: "#7366CA" },
               { title: "Faster Issue Detection", text: "Identify machine stops and quality failures the second they manifest.", icon: "bolt", color: "#6065D4" },
               { title: "Empowered Operators", text: "Provide shop floor teams with the digital tools and info they need to win.", icon: "user-astronaut", color: "#3D72FC" },
               { title: "Unified Floor Visibility", text: "Everyone from the operator to the CEO looks at the same real-time truth.", icon: "chart-area", color: "#00D094" }
@@ -449,10 +449,10 @@ export default function SFDCPage() {
             {[
               { name: "Order Tracking", path: "/features/work-order-tracking", icon: "tasks", color: "#FA5674" },
               { name: "Live OEE Monitoring", path: "/features/machine-monitoring", icon: "chart-line", color: "#00D094" },
-              { name: "Smarter Scheduling", path: "/features/production-planning-scheduling", icon: "calendar-alt", color: "#FFD25D" },
+              { name: "Smarter Scheduling", path: "/features/production-planning-scheduling", icon: "calendar-alt", color: "#7366CA" },
               { name: "Quality Control", path: "/features/quality-inspection-management", icon: "shield-alt", color: "#00D094" },
               { name: "Factory Dashboard", path: "/features/production-dashboard", icon: "tachometer-alt", color: "#3D72FC" },
-              { name: "Performance Reports", path: "/features/production-analytics-reports", icon: "file-chart-line", color: "#FFD25D" }
+              { name: "Performance Reports", path: "/features/production-analytics-reports", icon: "file-chart-line", color: "#7366CA" }
             ].map((solution, i) => (
               <div key={i} className="col-xl-4 col-lg-4 col-md-6">
                 <Link href={solution.path} className="d-block p-4 h-100 text-decoration-none"

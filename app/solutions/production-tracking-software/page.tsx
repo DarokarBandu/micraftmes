@@ -1,5 +1,5 @@
-"use client"
-import { useState, useEffect } from 'react'
+﻿"use client"
+import { useScrollSpy } from '@/hooks/useScrollSpy'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -26,30 +26,7 @@ const sections = [
 ]
 
 export default function ProductionTrackingSoftwarePage() {
-    const [activeSection, setActiveSection] = useState("hero")
-
-    useEffect(() => {
-        // Metadata is now managed via layout.tsx
-    }, []);
-
-    const scrollTo = (id: string) => {
-        setActiveSection(id);
-
-        // Wait briefly for React to render the new section, then scroll to the content
-        setTimeout(() => {
-            const contentArea = document.getElementById('main-content-area');
-            if (contentArea) {
-                const headerOffset = 120; // Height of the sticky navbar
-                const elementPosition = contentArea.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.scrollY - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        }, 50);
-    }
+    const { activeId: activeSection, scrollTo } = useScrollSpy(sections.map(s => s.id));
 
     return (
         <Layout headerStyle={1} footerStyle={2}>
@@ -64,11 +41,11 @@ export default function ProductionTrackingSoftwarePage() {
                 <div className="container-fluid px-xl-5">
                     <div className="row g-4 align-items-start pt-0">
                         {/* Sidebar (Left) - Sticky on Desktop only */}
-                        <div className="col-xl-3 col-lg-4 order-1 sticky-lg-top" style={{ height: 'fit-content', zIndex: 10 }}>
+                        <div className="col-xl-3 col-lg-4 order-1 solution-sidebar-col">
                             <div className="services-details__left mt-0 pt-0">
-                                <div className="services-details__services-list-box p-0 overflow-hidden mt-0 mb-4 mb-lg-0" style={{ background: 'rgba(61, 114, 252, 0.03)', border: '1px solid rgba(61, 114, 252, 0.1)' }}>
-                                    <div className="p-4" style={{ background: 'linear-gradient(90deg, rgba(61, 114, 252, 0.1), transparent)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                                        <h3 style={{ fontSize: '14px', margin: 0, color: '#3D72FC', textTransform: 'uppercase', letterSpacing: '3px', fontWeight: '900' }}>
+                                <div className="services-details__services-list-box p-0 overflow-hidden mt-0 mb-4 mb-lg-0" style={{ background: '#080D1A', border: '1px solid rgba(61, 114, 252, 0.25)', boxShadow: '0 15px 35px rgba(0, 0, 0, 0.6)', borderRadius: '16px' }}>
+                                    <div className="p-4" style={{ background: 'linear-gradient(90deg, rgba(61, 114, 252, 0.15), rgba(8, 13, 26, 0.95))', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+                                        <h3 style={{ fontSize: '14px', margin: 0, color: '#7366CA', textTransform: 'uppercase', letterSpacing: '3px', fontWeight: '900' }}>
                                             Solutions Menu
                                         </h3>
                                     </div>
@@ -98,11 +75,10 @@ export default function ProductionTrackingSoftwarePage() {
 
                         {/* Main Content (Right) - On-Demand Content View */}
                         <div className="col-xl-9 col-lg-8 order-2 pt-0">
-                            <div id="main-content-area" key={activeSection} className="services-details__right mt-0 pt-0 pb-5 pe-xl-5">
+                            <div id="main-content-area" suppressHydrationWarning className="services-details__right mt-0 pt-0 pb-5 pe-xl-5">
 
                                 {/* 1. Hero / Overview Section */}
-                                {activeSection === 'hero' && (
-                                    <section id="hero" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="hero" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="row g-4 align-items-center">
                                             <div className="col-lg-12">
                                                 <div className="section-title text-left mb-4">
@@ -111,7 +87,7 @@ export default function ProductionTrackingSoftwarePage() {
                                                     </div>
                                                     <AnimatedTitle>
                                                         <h1 className="section-title__title title-animation mb-4" style={{ lineHeight: '1.0', fontSize: '48px' }}>
-                                                            Production Tracking Software for <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Real-Time Manufacturing Visibility</span>
+                                                            Production Tracking Software for <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Real-Time Manufacturing Visibility</span>
                                                         </h1>
                                                     </AnimatedTitle>
                                                 </div>
@@ -143,17 +119,15 @@ export default function ProductionTrackingSoftwarePage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 2. Problem Section */}
-                                {activeSection === 'problems' && (
-                                    <section id="problems" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="problems" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="section-title text-left mb-4">
                                             <div className="section-title__tagline-box">
                                                 <span className="section-title__tagline" style={{ color: '#FA5674' }}>Pain Points</span>
                                             </div>
                                             <AnimatedTitle>
-                                                <h2 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>The Challenges of <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Manual Production Tracking</span></h2>
+                                                <h2 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>The Challenges of <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Manual Production Tracking</span></h2>
                                             </AnimatedTitle>
                                         </div>
                                         <p className="text-white-50 mb-3 opacity-80 pe-xl-5" style={{ fontSize: '16px' }}>
@@ -164,7 +138,7 @@ export default function ProductionTrackingSoftwarePage() {
                                             {[
                                                 { text: "Lack of real-time production visibility", sub: "Difficulty knowing exact status across the shop floor.", icon: "fas fa-eye-slash", color: "#6065D4", label: "VISIBILITY" },
                                                 { text: "Delayed identification of bottlenecks", sub: "Issues are often discovered hours or days too late.", icon: "fas fa-hourglass-half", color: "#FA5674", label: "LATENCY" },
-                                                { text: "Inaccurate production reporting", sub: "Paper-based logs lead to consistent data errors.", icon: "fas fa-file-signature", color: "#FFD25D", label: "REPORTING" },
+                                                { text: "Inaccurate production reporting", sub: "Paper-based logs lead to consistent data errors.", icon: "fas fa-file-signature", color: "#7366CA", label: "REPORTING" },
                                                 { text: "Difficulty tracking work order progress", sub: "Inertia in locating specific jobs in the production flow.", icon: "fas fa-search-location", color: "#00D261", label: "TRACKING" },
                                                 { text: "Inefficient stage coordination", sub: "Friction and lost time between production stages.", icon: "fas fa-project-diagram", color: "#3D72FC", label: "COORDINATION" },
                                                 { text: "Missed delivery schedules", sub: "Late insight leads to compromised fulfillment dates.", icon: "fas fa-calendar-times", color: "#6065D4", label: "DELIVERY" }
@@ -192,11 +166,9 @@ export default function ProductionTrackingSoftwarePage() {
                                             Without a reliable production tracking system, management often receives production updates hours or days after the actual activity occurs. <strong>Micraft MES solves this problem by enabling real-time digital production tracking across the factory floor.</strong>
                                         </p>
                                     </section>
-                                )}
 
                                 {/* 3. What is */}
-                                {activeSection === 'what-is' && (
-                                    <section id="what-is" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="what-is" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="row g-5 align-items-center">
                                             <div className="col-xl-6">
                                                 <div className="section-title text-left mb-5">
@@ -204,7 +176,7 @@ export default function ProductionTrackingSoftwarePage() {
                                                         <span className="section-title__tagline text-primary">Core Definition</span>
                                                     </div>
                                                     <AnimatedTitle>
-                                                        <h2 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>What is Production <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Tracking Software?</span></h2>
+                                                        <h2 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>What is Production <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Tracking Software?</span></h2>
                                                     </AnimatedTitle>
                                                     <p className="text-white-50 mt-4 opacity-80 lh-lg" style={{ fontSize: '16px' }}>
                                                         Production Tracking Software is a digital system that enables manufacturers to monitor, record, and analyze production activities in real time. It acts as the digital pulse of your factory, transforming raw floor data into actionable insights for production excellence.
@@ -219,7 +191,7 @@ export default function ProductionTrackingSoftwarePage() {
                                                         { t: "Work order progress", icon: "fas fa-clipboard-list", gradient: "linear-gradient(135deg, #3D72FC 0%, #6065D4 100%)" },
                                                         { t: "Production output", icon: "fas fa-box-open", gradient: "linear-gradient(135deg, #00D261 0%, #3D72FC 100%)" },
                                                         { t: "Machine activity", icon: "fas fa-robot", gradient: "linear-gradient(135deg, #FA5674 0%, #FFB01F 100%)" },
-                                                        { t: "Operator performance", icon: "fas fa-user-clock", gradient: "linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%)" },
+                                                        { t: "Operator performance", icon: "fas fa-user-clock", gradient: "linear-gradient(135deg, #8B7DEC 0%, #7366CA 100%)" },
                                                         { t: "Inspection results", icon: "fas fa-microscope", gradient: "linear-gradient(135deg, #5EEAD4 0%, #3D72FC 100%)" },
                                                         { t: "Dispatch status", icon: "fas fa-truck", gradient: "linear-gradient(135deg, #FFB01F 0%, #FA5674 100%)" }
                                                     ].map((box, i) => (
@@ -244,17 +216,15 @@ export default function ProductionTrackingSoftwarePage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 4. How it Works */}
-                                {activeSection === 'how-it-works' && (
-                                    <section id="how-it-works" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="how-it-works" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="section-title text-center mb-4">
                                             <div className="section-title__tagline-box mx-auto">
                                                 <span className="section-title__tagline text-info">Logic Flow</span>
                                             </div>
                                             <AnimatedTitle>
-                                                <h2 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>How Micraft MES <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Tracks Production in Real Time</span></h2>
+                                                <h2 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>How Micraft MES <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Tracks Production in Real Time</span></h2>
                                             </AnimatedTitle>
                                             <p className="text-white-50 mt-4 opacity-80 lh-base max-w-700 mx-auto" style={{ fontSize: '16px' }}>
                                                 Micraft MES connects shop floor operations with management dashboards, enabling live production monitoring across the factory. Production data is captured at each stage of the process and displayed in centralized dashboards.
@@ -291,7 +261,7 @@ export default function ProductionTrackingSoftwarePage() {
                                                         { t: "ORDER PROCESSING", s: "Data Validated", icon: "fas fa-server", angle: -30, color: "#3D72FC" },
                                                         { t: "PRODUCTION PLANNING", s: "Resource Allocation", icon: "fas fa-calendar-check", angle: 30, color: "#00D261" },
                                                         { t: "MANUFACTURING", s: "Work in Progress", icon: "fas fa-cogs", angle: 90, color: "#FA5674" },
-                                                        { t: "QUALITY CONTROL", s: "Inspect & Test", icon: "fas fa-check-double", angle: 150, color: "#FFD25D" },
+                                                        { t: "QUALITY CONTROL", s: "Inspect & Test", icon: "fas fa-check-double", angle: 150, color: "#7366CA" },
                                                         { t: "DISPATCH READY", s: "Order Shipped", icon: "fas fa-truck-loading", angle: 210, color: "#3D72FC" }
                                                     ].map((item, i) => {
                                                         const radius = 180;
@@ -319,7 +289,7 @@ export default function ProductionTrackingSoftwarePage() {
                                                 { t: "Live Updates", d: "Operators log progress at every stage via floor terminals.", i: "fas fa-sync-alt", color: "#6065D4" },
                                                 { t: "Digital Quality", d: "Results are captured instantly for real-time compliance.", i: "fas fa-microscope", color: "#00D261" },
                                                 { t: "Packing Sync", d: "Readiness is synced for seamless dispatch staging.", i: "fas fa-box-open", color: "#FA5674" },
-                                                { t: "Active Pulse", d: "Live KPIs flow to management dashboards immediately.", i: "fas fa-desktop", color: "#FFD25D" }
+                                                { t: "Active Pulse", d: "Live KPIs flow to management dashboards immediately.", i: "fas fa-desktop", color: "#7366CA" }
                                             ].map((step, i) => (
                                                 <div key={i} className="col-lg col-md-4 col-sm-6">
                                                     <div className="process-step-card p-4 rounded-5 border border-white border-opacity-5 text-center h-100 transition-all hover-translate-up" style={{ background: 'rgba(255,255,255,0.02)', position: 'relative', overflow: 'hidden' }}>
@@ -343,17 +313,15 @@ export default function ProductionTrackingSoftwarePage() {
                                             ))}
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 5. Key Features */}
-                                {activeSection === 'key-features' && (
-                                    <section id="key-features" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="key-features" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="section-title text-left mb-4">
                                             <div className="section-title__tagline-box">
                                                 <span className="section-title__tagline text-primary">Toolkit</span>
                                             </div>
                                             <AnimatedTitle>
-                                                <h2 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>Key Features of <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Micraft Production Tracking Software</span></h2>
+                                                <h2 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>Key Features of <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Micraft Production Tracking Software</span></h2>
                                             </AnimatedTitle>
                                         </div>
                                         <div className="row g-4">
@@ -367,13 +335,13 @@ export default function ProductionTrackingSoftwarePage() {
                                                 { t: "Packing & Dispatch Monitoring", d: "Ensure completed production moves smoothly to packing and dispatch stages.", i: "fas fa-box", c: "LOGISTICS" }
                                             ].map((f, i) => (
                                                 <div key={i} className="col-lg-4 col-md-6">
-                                                    <div className="capability-card h-100 p-4 rounded-5 position-relative overflow-hidden transition-all hover-translate-up" style={{ background: '#0F172A', border: '1px solid rgba(139, 92, 246, 0.1)', boxShadow: '0 20px 40px rgba(0,0,0,0.4)' }}>
+                                                    <div className="capability-card h-100 p-4 rounded-5 position-relative overflow-hidden transition-all hover-translate-up" style={{ background: '#0F172A', border: '1px solid rgba(115, 102, 202, 0.15)', boxShadow: '0 20px 40px rgba(0,0,0,0.4)' }}>
                                                         {/* Animated background glow */}
-                                                        <div className="position-absolute" style={{ top: '-20%', right: '-10%', width: '150px', height: '150px', borderRadius: '50%', background: 'linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%)', opacity: '0.05', filter: 'blur(40px)' }}></div>
+                                                        <div className="position-absolute" style={{ top: '-20%', right: '-10%', width: '150px', height: '150px', borderRadius: '50%', background: 'linear-gradient(135deg, #8B7DEC 0%, #7366CA 100%)', opacity: '0.08', filter: 'blur(40px)' }}></div>
 
                                                         <div className="d-flex flex-column h-100 position-relative" style={{ zIndex: 1 }}>
                                                             <div className="d-flex align-items-center justify-content-between mb-4">
-                                                                <div className="icon-container d-flex align-items-center justify-content-center rounded-circle" style={{ width: '56px', height: '56px', background: 'linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%)', boxShadow: '0 10px 20px rgba(139, 92, 246, 0.3)' }}>
+                                                                <div className="icon-container d-flex align-items-center justify-content-center rounded-circle" style={{ width: '56px', height: '56px', background: 'linear-gradient(135deg, #8B7DEC 0%, #7366CA 100%)', boxShadow: '0 10px 20px rgba(115, 102, 202, 0.35)' }}>
                                                                     <i className={`${f.i} text-white fs-4`}></i>
                                                                 </div>
                                                                 <span className="text-uppercase letter-spacing-2 fw-bold text-white-50" style={{ fontSize: '9px', opacity: '0.4' }}>{f.c}</span>
@@ -395,11 +363,9 @@ export default function ProductionTrackingSoftwarePage() {
                                         </div>
 
                                     </section>
-                                )}
 
                                 {/* 6. Benefits - Operational Intelligence Hub */}
-                                {activeSection === 'benefits' && (
-                                    <section id="benefits" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="benefits" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="p-xl-5 p-4 rounded-5 position-relative overflow-hidden analytics-dashboard" style={{ background: 'rgba(15, 23, 42, 0.5)', border: '1px solid rgba(139, 92, 246, 0.15)', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)' }}>
 
                                             <div className="section-title text-center mb-5">
@@ -407,7 +373,7 @@ export default function ProductionTrackingSoftwarePage() {
                                                     <span className="section-title__tagline" style={{ color: '#00D261' }}>Industrial Intelligence</span>
                                                 </div>
                                                 <AnimatedTitle>
-                                                    <h2 className="section-title__title title-animation mb-3" style={{ lineHeight: '1.1' }}>Benefits of Implementing <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Production Tracking Software</span></h2>
+                                                    <h2 className="section-title__title title-animation mb-3" style={{ lineHeight: '1.1' }}>Benefits of Implementing <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Production Tracking Software</span></h2>
                                                 </AnimatedTitle>
                                                 <p className="text-white-50 opacity-70 max-w-700 mx-auto" style={{ fontSize: '16px' }}>Manufacturers implementing Micraft MES gain measurable operational improvements through digitized floor control.</p>
                                             </div>
@@ -522,17 +488,15 @@ export default function ProductionTrackingSoftwarePage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 7. Industries */}
-                                {activeSection === 'industries' && (
-                                    <section id="industries" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="industries" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="text-left mb-5">
                                             <div className="section-title__tagline-box mb-3">
                                                 <span className="section-title__tagline text-primary">Vertical Segments</span>
                                             </div>
                                             <AnimatedTitle>
-                                                <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>Ideal for <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Manufacturing SMEs</span></h3>
+                                                <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>Ideal for <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Manufacturing SMEs</span></h3>
                                             </AnimatedTitle>
                                             <p className="text-white-50 mt-3" style={{ fontSize: '16px' }}>Engineered for versatility across diverse industrial production environments.</p>
                                         </div>
@@ -547,8 +511,8 @@ export default function ProductionTrackingSoftwarePage() {
                                             ].map((ind, i) => (
                                                 <div key={i} className="col">
                                                     <div className="industry-segment-card p-4 rounded-5 position-relative overflow-hidden transition-all hover-translate-up h-100" style={{ background: '#0F172A', border: '1px solid rgba(255,255,255,0.05)' }}>
-                                                        <div className="icon-box mb-4 d-flex align-items-center justify-content-center rounded-circle" style={{ width: '64px', height: '64px', background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1))', border: '1px solid rgba(139, 92, 246, 0.2)' }}>
-                                                            <i className={`${ind.i} fs-3`} style={{ background: 'linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}></i>
+                                                        <div className="icon-box mb-4 d-flex align-items-center justify-content-center rounded-circle" style={{ width: '64px', height: '64px', background: 'rgba(115, 102, 202, 0.1)', border: '1px solid rgba(115, 102, 202, 0.25)' }}>
+                                                            <i className={`${ind.i} fs-3`} style={{ color: '#7366CA' }}></i>
                                                         </div>
                                                         <h3 className="text-white h6 mb-3 fw-bold">{ind.t}</h3>
                                                         <div className="pt-3 border-top border-white border-opacity-5 mt-auto">
@@ -562,18 +526,16 @@ export default function ProductionTrackingSoftwarePage() {
                                         </div>
 
                                     </section>
-                                )}
 
                                  {/* 8. Why Micraft */}
-                                 {activeSection === 'why-micraft' && (
-                                     <section id="why-micraft" className="pt-0 pb-4 section-anchor section-fade-in">
+                                 <section id="why-micraft" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="p-4 p-xl-5 rounded-5 position-relative overflow-hidden" style={{ background: 'rgba(15, 23, 42, 0.3)', border: '1px solid rgba(139, 92, 246, 0.1)' }}>
                                             <div className="section-title text-center mb-5 max-w-800 mx-auto">
                                                 <div className="section-title__tagline-box mx-auto mb-3">
                                                     <span className="section-title__tagline text-primary">The Micraft Edge</span>
                                                 </div>
                                                 <AnimatedTitle>
-                                                    <h2 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>Why Manufacturers Choose <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Micraft MES for Production Tracking</span></h2>
+                                                    <h2 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>Why Manufacturers Choose <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Micraft MES for Production Tracking</span></h2>
                                                 </AnimatedTitle>
                                                 <p className="text-white-50 mt-4 opacity-70 lh-relaxed max-w-700 mx-auto" style={{ fontSize: '15px' }}>
                                                    Micraft MES eliminates implementation complexity for SMEs through purpose-built digital production tools and intuitive logic.
@@ -586,7 +548,7 @@ export default function ProductionTrackingSoftwarePage() {
                                                     { t: "Fast Deployment", d: "Live factory execution in weeks, not months of setup.", i: "fas fa-bolt", c: "#00D261" },
                                                     { t: "Live Precision", d: "Real-time accuracy for immediate floor control.", i: "fas fa-chart-line", c: "#FA5674" },
                                                     { t: "Agile Scalability", d: "Architecture that grows with your production volume.", i: "fas fa-expand-arrows-alt", c: "#8B5CF6" },
-                                                    { t: "SME First approach", d: "Built specifically for small/mid-sized manufacturer needs.", i: "fas fa-industry", c: "#FFD25D" },
+                                                    { t: "SME First approach", d: "Built specifically for small/mid-sized manufacturer needs.", i: "fas fa-industry", c: "#7366CA" },
                                                     { t: "Low Complexity", d: "High impact transformation without enterprise overhead.", i: "fas fa-shield-alt", c: "#3D72FC" }
                                                 ].map((adv, i) => (
                                                     <div key={i} className="col-lg-4 col-md-6">
@@ -604,17 +566,15 @@ export default function ProductionTrackingSoftwarePage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
                                 {/* 9. Integration - The Neural Connectivity Hub */}
-                                {activeSection === 'integration' && (
-                                    <section id="integration" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="integration" className="pt-0 pb-4 section-anchor section-fade-in">
                                         {/* Tier 1: Narrative Header */}
                                         <div className="section-title text-center mb-5 max-w-900 mx-auto">
                                             <div className="section-title__tagline-box mb-3 mx-auto">
                                                 <span className="section-title__tagline text-primary">Neural Integration Hub</span>
                                             </div>
                                             <AnimatedTitle>
-                                                <h2 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>Production Tracking + <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}><Link href="/solutions/shop-floor-visibility-software" className="text-decoration-none border-bottom border-primary pb-1" style={{ color: 'inherit' }}>Complete Shop Floor Visibility</Link></span></h2>
+                                                <h2 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>Production Tracking + <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}><Link href="/solutions/shop-floor-visibility-software" className="text-decoration-none border-bottom border-primary pb-1" style={{ color: 'inherit' }}>Complete Shop Floor Visibility</Link></span></h2>
                                             </AnimatedTitle>
                                             <p className="text-white-50 mt-4 x-small opacity-70 leading-relaxed mx-auto max-w-700">
                                                 Micraft MES production monitoring software integrates seamlessly with your factory&apos;s digital pulse, providing a unified manufacturing execution environment for real-time shop floor production tracking.
@@ -657,17 +617,15 @@ export default function ProductionTrackingSoftwarePage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 10. Related Solutions - The Industry Ecosystem Carousel */}
-                                {activeSection === 'related' && (
-                                    <section id="related" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="related" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="section-title text-center mb-5">
                                             <div className="section-title__tagline-box mx-auto">
                                                 <span className="section-title__tagline text-primary">Related Ecosystem</span>
                                             </div>
                                             <AnimatedTitle>
-                                                <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.2' }}>Explore Related <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Micraft MES Solutions</span></h3>
+                                                <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.2' }}>Explore Related <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Micraft MES Solutions</span></h3>
                                             </AnimatedTitle>
                                         </div>
 
@@ -720,7 +678,6 @@ export default function ProductionTrackingSoftwarePage() {
                                             </Swiper>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* Closing main content divs clearly */}
                             </div>
@@ -748,7 +705,7 @@ export default function ProductionTrackingSoftwarePage() {
                                 <AnimatedTitle>
                                     <h2 className="newsletter-one__title text-white mb-20" style={{ lineHeight: '1.0', fontSize: '32px', fontWeight: '700' }}>
                                         Monitor Your Factory <br />
-                                        <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Production in Real Time</span>
+                                        <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Production in Real Time</span>
                                     </h2>
                                 </AnimatedTitle>
                                 <p className="newsletter-one__text text-white mb-40 mx-auto" style={{ maxWidth: '750px', fontSize: '16px', opacity: 0.9 }}>
@@ -778,7 +735,7 @@ export default function ProductionTrackingSoftwarePage() {
 
             <style dangerouslySetInnerHTML={{
                 __html: `
-                .services-details { overflow: hidden; position: relative; }
+                .services-details { overflow: visible !important; position: relative; }
                 .shadow-2xl { box-shadow: 0 40px 100px -20px rgba(0,0,0,0.9); }
                 .shadow-primary-light { box-shadow: 0 15px 45px -10px rgba(61, 114, 252, 0.5); }
                 .group-hover-scale { transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }

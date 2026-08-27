@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from 'react';
 import Layout from '@/components/layout/Layout';
@@ -212,10 +212,10 @@ export default function ManualVsDigitalProductionTrackingPage() {
                             <div className="row g-4">
                                 {[
                                     { title: "No Real-Time Visibility", text: "Managers cannot see shop floor activity instantly.", icon: EyeOff, color: "#FF5252" },
-                                    { title: "Delayed Reporting", text: "Production data updated hours or even days later.", icon: Clock, color: "#FFD25D" },
+                                    { title: "Delayed Reporting", text: "Production data updated hours or even days later.", icon: Clock, color: "#7366CA" },
                                     { title: "Machine Utilization", text: "Impossible to accurately measure equipment productivity.", icon: MonitorX, color: "#FF5252" },
                                     { title: "Hidden Bottlenecks", text: "Production delays remain hidden until after the fact.", icon: AlertTriangle, color: "#FF5252" },
-                                    { title: "Inaccurate Data", text: "High risk of manual entry errors and data silos.", icon: Search, color: "#FFD25D" },
+                                    { title: "Inaccurate Data", text: "High risk of manual entry errors and data silos.", icon: Search, color: "#7366CA" },
                                     { title: "Poor Coordination", text: "Teams struggle to track complex workflow progress.", icon: Layers, color: "#FF5252" }
                                 ].map((item, i) => (
                                     <div key={i} className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay={`${i * 100}ms`}>
@@ -532,7 +532,7 @@ export default function ManualVsDigitalProductionTrackingPage() {
 
                                             <div className="row g-4 text-center">
                                                 {[
-                                                    { icon: LayoutDashboard, label: "Live Stats", color: "#FFD25D" },
+                                                    { icon: LayoutDashboard, label: "Live Stats", color: "#7366CA" },
                                                     { icon: Globe, label: "Multi-Plant", color: "#6065D4" },
                                                     { icon: Rocket, label: "Performance", color: "#FA5674" }
                                                 ].map((item, i) => (
@@ -670,7 +670,7 @@ export default function ManualVsDigitalProductionTrackingPage() {
                     <style jsx global>{`
                         .bg-black-mes { background-color: #070B14 !important; }
                         .bg-dark-deep-mes { background-color: #04070D !important; }
-                        .text-gold { color: #FFD25D !important; }
+                        .text-gold { color: #7366CA !important; }
                         .hover-translate-y:hover { transform: translateY(-10px); }
                         .hover-scale-sm:hover { transform: scale(1.02); }
                         .bg-gold-soft { background: rgba(255, 210, 93, 0.08); }
@@ -810,7 +810,7 @@ export default function ManualVsDigitalProductionTrackingPage() {
                             display: inline-block;
                             background: rgba(255,210,93,0.12);
                             border: 1px solid rgba(255,210,93,0.35);
-                            color: #FFD25D;
+                            color: #7366CA;
                             font-family: 'Marcellus', serif;
                             font-size: 12px;
                             font-weight: 700;
@@ -865,7 +865,7 @@ export default function ManualVsDigitalProductionTrackingPage() {
                         .versus-panel { border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.01); backdrop-filter: blur(10px); }
                         .versus-panel__headers { display: grid; grid-template-columns: 1fr 80px 1fr; border-bottom: 1px solid rgba(255,255,255,0.1); overflow: hidden; }
                         .vs-badge-glow { box-shadow: 0 0 30px rgba(255, 210, 93, 0.4); }
-                        .versus-vs-badge { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Marcellus', serif; color: #FFD25D; background: rgba(255,210,93,0.15); border: 1px solid rgba(255,210,93,0.4); font-size: 14px; font-weight: 900; z-index: 5; position: relative; }
+                        .versus-vs-badge { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Marcellus', serif; color: #7366CA; background: rgba(255,210,93,0.15); border: 1px solid rgba(255,210,93,0.4); font-size: 14px; font-weight: 900; z-index: 5; position: relative; }
                         .shadow-glow-gold-v2 { box-shadow: 0 0 25px rgba(255, 210, 93, 0.3), inset 0 0 10px rgba(255, 210, 93, 0.3); }
                         .bg-red-opacity-05 { background: rgba(255, 82, 82, 0.05); }
                         .bg-gold-opacity-05 { background: rgba(255, 210, 93, 0.05); }

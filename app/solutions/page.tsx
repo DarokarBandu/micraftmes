@@ -1,4 +1,4 @@
-import Layout from "@/components/layout/Layout"
+﻿import Layout from "@/components/layout/Layout"
 import Breadcrumb from "@/components/layout/Breadcrumb"
 import Link from "next/link"
 import Image from "next/image"
@@ -41,7 +41,7 @@ export default function SolutionsPage() {
             desc: "Access live visual dashboards displaying real-time production data, work order status, and factory performance metrics.",
             href: "/solutions/digital-production-dashboard",
             icon: "fas fa-tachometer-alt",
-            color: "#FFD25D"
+            color: "#7366CA"
         },
         {
             title: "Machine Utilization Tracking Software",
@@ -92,7 +92,7 @@ export default function SolutionsPage() {
                                 
                                 <div className="d-flex flex-wrap gap-4">
                                     <Link href="#solutions-grid" className="thm-btn">Explore Solutions <span className="icon-right-arrow"></span></Link>
-                                    <Link href="/contact" className="thm-btn thm-btn--two" style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.1)' }}>Book a Demo <span className="icon-right-arrow"></span></Link>
+                                    <Link href="/contact" className="thm-btn thm-btn--two">Book a Demo <span className="icon-right-arrow"></span></Link>
                                 </div>
                             </div>
                         </div>
@@ -202,7 +202,7 @@ export default function SolutionsPage() {
                             {[
                                 { t: "Process Assessment", s: "Phase 01", i: "search", c: "#3D72FC", d: "Mapping your shop floor data nodes." },
                                 { t: "System Config", s: "Phase 02", i: "cog", c: "#FA5674", d: "Tailoring logic to your workflows." },
-                                { t: "Floor Deployment", s: "Phase 03", i: "industry", c: "#FFD25D", d: "Installing tracking interfaces." },
+                                { t: "Floor Deployment", s: "Phase 03", i: "industry", c: "#7366CA", d: "Installing tracking interfaces." },
                                 { t: "Team Training", s: "Phase 04", i: "users", c: "#00D261", d: "Ensuring accurate data capture." },
                                 { t: "Operational Live", s: "Phase 05", i: "rocket", c: "#6065D4", d: "Switching to digital monitoring." }
                             ].map((step, idx) => (

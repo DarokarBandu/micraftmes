@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 import { Fragment, useState, useEffect } from 'react'
 import Layout from "@/components/layout/Layout"
 import Breadcrumb from "@/components/layout/Breadcrumb"
@@ -83,7 +83,7 @@ export default function ProductionDashboardPage() {
               <div className="nav-links d-flex align-items-center justify-content-center gap-2 flex-wrap">
                 {[
                   { id: "step-1-conn", label: "Asset Connectivity", icon: "network-wired", color: "#FA5674" },
-                  { id: "step-2-ingest", label: "Data Ingestion", icon: "download", color: "#FFD25D" },
+                  { id: "step-2-ingest", label: "Data Ingestion", icon: "download", color: "#7366CA" },
                   { id: "step-3-live", label: "Live Metrics", icon: "tachometer-alt", color: "#6065D4" },
                   { id: "step-4-eff", label: "Efficiency Scoring", icon: "percentage", color: "#3D72FC" },
                   { id: "step-5-trend", label: "Trend Monitoring", icon: "chart-line", color: "#00D094" },
@@ -143,7 +143,7 @@ export default function ProductionDashboardPage() {
             {[
               { title: "Live Output Tracking", desc: "Real-time count of produced goods vs. scheduled shift targets", icon: "box-open", color: "#FA5674", gradient: "linear-gradient(135deg, rgba(250,86,116,0.12), rgba(250,86,116,0.04))" },
               { title: "Efficiency Dashboards", desc: "Visual percentage metrics for utilization and operator performance", icon: "tachometer-alt", color: "#6065D4", gradient: "linear-gradient(135deg, rgba(96,101,212,0.12), rgba(96,101,212,0.04))" },
-              { title: "Visual Control Center", desc: "A unified birds-eye view of all machines, work orders, and priority jobs", icon: "video", color: "#FFD25D", gradient: "linear-gradient(135deg, rgba(255,210,93,0.12), rgba(255,210,93,0.04))" },
+              { title: "Visual Control Center", desc: "A unified birds-eye view of all machines, work orders, and priority jobs", icon: "video", color: "#7366CA", gradient: "linear-gradient(135deg, rgba(255,210,93,0.12), rgba(255,210,93,0.04))" },
               { title: "Real-time KPI Feed", desc: "Sub-second updates on cycle times, downtime reasons, and quality trends", icon: "stream", color: "#00D094", gradient: "linear-gradient(135deg, rgba(0,208,148,0.12), rgba(0,208,148,0.04))" }
             ].map((item, idx) => (
               <div key={idx} className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay={`${idx * 100 + 100}ms`}>
@@ -198,7 +198,7 @@ export default function ProductionDashboardPage() {
 
             {[
               { title: "Asset Connectivity", icon: "network-wired", color: "#3D72FC", desc: "Synchronize floor terminals and machine PLCs to a centralized data stream." },
-              { title: "Automated Data Ingestion", icon: "download", color: "#FFD25D", desc: "Continuously pull production counts and status codes from operator touchpoints." },
+              { title: "Automated Data Ingestion", icon: "download", color: "#7366CA", desc: "Continuously pull production counts and status codes from operator touchpoints." },
               { title: "Live Metrics Visualization", icon: "tachometer-alt", color: "#FA5674", desc: "Display real-time KPI gauges for OEE, output, and utilization across the plant." },
               { title: "Efficiency Scoring", icon: "percentage", color: "#6065D4", desc: "Calculate performance vs. target in real-time to identify underperforming stations." },
               { title: "Historical Trend Monitoring", icon: "chart-line", color: "#00D094", desc: "Visualize shift-wise and daily production history for long-term improvement." },
@@ -344,7 +344,7 @@ export default function ProductionDashboardPage() {
           </div>
 
           {/* FEATURE 2: FACTORY EFFICIENCY */}
-          <div className="meswork-step-detail mb-5 wow fadeInUp" id="step-4-eff" style={{ borderLeft: '4px solid #FFD25D' }}>
+          <div className="meswork-step-detail mb-5 wow fadeInUp" id="step-4-eff" style={{ borderLeft: '4px solid #7366CA' }}>
             <div className="row align-items-center g-4">
               <div className="col-lg-5 order-2 order-lg-1">
                 <div className="meswork-img-card meswork-img-glow p-2">
@@ -352,7 +352,7 @@ export default function ProductionDashboardPage() {
                 </div>
               </div>
               <div className="col-lg-7 order-1 order-lg-2">
-                <div className="meswork-cycle-num mb-3" style={{ background: 'linear-gradient(135deg, #FFD25D, #FA5674)' }}>02</div>
+                <div className="meswork-cycle-num mb-3" style={{ background: 'linear-gradient(135deg, #7366CA, #FA5674)' }}>02</div>
                 <AnimatedTitle>
                   <h2 className="section-title__title text-white mb-3" style={{ fontSize: '30px' }}>Factory <span>Efficiency Dashboards</span></h2>
                 </AnimatedTitle>
@@ -365,7 +365,7 @@ export default function ProductionDashboardPage() {
                   <li>Top-down view of work order flow vs. planned schedule</li>
                   <li>Operator productivity metrics and shift performance ranking</li>
                 </ul>
-                <Link href="/features/production-analytics-reports" className="meswork-link" style={{ color: '#FFD25D' }}>
+                <Link href="/features/production-analytics-reports" className="meswork-link" style={{ color: '#7366CA' }}>
                    Performance Analytics <i className="icon-right-arrow"></i>
                 </Link>
               </div>
@@ -418,7 +418,7 @@ export default function ProductionDashboardPage() {
           <div className="row g-4 justify-content-center">
             {[
               { title: "100% Floor Visibility", text: "Know the status of every machine and order without leaving your desk.", icon: "satellite", color: "#FA5674" },
-              { title: "Fast Decision Making", text: "React to operational hurdles in seconds with live performance data.", icon: "bolt", color: "#FFD25D" },
+              { title: "Fast Decision Making", text: "React to operational hurdles in seconds with live performance data.", icon: "bolt", color: "#7366CA" },
               { title: "Identifying Bottlenecks", text: "Visually pinpoint exactly where work orders are accumulating.", icon: "filter", color: "#6065D4" },
               { title: "Proactive Issue Management", text: "Solve minor stops before they snowball into major production delays.", icon: "heartbeat", color: "#3D72FC" },
               { title: "Scalable Factory Monitoring", text: "Deploy across a single line or multiple factory locations globally.", icon: "expand-arrows-alt", color: "#00D094" }
@@ -449,10 +449,10 @@ export default function ProductionDashboardPage() {
             {[
               { name: "Order Tracking", path: "/features/work-order-tracking", icon: "tasks", color: "#FA5674" },
               { name: "Live OEE Monitoring", path: "/features/machine-monitoring", icon: "chart-line", color: "#00D094" },
-              { name: "Smarter Scheduling", path: "/features/production-planning-scheduling", icon: "calendar-alt", color: "#FFD25D" },
+              { name: "Smarter Scheduling", path: "/features/production-planning-scheduling", icon: "calendar-alt", color: "#7366CA" },
               { name: "Quality Control", path: "/features/quality-inspection-management", icon: "shield-alt", color: "#00D094" },
               { name: "Operator Hub", path: "/features/shop-floor-data-collection", icon: "tablet-alt", color: "#6065D4" },
-              { name: "Performance Reports", path: "/features/production-analytics-reports", icon: "file-chart-line", color: "#FFD25D" }
+              { name: "Performance Reports", path: "/features/production-analytics-reports", icon: "file-chart-line", color: "#7366CA" }
             ].map((solution, i) => (
               <div key={i} className="col-xl-4 col-lg-4 col-md-6">
                 <Link href={solution.path} className="d-block p-4 h-100 text-decoration-none"

@@ -9,11 +9,13 @@ import { useState } from "react"
 
 export default function CareersPage() {
     const [status, setStatus] = useState<string | null>(null);
+    const [errorMessage, setErrorMessage] = useState<string | null>(null);
     const [fileName, setFileName] = useState<string | null>(null);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setStatus("loading");
+        setErrorMessage(null);
         
         const form = e.currentTarget;
         const formData = new FormData(form);
@@ -23,23 +25,32 @@ export default function CareersPage() {
                 method: "POST",
                 body: formData,
             });
-            if (res.ok) {
+            const json = await res.json().catch(() => ({}));
+            if (res.ok && json.success !== false) {
                 setStatus("success");
                 form.reset();
                 setFileName(null);
             } else {
                 setStatus("error");
+                setErrorMessage(json.message || "Failed to submit application. Please try again.");
             }
         } catch (error) {
             console.error(error);
             setStatus("error");
+            setErrorMessage("Network error. Please try again or email careers@micraft.co.in.");
         }
     };
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
         if (file) {
-            setFileName(file.name);
+            if (file.size > 8 * 1024 * 1024) {
+                alert(`The selected file is ${(file.size / (1024 * 1024)).toFixed(1)} MB. Please select a resume smaller than 8 MB.`);
+                e.target.value = "";
+                setFileName(null);
+                return;
+            }
+            setFileName(`${file.name} (${(file.size / 1024).toFixed(1)} KB)`);
         } else {
             setFileName(null);
         }
@@ -252,29 +263,54 @@ export default function CareersPage() {
                                     </div>
                                     <div className="col-12">
                                         <select name="role" className="form-select career-input" defaultValue="" required>
-                                            <option value="" disabled>Role of Interest</option>
-                                            <option value="software">Software Developer</option>
-                                            <option value="product">Product Engineer</option>
-                                            <option value="uiux">UI/UX Designer</option>
-                                            <option value="implementation">Implementation Specialist</option>
-                                            <option value="domain">Manufacturing Domain Expert</option>
-                                            <option value="other">Other</option>
+                                            <option value="" disabled>Select Role of Interest</option>
+                                            <option value="Software Developer">Software Developer</option>
+                                            <option value="Product Engineer">Product Engineer</option>
+                                            <option value="UI/UX Designer">UI/UX Designer</option>
+                                            <option value="Implementation Specialist">Implementation Specialist</option>
+                                            <option value="Manufacturing Domain Expert">Manufacturing Domain Expert</option>
+                                            <option value="Other">Other / General Application</option>
                                         </select>
                                     </div>
                                     <div className="col-12">
                                         <div className="upload-wrapper position-relative p-4 text-center rounded-3 border border-dashed" style={{ border: '1px dashed rgba(255,255,255,0.2)', background: 'rgba(255,255,255,0.01)' }}>
-                                            <i className="fas fa-cloud-upload-alt text-white-50 mb-2"></i>
-                                            <p className="text-white-50 small mb-0">{fileName || "Upload Resume (PDF/Doc)"}</p>
+                                            <i className="fas fa-cloud-upload-alt text-white-50 mb-2 fs-4"></i>
+                                            <p className="text-white-50 small mb-0">{fileName ? `📎 ${fileName}` : "Upload Resume (PDF / DOC / DOCX)"}</p>
                                             <input type="file" name="resume" accept=".pdf,.doc,.docx" className="d-none" id="resumeUpload" onChange={handleFileChange} />
                                             <label htmlFor="resumeUpload" className="stretched-link cursor-pointer d-block"></label>
                                         </div>
                                     </div>
                                     <div className="col-12 mt-4 text-center">
+                                        {status === "success" && (
+                                            <div className="form-alert-success mb-3 d-flex align-items-center gap-3">
+                                                <i className="fas fa-check-circle form-alert-icon"></i>
+                                                <div>
+                                                    <strong className="form-alert-title">
+                                                        Application Submitted Successfully!
+                                                    </strong>
+                                                    <span className="form-alert-text">
+                                                        Thank you for your interest. Your resume and application have been sent to our recruitment team.
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        )}
+                                        {status === "error" && (
+                                            <div className="form-alert-error mb-3 d-flex align-items-center gap-3">
+                                                <i className="fas fa-exclamation-circle form-alert-icon"></i>
+                                                <div>
+                                                    <strong className="form-alert-title">
+                                                        Submission Failed
+                                                    </strong>
+                                                    <span className="form-alert-text">
+                                                        {errorMessage || "Could not submit application. Please email your resume directly to careers@micraft.co.in."}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        )}
                                         <button type="submit" className="thm-btn w-100 justify-content-center" disabled={status === "loading"}>
-                                            {status === "loading" ? "Submitting..." : "Submit Application"}
+                                            <span>{status === "loading" ? "Submitting Application..." : "Submit Application"}</span>
+                                            <i className="icon-right-arrow"></i>
                                         </button>
-                                        {status === "success" && <p className="text-success mt-3 mb-0">Application submitted successfully! ✅</p>}
-                                        {status === "error" && <p className="text-danger mt-3 mb-0">Failed to submit application. Please try again.</p>}
                                     </div>
                                 </form>
                             </div>

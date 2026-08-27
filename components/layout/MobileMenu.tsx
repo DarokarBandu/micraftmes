@@ -2,6 +2,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import ThemeToggle from "@/components/elements/ThemeToggle";
 
 type MobileMenuProps = {
   isSidebar: boolean;
@@ -34,16 +35,30 @@ export default function MobileMenu({ isSidebar, handleMobileMenu }: MobileMenuPr
             <i className="fa fa-times"></i>
           </span>
 
-          <div className="logo-box">
+          <div className="logo-box d-flex align-items-center justify-content-between pe-4">
             <Link href="/" aria-label="logo image" onClick={handleMobileMenu}>
+              {/* Dark theme logo (White logo) */}
               <Image
-                src="/assets/images/logo/Micraftmeslogo.svg"
+                src="/assets/images/logo/light.png"
                 alt="Micraft Solutions | Micraft MES"
-                width={190}
-                height={50}
+                width={160}
+                height={42}
                 priority
+                className="logo-dark-theme"
+                style={{ height: 'auto', maxHeight: '42px', width: 'auto' }}
+              />
+              {/* Light theme logo (Dark logo) */}
+              <Image
+                src="/assets/images/logo/dark.png"
+                alt="Micraft Solutions | Micraft MES"
+                width={160}
+                height={42}
+                priority
+                className="logo-light-theme"
+                style={{ height: 'auto', maxHeight: '42px', width: 'auto' }}
               />
             </Link>
+            <ThemeToggle />
           </div>
 
           <div className="mobile-nav__container">

@@ -17,7 +17,7 @@ export default function About() {
                             <div className="about-two__left">
                                 <div className="about-two__img-box">
                                     <div className="about-two__img">
-                                        <Image src="/assets/images/resources/ShopFloor.jpg" alt="Image" width={495} height={474} priority />
+                                        <Image src="/assets/images/resources/shopfloor.png" alt="Shop Floor Visibility" width={550} height={480} style={{ width: '100%', height: 'auto' }} priority />
                                     </div>
                                     <div className="about-two__shape-1"></div>
                                 </div>
@@ -33,8 +33,8 @@ export default function About() {
                                     </div>
                                     <AnimatedTitle>
                                         <h2 className="section-title__title title-animation">
-                                            {"Why Manufacturing Plants"} <br className="d-none d-lg-block" />
-                                            {"Still Lack "}<span>{"Real-Time Shop Floor Visibility"}</span>
+                                            Why Manufacturing Plants Still Lack <br className="d-none d-md-block" />
+                                            <span>Real-Time Shop Floor Visibility</span>
                                         </h2>
                                     </AnimatedTitle>
                                 </div>

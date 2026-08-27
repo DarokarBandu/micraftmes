@@ -14,25 +14,15 @@ const OperationalImprovements = () => {
 
     return (
         <section className="operational-improvements" id="results" style={{
-            background: '#0B192C',
-            padding: '60px 0',
+            padding: '70px 0',
             position: 'relative',
             overflow: 'hidden'
         }}>
-            {/* Subtle Texture */}
-            <div style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                backgroundImage: "url(/assets/images/backgrounds/ProductionandDowntime.jpg)",
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                opacity: 0.04,
-                zIndex: 0,
-                pointerEvents: 'none'
+            {/* Background Texture & Overlay */}
+            <div className="operational-improvements__bg" style={{
+                backgroundImage: "url(/assets/images/backgrounds/ProductionandDowntime.jpg)"
             }}></div>
+            <div className="operational-improvements__overlay"></div>
 
             <div className="container" style={{ position: 'relative', zIndex: 1 }}>
                 <div className="row align-items-center g-5">
@@ -45,7 +35,7 @@ const OperationalImprovements = () => {
                                 <div className="section-title__tagline-shape-2"></div>
                             </div>
                             <AnimatedTitle>
-                                <h2 className="section-title__title text-white mt-3" style={{ fontSize: '36px', lineHeight: '1.2' }}>
+                                <h2 className="section-title__title mt-3">
                                     Operational Improvements <br /> <span>with Micraft MES</span>
                                 </h2>
                             </AnimatedTitle>
@@ -55,11 +45,11 @@ const OperationalImprovements = () => {
                         </div>
 
                         <div className="impact-callout p-3 d-flex align-items-center gap-3" style={{
-                            background: 'rgba(250, 86, 116, 0.1)',
-                            borderLeft: '4px solid #FA5674',
+                            background: 'rgba(115, 102, 202, 0.1)',
+                            borderLeft: '4px solid #7366CA',
                             borderRadius: '8px'
                         }}>
-                            <Zap className="w-6 h-6" style={{ color: '#FA5674' }} />
+                            <Zap className="w-6 h-6" style={{ color: '#7366CA' }} />
                             <p className="mb-0 text-white" style={{ fontSize: '15px', fontWeight: '500' }}>
                                 These improvements help manufacturing teams move from reactive decision-making to <span style={{ color: '#00D261' }}>proactive operational control</span>.
                             </p>
@@ -96,11 +86,11 @@ const OperationalImprovements = () => {
                 }
                 .improvement-item-compact:hover {
                     background: rgba(255, 255, 255, 0.06);
-                    border-color: #FA5674;
+                    border-color: #7366CA;
                     transform: translateX(10px);
                 }
                 .icon-wrap {
-                    color: #FA5674;
+                    color: #7366CA;
                     display: flex;
                     align-items: center;
                     justify-content: center;

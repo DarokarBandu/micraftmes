@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 import { Fragment, useState, useEffect } from 'react'
 import Layout from "@/components/layout/Layout"
 import Breadcrumb from "@/components/layout/Breadcrumb"
@@ -83,7 +83,7 @@ export default function ProductionPlanningPage() {
               <div className="nav-links d-flex align-items-center justify-content-center gap-2 flex-wrap">
                 {[
                   { id: "step-1-order", label: "Order Integration", icon: "file-import", color: "#FA5674" },
-                  { id: "step-2-capacity", label: "Capacity Analysis", icon: "battery-half", color: "#FFD25D" },
+                  { id: "step-2-capacity", label: "Capacity Analysis", icon: "battery-half", color: "#7366CA" },
                   { id: "step-3-alloc", label: "Machine Allocation", icon: "microchip", color: "#6065D4" },
                   { id: "step-4-seq", label: "Sequence Optimization", icon: "sort-amount-down", color: "#3D72FC" },
                   { id: "step-5-release", label: "Schedule Release", icon: "play-circle", color: "#00D094" },
@@ -143,7 +143,7 @@ export default function ProductionPlanningPage() {
             {[
               { title: "Automated Scheduling", desc: "Instant assignment of production orders to machines based on capacity rules", icon: "magic", color: "#FA5674", gradient: "linear-gradient(135deg, rgba(250,86,116,0.12), rgba(250,86,116,0.04))" },
               { title: "Capacity Visibility", desc: "View real-time machine availability and workload balance across all shifts", icon: "eye", color: "#6065D4", gradient: "linear-gradient(135deg, rgba(96,101,212,0.12), rgba(96,101,212,0.04))" },
-              { title: "Dynamic Adjustments", desc: "Instantly re-prioritize jobs and machines when production constraints change", icon: "random", color: "#FFD25D", gradient: "linear-gradient(135deg, rgba(255,210,93,0.12), rgba(255,210,93,0.04))" },
+              { title: "Dynamic Adjustments", desc: "Instantly re-prioritize jobs and machines when production constraints change", icon: "random", color: "#7366CA", gradient: "linear-gradient(135deg, rgba(255,210,93,0.12), rgba(255,210,93,0.04))" },
               { title: "Workload Balancing", desc: "Identify underutilized workstations and re-route orders to maximize throughput", icon: "balance-scale", color: "#00D094", gradient: "linear-gradient(135deg, rgba(0,208,148,0.12), rgba(0,208,148,0.04))" }
             ].map((item, idx) => (
               <div key={idx} className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay={`${idx * 100 + 100}ms`}>
@@ -198,7 +198,7 @@ export default function ProductionPlanningPage() {
 
             {[
               { title: "Order Requirements Sync", icon: "file-import", color: "#3D72FC", desc: "Integrate customer orders instantly to generate production requirements and quantities." },
-              { title: "Capacity Load Analysis", icon: "battery-half", color: "#FFD25D", desc: "Calculate required machine hours vs available shift capacity for accurate scheduling." },
+              { title: "Capacity Load Analysis", icon: "battery-half", color: "#7366CA", desc: "Calculate required machine hours vs available shift capacity for accurate scheduling." },
               { title: "Machine Operation Mapping", icon: "microchip", color: "#FA5674", desc: "Assign specific technical operations to machine groups based on tooling and setup rules." },
               { title: "Sequence Optimization", icon: "sort-amount-down", color: "#6065D4", desc: "Optimize production queues to minimize changeover time and group similar product types." },
               { title: "Digital Schedule Release", icon: "rocket", color: "#00D094", desc: "Instantly publish the finalized schedule to shop floor terminals and operator hubs." },
@@ -344,7 +344,7 @@ export default function ProductionPlanningPage() {
           </div>
 
           {/* FEATURE 2: CAPACITY DASHBOARDS */}
-          <div className="meswork-step-detail mb-5 wow fadeInUp" id="step-2-capacity" style={{ borderLeft: '4px solid #FFD25D' }}>
+          <div className="meswork-step-detail mb-5 wow fadeInUp" id="step-2-capacity" style={{ borderLeft: '4px solid #7366CA' }}>
             <div className="row align-items-center g-4">
               <div className="col-lg-5 order-2 order-lg-1">
                 <div className="meswork-img-card meswork-img-glow p-2">
@@ -352,7 +352,7 @@ export default function ProductionPlanningPage() {
                 </div>
               </div>
               <div className="col-lg-7 order-1 order-lg-2">
-                <div className="meswork-cycle-num mb-3" style={{ background: 'linear-gradient(135deg, #FFD25D, #FA5674)' }}>02</div>
+                <div className="meswork-cycle-num mb-3" style={{ background: 'linear-gradient(135deg, #7366CA, #FA5674)' }}>02</div>
                 <AnimatedTitle>
                   <h2 className="section-title__title text-white mb-3" style={{ fontSize: '30px' }}>Live <span>Capacity Dashboards</span></h2>
                 </AnimatedTitle>
@@ -365,7 +365,7 @@ export default function ProductionPlanningPage() {
                   <li>Historical shift performance integration for realistic timelines</li>
                   <li>Predictive overload alerts for high-demand periods</li>
                 </ul>
-                <Link href="/features/production-analytics-reports" className="meswork-link" style={{ color: '#FFD25D' }}>
+                <Link href="/features/production-analytics-reports" className="meswork-link" style={{ color: '#7366CA' }}>
                    Performance Reporting <i className="icon-right-arrow"></i>
                 </Link>
               </div>
@@ -418,7 +418,7 @@ export default function ProductionPlanningPage() {
           <div className="row g-4 justify-content-center">
             {[
               { title: "30% Higher Utilization", text: "Achieve more output with your existing machines through better load balancing.", icon: "chart-bar", color: "#FA5674" },
-              { title: "Reduced Lead Times", text: "Minimize idle intervals and wait times between production operations.", icon: "history", color: "#FFD25D" },
+              { title: "Reduced Lead Times", text: "Minimize idle intervals and wait times between production operations.", icon: "history", color: "#7366CA" },
               { title: "Effortless Rescheduling", text: "Adapt instantly to rush orders or equipment failures without chaos.", icon: "sync", color: "#6065D4" },
               { title: "Optimized Allocation", text: "Assign the right job to the right machine at the right time.", icon: "sitemap", color: "#3D72FC" },
               { title: "Data-Driven Planning", text: "Plan based on historical machine performance data, not manual estimates.", icon: "database", color: "#00D094" }
@@ -452,7 +452,7 @@ export default function ProductionPlanningPage() {
               { name: "Operator Hub", path: "/features/shop-floor-data-collection", icon: "tablet-alt", color: "#6065D4" },
               { name: "Quality Control", path: "/features/quality-inspection-management", icon: "shield-alt", color: "#00D094" },
               { name: "Factory Dashboard", path: "/features/production-dashboard", icon: "tachometer-alt", color: "#3D72FC" },
-              { name: "Performance Reports", path: "/features/production-analytics-reports", icon: "file-chart-line", color: "#FFD25D" }
+              { name: "Performance Reports", path: "/features/production-analytics-reports", icon: "file-chart-line", color: "#7366CA" }
             ].map((solution, i) => (
               <div key={i} className="col-xl-4 col-lg-4 col-md-6">
                 <Link href={solution.path} className="d-block p-4 h-100 text-decoration-none"

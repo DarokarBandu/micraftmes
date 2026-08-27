@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 import Image from "next/image";
 import Link from "next/link";
 import Layout from "@/components/layout/Layout";
@@ -49,7 +49,7 @@ export default function GeneralManufacturingSMEPage() {
                                 </div>
                                 <div className="services-details__need-help mt-4">
                                     <div className="services-details__need-help-img rounded-4 overflow-hidden border-primary-glow shadow-2xl">
-                                        <Image src="/assets/images/solutions/tracking-sme-v3.png" alt="SME Manufacturing" width={356} height={450} style={{ objectFit: 'cover' }} priority />
+                                        <Image src="/assets/images/solutions/tracking-sme-v3.png" alt="SME Manufacturing" width={356} height={450} style={{ objectFit: 'cover', width: '100%', height: 'auto' }} priority />
                                         <div className="services-details__need-help-content" style={{ background: 'rgba(2, 5, 10, 0.9)', backdropFilter: 'blur(10px)' }}>
                                             <div className="services-details__need-help-bdr"></div>
                                             <AnimatedTitle>
@@ -68,7 +68,7 @@ export default function GeneralManufacturingSMEPage() {
                                 <span className="section-title__tagline text-primary uppercase letter-spacing-3 fw-bold mb-0 d-block">Integrated Production Tracking</span>
                                 <AnimatedTitle>
                                     <h1 className="services-details__title-1 text-white fw-900 mb-4" style={{ fontSize: '48px', lineHeight: '1.0' }}>
-                                        MES Software for <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }} className="d-block">General Manufacturing SMEs</span>
+                                        MES Software for <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }} className="d-block">General Manufacturing SMEs</span>
                                     </h1>
                                 </AnimatedTitle>
                                 <h3 className="h5 text-white opacity-90 mb-4 fw-bold">Digitize shop floor operations, track production progress, and monitor machine utilization for growing factories.</h3>

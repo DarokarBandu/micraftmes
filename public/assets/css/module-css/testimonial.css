@@ -100,6 +100,8 @@
     background: linear-gradient(90deg, #3D72FC, #5CB0E9) border-box;
     -webkit-mask: linear-gradient(#fff 0 0) padding-box,
         linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     -webkit-transition: all 500ms ease;
@@ -291,6 +293,8 @@
     background: linear-gradient(90deg, #3D72FC, #5CB0E9) border-box;
     -webkit-mask: linear-gradient(#fff 0 0) padding-box,
         linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     -webkit-transition: all 500ms ease;
@@ -331,6 +335,8 @@
     border: 1px solid transparent;
     background: linear-gradient(90deg, #3D72FC, #5CB0E9) border-box;
     -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) padding-box,
         linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -416,7 +422,7 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: linear-gradient(270deg, rgba(250, 86, 116, .20), rgba(96, 101, 212, .20));
+    background: rgba(115, 102, 202, 0.2);
     margin: 0px 5px;
     padding: 0px;
     transition: all 100ms linear;
@@ -520,6 +526,8 @@
     border: 2px solid transparent;
     background: linear-gradient(90deg, #3D72FC, #5CB0E9) border-box;
     -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) padding-box,
         linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -675,46 +683,36 @@
 .testimonial-two__carousel .swiper-pagination {
     position: relative;
     text-align: center;
-    margin: 60px auto 0 !important;
+    margin: 28px auto 0 !important;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    gap: 10px;
+    gap: 8px;
 }
 
 .testimonial-two__carousel .swiper-pagination .swiper-pagination-bullet {
     position: relative;
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 9px;
+    height: 9px;
     border-radius: 50%;
-    background: linear-gradient(270deg, rgba(250, 86, 116, .20), rgba(96, 101, 212, .20));
-    margin: 0px 5px;
+    background: rgba(115, 102, 202, 0.25);
+    margin: 0px 3px;
     padding: 0px;
-    transition: all 100ms linear;
-    transition-delay: 0.1s;
+    transition: all 0.3s ease;
     z-index: 1;
     opacity: 1;
 }
 
-.testimonial-two__carousel .swiper-pagination .swiper-pagination-bullet::after {
-    content: "";
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    right: 3px;
-    bottom: 3px;
-    background-color: var(--techguru-base);
-    border-radius: 50%;
-    transform: scaleX(0);
-    transition: all 200ms linear;
-    transition-delay: 0.1s;
-    z-index: -1;
+.testimonial-two__carousel .swiper-pagination .swiper-pagination-bullet-active {
+    background: #7366CA;
+    width: 24px;
+    border-radius: 10px;
 }
 
-.testimonial-two__carousel .swiper-pagination .swiper-pagination-bullet-active::after {
-    transform: scaleX(1.0);
+.testimonial-two__carousel .swiper-pagination .swiper-pagination-bullet::after {
+    display: none;
 }
 
 /*--------------------------------------------------------------

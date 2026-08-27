@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 import { Fragment } from 'react'
 import Layout from "@/components/layout/Layout"
 import Breadcrumb from "@/components/layout/Breadcrumb"
@@ -78,12 +78,12 @@ export default function HowMicraftMesWorksPage() {
                             <div className="nav-links d-flex align-items-center justify-content-center gap-2 flex-wrap">
                                 {[
                                     { id: "step-1-orders", label: "Production Orders", icon: "clipboard-list", color: "#FA5674" },
-                                    { id: "step-2-progress", label: "Production Progress", icon: "sync", color: "#FFD25D" },
+                                    { id: "step-2-progress", label: "Production Progress", icon: "sync", color: "#7366CA" },
                                     { id: "step-3-monitoring", label: "Machine Utilization", icon: "cogs", color: "#6065D4" },
                                     { id: "step-4-workflow", label: "Workflow tracking", icon: "exchange-alt", color: "#3D72FC" },
                                     { id: "step-5-quality", label: "Quality Recording", icon: "shield-alt", color: "#00D094" },
                                     { id: "step-6-dashboards", label: "Dashboards", icon: "chart-bar", color: "#FA5674" },
-                                    { id: "step-7-dispatch", label: "Dispatch Tracking", icon: "truck-loading", color: "#FFD25D" }
+                                    { id: "step-7-dispatch", label: "Dispatch Tracking", icon: "truck-loading", color: "#7366CA" }
                                 ].map((nav, i) => (
                                     <Fragment key={i}>
                                         <Link href={`#${nav.id}`} className="nav-item-link px-3 py-2 d-flex align-items-center gap-3">
@@ -169,7 +169,7 @@ export default function HowMicraftMesWorksPage() {
                         {[
                             { title: "Operators", desc: "Shop floor workers update production progress at each stage", icon: "user-cog", color: "#FA5674", gradient: "linear-gradient(135deg, rgba(250,86,116,0.12), rgba(250,86,116,0.04))" },
                             { title: "Machines", desc: "Machine runtime, idle time, and utilization data is captured", icon: "cogs", color: "#6065D4", gradient: "linear-gradient(135deg, rgba(96,101,212,0.12), rgba(96,101,212,0.04))" },
-                            { title: "Production Workstations", desc: "Stage-wise completion tracking across all workstations", icon: "desktop", color: "#FFD25D", gradient: "linear-gradient(135deg, rgba(255,210,93,0.12), rgba(255,210,93,0.04))" },
+                            { title: "Production Workstations", desc: "Stage-wise completion tracking across all workstations", icon: "desktop", color: "#7366CA", gradient: "linear-gradient(135deg, rgba(255,210,93,0.12), rgba(255,210,93,0.04))" },
                             { title: "Inspection Stations", desc: "Quality checks and rejection data recorded instantly", icon: "shield-alt", color: "#00D094", gradient: "linear-gradient(135deg, rgba(0,208,148,0.12), rgba(0,208,148,0.04))" }
                         ].map((item, idx) => (
                             <div key={idx} className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay={`${idx * 100 + 100}ms`}>
@@ -246,12 +246,12 @@ export default function HowMicraftMesWorksPage() {
 
                         {[
                             { title: "Production Orders", icon: "clipboard-list", color: "#3D72FC", desc: "Production orders are created in the system, defining product information, quantities, and involved workstations with absolute precision." },
-                            { title: "Production Progress", icon: "sync-alt", color: "#FFD25D", desc: "Operators update job progress at each production stage, providing machining, assembly, and process completion updates in real time." },
+                            { title: "Production Progress", icon: "sync-alt", color: "#7366CA", desc: "Operators update job progress at each production stage, providing machining, assembly, and process completion updates in real time." },
                             { title: "Machine Utilization", icon: "cogs", color: "#FA5674", desc: "Micraft MES tracks machine productivity by monitoring running time, idle time, and production output to help manufacturers understand performance." },
                             { title: "Workflow Progress", icon: "exchange-alt", color: "#6065D4", desc: "Production processes are tracked across multiple stages like machining and assembly, ensuring managers maintain visibility across the factory." },
                             { title: "Inspection Recording", icon: "shield-alt", color: "#00D094", desc: "Quality checks and result logs are maintained instantly to track inspection results, rejection quantities, and defect trends." },
                             { title: "Production Dashboards", icon: "chart-bar", color: "#FA5674", desc: "Production data is converted into visual dashboards, providing instant visibility of work order progress and factory performance." },
-                            { title: "Packing & Dispatch", icon: "truck-loading", color: "#FFD25D", desc: "Packing completion and order readiness for shipment are tracked to ensure finished products are delivered on schedule." }
+                            { title: "Packing & Dispatch", icon: "truck-loading", color: "#7366CA", desc: "Packing completion and order readiness for shipment are tracked to ensure finished products are delivered on schedule." }
                         ].map((step, idx) => {
                             const isRight = idx % 2 === 0;
 
@@ -420,7 +420,7 @@ export default function HowMicraftMesWorksPage() {
             </section>
 
             {/* ═══════════════ DETAILED STEP SECTIONS ═══════════════ */}
-            <section className="py-5 position-relative" style={{ background: '#070C14' }}>
+            <section className="py-5 position-relative meswork-steps-section" id="detailed-steps">
                 <div className="position-absolute" style={{ top: 0, left: 0, right: 0, bottom: 0, backgroundImage: 'url(/assets/images/shapes/counter-one-bg-shape.png)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.02, zIndex: 0 }}></div>
                 <div className="container py-4 position-relative z-1">
 
@@ -431,9 +431,9 @@ export default function HowMicraftMesWorksPage() {
                             <div className="col-lg-7">
                                 <div className="meswork-cycle-num mb-3" style={{ background: 'linear-gradient(135deg, #FA5674, #6065D4)' }}>1</div>
                                 <AnimatedTitle>
-                                    <h2 className="section-title__title text-white mb-3" style={{ fontSize: '30px' }}>Step 1 – Production Orders are <span>Created</span></h2>
+                                    <h2 className="section-title__title mb-3" style={{ fontSize: '30px' }}>Step 1 – Production Orders are <span>Created</span></h2>
                                 </AnimatedTitle>
-                                <p style={{ color: 'rgba(255,255,255,0.55)', lineHeight: '1.7', marginBottom: '20px' }}>
+                                <p style={{ lineHeight: '1.7', marginBottom: '20px' }}>
                                     Manufacturing operations begin with the creation of production orders. These orders contain details such such as:
                                 </p>
                                 <ul className="meswork-checklist mb-4">
@@ -442,7 +442,7 @@ export default function HowMicraftMesWorksPage() {
                                     <li>Production stages</li>
                                     <li>Workstations involved</li>
                                 </ul>
-                                <p style={{ color: 'rgba(255,255,255,0.45)', lineHeight: '1.7', fontSize: '14px', marginBottom: '20px' }}>
+                                <p style={{ lineHeight: '1.7', fontSize: '14px', marginBottom: '20px' }}>
                                     Micraft MES allows manufacturers to track production orders digitally instead of relying on manual registers.
                                 </p>
                                 <Link href="/solutions/production-tracking-software" className="meswork-link" style={{ color: '#FA5674' }}>
@@ -458,7 +458,7 @@ export default function HowMicraftMesWorksPage() {
                     </div>
 
                     {/* STEP 2 */}
-                    <div className="meswork-step-detail mb-5 wow fadeInUp" id="step-2-progress" style={{ borderLeft: '4px solid #FFD25D' }}>
+                    <div className="meswork-step-detail mb-5 wow fadeInUp" id="step-2-progress" style={{ borderLeft: '4px solid #7366CA' }}>
                         <div style={{ position: 'absolute', top: 0, right: 0, width: 200, height: 200, background: 'rgba(255,210,93,0.06)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none' }}></div>
                         <div className="row align-items-start g-4">
                             <div className="col-lg-5 order-2 order-lg-1">
@@ -467,11 +467,11 @@ export default function HowMicraftMesWorksPage() {
                                 </div>
                             </div>
                             <div className="col-lg-7 order-1 order-lg-2">
-                                <div className="meswork-cycle-num mb-3" style={{ background: 'linear-gradient(135deg, #FFD25D, #FA5674)' }}>2</div>
+                                <div className="meswork-cycle-num mb-3" style={{ background: 'linear-gradient(135deg, #7366CA, #FA5674)' }}>2</div>
                                 <AnimatedTitle>
-                                    <h2 className="section-title__title text-white mb-3" style={{ fontSize: '30px' }}>Step 2 – Operators Update <span>Production Progress</span></h2>
+                                    <h2 className="section-title__title mb-3" style={{ fontSize: '30px' }}>Step 2 – Operators Update <span>Production Progress</span></h2>
                                 </AnimatedTitle>
-                                <p style={{ color: 'rgba(255,255,255,0.55)', lineHeight: '1.7', marginBottom: '20px' }}>
+                                <p style={{ lineHeight: '1.7', marginBottom: '20px' }}>
                                     As production begins, operators update job progress at each production stage. Examples include:
                                 </p>
                                 <ul className="meswork-checklist mb-4">
@@ -480,10 +480,10 @@ export default function HowMicraftMesWorksPage() {
                                     <li>Inspection checkpoints</li>
                                     <li>Process stage completion</li>
                                 </ul>
-                                <p style={{ color: 'rgba(255,255,255,0.45)', lineHeight: '1.7', fontSize: '14px', marginBottom: '20px' }}>
+                                <p style={{ lineHeight: '1.7', fontSize: '14px', marginBottom: '20px' }}>
                                     These updates allow the system to maintain real-time visibility of production progress.
                                 </p>
-                                <Link href="/solutions/shop-floor-visibility-software" className="meswork-link" style={{ color: '#FFD25D' }}>
+                                <Link href="/solutions/shop-floor-visibility-software" className="meswork-link" style={{ color: '#7366CA' }}>
                                     Shop Floor Visibility Software <i className="icon-right-arrow"></i>
                                 </Link>
                             </div>
@@ -497,9 +497,9 @@ export default function HowMicraftMesWorksPage() {
                             <div className="col-lg-7">
                                 <div className="meswork-cycle-num mb-3" style={{ background: 'linear-gradient(135deg, #6065D4, #3D72FC)' }}>3</div>
                                 <AnimatedTitle>
-                                    <h2 className="section-title__title text-white mb-3" style={{ fontSize: '30px' }}>Step 3 – Machine Utilization is <span>Monitored</span></h2>
+                                    <h2 className="section-title__title mb-3" style={{ fontSize: '30px' }}>Step 3 – Machine Utilization is <span>Monitored</span></h2>
                                 </AnimatedTitle>
-                                <p style={{ color: 'rgba(255,255,255,0.55)', lineHeight: '1.7', marginBottom: '20px' }}>
+                                <p style={{ lineHeight: '1.7', marginBottom: '20px' }}>
                                     Micraft MES tracks machine productivity by monitoring:
                                 </p>
                                 <ul className="meswork-checklist mb-4">
@@ -508,7 +508,7 @@ export default function HowMicraftMesWorksPage() {
                                     <li>Production output per machine</li>
                                     <li>Machine performance trends</li>
                                 </ul>
-                                <p style={{ color: 'rgba(255,255,255,0.45)', lineHeight: '1.7', fontSize: '14px', marginBottom: '20px' }}>
+                                <p style={{ lineHeight: '1.7', fontSize: '14px', marginBottom: '20px' }}>
                                     This helps manufacturers understand how effectively machines are being used.
                                 </p>
                                 <Link href="/solutions/machine-utilization-tracking" className="meswork-link" style={{ color: '#6065D4' }}>
@@ -535,9 +535,9 @@ export default function HowMicraftMesWorksPage() {
                             <div className="col-lg-7 order-1 order-lg-2">
                                 <div className="meswork-cycle-num mb-3" style={{ background: 'linear-gradient(135deg, #3D72FC, #6065D4)' }}>4</div>
                                 <AnimatedTitle>
-                                    <h2 className="section-title__title text-white mb-3" style={{ fontSize: '30px' }}>Step 4 – Production Workflow is <span>Tracked</span></h2>
+                                    <h2 className="section-title__title mb-3" style={{ fontSize: '30px' }}>Step 4 – Production Workflow is <span>Tracked</span></h2>
                                 </AnimatedTitle>
-                                <p style={{ color: 'rgba(255,255,255,0.55)', lineHeight: '1.7', marginBottom: '20px' }}>
+                                <p style={{ lineHeight: '1.7', marginBottom: '20px' }}>
                                     Manufacturing processes often involve multiple stages. Micraft MES tracks how work orders move through stages such as:
                                 </p>
                                 <ul className="meswork-checklist mb-4">
@@ -546,7 +546,7 @@ export default function HowMicraftMesWorksPage() {
                                     <li>Inspection</li>
                                     <li>Finishing</li>
                                 </ul>
-                                <p style={{ color: 'rgba(255,255,255,0.45)', lineHeight: '1.7', fontSize: '14px', marginBottom: '20px' }}>
+                                <p style={{ lineHeight: '1.7', fontSize: '14px', marginBottom: '20px' }}>
                                     This ensures that managers can monitor workflow progress across the factory.
                                 </p>
                                 <Link href="/solutions/manufacturing-process-tracking" className="meswork-link" style={{ color: '#3D72FC' }}>
@@ -563,9 +563,9 @@ export default function HowMicraftMesWorksPage() {
                             <div className="col-lg-7">
                                 <div className="meswork-cycle-num mb-3" style={{ background: 'linear-gradient(135deg, #00D094, #00B07D)' }}>5</div>
                                 <AnimatedTitle>
-                                    <h2 className="section-title__title text-white mb-3" style={{ fontSize: '30px' }}>Step 5 – Inspection Results are <span>Recorded</span></h2>
+                                    <h2 className="section-title__title mb-3" style={{ fontSize: '30px' }}>Step 5 – Inspection Results are <span>Recorded</span></h2>
                                 </AnimatedTitle>
-                                <p style={{ color: 'rgba(255,255,255,0.55)', lineHeight: '1.7', marginBottom: '20px' }}>
+                                <p style={{ lineHeight: '1.7', marginBottom: '20px' }}>
                                     Quality checks are recorded during production. Inspectors can log:
                                 </p>
                                 <ul className="meswork-checklist mb-4">
@@ -573,7 +573,7 @@ export default function HowMicraftMesWorksPage() {
                                     <li>Rejection quantities</li>
                                     <li>Defect types</li>
                                 </ul>
-                                <p style={{ color: 'rgba(255,255,255,0.45)', lineHeight: '1.7', fontSize: '14px', marginBottom: '20px' }}>
+                                <p style={{ lineHeight: '1.7', fontSize: '14px', marginBottom: '20px' }}>
                                     This enables manufacturers to track quality performance and rejection trends.
                                 </p>
                                 <Link href="/solutions/quality-inspection-tracking" className="meswork-link" style={{ color: '#00D094' }}>
@@ -600,9 +600,9 @@ export default function HowMicraftMesWorksPage() {
                             <div className="col-lg-7 order-1 order-lg-2">
                                 <div className="meswork-cycle-num mb-3" style={{ background: 'linear-gradient(135deg, #FA5674, #6065D4)' }}>6</div>
                                 <AnimatedTitle>
-                                    <h2 className="section-title__title text-white mb-3" style={{ fontSize: '30px' }}>Step 6 – Real-Time Production <span>Dashboards</span></h2>
+                                    <h2 className="section-title__title mb-3" style={{ fontSize: '30px' }}>Step 6 – Real-Time Production <span>Dashboards</span></h2>
                                 </AnimatedTitle>
-                                <p style={{ color: 'rgba(255,255,255,0.55)', lineHeight: '1.7', marginBottom: '20px' }}>
+                                <p style={{ lineHeight: '1.7', marginBottom: '20px' }}>
                                     Micraft MES converts production data into visual dashboards. Managers can monitor:
                                 </p>
                                 <ul className="meswork-checklist mb-4">
@@ -612,7 +612,7 @@ export default function HowMicraftMesWorksPage() {
                                     <li>Inspection results</li>
                                     <li>Dispatch readiness</li>
                                 </ul>
-                                <p style={{ color: 'rgba(255,255,255,0.45)', lineHeight: '1.7', fontSize: '14px', marginBottom: '20px' }}>
+                                <p style={{ lineHeight: '1.7', fontSize: '14px', marginBottom: '20px' }}>
                                     These dashboards provide instant visibility of factory operations.
                                 </p>
                                 <Link href="/solutions/digital-production-dashboard" className="meswork-link" style={{ color: '#FA5674' }}>
@@ -623,15 +623,15 @@ export default function HowMicraftMesWorksPage() {
                     </div>
 
                     {/* STEP 7 */}
-                    <div className="meswork-step-detail wow fadeInUp" id="step-7-dispatch" style={{ borderLeft: '4px solid #FFD25D' }}>
+                    <div className="meswork-step-detail wow fadeInUp" id="step-7-dispatch" style={{ borderLeft: '4px solid #7366CA' }}>
                         <div style={{ position: 'absolute', top: 0, right: 0, width: 200, height: 200, background: 'rgba(255,210,93,0.06)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none' }}></div>
                         <div className="row align-items-start g-4">
                             <div className="col-lg-7">
-                                <div className="meswork-cycle-num mb-3" style={{ background: 'linear-gradient(135deg, #FFD25D, #e8b835)' }}>7</div>
+                                <div className="meswork-cycle-num mb-3" style={{ background: 'linear-gradient(135deg, #7366CA, #e8b835)' }}>7</div>
                                 <AnimatedTitle>
-                                    <h2 className="section-title__title text-white mb-3" style={{ fontSize: '30px' }}>Step 7 – Dispatch Readiness <span>Monitoring</span></h2>
+                                    <h2 className="section-title__title mb-3" style={{ fontSize: '30px' }}>Step 7 – Dispatch Readiness <span>Monitoring</span></h2>
                                 </AnimatedTitle>
-                                <p style={{ color: 'rgba(255,255,255,0.55)', lineHeight: '1.7', marginBottom: '20px' }}>
+                                <p style={{ lineHeight: '1.7', marginBottom: '20px' }}>
                                     After production is completed, Micraft MES tracks:
                                 </p>
                                 <ul className="meswork-checklist mb-4">
@@ -639,10 +639,10 @@ export default function HowMicraftMesWorksPage() {
                                     <li>Order readiness for shipment</li>
                                     <li>Dispatch preparation</li>
                                 </ul>
-                                <p style={{ color: 'rgba(255,255,255,0.45)', lineHeight: '1.7', fontSize: '14px', marginBottom: '20px' }}>
+                                <p style={{ lineHeight: '1.7', fontSize: '14px', marginBottom: '20px' }}>
                                     This helps manufacturers ensure that finished products are delivered on schedule.
                                 </p>
-                                <Link href="/solutions/packing-dispatch-tracking" className="meswork-link" style={{ color: '#FFD25D' }}>
+                                <Link href="/solutions/packing-dispatch-tracking" className="meswork-link" style={{ color: '#7366CA' }}>
                                     Packing & Dispatch Tracking <i className="icon-right-arrow"></i>
                                 </Link>
                             </div>
@@ -658,21 +658,21 @@ export default function HowMicraftMesWorksPage() {
             </section>
 
             {/* ═══════════════ END-TO-END VISIBILITY PANEL ═══════════════ */}
-            <section className="py-5" style={{ background: '#0B1320' }}>
-                <div className="container py-4">
-                    <div className="meswork-glass p-5 text-center" style={{ borderRadius: '30px', border: '1px solid rgba(255,255,255,0.08)', background: 'linear-gradient(135deg, rgba(61,114,252,0.05), rgba(7,12,20,0.8))' }}>
-                        <div className="section-title text-center mb-4 wow fadeInUp">
+            <section className="meswork-e2e-section pt-5 pb-0">
+                <div className="container pt-3 pb-0">
+                    <div className="meswork-e2e-card p-4 p-md-5 text-center">
+                        <div className="section-title text-center mb-3 wow fadeInUp">
                             <AnimatedTitle>
-                                <h2 className="section-title__title text-white" style={{ fontSize: '32px' }}>Complete Production Monitoring <span>from Start to Dispatch</span></h2>
+                                <h2 className="section-title__title" style={{ fontSize: '32px' }}>Complete Production Monitoring <span>from Start to Dispatch</span></h2>
                             </AnimatedTitle>
                         </div>
-                        <p className="mx-auto mb-5" style={{ color: 'rgba(255,255,255,0.55)', fontSize: '17px', maxWidth: '800px', lineHeight: '1.8' }}>
-                            Micraft MES connects all stages of manufacturing operations. The system provides visibility across production orders, machine utilization, manufacturing processes, inspection activities, and packing & dispatch. This end-to-end monitoring allows manufacturers to control production operations more effectively.
+                        <p className="meswork-e2e-desc mx-auto mb-4" style={{ fontSize: '16px', maxWidth: '800px', lineHeight: '1.7' }}>
+                            Micraft MES connects all stages of manufacturing operations. The system provides visibility across production orders, machine utilization, manufacturing processes, inspection activities, and packing &amp; dispatch. This end-to-end monitoring allows manufacturers to control production operations more effectively.
                         </p>
-                        <div className="row g-3 justify-content-center">
+                        <div className="row g-2 justify-content-center">
                             {['Production Orders', 'Machine Utilization', 'Manufacturing Processes', 'Inspection Activities', 'Packing & Dispatch'].map((item, i) => (
                                 <div key={i} className="col-auto">
-                                    <div className="px-3 py-2" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '100px', fontSize: '13px', color: 'rgba(255,255,255,0.7)', fontWeight: '600' }}>
+                                    <div className="meswork-e2e-pill px-3 py-2">
                                         <i className="fas fa-check-circle me-2" style={{ color: '#00D094' }}></i> {item}
                                     </div>
                                 </div>
@@ -683,20 +683,20 @@ export default function HowMicraftMesWorksPage() {
             </section>
 
             {/* ═══════════════ BENEFITS ═══════════════ */}
-            <section className="py-5" style={{ background: '#070C14' }}>
-                <div className="container py-5">
-                    <div className="section-title text-center mb-5">
+            <section className="meswork-benefits-section pt-4 pb-5">
+                <div className="container pt-2 pb-4">
+                    <div className="section-title text-center mb-4">
                         <div className="section-title__tagline-box">
                             <span className="section-title__tagline">Why Implement Micraft</span>
                         </div>
                         <AnimatedTitle>
-                            <h2 className="section-title__title text-white" style={{ fontSize: '36px' }}>Benefits of <span>Implementing Micraft MES</span></h2>
+                            <h2 className="section-title__title" style={{ fontSize: '36px' }}>Benefits of <span>Implementing Micraft MES</span></h2>
                         </AnimatedTitle>
                     </div>
                     <div className="row g-4 justify-content-center">
                         {[
                             { title: "Real-Time Production Visibility", text: "Monitor factory operations instantly with live dashboards.", icon: "eye", color: "#FA5674" },
-                            { title: "Faster Operational Decisions", text: "Detect issues quickly and respond faster to floor disruptions.", icon: "bolt", color: "#FFD25D" },
+                            { title: "Faster Operational Decisions", text: "Detect issues quickly and respond faster to floor disruptions.", icon: "bolt", color: "#7366CA" },
                             { title: "Improved Production Efficiency", text: "Optimize workflows and reduce delays across the factory.", icon: "chart-line", color: "#6065D4" },
                             { title: "Better Machine Utilization", text: "Improve equipment productivity and optimize machine performance.", icon: "cogs", color: "#3D72FC" },
                             { title: "Accurate Production Reporting", text: "Access reliable production data through digital factory dashboards.", icon: "poll-h", color: "#00D094" }
@@ -706,8 +706,8 @@ export default function HowMicraftMesWorksPage() {
                                     <div className="meswork-benefit__icon" style={{ background: `${benefit.color}12`, color: benefit.color, boxShadow: `0 4px 12px ${benefit.color}20` }}>
                                         <i className={`fas fa-${benefit.icon}`}></i>
                                     </div>
-                                    <h4 className="text-white mb-2" style={{ fontSize: '20px', fontWeight: 700 }}>{benefit.title}</h4>
-                                    <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '15px', lineHeight: '1.6' }}>{benefit.text}</p>
+                                    <h4 className="mb-2" style={{ fontSize: '20px', fontWeight: 700 }}>{benefit.title}</h4>
+                                    <p style={{ fontSize: '15px', lineHeight: '1.6' }}>{benefit.text}</p>
                                 </div>
                             </div>
                         ))}
@@ -716,55 +716,42 @@ export default function HowMicraftMesWorksPage() {
             </section>
 
             {/* ═══════════════ RELATED SOLUTIONS QUICK LINKS ═══════════════ */}
-            <section className="py-5" style={{ background: '#070C14' }}>
+            <section className="meswork-solutions-section py-5">
                 <div className="container">
                     <div className="section-title text-center mb-5">
                         <div className="section-title__tagline-box">
                             <span className="section-title__tagline">Explore More</span>
                         </div>
                         <AnimatedTitle>
-                            <h2 className="section-title__title text-white" style={{ fontSize: '32px' }}>Related <span>Manufacturing Solutions</span></h2>
+                            <h2 className="section-title__title" style={{ fontSize: '32px' }}>Related <span>Manufacturing Solutions</span></h2>
                         </AnimatedTitle>
                     </div>
                     
                     <div className="row g-3 justify-content-center">
                         {[
                             { name: "Production Tracking Software", path: "/solutions/production-tracking-software", icon: "clipboard-list", color: "#FA5674" },
-                            { name: "Shop Floor Visibility Software", path: "/solutions/shop-floor-visibility-software", icon: "eye", color: "#FFD25D" },
+                            { name: "Shop Floor Visibility Software", path: "/solutions/shop-floor-visibility-software", icon: "eye", color: "#7366CA" },
                             { name: "Machine Utilization Tracking", path: "/solutions/machine-utilization-tracking", icon: "cogs", color: "#6065D4" },
                             { name: "Manufacturing Performance Tracking", path: "/solutions/manufacturing-performance-tracking", icon: "chart-line", color: "#00D094" },
                             { name: "Manufacturing Process Tracking", path: "/solutions/manufacturing-process-tracking", icon: "exchange-alt", color: "#3D72FC" },
                             { name: "Quality Inspection Tracking", path: "/solutions/quality-inspection-tracking", icon: "shield-alt", color: "#00D094" },
                             { name: "Digital Production Dashboard", path: "/solutions/digital-production-dashboard", icon: "chart-bar", color: "#FA5674" },
-                            { name: "Packing & Dispatch Tracking", path: "/solutions/packing-dispatch-tracking", icon: "truck-loading", color: "#FFD25D" }
+                            { name: "Packing & Dispatch Tracking", path: "/solutions/packing-dispatch-tracking", icon: "truck-loading", color: "#7366CA" }
                         ].map((solution, i) => (
                             <div key={i} className="col-xl-3 col-lg-4 col-md-6">
-                                <Link href={solution.path} className="d-block p-4 h-100 text-decoration-none" 
-                                      style={{ 
-                                          background: 'rgba(255,255,255,0.02)', 
-                                          border: '1px solid rgba(255,255,255,0.06)', 
-                                          borderRadius: '20px',
-                                          transition: 'all 0.3s ease'
-                                      }}>
+                                <Link href={solution.path} className="meswork-solution-card d-block p-4 h-100 text-decoration-none">
                                     <div className="d-flex align-items-center gap-3">
                                         <div className="d-flex align-items-center justify-content-center" 
                                              style={{ width: 45, height: 45, borderRadius: '12px', background: `${solution.color}12`, border: `1px solid ${solution.color}25` }}>
                                             <i className={`fas fa-${solution.icon}`} style={{ color: solution.color, fontSize: '18px' }}></i>
                                         </div>
-                                        <h4 className="text-white mb-0" style={{ fontSize: '14px', fontWeight: '600' }}>{solution.name}</h4>
+                                        <h4 className="mb-0" style={{ fontSize: '14px', fontWeight: '600' }}>{solution.name}</h4>
                                     </div>
                                 </Link>
                             </div>
                         ))}
                     </div>
                 </div>
-                <style jsx>{`
-                    .col-xl-3 Link:hover {
-                        background: rgba(255,255,255,0.04) !important;
-                        border-color: rgba(255,255,255,0.2) !important;
-                        transform: translateY(-5px);
-                    }
-                `}</style>
             </section>
 
             {/* ═══════════════ FINAL CTA ═══════════════ */}
@@ -783,19 +770,19 @@ export default function HowMicraftMesWorksPage() {
                         </div>
 
                         <div className="row justify-content-center text-center">
-                            <div className="col-lg-10" style={{ position: 'relative', zIndex: 5 }}>
+                            <div className="col-lg-9 col-md-11" style={{ position: 'relative', zIndex: 5 }}>
                                 <AnimatedTitle>
-                                    <h2 className="newsletter-one__title text-white mb-20" style={{ fontSize: '42px', lineHeight: '1.2' }}>
+                                    <h2 className="newsletter-one__title text-white mb-3" style={{ fontSize: '34px', lineHeight: '1.3', fontWeight: 800 }}>
                                         See How Micraft MES Works <br />
                                         <span>In Your Factory</span>
                                     </h2>
                                 </AnimatedTitle>
-                                <p className="newsletter-one__text text-white mb-40 mx-auto" style={{ maxWidth: '750px' }}>
+                                <p className="newsletter-one__text text-white mb-4 mx-auto" style={{ maxWidth: '700px', fontSize: '16px', lineHeight: '1.65', color: 'rgba(255,255,255,0.92)' }}>
                                     Discover how Micraft MES can help your manufacturing company gain real-time production visibility and improve operational efficiency. Schedule a Live Demo to see Micraft MES in action.
                                 </p>
 
-                                <div className="cta-btns d-flex flex-wrap justify-content-center gap-4">
-                                    <Link href="/book-demo" className="thm-btn" style={{ background: '#0B192C', color: '#fff' }}>
+                                <div className="cta-btns d-flex flex-wrap justify-content-center gap-3 mt-4">
+                                    <Link href="/book-demo" className="thm-btn" style={{ background: '#FFFFFF', color: '#0B192C', fontWeight: 700, padding: '14px 36px', borderRadius: '12px', boxShadow: '0 10px 25px rgba(0,0,0,0.2)' }}>
                                         Book Your Demo <span className="icon-arrow-right"></span>
                                     </Link>
                                 </div>
@@ -806,7 +793,7 @@ export default function HowMicraftMesWorksPage() {
                 
                 <style dangerouslySetInnerHTML={{__html: `
                     .newsletter-three {
-                        padding: 40px 0 !important;
+                        padding: 50px 0 !important;
                     }
                     .newsletter-one__img {
                         position: absolute;
@@ -818,9 +805,10 @@ export default function HowMicraftMesWorksPage() {
                         height: auto;
                         z-index: 2;
                     }
-                    .thm-btn:hover {
-                        background: #fff !important;
-                        color: #0B192C !important;
+                    .newsletter-one__inner .thm-btn:hover {
+                        background: #0B192C !important;
+                        color: #FFFFFF !important;
+                        transform: translateY(-3px);
                     }
                     @media (max-width: 1199px) {
                         .newsletter-one__img {
@@ -839,18 +827,18 @@ export default function HowMicraftMesWorksPage() {
                             display: none;
                         }
                         .newsletter-one__inner {
-                            padding: 60px 20px;
+                            padding: 50px 24px;
                             margin: 0 15px;
                         }
                     }
                     @media (max-width: 767px) {
                         .newsletter-one__title {
-                            font-size: 30px !important;
+                            font-size: 26px !important;
                             line-height: 1.3 !important;
                         }
                         .newsletter-one__text {
-                            font-size: 15px;
-                            margin-bottom: 30px !important;
+                            font-size: 14px;
+                            margin-bottom: 24px !important;
                         }
                         .cta-btns {
                             flex-direction: column;

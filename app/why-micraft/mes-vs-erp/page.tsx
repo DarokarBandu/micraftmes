@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 
 import React from 'react';
@@ -281,7 +281,7 @@ export default function MesVsErpPage() {
 
                         {[
                             { f: "Management Core", e: "Business processes", m: "Shop floor operations", Icon: Settings, color: "#3D72FC" },
-                            { f: "Strategic Focus", e: "Planning & Resources", m: "Production Execution", Icon: Target, color: "#FFD25D" },
+                            { f: "Strategic Focus", e: "Planning & Resources", m: "Production Execution", Icon: Target, color: "#7366CA" },
                             { f: "Data Domains", e: "Finance, Procurement, Inventory", m: "Live Orders & Machine Pulse", Icon: LinkIcon, color: "#00E5FF" },
                             { f: "Visibility Level", e: "High-level operational insights", m: "Real-time factory monitoring", Icon: Search, color: "#00E676" },
                             { f: "Primary Audience", e: "Enterprise Management Teams", m: "Supervisors & Shop Floor", Icon: Users, color: "#F50057" }
@@ -427,7 +427,7 @@ export default function MesVsErpPage() {
                                 <defs>
                                     <linearGradient id="paint0_linear" x1="0" y1="100" x2="1200" y2="100" gradientUnits="userSpaceOnUse">
                                         <stop stopColor="#3D72FC" />
-                                        <stop offset="0.5" stopColor="#FFD25D" />
+                                        <stop offset="0.5" stopColor="#7366CA" />
                                         <stop offset="1" stopColor="#3D72FC" />
                                     </linearGradient>
                                 </defs>
@@ -451,7 +451,7 @@ export default function MesVsErpPage() {
                                                 <Image src={step.img} alt={step.title} width={180} height={180} className="object-fit-cover transition-all group-hover:scale-110" />
                                             </div>
 
-                                            <div className="node-step-identifier position-absolute d-flex align-items-center justify-content-center" style={{ top: '0', right: '-15px', transform: 'translate(50%, -50%)', width: '45px', height: '45px', background: `${step.color === 'blue' ? '#3D72FC' : '#FFD25D'}`, color: '#fff', borderRadius: '50%', fontWeight: '900', fontSize: '16px', border: '4px solid #080C14', boxShadow: 'none', zIndex: '10' }}>
+                                            <div className="node-step-identifier position-absolute d-flex align-items-center justify-content-center" style={{ top: '0', right: '-15px', transform: 'translate(50%, -50%)', width: '45px', height: '45px', background: `${step.color === 'blue' ? '#3D72FC' : '#7366CA'}`, color: '#fff', borderRadius: '50%', fontWeight: '900', fontSize: '16px', border: '4px solid #080C14', boxShadow: 'none', zIndex: '10' }}>
                                                 {step.step}
                                             </div>
                                         </div>
@@ -599,8 +599,8 @@ export default function MesVsErpPage() {
                                         <Image src={member.img} alt={member.name} width={400} height={450} className="object-fit-cover w-100 h-100 grayscale-hint hover-grayscale-off transition-all duration-500" />
                                     </div>
                                     <div className="team-two__title-box p-4 w-100 position-absolute bottom-0 start-0 z-index-3" style={{ textShadow: '0 4px 15px rgba(0,0,0,1)' }}>
-                                        <div className="role-tag mb-2 font-marcellus extra-small fw-900 letter-spacing-2 d-inline-block px-3 py-1 bg-black bg-opacity-60 rounded-pill border border-warning border-opacity-50" style={{ color: '#FFD25D' }}>{member.role}</div>
-                                        <h3 className="text-gold h5 fw-900 font-marcellus mb-2" style={{ fontSize: '20px', color: '#FFD25D' }}>{member.name}</h3>
+                                        <div className="role-tag mb-2 font-marcellus extra-small fw-900 letter-spacing-2 d-inline-block px-3 py-1 bg-black bg-opacity-60 rounded-pill border border-warning border-opacity-50" style={{ color: '#7366CA' }}>{member.role}</div>
+                                        <h3 className="text-gold h5 fw-900 font-marcellus mb-2" style={{ fontSize: '20px', color: '#7366CA' }}>{member.name}</h3>
                                         <p className="text-white fw-medium small mb-2 font-marcellus leading-relaxed opacity-100">{member.text}</p>
                                     </div>
                                     <div className="card-outer-glow absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-20 transition-all duration-500 bg-gradient-primary"></div>
@@ -649,7 +649,7 @@ export default function MesVsErpPage() {
                                 <AnimatedTitle>
                                     <h2 className="newsletter-one__title text-white mb-20 font-marcellus d-block" style={{ lineHeight: '1.2', fontSize: '36px' }}>
                                         Improve Factory Visibility <br />
-                                        <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400', fontSize: '32px' }}>with Micraft MES</span>
+                                        <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400', fontSize: '32px' }}>with Micraft MES</span>
                                     </h2>
                                 </AnimatedTitle>
                                 <p className="newsletter-one__text text-white mb-4 fs-5 opacity-90 mx-auto font-marcellus d-block" style={{ maxWidth: '800px' }}>

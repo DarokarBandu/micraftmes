@@ -41,7 +41,7 @@ export default function ServiceCarousel() {
             text: "Gain real-time visibility of shop floor operations from a centralized dashboard.",
             href: "/solutions/shop-floor-visibility-software",
             icon: "fas fa-eye",
-            color: "#FA5674"
+            color: "#7366CA"
         },
         {
             title: "Factory Monitoring",
@@ -55,15 +55,17 @@ export default function ServiceCarousel() {
             text: "Track machine usage and productivity to maximize equipment efficiency.",
             href: "/solutions/machine-utilization-tracking",
             icon: "fas fa-microchip",
-            color: "#6065D4"
+            color: "#7366CA"
         }
     ];
+
+    const displayServices = [...services, ...services];
 
     return (
         <section className="service-carousel-section" style={{ padding: '100px 0', background: '#070B14' }}>
             <div className="container">
                 <Swiper {...swiperOptions} className="service-carousel">
-                    {services.map((service, index) => (
+                    {displayServices.map((service, index) => (
                         <SwiperSlide key={index}>
                             <div className="service-card" style={{ 
                                 background: 'rgba(255,255,255,0.03)', 

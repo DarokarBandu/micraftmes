@@ -1,6 +1,6 @@
-
+﻿
 "use client"
-import { useState, useEffect } from 'react'
+import { useScrollSpy } from '@/hooks/useScrollSpy'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -26,30 +26,13 @@ const sections = [
 ]
 
 export default function PerformanceTrackingPage() {
-    const [activeSection, setActiveSection] = useState("hero")
-
-    useEffect(() => {
-        // Metadata is now managed via layout.tsx
-    }, []);
-
-    const scrollTo = (id: string) => {
-        setActiveSection(id);
-        setTimeout(() => {
-            const contentArea = document.getElementById('main-content-area');
-            if (contentArea) {
-                const headerOffset = 120;
-                const elementPosition = contentArea.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.scrollY - headerOffset;
-                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-            }
-        }, 50);
-    }
+    const { activeId: activeSection, scrollTo } = useScrollSpy(sections.map(s => s.id));
 
     return (
         <Layout headerStyle={1} footerStyle={2}>
             <Breadcrumb breadcrumbTitle="Manufacturing Performance Tracking" />
 
-            <section className="services-details pt-0" style={{ background: '#02050A', minHeight: '100vh', paddingBottom: '0' }}>
+            <section className="services-details pt-0 pt-lg-0" style={{ background: '#02050A', minHeight: '100vh', paddingBottom: '0' }}>
                 <div className="services-details__shape-1"></div>
                 <div className="services-details__shape-2">
                     <Image src="/assets/images/shapes/services-details-shape-2.png" alt="Shape" width={1920} height={1332} style={{ opacity: 0.1 }} priority />
@@ -57,11 +40,11 @@ export default function PerformanceTrackingPage() {
                 <div className="container-fluid px-xl-5">
                     <div className="row g-4 align-items-start pt-0">
                         {/* Sidebar */}
-                        <div className="col-xl-3 col-lg-4 order-1 sticky-lg-top mt-1 mt-lg-0" style={{ height: 'fit-content', zIndex: 10 }}>
-                            <div className="services-details__left">
-                                <div className="services-details__services-list-box p-0 overflow-hidden mb-4 mb-lg-0" style={{ background: 'rgba(61, 114, 252, 0.03)', border: '1px solid rgba(61, 114, 252, 0.1)' }}>
-                                    <div className="p-4" style={{ background: 'linear-gradient(90deg, rgba(61, 114, 252, 0.1), transparent)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                                        <h3 style={{ fontSize: '14px', margin: 0, color: '#3D72FC', textTransform: 'uppercase', letterSpacing: '3px', fontWeight: '900' }}>
+                        <div className="col-xl-3 col-lg-4 order-1 solution-sidebar-col">
+                            <div className="services-details__left mt-0 pt-0">
+                                <div className="services-details__services-list-box p-0 overflow-hidden mb-4 mb-lg-0" style={{ background: '#080D1A', border: '1px solid rgba(61, 114, 252, 0.25)', boxShadow: '0 15px 35px rgba(0, 0, 0, 0.6)', borderRadius: '16px' }}>
+                                    <div className="p-4" style={{ background: 'linear-gradient(90deg, rgba(61, 114, 252, 0.15), rgba(8, 13, 26, 0.95))', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+                                        <h3 style={{ fontSize: '14px', margin: 0, color: '#7366CA', textTransform: 'uppercase', letterSpacing: '3px', fontWeight: '900' }}>
                                             Performance Menu
                                         </h3>
                                     </div>
@@ -87,12 +70,11 @@ export default function PerformanceTrackingPage() {
                         </div>
 
                         {/* Main Content */}
-                        <div className="col-xl-9 col-lg-8 order-2 mt-5 mt-lg-0 pt-0">
-                            <div id="main-content-area" key={activeSection} className="services-details__right mt-0 pt-0 pb-5 pe-xl-5">
+                        <div className="col-xl-9 col-lg-8 order-2 pt-0">
+                            <div id="main-content-area" suppressHydrationWarning className="services-details__right mt-0 pt-0 pb-5 pe-xl-5">
 
                                 {/* 1. Hero Section */}
-                                {activeSection === 'hero' && (
-                                    <section id="hero" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="hero" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="row g-4 align-items-center">
                                             <div className="col-lg-12">
                                                 <div className="section-title text-left mb-4">
@@ -130,11 +112,9 @@ export default function PerformanceTrackingPage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 2. Problems Section */}
-                                {activeSection === 'problems' && (
-                                    <section id="problems" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="problems" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="section-title text-left mb-4">
                                             <div className="section-title__tagline-box">
                                                 <span className="section-title__tagline" style={{ color: '#FA5674' }}>Efficiency Blind Spots</span>
@@ -152,7 +132,7 @@ export default function PerformanceTrackingPage() {
                                                         { text: "Inconsistent Benchmarking", sub: "Hard to compare shift performance or operator efficiency accurately.", icon: "fas fa-balance-scale", color: "#FA5674", label: "BIAS" },
                                                         { text: "Untraceable Micro-Stops", sub: "Small interruptions that add up to big losses remain hidden in paper logs.", icon: "fas fa-clock", color: "#6065D4", label: "HIDDEN LOSS" },
                                                         { text: "High Reporting Effort", sub: "Managers spend hours in Excel trying to consolidate daily production data.", icon: "fas fa-file-excel", color: "#00D261", label: "INEFFICIENT" },
-                                                        { text: "Lack of Trend Insight", sub: "Cannot see if performance is improving or declining over weeks and months.", icon: "fas fa-chart-line", color: "#FFD25D", label: "NO VISION" }
+                                                        { text: "Lack of Trend Insight", sub: "Cannot see if performance is improving or declining over weeks and months.", icon: "fas fa-chart-line", color: "#7366CA", label: "NO VISION" }
                                                     ].map((item, i) => (
                                                         <div key={i} className="col-md-6">
                                                             <div className="p-4 rounded-4 border border-white border-opacity-5 h-100 transition-all hover-translate-up" style={{ background: 'rgba(255,255,255,0.03)' }}>
@@ -182,11 +162,9 @@ export default function PerformanceTrackingPage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 3. How it Works */}
-                                {activeSection === 'how-it-works' && (
-                                    <section id="how-it-works" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="how-it-works" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="p-4 p-xl-5 rounded-5 shadow-2xl position-relative overflow-hidden"
                                             style={{ background: 'rgba(11, 15, 25, 0.4)', border: '1px solid rgba(139, 92, 246, 0.1)', backdropFilter: 'blur(10px)' }}>
 
@@ -223,11 +201,9 @@ export default function PerformanceTrackingPage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 4. Capabilities */}
-                                {activeSection === 'capabilities' && (
-                                    <section id="capabilities" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="capabilities" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="section-title text-left mb-5">
                                             <span className="section-title__tagline text-primary">ANALYTICS SUITE</span>
                                             <AnimatedTitle>
@@ -272,11 +248,9 @@ export default function PerformanceTrackingPage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 5. Benefits - Flow-wise Design */}
-                                {activeSection === 'benefits' && (
-                                    <section id="benefits" className="py-4 section-anchor section-fade-in premium-flow-section">
+                                <section id="benefits" className="py-4 section-anchor section-fade-in premium-flow-section">
                                         <div className="p-xl-5 ps-3 pe-3 p-4 rounded-5 position-relative overflow-hidden"
                                             style={{ background: 'rgba(7, 11, 20, 0.9)', border: '1px solid rgba(139, 92, 246, 0.25)', boxShadow: '0 30px 60px rgba(0,0,0,0.6)' }}>
 
@@ -318,7 +292,7 @@ export default function PerformanceTrackingPage() {
                                                         { t: "02", b: "Continuous Growth", d: "Apply live Kaizen data.", i: "fas fa-sync", c1: "#00D261", c2: "#3D72FC" },
                                                         { t: "03", b: "Smart Investments", d: "Data-driven upgrades.", i: "fas fa-piggy-bank", c1: "#FFB01F", c2: "#FA5674" },
                                                         { t: "04", b: "Predictable Capacity", d: "Maximize high-value orders.", i: "fas fa-warehouse", c1: "#00D2FF", c2: "#3D72FC" },
-                                                        { t: "05", b: "Shift Performance", d: "Identify training needs.", i: "fas fa-user-check", c1: "#EC4899", c2: "#8B5CF6" },
+                                                        { t: "05", b: "Shift Performance", d: "Identify training needs.", i: "fas fa-user-check", c1: "#7366CA", c2: "#8B7DEC" },
                                                         { t: "06", b: "ROI Verification", d: "Quantify every change.", i: "fas fa-chart-line", c1: "#3D72FC", c2: "#00D261" }
                                                     ].map((item, i) => (
                                                         <div key={i} className="col-lg-2 col-md-4 col-sm-6">
@@ -341,11 +315,9 @@ export default function PerformanceTrackingPage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 6. Industries */}
-                                {activeSection === 'industries' && (
-                                    <section id="industries" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="industries" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="section-title text-left mb-5">
                                             <span className="section-title__tagline text-primary">PERFORMANCE BENCHMARKING</span>
                                             <AnimatedTitle>
@@ -372,11 +344,9 @@ export default function PerformanceTrackingPage() {
                                             ))}
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 7. Integration */}
-                                {activeSection === 'integration' && (
-                                    <section id="integration" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="integration" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="p-4 p-xl-5 rounded-5 border-primary-glow bg-dark shadow-2xl">
                                             <div className="row g-4 align-items-center">
                                                 <div className="col-lg-7">
@@ -414,11 +384,9 @@ export default function PerformanceTrackingPage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 8. Why Micraft */}
-                                {activeSection === 'why-micraft' && (
-                                    <section id="why-micraft" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="why-micraft" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="p-4 p-xl-5 rounded-5 shadow-2xl" style={{ background: 'rgba(15, 23, 42, 0.4)', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
                                             <div className="row g-4 justify-content-center">
                                                 {[
@@ -439,11 +407,9 @@ export default function PerformanceTrackingPage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 10. Related Solutions - The Industry Ecosystem Carousel */}
-                                {activeSection === 'related' && (
-                                    <section id="related" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="related" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="section-title text-center mb-5">
                                             <div className="section-title__tagline-box mx-auto">
                                                 <span className="section-title__tagline text-primary">Related Ecosystem</span>
@@ -502,7 +468,6 @@ export default function PerformanceTrackingPage() {
                                             </Swiper>
                                         </div>
                                     </section>
-                                )}
 
                             </div>
                         </div>
@@ -559,7 +524,7 @@ export default function PerformanceTrackingPage() {
 
             <style dangerouslySetInnerHTML={{
                 __html: `
-                .services-details { overflow: hidden; position: relative; }
+                .services-details { overflow: visible !important; position: relative; }
                 .shadow-2xl { box-shadow: 0 40px 100px -20px rgba(0,0,0,0.9); }
                 .rounded-5 { border-radius: 32px !important; }
                 .border-primary-glow { border: 1px solid rgba(139, 92, 246, 0.4); box-shadow: inset 0 0 20px rgba(139, 92, 246, 0.1); }

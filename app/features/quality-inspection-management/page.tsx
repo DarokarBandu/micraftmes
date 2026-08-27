@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 import { Fragment, useState, useEffect } from 'react'
 import Layout from "@/components/layout/Layout"
 import Breadcrumb from "@/components/layout/Breadcrumb"
@@ -83,7 +83,7 @@ export default function QualityManagementPage() {
               <div className="nav-links d-flex align-items-center justify-content-center gap-2 flex-wrap">
                 {[
                   { id: "step-1-specs", label: "Spec Definition", icon: "pencil-ruler", color: "#FA5674" },
-                  { id: "step-2-gates", label: "Inspection Gates", icon: "door-closed", color: "#FFD25D" },
+                  { id: "step-2-gates", label: "Inspection Gates", icon: "door-closed", color: "#7366CA" },
                   { id: "step-3-digicheck", label: "Digital Checklists", icon: "check-double", color: "#6065D4" },
                   { id: "step-4-defects", label: "Defect Analysis", icon: "exclamation-triangle", color: "#3D72FC" },
                   { id: "step-5-yield", label: "Yield Tracking", icon: "chart-pie", color: "#00D094" },
@@ -143,7 +143,7 @@ export default function QualityManagementPage() {
             {[
               { title: "Live Yield Tracking", desc: "Monitor first-pass yield and scrap rates in real-time across workstations", icon: "percentage", color: "#FA5674", gradient: "linear-gradient(135deg, rgba(250,86,116,0.12), rgba(250,86,116,0.04))" },
               { title: "Digital Inspection Hub", desc: "Standardized inspection points linked directly to production orders", icon: "clipboard-list", color: "#6065D4", gradient: "linear-gradient(135deg, rgba(96,101,212,0.12), rgba(96,101,212,0.04))" },
-              { title: "Real-Time Defect Alerts", desc: "Instant notifications for non-conformance and recurring quality failures", icon: "bell", color: "#FFD25D", gradient: "linear-gradient(135deg, rgba(255,210,93,0.12), rgba(255,210,93,0.04))" },
+              { title: "Real-Time Defect Alerts", desc: "Instant notifications for non-conformance and recurring quality failures", icon: "bell", color: "#7366CA", gradient: "linear-gradient(135deg, rgba(255,210,93,0.12), rgba(255,210,93,0.04))" },
               { title: "Full Batch Traceability", desc: "Audit-ready historical records of every quality checkpoint and test", icon: "history", color: "#00D094", gradient: "linear-gradient(135deg, rgba(0,208,148,0.12), rgba(0,208,148,0.04))" }
             ].map((item, idx) => (
               <div key={idx} className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay={`${idx * 100 + 100}ms`}>
@@ -198,7 +198,7 @@ export default function QualityManagementPage() {
 
             {[
               { title: "Tech Spec Definition", icon: "pencil-ruler", color: "#3D72FC", desc: "Define tolerance levels, dimensional specs, and mandatory test criteria for each product type." },
-              { title: "Dynamic Inspection Gating", icon: "door-closed", color: "#FFD25D", desc: "Configure mandatory digital gates that prevent work orders from moving forward until quality is verified." },
+              { title: "Dynamic Inspection Gating", icon: "door-closed", color: "#7366CA", desc: "Configure mandatory digital gates that prevent work orders from moving forward until quality is verified." },
               { title: "Shop Floor Checklists", icon: "check-double", color: "#FA5674", desc: "Guided digital checklists for operators to perform systematic self-inspections at the workstation." },
               { title: "Defect Categorization", icon: "exclamation-triangle", color: "#6065D4", desc: "Log non-conformances with standardized reason codes for instant root-cause analysis." },
               { title: "Rework Management", icon: "redo-alt", color: "#00D094", desc: "Automated routing of rejected parts to designated rework stations for remediation and re-testing." },
@@ -344,7 +344,7 @@ export default function QualityManagementPage() {
           </div>
 
           {/* FEATURE 2: NON-CONFORMANCE ALERTS */}
-          <div className="meswork-step-detail mb-5 wow fadeInUp" id="step-4-defects" style={{ borderLeft: '4px solid #FFD25D' }}>
+          <div className="meswork-step-detail mb-5 wow fadeInUp" id="step-4-defects" style={{ borderLeft: '4px solid #7366CA' }}>
             <div className="row align-items-center g-4">
               <div className="col-lg-5 order-2 order-lg-1">
                 <div className="meswork-img-card meswork-img-glow p-2">
@@ -352,7 +352,7 @@ export default function QualityManagementPage() {
                 </div>
               </div>
               <div className="col-lg-7 order-1 order-lg-2">
-                <div className="meswork-cycle-num mb-3" style={{ background: 'linear-gradient(135deg, #FFD25D, #FA5674)' }}>02</div>
+                <div className="meswork-cycle-num mb-3" style={{ background: 'linear-gradient(135deg, #7366CA, #FA5674)' }}>02</div>
                 <AnimatedTitle>
                   <h2 className="section-title__title text-white mb-3" style={{ fontSize: '30px' }}>Automated <span>Non-Conformance Alerts</span></h2>
                 </AnimatedTitle>
@@ -365,7 +365,7 @@ export default function QualityManagementPage() {
                   <li>Standardized non-conformance reporting (NCR)</li>
                   <li>Root-cause tracking linked to machine and shift performance</li>
                 </ul>
-                <Link href="/features/production-analytics-reports" className="meswork-link" style={{ color: '#FFD25D' }}>
+                <Link href="/features/production-analytics-reports" className="meswork-link" style={{ color: '#7366CA' }}>
                    Quality Analytics Insights <i className="icon-right-arrow"></i>
                 </Link>
               </div>
@@ -418,7 +418,7 @@ export default function QualityManagementPage() {
           <div className="row g-4 justify-content-center">
             {[
               { title: "Zero Paper Inspections", text: "100% digital checklists that eliminate manual errors and missing logs.", icon: "file-medical", color: "#FA5674" },
-              { title: "Faster Defect Detection", text: "Catch quality deviations at the workstation before they drift further.", icon: "bolt", color: "#FFD25D" },
+              { title: "Faster Defect Detection", text: "Catch quality deviations at the workstation before they drift further.", icon: "bolt", color: "#7366CA" },
               { title: "Higher First-Pass Yields", text: "Maximize sellable output by standardizing operational precision.", icon: "chart-line", color: "#6065D4" },
               { title: "Regulatory Compliance", text: "Complete digital audit trails for ISO and industry-specific certifications.", icon: "award", color: "#3D72FC" },
               { title: "Scalable Quality Gates", text: "Effortlessly add new inspection points as your processes evolve.", icon: "layer-group", color: "#00D094" }
@@ -448,7 +448,7 @@ export default function QualityManagementPage() {
           <div className="row g-3 justify-content-center">
             {[
               { name: "Order Tracking", path: "/features/work-order-tracking", icon: "tasks", color: "#FA5674" },
-              { name: "Smarter Scheduling", path: "/features/production-planning-scheduling", icon: "calendar-alt", color: "#FFD25D" },
+              { name: "Smarter Scheduling", path: "/features/production-planning-scheduling", icon: "calendar-alt", color: "#7366CA" },
               { name: "Live OEE Monitoring", path: "/features/machine-monitoring", icon: "chart-line", color: "#00D094" },
               { name: "Operator Hub", path: "/features/shop-floor-data-collection", icon: "tablet-alt", color: "#6065D4" },
               { name: "Factory Dashboard", path: "/features/production-dashboard", icon: "tachometer-alt", color: "#3D72FC" },

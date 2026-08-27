@@ -1,13 +1,13 @@
 'use client'
 import React from "react"
-import { Autoplay, Navigation, Pagination, EffectFade } from "swiper/modules"
+import { Autoplay, Navigation, EffectFade } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
 import Link from "next/link";
 import Image from "next/image";
 import "swiper/css/effect-fade";
 
 const swiperOptions = {
-    modules: [Autoplay, Pagination, Navigation, EffectFade],
+    modules: [Autoplay, Navigation, EffectFade],
     slidesPerView: 1,
     spaceBetween: 30,
     autoplay: {
@@ -18,10 +18,6 @@ const swiperOptions = {
     effect: "fade",
     fadeEffect: {
         crossFade: true,
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
     },
     navigation: {
         nextEl: '.main-slider-two__nav-next',
@@ -70,10 +66,10 @@ export default function Banner() {
                                             <h1 className="main-slider-two__title banner-title-desktop">
                                                 Manufacturing Execution System for <br /> <span>Real-Time Shop Floor Visibility</span>
                                             </h1>
-                                            <h2 className="main-slider-two__h2 text-white banner-h2-desktop mb-3" style={{ fontWeight: '700', fontSize: '32px' }}>
+                                            <h2 className="main-slider-two__h2 banner-h2-desktop mb-3" style={{ fontWeight: '700', fontSize: '32px', color: '#ffffff' }}>
                                                 Track production, downtime, inspection, packing, and dispatch in real time.
                                             </h2>
-                                            <p className="main-slider-two__text fw-medium" style={{ fontWeight: '500' }}>
+                                            <p className="main-slider-two__text fw-medium" style={{ fontWeight: '500', color: 'rgba(255, 255, 255, 0.9)' }}>
                                                 Micraft MES connects machines, operators, and processes to give <br />
                                                 manufacturing teams a clear and reliable view of what is happening on the shop floor.
                                             </p>
@@ -89,18 +85,18 @@ export default function Banner() {
                                     </div>
                                     <div className="col-xl-5 col-lg-5 d-none d-lg-block">
                                         <div className="main-slider-two__illustration-wrapper float-bob-y" style={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', minHeight: '400px' }}>
-                                            <div className="position-absolute" style={{ background: 'radial-gradient(circle, rgba(92,176,233,0.15) 0%, transparent 70%)', width: '500px', height: '500px', borderRadius: '50%' }}></div>
+                                            <div className="position-absolute" style={{ background: 'rgba(115, 102, 202, 0.15)', width: '500px', height: '500px', borderRadius: '50%', filter: 'blur(50px)' }}></div>
 
-                                            <div className="glass-vector" style={{ position: 'relative', background: 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%)', backdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.1)', padding: '50px', borderRadius: '30px', textAlign: 'center', boxShadow: '0 25px 50px rgba(0,0,0,0.3)', zIndex: 2 }}>
-                                                <div style={{ fontSize: '80px', marginBottom: '20px', background: 'linear-gradient(135deg, #5CB0E9, #3D72FC)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', display: 'inline-block' }}>
+                                            <div className="glass-vector" style={{ position: 'relative', background: 'rgba(255,255,255,0.04)', backdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.1)', padding: '50px', borderRadius: '30px', textAlign: 'center', boxShadow: '0 25px 50px rgba(0,0,0,0.3)', zIndex: 2 }}>
+                                                <div style={{ fontSize: '80px', marginBottom: '20px', color: '#7366CA', display: 'inline-block' }}>
                                                     <i className="fas fa-network-wired"></i>
                                                 </div>
                                                 <h3 style={{ color: 'white', fontSize: '24px', fontWeight: '700', margin: 0 }}>Real-Time Data</h3>
                                                 <p style={{ color: '#97a2b0', marginTop: '10px', fontSize: '15px', marginBottom: 0 }}>100% Shop Floor Sync</p>
                                             </div>
 
-                                            <div className="position-absolute float-bob-x" style={{ top: '15%', right: '0%', background: 'rgba(16,185,129,0.15)', border: '1px solid rgba(16,185,129,0.3)', backdropFilter: 'blur(10px)', padding: '12px 24px', borderRadius: '40px', zIndex: 3, display: 'flex', alignItems: 'center', gap: '10px', boxShadow: '0 10px 20px rgba(0,0,0,0.2)' }}>
-                                                <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#10B981', boxShadow: '0 0 12px #10B981' }}></div>
+                                            <div className="position-absolute float-bob-x" style={{ top: '15%', right: '0%', background: 'rgba(115,102,202,0.15)', border: '1px solid rgba(115,102,202,0.3)', backdropFilter: 'blur(10px)', padding: '12px 24px', borderRadius: '40px', zIndex: 3, display: 'flex', alignItems: 'center', gap: '10px', boxShadow: '0 10px 20px rgba(0,0,0,0.2)' }}>
+                                                <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#7366CA', boxShadow: '0 0 12px #7366CA' }}></div>
                                                 <span style={{ color: '#fff', fontSize: '14px', fontWeight: '600', letterSpacing: '1px' }}>LIVE</span>
                                             </div>
                                         </div>
@@ -136,28 +132,28 @@ export default function Banner() {
                                             <h1 className="main-slider-two__title banner-title-desktop">
                                                 Reduce Downtime with <br /> <span>Real-Time Monitoring</span>
                                             </h1>
-                                            <h2 className="main-slider-two__h2 text-white banner-h2-desktop mb-3" style={{ fontWeight: '700', fontSize: '32px' }}>
+                                            <h2 className="main-slider-two__h2 banner-h2-desktop mb-3" style={{ fontWeight: '700', fontSize: '32px', color: '#ffffff' }}>
                                                 Identify production losses faster and take corrective action during the shift.
                                             </h2>
-                                            <p className="main-slider-two__text fw-medium" style={{ fontWeight: '500' }}>
+                                            <p className="main-slider-two__text fw-medium" style={{ fontWeight: '500', color: 'rgba(255, 255, 255, 0.9)' }}>
                                                 Micraft MES captures downtime reasons directly from the shop floor <br />
                                                 and shows production performance in real time so teams can quickly identify bottlenecks.
                                             </p>
                                             <div className="main-slider-two__btns-box">
                                                 <div className="main-slider-two__btn-box-1">
-                                                    <Link href="/features/machine-monitoring" className="thm-btn">Explore Downtime Tracking<span className="icon-right-arrow"></span></Link>
+                                                    <Link href="/solutions/production-tracking-software" className="thm-btn">Explore Downtime Tracking<span className="icon-right-arrow"></span></Link>
                                                 </div>
                                                 <div className="main-slider-two__btn-box-2">
-                                                    <Link href="/contact" className="thm-btn">Book a Demo<span className="icon-right-arrow"></span></Link>
+                                                    <Link href="/contact" className="thm-btn">Book A Demo<span className="icon-right-arrow"></span></Link>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="col-xl-5 col-lg-5 d-none d-lg-block">
                                         <div className="main-slider-two__illustration-wrapper float-bob-y" style={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', minHeight: '400px' }}>
-                                            <div className="position-absolute" style={{ background: 'radial-gradient(circle, rgba(255,210,93,0.15) 0%, transparent 70%)', width: '500px', height: '500px', borderRadius: '50%' }}></div>
-                                            <div className="glass-vector" style={{ position: 'relative', background: 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%)', backdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.1)', padding: '50px', borderRadius: '30px', textAlign: 'center', boxShadow: '0 25px 50px rgba(0,0,0,0.3)', zIndex: 2 }}>
-                                                <div style={{ fontSize: '80px', marginBottom: '20px', background: 'linear-gradient(135deg, #FFD25D, #FF9C2A)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', display: 'inline-block' }}>
+                                            <div className="position-absolute" style={{ background: 'rgba(255,210,93,0.15)', width: '500px', height: '500px', borderRadius: '50%', filter: 'blur(50px)' }}></div>
+                                            <div className="glass-vector" style={{ position: 'relative', background: 'rgba(255,255,255,0.04)', backdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.1)', padding: '50px', borderRadius: '30px', textAlign: 'center', boxShadow: '0 25px 50px rgba(0,0,0,0.3)', zIndex: 2 }}>
+                                                <div style={{ fontSize: '80px', marginBottom: '20px', color: '#FFD25D', display: 'inline-block' }}>
                                                     <i className="fas fa-chart-bar"></i>
                                                 </div>
                                                 <h3 style={{ color: 'white', fontSize: '24px', fontWeight: '700', margin: 0 }}>OEE Tracking</h3>
@@ -200,10 +196,10 @@ export default function Banner() {
                                             <h1 className="main-slider-two__title banner-title-desktop">
                                                 From Production to Dispatch <br /> <span>Complete Visibility</span>
                                             </h1>
-                                            <h2 className="main-slider-two__h2 text-white banner-h2-desktop mb-3" style={{ fontWeight: '700', fontSize: '32px' }}>
+                                            <h2 className="main-slider-two__h2 banner-h2-desktop mb-3" style={{ fontWeight: '700', fontSize: '32px', color: '#ffffff' }}>
                                                 Monitor work orders, inspection results, packing status, and dispatch readiness in one system.
                                             </h2>
-                                            <p className="main-slider-two__text fw-medium" style={{ fontWeight: '500' }}>
+                                            <p className="main-slider-two__text fw-medium" style={{ fontWeight: '500', color: 'rgba(255, 255, 255, 0.9)' }}>
                                                 Micraft MES connects production processes so manufacturing teams <br />
                                                 always know what is completed, what is pending, and what is ready to ship.
                                             </p>
@@ -219,16 +215,16 @@ export default function Banner() {
                                     </div>
                                     <div className="col-xl-5 col-lg-5 d-none d-lg-block">
                                         <div className="main-slider-two__illustration-wrapper float-bob-y" style={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', minHeight: '400px' }}>
-                                            <div className="position-absolute" style={{ background: 'radial-gradient(circle, rgba(16,185,129,0.15) 0%, transparent 70%)', width: '500px', height: '500px', borderRadius: '50%' }}></div>
-                                            <div className="glass-vector" style={{ position: 'relative', background: 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%)', backdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.1)', padding: '50px', borderRadius: '30px', textAlign: 'center', boxShadow: '0 25px 50px rgba(0,0,0,0.3)', zIndex: 2 }}>
-                                                <div style={{ fontSize: '80px', marginBottom: '20px', background: 'linear-gradient(135deg, #10B981, #059669)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', display: 'inline-block' }}>
+                                            <div className="position-absolute" style={{ background: 'rgba(115, 102, 202, 0.15)', width: '500px', height: '500px', borderRadius: '50%', filter: 'blur(50px)' }}></div>
+                                            <div className="glass-vector" style={{ position: 'relative', background: 'rgba(255,255,255,0.04)', backdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.1)', padding: '50px', borderRadius: '30px', textAlign: 'center', boxShadow: '0 25px 50px rgba(0,0,0,0.3)', zIndex: 2 }}>
+                                                <div style={{ fontSize: '80px', marginBottom: '20px', color: '#7366CA', display: 'inline-block' }}>
                                                     <i className="fas fa-project-diagram"></i>
                                                 </div>
                                                 <h3 style={{ color: 'white', fontSize: '24px', fontWeight: '700', margin: 0 }}>End-to-End Traceability</h3>
                                                 <p style={{ color: '#97a2b0', marginTop: '10px', fontSize: '15px', marginBottom: 0 }}>Production to Dispatch</p>
                                             </div>
-                                            <div className="position-absolute float-bob-x" style={{ top: '25%', right: '0%', background: 'rgba(16,185,129,0.15)', border: '1px solid rgba(16,185,129,0.3)', backdropFilter: 'blur(10px)', padding: '12px 24px', borderRadius: '40px', zIndex: 3, display: 'flex', alignItems: 'center', gap: '10px', boxShadow: '0 10px 20px rgba(0,0,0,0.2)' }}>
-                                                <i className="fas fa-check-circle text-success"></i>
+                                            <div className="position-absolute float-bob-x" style={{ top: '25%', right: '0%', background: 'rgba(115,102,202,0.15)', border: '1px solid rgba(115,102,202,0.3)', backdropFilter: 'blur(10px)', padding: '12px 24px', borderRadius: '40px', zIndex: 3, display: 'flex', alignItems: 'center', gap: '10px', boxShadow: '0 10px 20px rgba(0,0,0,0.2)' }}>
+                                                <i className="fas fa-check-circle" style={{ color: '#7366CA' }}></i>
                                                 <span style={{ color: '#fff', fontSize: '14px', fontWeight: '600' }}>Quality Verified</span>
                                             </div>
                                         </div>
@@ -264,10 +260,10 @@ export default function Banner() {
                                             <h1 className="main-slider-two__title banner-title-desktop">
                                                 Deploy a Practical MES in <br /> <span>30–60 Days</span>
                                             </h1>
-                                            <h2 className="main-slider-two__h2 text-white banner-h2-desktop mb-3" style={{ fontWeight: '700', fontSize: '32px' }}>
+                                            <h2 className="main-slider-two__h2 banner-h2-desktop mb-3" style={{ fontWeight: '700', fontSize: '32px', color: '#ffffff' }}>
                                                 Improve shop-floor visibility without replacing ERP or disrupting operations.
                                             </h2>
-                                            <p className="main-slider-two__text fw-medium" style={{ fontWeight: '500' }}>
+                                            <p className="main-slider-two__text fw-medium" style={{ fontWeight: '500', color: 'rgba(255, 255, 255, 0.9)' }}>
                                                 Micraft MES works alongside your existing systems and focuses on <br />
                                                 solving the execution visibility gaps most manufacturing plants face.
                                             </p>
@@ -283,16 +279,16 @@ export default function Banner() {
                                     </div>
                                     <div className="col-xl-5 col-lg-5 d-none d-lg-block">
                                         <div className="main-slider-two__illustration-wrapper float-bob-y" style={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', minHeight: '400px' }}>
-                                            <div className="position-absolute" style={{ background: 'radial-gradient(circle, rgba(168,85,247,0.15) 0%, transparent 70%)', width: '500px', height: '500px', borderRadius: '50%' }}></div>
-                                            <div className="glass-vector" style={{ position: 'relative', background: 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%)', backdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.1)', padding: '50px', borderRadius: '30px', textAlign: 'center', boxShadow: '0 25px 50px rgba(0,0,0,0.3)', zIndex: 2 }}>
-                                                <div style={{ fontSize: '80px', marginBottom: '20px', background: 'linear-gradient(135deg, #A855F7, #7C3AED)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', display: 'inline-block' }}>
+                                            <div className="position-absolute" style={{ background: 'rgba(115, 102, 202, 0.15)', width: '500px', height: '500px', borderRadius: '50%', filter: 'blur(50px)' }}></div>
+                                            <div className="glass-vector" style={{ position: 'relative', background: 'rgba(255,255,255,0.04)', backdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.1)', padding: '50px', borderRadius: '30px', textAlign: 'center', boxShadow: '0 25px 50px rgba(0,0,0,0.3)', zIndex: 2 }}>
+                                                <div style={{ fontSize: '80px', marginBottom: '20px', color: '#7366CA', display: 'inline-block' }}>
                                                     <i className="fas fa-rocket"></i>
                                                 </div>
                                                 <h3 style={{ color: 'white', fontSize: '24px', fontWeight: '700', margin: 0 }}>Rapid Go-Live</h3>
                                                 <p style={{ color: '#97a2b0', marginTop: '10px', fontSize: '15px', marginBottom: 0 }}>30-60 Days Deployment</p>
                                             </div>
-                                            <div className="position-absolute float-bob-x" style={{ bottom: '20%', right: '10%', background: 'rgba(168,85,247,0.15)', border: '1px solid rgba(168,85,247,0.3)', backdropFilter: 'blur(10px)', padding: '12px 24px', borderRadius: '40px', zIndex: 3, display: 'flex', alignItems: 'center', gap: '10px', boxShadow: '0 10px 20px rgba(0,0,0,0.2)' }}>
-                                                <i className="fas fa-bolt" style={{ color: '#c084fc' }}></i>
+                                            <div className="position-absolute float-bob-x" style={{ bottom: '20%', right: '10%', background: 'rgba(115,102,202,0.15)', border: '1px solid rgba(115,102,202,0.3)', backdropFilter: 'blur(10px)', padding: '12px 24px', borderRadius: '40px', zIndex: 3, display: 'flex', alignItems: 'center', gap: '10px', boxShadow: '0 10px 20px rgba(0,0,0,0.2)' }}>
+                                                <i className="fas fa-bolt" style={{ color: '#FFD25D' }}></i>
                                                 <span style={{ color: '#fff', fontSize: '14px', fontWeight: '600' }}>Zero Disruption</span>
                                             </div>
                                         </div>
@@ -301,8 +297,6 @@ export default function Banner() {
                             </div>
                         </div>
                     </SwiperSlide>
-
-                    <div className="swiper-pagination"></div>
 
                     <div className="main-slider-two__nav">
                         <div className="swiper-button-prev main-slider-two__nav-prev">

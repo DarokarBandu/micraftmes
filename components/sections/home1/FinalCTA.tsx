@@ -14,7 +14,7 @@ const FinalCTA = ({ title, text, buttonLabel1, buttonLabel2 }: FinalCTAProps) =>
     return (
         <section className="newsletter-one newsletter-three pb-0">
             <div className="container">
-                <div className="newsletter-one__inner" style={{ background: 'linear-gradient(90deg, #FA5674 0%, #6065D4 100%)' }}>
+                <div className="newsletter-one__inner" style={{ background: '#7366CA' }}>
                     <div className="newsletter-one__shape-bg"
                         style={{ backgroundImage: "url(/assets/images/shapes/newsletter-one-shape-bg.png)" }}></div>
                     <div className="newsletter-one__shape-1 float-bob-x">
@@ -28,7 +28,7 @@ const FinalCTA = ({ title, text, buttonLabel1, buttonLabel2 }: FinalCTAProps) =>
 
                     <div className="row justify-content-center text-center">
                         <div className="col-lg-10" style={{ position: 'relative', zIndex: 5 }}>
-                            <h2 className="newsletter-one__title text-white mb-20" style={{ fontSize: '42px', lineHeight: '1.2' }}>
+                            <h2 className="newsletter-one__title text-white mb-20 cta-heading-refined">
                                 {title || (
                                     <>Bring Real-Time Visibility <br /> <span>to Your Manufacturing Operations</span></>
                                 )}
@@ -38,10 +38,10 @@ const FinalCTA = ({ title, text, buttonLabel1, buttonLabel2 }: FinalCTAProps) =>
                             </p>
 
                             <div className="cta-btns d-flex flex-wrap justify-content-center gap-4">
-                                <Link href="/contact" className="thm-btn" style={{ background: '#0B192C', color: '#fff' }}>
+                                <Link href="/contact" className="thm-btn cta-btn-white">
                                     {buttonLabel1 || "Request a Demo"} <span className="icon-arrow-right"></span>
                                 </Link>
-                                <Link href="/contact" className="thm-btn" style={{ background: 'transparent', border: '1px solid #fff', color: '#fff' }}>
+                                <Link href="/contact" className="thm-btn cta-btn-dark">
                                     {buttonLabel2 || "Book a 15-Minute Consultation"} <span className="icon-arrow-right"></span>
                                 </Link>
                             </div>
@@ -51,7 +51,27 @@ const FinalCTA = ({ title, text, buttonLabel1, buttonLabel2 }: FinalCTAProps) =>
             </div>
             <style jsx>{`
                 .newsletter-three {
-                    padding: 40px 0 0 0 !important;
+                    padding: 40px 0 50px 0 !important;
+                }
+                :global(.cta-heading-refined),
+                .newsletter-one__title {
+                    font-size: 32px !important;
+                    line-height: 1.25 !important;
+                    font-weight: 700 !important;
+                }
+                @media (max-width: 991px) {
+                    :global(.cta-heading-refined),
+                    .newsletter-one__title {
+                        font-size: 26px !important;
+                        line-height: 1.3 !important;
+                    }
+                }
+                @media (max-width: 575px) {
+                    :global(.cta-heading-refined),
+                    .newsletter-one__title {
+                        font-size: 22px !important;
+                        line-height: 1.3 !important;
+                    }
                 }
                 .newsletter-one__img {
                     position: absolute;
@@ -63,9 +83,38 @@ const FinalCTA = ({ title, text, buttonLabel1, buttonLabel2 }: FinalCTAProps) =>
                     height: auto;
                     zIndex: 2;
                 }
-                .thm-btn:hover {
-                    background: #fff !important;
+                :global(.cta-btns .cta-btn-white) {
+                    background: #FFFFFF !important;
                     color: #0B192C !important;
+                    font-weight: 700 !important;
+                    border: none !important;
+                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25) !important;
+                    transition: all 0.3s ease !important;
+                }
+                :global(.cta-btns .cta-btn-white:hover) {
+                    background: #FFD25D !important;
+                    color: #0B192C !important;
+                    transform: translateY(-3px) !important;
+                    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35) !important;
+                }
+                :global(.cta-btns .cta-btn-dark) {
+                    background: #0B192C !important;
+                    color: #FFFFFF !important;
+                    font-weight: 700 !important;
+                    border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25) !important;
+                    transition: all 0.3s ease !important;
+                }
+                :global(.cta-btns .cta-btn-dark:hover) {
+                    background: #FFFFFF !important;
+                    color: #0B192C !important;
+                    border-color: #FFFFFF !important;
+                    transform: translateY(-3px) !important;
+                    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35) !important;
+                }
+                :global(.cta-btns .thm-btn::before),
+                :global(.cta-btns .thm-btn::after) {
+                    display: none !important;
                 }
                 @media (max-width: 1199px) {
                     .newsletter-one__img {

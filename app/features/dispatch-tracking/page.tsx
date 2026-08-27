@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 import { Fragment, useState, useEffect } from 'react'
 import Layout from "@/components/layout/Layout"
 import Breadcrumb from "@/components/layout/Breadcrumb"
@@ -83,7 +83,7 @@ export default function DispatchTrackingPage() {
               <div className="nav-links d-flex align-items-center justify-content-center gap-2 flex-wrap">
                 {[
                   { id: "step-1-sync", label: "Completion Sync", icon: "clipboard-check", color: "#FA5674" },
-                  { id: "step-2-verify", label: "Verification Gate", icon: "shield-alt", color: "#FFD25D" },
+                  { id: "step-2-verify", label: "Verification Gate", icon: "shield-alt", color: "#7366CA" },
                   { id: "step-3-packing", label: "Packing Log", icon: "box-open", color: "#6065D4" },
                   { id: "step-4-label", label: "Label Generation", icon: "barcode", color: "#3D72FC" },
                   { id: "step-5-queue", label: "Dispatch Queue", icon: "truck-loading", color: "#00D094" },
@@ -143,7 +143,7 @@ export default function DispatchTrackingPage() {
             {[
               { title: "Live Readiness Map", desc: "Instantly see which production orders are completed and ready for packing", icon: "map-marked-alt", color: "#FA5674", gradient: "linear-gradient(135deg, rgba(250,86,116,0.12), rgba(250,86,116,0.04))" },
               { title: "Error-Free Packing", desc: "Standardized verification process to ensure zero missing items in shipments", icon: "box", color: "#6065D4", gradient: "linear-gradient(135deg, rgba(96,101,212,0.12), rgba(96,101,212,0.04))" },
-              { title: "Instant Labeling", desc: "Automated generation of shipping labels and packing lists from MES data", icon: "tag", color: "#FFD25D", gradient: "linear-gradient(135deg, rgba(255,210,93,0.12), rgba(255,210,93,0.04))" },
+              { title: "Instant Labeling", desc: "Automated generation of shipping labels and packing lists from MES data", icon: "tag", color: "#7366CA", gradient: "linear-gradient(135deg, rgba(255,210,93,0.12), rgba(255,210,93,0.04))" },
               { title: "Shipment Visibility", desc: "Complete historical log of everything dispatched from your factory floor", icon: "truck-moving", color: "#00D094", gradient: "linear-gradient(135deg, rgba(0,208,148,0.12), rgba(0,208,148,0.04))" }
             ].map((item, idx) => (
               <div key={idx} className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay={`${idx * 100 + 100}ms`}>
@@ -198,7 +198,7 @@ export default function DispatchTrackingPage() {
 
             {[
               { title: "Production Completion Sync", icon: "clipboard-check", color: "#3D72FC", desc: "Instant visibility for dispatch teams when production orders are marked as completed." },
-              { title: "Final Quality Verification", icon: "shield-alt", color: "#FFD25D", desc: "Automatic check to ensure the order has passed all mandatory quality gates before packing." },
+              { title: "Final Quality Verification", icon: "shield-alt", color: "#7366CA", desc: "Automatic check to ensure the order has passed all mandatory quality gates before packing." },
               { title: "Guided Packing Process", icon: "box-open", color: "#FA5674", desc: "Structured digital packing lists that guide operators to pack correct quantities and items." },
               { title: "Automated Labeling", icon: "barcode", color: "#6065D4", desc: "Instant generation of shipping labels, packing slips, and delivery notes from verified data." },
               { title: "Dispatch Queue Management", icon: "list-ol", color: "#00D094", desc: "Organize shipments based on transport schedules, delivery priority, and carrier availability." },
@@ -344,7 +344,7 @@ export default function DispatchTrackingPage() {
           </div>
 
           {/* FEATURE 2: LABELING ENGINE */}
-          <div className="meswork-step-detail mb-5 wow fadeInUp" id="step-4-label" style={{ borderLeft: '4px solid #FFD25D' }}>
+          <div className="meswork-step-detail mb-5 wow fadeInUp" id="step-4-label" style={{ borderLeft: '4px solid #7366CA' }}>
             <div className="row align-items-center g-4">
               <div className="col-lg-5 order-2 order-lg-1">
                 <div className="meswork-img-card meswork-img-glow p-2">
@@ -353,7 +353,7 @@ export default function DispatchTrackingPage() {
                 </div>
               </div>
               <div className="col-lg-7 order-1 order-lg-2">
-                <div className="meswork-cycle-num mb-3" style={{ background: 'linear-gradient(135deg, #FFD25D, #FA5674)' }}>02</div>
+                <div className="meswork-cycle-num mb-3" style={{ background: 'linear-gradient(135deg, #7366CA, #FA5674)' }}>02</div>
                 <AnimatedTitle>
                   <h2 className="section-title__title text-white mb-3" style={{ fontSize: '30px' }}>Integrated <span>Labeling Engine</span></h2>
                 </AnimatedTitle>
@@ -366,7 +366,7 @@ export default function DispatchTrackingPage() {
                   <li>Automated generation of Barcodes and QR codes for tracking</li>
                   <li>Integrated digital packing lists for shipment verification</li>
                 </ul>
-                <Link href="/features/production-order-management" className="meswork-link" style={{ color: '#FFD25D' }}>
+                <Link href="/features/production-order-management" className="meswork-link" style={{ color: '#7366CA' }}>
                    Order Data Integration <i className="icon-right-arrow"></i>
                 </Link>
               </div>
@@ -419,7 +419,7 @@ export default function DispatchTrackingPage() {
           <div className="row g-4 justify-content-center">
             {[
               { title: "Zero Shipping Errors", text: "100% verification ensure customer receive exactly what they ordered.", icon: "check-double", color: "#FA5674" },
-              { title: "Faster Dispatch Cycles", text: "Reduce time spent on checking and documentation by 40% or more.", icon: "bolt", color: "#FFD25D" },
+              { title: "Faster Dispatch Cycles", text: "Reduce time spent on checking and documentation by 40% or more.", icon: "bolt", color: "#7366CA" },
               { title: "Complete Shipment Logs", text: "Electronic record of every item dispatched for complete traceability.", icon: "history", color: "#6065D4" },
               { title: "Collaboration", text: "Seamless transition between production, packing and dispatch teams.", icon: "users-cog", color: "#3D72FC" },
               { title: "Scalable Packing", text: "Handle more orders with digital workflows and automated labeling.", icon: "layer-group", color: "#00D094" }
@@ -450,10 +450,10 @@ export default function DispatchTrackingPage() {
             {[
               { name: "Order Tracking", path: "/features/work-order-tracking", icon: "tasks", color: "#FA5674" },
               { name: "Quality Control", path: "/features/quality-inspection-management", icon: "shield-alt", color: "#00D094" },
-              { name: "Smarter Scheduling", path: "/features/production-planning-scheduling", icon: "calendar-alt", color: "#FFD25D" },
+              { name: "Smarter Scheduling", path: "/features/production-planning-scheduling", icon: "calendar-alt", color: "#7366CA" },
               { name: "Live OEE Monitoring", path: "/features/machine-monitoring", icon: "chart-line", color: "#00D094" },
               { name: "Operator Hub", path: "/features/shop-floor-data-collection", icon: "tablet-alt", color: "#6065D4" },
-              { name: "Performance Reports", path: "/features/production-analytics-reports", icon: "file-chart-line", color: "#FFD25D" }
+              { name: "Performance Reports", path: "/features/production-analytics-reports", icon: "file-chart-line", color: "#7366CA" }
             ].map((solution, i) => (
               <div key={i} className="col-xl-4 col-lg-4 col-md-6">
                 <Link href={solution.path} className="d-block p-4 h-100 text-decoration-none"

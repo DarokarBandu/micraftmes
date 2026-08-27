@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 import Image from "next/image";
 import Link from "next/link";
 import Layout from "@/components/layout/Layout";
@@ -49,7 +49,7 @@ export default function AutomotiveIndustryPage() {
                                 </div>
                                 <div className="services-details__need-help mt-4">
                                     <div className="services-details__need-help-img rounded-4 overflow-hidden border-primary-glow shadow-2xl">
-                                        <Image src="/assets/images/solutions/real-time-production.png" alt="Auto Parts Manufacturing" width={356} height={450} style={{ objectFit: 'cover' }} priority />
+                                        <Image src="/assets/images/solutions/real-time-production.png" alt="Auto Parts Manufacturing" width={356} height={450} style={{ objectFit: 'cover', width: '100%', height: 'auto' }} priority />
                                         <div className="services-details__need-help-content" style={{ background: 'rgba(2, 5, 10, 0.9)', backdropFilter: 'blur(10px)' }}>
                                             <div className="services-details__need-help-bdr"></div>
                                             <AnimatedTitle>
@@ -68,7 +68,7 @@ export default function AutomotiveIndustryPage() {
                                 <span className="section-title__tagline text-primary uppercase letter-spacing-3 fw-bold mb-0 d-block">Primary Keyword: MES for automotive component manufacturing</span>
                                 <AnimatedTitle>
                                     <h1 className="services-details__title-1 text-white fw-900 mb-4" style={{ fontSize: '48px', lineHeight: '1.0' }}>
-                                        MES Software for <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }} className="d-block">Automotive Component Manufacturing</span>
+                                        MES Software for <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }} className="d-block">Automotive Component Manufacturing</span>
                                     </h1>
                                 </AnimatedTitle>
                                 <h3 className="h5 text-white opacity-90 mb-4 fw-bold">Monitor production, track machining operations, manage inspections, and improve delivery performance with Micraft MES.</h3>
@@ -132,12 +132,12 @@ export default function AutomotiveIndustryPage() {
                                     <div className="row">
                                         <div className="col-xl-6">
                                             <div className="services-details__img-box-img rounded-5 overflow-hidden border-primary-glow shadow-2xl transition-all duration-500 scale-hover">
-                                                <Image src="/assets/images/solutions/performance-kpi-dashboard-1775020757736.png" alt="Auto Inspection" width={409} height={340} priority />
+                                                <Image src="/assets/images/solutions/performance-kpi-dashboard-1775020757736.png" alt="Auto Inspection" width={409} height={340} style={{ width: '100%', height: 'auto' }} priority />
                                             </div>
                                         </div>
                                         <div className="col-xl-6">
                                             <div className="services-details__img-box-img rounded-5 overflow-hidden border-primary-glow shadow-2xl transition-all duration-500 scale-hover">
-                                                <Image src="/assets/images/solutions/oee-monitoring-interface-1775021120923.png" alt="OEE Dashboard" width={409} height={340} priority />
+                                                <Image src="/assets/images/solutions/oee-monitoring-interface-1775021120923.png" alt="OEE Dashboard" width={409} height={340} style={{ width: '100%', height: 'auto' }} priority />
                                             </div>
                                         </div>
                                     </div>

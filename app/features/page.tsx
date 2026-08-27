@@ -259,7 +259,7 @@ export default function FeaturesLandingPage() {
 
                                     <div className="arch-center-node wow zoomIn" data-wow-delay="100ms">
                                         <div className="bg-accent p-4 rounded-5 shadow-2xl border border-white border-opacity-20 d-flex flex-column align-items-center justify-content-center" style={{ width: '200px', height: '120px' }}>
-                                            <Image src="/assets/images/logo/Micraftmeslogo.svg" alt="Micraft MES" width={140} height={40} className="brightness-0 invert mb-2" />
+                                            <Image src="/assets/images/logo/light.png" alt="Micraft MES" width={140} height={40} className="brightness-0 invert mb-2" />
                                             <span className="text-dark fw-black small text-uppercase tracking-widest">Central Platform</span>
                                         </div>
                                     </div>

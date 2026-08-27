@@ -494,7 +494,7 @@
     width: 48px;
     border: none;
     border-radius: 10px;
-    background: linear-gradient(270deg, #FA5674 0%, #6065D4 100%);
+    background: var(--techguru-base, #7366CA);
     font-size: 18px;
     color: var(--techguru-white);
     padding: 0;
@@ -559,14 +559,7 @@
     right: 0px;
     bottom: 0px;
     border-radius: 4px;
-    border: 1px solid transparent;
-    background: linear-gradient(90deg, #6065D4, #FA5674) border-box;
-    -webkit-mask: linear-gradient(#fff 0 0) padding-box,
-        linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) padding-box,
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
+    border: 1px solid var(--techguru-base, #7366CA);
     -webkit-transition: all 500ms ease;
     -moz-transition: all 500ms ease;
     -ms-transition: all 500ms ease;
@@ -653,7 +646,7 @@
     right: 0;
     bottom: 0;
     content: "";
-    background: linear-gradient(270deg, #FA5674 0%, #6065D4 100%);
+    background: var(--techguru-base, #7366CA);
     border-radius: 50%;
     transform: scale(0.0);
     transform-origin: center;
@@ -705,8 +698,8 @@
 .site-footer-two {
     position: relative;
     display: block;
+    background-color: #070B14;
     overflow: hidden;
-    background-color: var(--techguru-black);
     z-index: 1;
 }
 
@@ -715,62 +708,67 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    right: 0;
     left: 0;
-    background-color: rgba(var(--techguru-white-rgb), .05);
+    right: 0;
+    background-color: #070B14;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     z-index: -1;
 }
 
 .site-footer-two__shape-1 {
     position: absolute;
-    top: -100px;
-    left: -70px;
-    width: 730px;
-    height: 765px;
-    border-radius: 50%;
-    background: radial-gradient(50% 50% at 50% 50%, rgba(102, 105, 216, 0.62) 0%, rgba(7, 12, 20, 0) 100%);
-    opacity: 0.4;
-    filter: blur(120px);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    mix-blend-mode: color-dodge;
+    opacity: 0.1;
     z-index: -1;
 }
 
 .site-footer-two__shape-2 {
     position: absolute;
-    bottom: -255px;
-    left: 595px;
-    width: 730px;
-    height: 765px;
-    border-radius: 50%;
-    background: radial-gradient(50% 50% at 50% 50%, rgba(216, 102, 195, 0.62) 0%, rgba(7, 12, 20, 0) 100%);
-    opacity: 0.4;
-    filter: blur(120px);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 614px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: cover;
+    opacity: 0.1;
     z-index: -1;
 }
 
 .site-footer-two__shape-3 {
     position: absolute;
-    top: -100px;
-    right: 250px;
-    width: 730px;
-    height: 765px;
-    border-radius: 50%;
-    background: radial-gradient(50% 50% at 50% 50%, rgba(102, 105, 216, 0.62) 0%, rgba(7, 12, 20, 0) 100%);
-    opacity: 0.4;
-    filter: blur(120px);
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 614px;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: cover;
+    opacity: 0.1;
     z-index: -1;
 }
 
 .site-footer-two__top {
     position: relative;
     display: block;
-    padding: 30px 0 20px;
+    padding: 60px 0 50px;
+    z-index: 1;
 }
 
 .site-footer-two__about {
     position: relative;
     display: block;
-    padding: 25px 30px;
-    background-color: rgba(var(--techguru-white-rgb), .10);
+    padding: 40px;
+    border: 1px solid rgba(var(--techguru-white-rgb), .10);
     border-radius: 30px;
 }
 
@@ -818,7 +816,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(270deg, #FA5674 0%, #6065D4 100%);
+    background: var(--techguru-base, #7366CA);
     z-index: -1;
 }
 
@@ -839,9 +837,7 @@
     font-size: 20px;
     font-weight: 700;
     line-height: 20px;
-    background: linear-gradient(270deg, #FA5674 0%, #6065D4 100%);
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--techguru-white);
     margin-bottom: 12px;
 }
 
@@ -861,7 +857,7 @@
 }
 
 .site-footer-two__contact-mail:hover {
-    color: var(--techguru-base);
+    color: var(--techguru-base, #7366CA);
 }
 
 .site-footer-two__contact-phone {
@@ -869,7 +865,7 @@
 }
 
 .site-footer-two__contact-phone:hover {
-    color: var(--techguru-base);
+    color: var(--techguru-base, #7366CA);
 }
 
 .footer-widget-two__quick-links {
@@ -883,9 +879,7 @@
     position: relative;
     display: block;
     font-size: 20px;
-    background: linear-gradient(270deg, #FA5674 0%, #6065D4 100%);
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--techguru-white);
     text-transform: capitalize;
     font-weight: 700;
     line-height: 24px;
@@ -915,7 +909,7 @@
 }
 
 .footer-widget-two__quick-links-list li a:hover {
-    color: var(--techguru-base);
+    color: var(--techguru-base, #7366CA);
 }
 
 .footer-widget-two__quick-links-list li a:before {
@@ -924,7 +918,7 @@
     left: 0;
     right: 0;
     height: 2px;
-    background-color: var(--techguru-base);
+    background-color: var(--techguru-base, #7366CA);
     content: "";
     transition: transform 500ms ease;
     transform: scale(0, 1);
@@ -950,8 +944,8 @@
     bottom: 0;
     left: 15px;
     width: 1px;
-    background: linear-gradient(0deg, rgba(250, 86, 116, 0) 0%, #6065D5 100%);
-    opacity: 0.2;
+    background: rgba(115, 102, 202, 0.25);
+    opacity: 0.5;
 }
 
 .footer-widget-two__services {
@@ -968,8 +962,8 @@
     bottom: 0;
     left: 30px;
     width: 1px;
-    background: linear-gradient(0deg, rgba(250, 86, 116, 0) 0%, #6065D5 100%);
-    opacity: 0.2;
+    background: rgba(115, 102, 202, 0.25);
+    opacity: 0.5;
 }
 
 .site-footer-two__bottom {
@@ -1002,7 +996,7 @@
 }
 
 .site-footer-two__copyright-text a:hover {
-    color: var(--techguru-base);
+    color: var(--techguru-base, #7366CA);
 }
 
 .site-footer-two__social-box {
@@ -1017,9 +1011,7 @@
     font-size: 18px;
     font-weight: 700;
     line-height: 24px;
-    background: linear-gradient(270deg, #FA5674 0%, #6065D4 100%);
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--techguru-white);
 }
 
 .site-footer-two__social-box-inner {
@@ -1054,7 +1046,7 @@
     right: 0;
     bottom: 0;
     content: "";
-    background: linear-gradient(270deg, #FA5674 0%, #6065D4 100%);
+    background: var(--techguru-base, #7366CA);
     border-radius: 50%;
     transform: scale(0.0);
     transform-origin: center;

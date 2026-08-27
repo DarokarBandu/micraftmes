@@ -50,7 +50,28 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }: Head
                         <div className="main-menu-two__wrapper-inner">
                             <div className="main-menu-two__left">
                                 <div className="main-menu-two__logo">
-                                    <Link href="/"><Image src="/assets/images/logo/Micraftmeslogo.svg" alt="Micraft Solutions | Micraft MES" width={190} height={50} priority /></Link>
+                                    <Link href="/" aria-label="Micraft MES Home">
+                                        {/* Dark theme logo (White logo) */}
+                                        <Image
+                                            src="/assets/images/logo/light.png"
+                                            alt="Micraft Solutions | Micraft MES"
+                                            width={190}
+                                            height={50}
+                                            priority
+                                            className="logo-dark-theme"
+                                            style={{ height: 'auto', maxHeight: '50px', width: 'auto' }}
+                                        />
+                                        {/* Light theme logo (Dark logo) */}
+                                        <Image
+                                            src="/assets/images/logo/dark.png"
+                                            alt="Micraft Solutions | Micraft MES"
+                                            width={190}
+                                            height={50}
+                                            priority
+                                            className="logo-light-theme"
+                                            style={{ height: 'auto', maxHeight: '50px', width: 'auto' }}
+                                        />
+                                    </Link>
                                 </div>
                             </div>
                             <div className="main-menu-two__right">
@@ -58,9 +79,11 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }: Head
                                     <Link href="#" className="mobile-nav__toggler" onClick={handleMobileMenu}><i className="fa fa-bars"></i></Link>
                                     <Menu />
                                 </div>
+                                <div className="main-menu-two__action-box d-flex align-items-center">
                                     <div className="main-menu-two__btn-box">
                                         <Link href="/contact" className="thm-btn">Get In Touch</Link>
                                     </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -73,7 +96,28 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }: Head
                             <div className="main-menu-two__wrapper-inner">
                                 <div className="main-menu-two__left">
                                     <div className="main-menu-two__logo">
-                                        <Link href="/"><Image src="/assets/images/logo/Micraftmeslogo.svg" alt="Micraft Solutions | Micraft MES" width={190} height={50} priority /></Link>
+                                        <Link href="/" aria-label="Micraft MES Home">
+                                            {/* Dark theme logo (White logo) */}
+                                            <Image
+                                                src="/assets/images/logo/light.png"
+                                                alt="Micraft Solutions | Micraft MES"
+                                                width={190}
+                                                height={50}
+                                                priority
+                                                className="logo-dark-theme"
+                                                style={{ height: 'auto', maxHeight: '50px', width: 'auto' }}
+                                            />
+                                            {/* Light theme logo (Dark logo) */}
+                                            <Image
+                                                src="/assets/images/logo/dark.png"
+                                                alt="Micraft Solutions | Micraft MES"
+                                                width={190}
+                                                height={50}
+                                                priority
+                                                className="logo-light-theme"
+                                                style={{ height: 'auto', maxHeight: '50px', width: 'auto' }}
+                                            />
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="main-menu-two__right">
@@ -81,8 +125,10 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu }: Head
                                         <Link href="#" className="mobile-nav__toggler" onClick={handleMobileMenu}><i className="fa fa-bars"></i></Link>
                                         <Menu />
                                     </div>
-                                    <div className="main-menu-two__btn-box">
-                                        <Link href="/contact" className="thm-btn">Get In Touch</Link>
+                                    <div className="main-menu-two__action-box d-flex align-items-center">
+                                        <div className="main-menu-two__btn-box">
+                                            <Link href="/contact" className="thm-btn">Get In Touch</Link>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

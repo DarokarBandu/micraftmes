@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 import Layout from "../../../components/layout/Layout"
 import Breadcrumb from "../../../components/layout/Breadcrumb"
 import Link from "next/link"
@@ -311,11 +311,30 @@ export default function MESImplementationGuidePage() {
             </section>
 
             {/* 6. Operational Benefits */}
-            <section className="benefits-section pt-100 pb-100 position-relative overflow-hidden mes-benefits-bg">
-                <div className="overlay-dark"></div>
-                <div className="container relative-z2">
+            <section className="benefits-section pt-100 pb-100 position-relative overflow-hidden">
+                {/* Background Image Layer with Opacity Overlay */}
+                <div className="benefits-bg-layer position-absolute top-0 start-0 w-100 h-100" style={{ zIndex: 1, pointerEvents: 'none' }}>
+                    <Image
+                        src="/assets/images/backgrounds/mes-localized-implementation-bg.jpg"
+                        alt="MES Localized Implementation Background"
+                        fill
+                        priority
+                        className="benefits-bg-img"
+                        style={{ objectFit: 'cover', objectPosition: 'center' }}
+                    />
+                    <div className="benefits-bg-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+                </div>
+
+                <div className="container position-relative" style={{ zIndex: 2 }}>
                     <div className="section-title text-center mb-60">
-                        <h2 className="section-title__title text-white">Benefits of <span>Localized Implementation</span></h2>
+                        <div className="section-title__tagline-box justify-content-center mb-2">
+                            <div className="section-title__tagline-shape-1"></div>
+                            <span className="section-title__tagline">Proven Advantages</span>
+                            <div className="section-title__tagline-shape-2"></div>
+                        </div>
+                        <AnimatedTitle>
+                            <h2 className="section-title__title benefits-heading-title">Benefits of <span>Localized Implementation</span></h2>
+                        </AnimatedTitle>
                     </div>
                     <div className="row g-4">
                         {[
@@ -327,12 +346,12 @@ export default function MESImplementationGuidePage() {
                             { title: "Management Confidence", desc: "Prove digital ROI before making large enterprise bets." }
                         ].map((ben, idx) => (
                             <div key={idx} className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay={`${idx * 100}ms`}>
-                                <div className="benefit-card p-4 rounded-4 text-center h-100 border border-secondary border-opacity-10 shadow-lg card-benefit-inner transition-3s">
+                                <div className="benefit-card p-4 rounded-4 text-center h-100 card-benefit-inner transition-3s">
                                     <div className="icon-box mb-3 mx-auto icon-box-benefit">
                                         <i className="fas fa-check"></i>
                                     </div>
-                                    <h4 className="text-white mb-2 text-h4">{ben.title}</h4>
-                                    <p className="text-white-50 small mb-0">{ben.desc}</p>
+                                    <h4 className="benefit-card-title mb-2">{ben.title}</h4>
+                                    <p className="benefit-card-desc small mb-0">{ben.desc}</p>
                                 </div>
                             </div>
                         ))}
@@ -521,24 +540,33 @@ export default function MESImplementationGuidePage() {
                         </div>
                     </div>
 
-                    <div className="row mt-80 justify-content-center pt-5">
-                        <div className="col-lg-10 wow fadeInUp">
-                            <div className="bg-accent-glow p-1 rounded-5">
-                                <div className="bg-dark-surface p-5 rounded-5 border border-white border-opacity-10 position-relative overflow-hidden">
-                                    <div className="position-absolute top-50 end-0 translate-middle-y p-5 opacity-05 fa-8x d-none d-md-block">
-                                        <i className="fas fa-microchip text-white rotate-12"></i>
-                                    </div>
-                                    <div className="row align-items-center position-relative z-2">
-                                        <div className="col-md-8">
-                                            <h3 className="text-white mb-3 h4 fw-bold">Ready to Digitize Your Floor?</h3>
-                                            <p className="text-white opacity-75 mb-0 pe-lg-5">
-                                                Our architecture doesn&apos;t just store data—it activates it. By removing the lag between the shop floor and
-                                                the head office, we enable a proactive manufacturing culture in just 30-60 days.
-                                            </p>
+                    <div className="row mt-80 justify-content-center pt-4">
+                        <div className="col-lg-12 wow fadeInUp">
+                            <div className="resource-inline-cta p-4 p-md-5 rounded-4 position-relative overflow-hidden shadow-2xl">
+                                {/* Ambient Background Decorative Elements */}
+                                <div className="resource-cta-shape-bg position-absolute top-0 start-0 w-100 h-100" style={{ backgroundImage: "url(/assets/images/shapes/newsletter-one-shape-bg.png)", opacity: 0.15, backgroundSize: 'cover' }}></div>
+                                <div className="resource-cta-glow position-absolute" style={{ top: '-40%', right: '-10%', width: '350px', height: '350px', background: 'radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%)', filter: 'blur(30px)', pointerEvents: 'none' }}></div>
+                                
+                                <div className="row align-items-center position-relative" style={{ zIndex: 2 }}>
+                                    <div className="col-lg-8 mb-4 mb-lg-0 text-center text-lg-start">
+                                        <div className="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-3" style={{ background: 'rgba(255, 255, 255, 0.18)', border: '1px solid rgba(255, 255, 255, 0.3)' }}>
+                                            <span className="badge-dot pulse-primary" style={{ background: '#7366CA', boxShadow: '0 0 8px #7366CA' }}></span>
+                                            <span className="text-white text-uppercase fw-bold" style={{ fontSize: '11px', letterSpacing: '1px' }}>Accelerated 30-60 Day Deployment</span>
                                         </div>
-                                        <div className="col-md-4 text-md-end mt-4 mt-md-0">
-                                            <Link href="/solutions" className="btn btn-primary px-4 py-3 fw-bold rounded-pill shadow-lg hover-up d-inline-flex align-items-center gap-2" style={{ background: 'linear-gradient(135deg, #6065D4, #FA5674)', border: 'none' }}>
-                                                Check Implementation <i className="fas fa-arrow-right"></i>
+                                        <h3 className="text-white mb-3 fw-bold" style={{ fontSize: '28px', lineHeight: 1.3 }}>
+                                            Ready to Digitize Your Factory Floor?
+                                        </h3>
+                                        <p className="text-white mb-0 pe-lg-4" style={{ fontSize: '16px', opacity: 0.92, lineHeight: 1.6 }}>
+                                            Our architecture activates shop-floor data in real time, eliminating lag between production and management without disrupting active lines.
+                                        </p>
+                                    </div>
+                                    <div className="col-lg-4 text-center text-lg-end">
+                                        <div className="d-flex flex-column flex-sm-row flex-lg-column align-items-center align-items-lg-end justify-content-center gap-3">
+                                            <Link href="/contact" className="thm-btn cta-btn-white w-100 text-center" style={{ maxWidth: '280px', justifyContent: 'center' }}>
+                                                Check Implementation <span className="icon-arrow-right"></span>
+                                            </Link>
+                                            <Link href="/solutions/production-tracking-software" className="thm-btn cta-btn-dark w-100 text-center" style={{ maxWidth: '280px', justifyContent: 'center' }}>
+                                                Explore Features <span className="icon-arrow-right"></span>
                                             </Link>
                                         </div>
                                     </div>

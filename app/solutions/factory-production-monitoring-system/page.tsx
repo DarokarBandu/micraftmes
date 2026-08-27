@@ -1,5 +1,5 @@
-"use client"
-import { useState, useEffect } from 'react'
+﻿"use client"
+import { useScrollSpy } from '@/hooks/useScrollSpy'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -28,36 +28,14 @@ const sections = [
 ]
 
 export default function FactoryMonitoringPage() {
-    const [activeSection, setActiveSection] = useState("hero")
-
-    useEffect(() => {
-        // Metadata is now managed via layout.tsx
-    }, []);
-
-    const scrollTo = (id: string) => {
-        setActiveSection(id);
-        
-        setTimeout(() => {
-            const contentArea = document.getElementById('main-content-area');
-            if (contentArea) {
-                const headerOffset = 120;
-                const elementPosition = contentArea.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.scrollY - headerOffset;
-                
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        }, 50);
-    }
+    const { activeId: activeSection, scrollTo } = useScrollSpy(sections.map(s => s.id));
 
     return (
         <Layout headerStyle={1} footerStyle={2}>
 
             <Breadcrumb breadcrumbTitle="Factory Production Monitoring System" />
 
-            <section className="services-details pt-0" style={{ background: '#02050A', minHeight: '100vh', paddingBottom: '0' }}>
+            <section className="services-details pt-0 pt-lg-0" style={{ background: '#02050A', minHeight: '100vh', paddingBottom: '0' }}>
                 <div className="services-details__shape-1"></div>
                 <div className="services-details__shape-2">
                     <Image src="/assets/images/shapes/services-details-shape-2.png" alt="Shape" width={1920} height={1332} style={{ opacity: 0.1 }} priority />
@@ -65,11 +43,11 @@ export default function FactoryMonitoringPage() {
                 <div className="container-fluid px-xl-5">
                     <div className="row g-4 align-items-start pt-0">
                         {/* Sidebar */}
-                        <div className="col-xl-3 col-lg-4 order-1 sticky-lg-top mt-1 mt-lg-0" style={{ height: 'fit-content', zIndex: 10 }}>
-                            <div className="services-details__left">
-                                <div className="services-details__services-list-box p-0 overflow-hidden mb-4 mb-lg-0" style={{ background: 'rgba(61, 114, 252, 0.03)', border: '1px solid rgba(61, 114, 252, 0.1)' }}>
-                                    <div className="p-4" style={{ background: 'linear-gradient(90deg, rgba(61, 114, 252, 0.1), transparent)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                                        <h3 style={{ fontSize: '14px', margin: 0, color: '#3D72FC', textTransform: 'uppercase', letterSpacing: '3px', fontWeight: '900' }}>
+                        <div className="col-xl-3 col-lg-4 order-1 solution-sidebar-col">
+                            <div className="services-details__left mt-0 pt-0">
+                                <div className="services-details__services-list-box p-0 overflow-hidden mb-4 mb-lg-0" style={{ background: '#080D1A', border: '1px solid rgba(61, 114, 252, 0.25)', boxShadow: '0 15px 35px rgba(0, 0, 0, 0.6)', borderRadius: '16px' }}>
+                                    <div className="p-4" style={{ background: 'linear-gradient(90deg, rgba(61, 114, 252, 0.15), rgba(8, 13, 26, 0.95))', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+                                        <h3 style={{ fontSize: '14px', margin: 0, color: '#7366CA', textTransform: 'uppercase', letterSpacing: '3px', fontWeight: '900' }}>
                                             Solutions Menu
                                         </h3>
                                     </div>
@@ -98,12 +76,11 @@ export default function FactoryMonitoringPage() {
                         </div>
 
                         {/* Main Content */}
-                        <div className="col-xl-9 col-lg-8 order-2 mt-5 mt-lg-0 pt-0">
-                            <div id="main-content-area" key={activeSection} className="services-details__right mt-0 pt-0 pb-5 pe-xl-5">
+                        <div className="col-xl-9 col-lg-8 order-2 pt-0">
+                            <div id="main-content-area" suppressHydrationWarning className="services-details__right mt-0 pt-0 pb-5 pe-xl-5">
 
                                 {/* 1. Hero Section */}
-                                {activeSection === 'hero' && (
-                                    <section id="hero" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="hero" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="row g-4 align-items-center">
                                             <div className="col-lg-12">
                                                 <div className="section-title text-left mb-4">
@@ -113,7 +90,7 @@ export default function FactoryMonitoringPage() {
                                                     </div>
                                                     <AnimatedTitle>
                                                         <h1 className="section-title__title title-animation mb-4" style={{ lineHeight: '1.0', fontSize: '48px' }}>
-                                                            Factory Production Monitoring System for <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Real-Time Manufacturing Visibility</span>
+                                                            Factory Production Monitoring System for <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Real-Time Manufacturing Visibility</span>
                                                         </h1>
                                                     </AnimatedTitle>
                                                 </div>
@@ -149,17 +126,15 @@ export default function FactoryMonitoringPage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 2. Problem Section */}
-                                {activeSection === 'problems' && (
-                                    <section id="problems" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="problems" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="section-title text-left mb-4">
                                             <div className="section-title__tagline-box">
                                                 <span className="section-title__tagline" style={{ color: '#FA5674' }}>Pain Points</span>
                                             </div>
                                             <AnimatedTitle>
-                                                <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>Why Many Factories Lack <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Real-Time Production</span> Visibility</h3>
+                                                <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>Why Many Factories Lack <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Real-Time Production</span> Visibility</h3>
                                             </AnimatedTitle>
                                         </div>
                                         <p className="text-white-50 mb-3 opacity-80 pe-xl-5" style={{ fontSize: '16px' }}>In many manufacturing companies, production monitoring still relies on: manual registers, Excel spreadsheets, verbal updates from supervisors, and end-of-day production reports.</p>
@@ -169,7 +144,7 @@ export default function FactoryMonitoringPage() {
                                                 { text: "Delayed production updates", sub: "Information is recorded on paper and entered into systems late.", icon: "fas fa-clock", color: "#FA5674", label: "LATENCY" },
                                                 { text: "Difficulty identifying bottlenecks", sub: "Lack of live visibility makes it hard to see where production stops.", icon: "fas fa-exclamation-triangle", color: "#6065D4", label: "OPACITY" },
                                                 { text: "Lack of machine performance visibility", sub: "Machine idle time and output aren't tracked accurately in real-time.", icon: "fas fa-robot", color: "#00D261", label: "ASSET GAP" },
-                                                { text: "Inefficient production coordination", sub: "Communication gaps lead to mismatched schedules and delay.", icon: "fas fa-project-diagram", color: "#FFD25D", label: "FRICTION" },
+                                                { text: "Inefficient production coordination", sub: "Communication gaps lead to mismatched schedules and delay.", icon: "fas fa-project-diagram", color: "#7366CA", label: "FRICTION" },
                                                 { text: "Inaccurate reporting", sub: "Manual records often lead to errors in critical production data.", icon: "fas fa-file-invoice", color: "#3D72FC", label: "DATA RISK" }
                                             ].map((item, i) => (
                                                 <div key={i} className="col-lg-6">
@@ -191,11 +166,9 @@ export default function FactoryMonitoringPage() {
                                             <p className="text-white-50 mb-0 opacity-80" style={{ fontSize: '16px' }}>Without a proper monitoring system, factory managers often discover production issues only after delays occur. A digital production monitoring system solves this by providing live visibility of manufacturing operations.</p>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 3. What is Section */}
-                                {activeSection === 'what-is' && (
-                                    <section id="what-is" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="what-is" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="p-4 p-xl-5 rounded-5 shadow-2xl position-relative overflow-hidden" 
                                              style={{ background: 'rgba(11, 15, 25, 0.4)', border: '1px solid rgba(61, 114, 252, 0.1)', backdropFilter: 'blur(10px)' }}>
                                             
@@ -204,7 +177,7 @@ export default function FactoryMonitoringPage() {
                                                     <span className="section-title__tagline text-primary">CORE DEFINITION</span>
                                                 </div>
                                                 <AnimatedTitle>
-                                                    <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>What is a Factory Production <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Monitoring System?</span></h3>
+                                                    <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>What is a Factory Production <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Monitoring System?</span></h3>
                                                 </AnimatedTitle>
                                                 <p className="text-white opacity-80 mx-auto mt-4 px-xl-5" style={{ maxWidth: '900px', fontSize: '15px' }}>
                                                     A factory production monitoring system is a digital platform that allows manufacturers to track and analyze production performance in real time across the entire factory.
@@ -267,18 +240,16 @@ export default function FactoryMonitoringPage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 4. How it Works Section */}
-                                {activeSection === 'how-it-works' && (
-                                    <section id="how-it-works" className="py-2 section-anchor section-fade-in mb-4">
+                                <section id="how-it-works" className="py-2 section-anchor section-fade-in mb-4">
                                         <div className="px-4 px-xl-5 py-4 rounded-5 shadow-2xl position-relative overflow-hidden" 
                                              style={{ background: 'rgba(7, 10, 15, 0.6)', border: '1px solid rgba(61, 114, 252, 0.2)', backdropFilter: 'blur(20px)' }}>
                                              
                                              <div className="section-title text-center mb-4">
                                                  <span className="text-uppercase letter-spacing-5 text-primary fw-900 mb-2 d-block" style={{ fontSize: '10px' }}>MONITORING PROCESS FLOW</span>
                                                  <AnimatedTitle>
-                                                     <h2 className="section-title__title title-animation mb-3" style={{ lineHeight: '1.1', fontSize: '28px' }}>How Micraft MES Provides <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Real-Time Factory Monitoring</span></h2>
+                                                     <h2 className="section-title__title title-animation mb-3" style={{ lineHeight: '1.1', fontSize: '28px' }}>How Micraft MES Provides <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Real-Time Factory Monitoring</span></h2>
                                                  </AnimatedTitle>
                                                  <div className="intro-text mx-auto" style={{ maxWidth: '900px' }}>
                                                      <p className="text-white opacity-90 fw-bold mb-2" style={{ fontSize: '15px' }}>Micraft MES connects shop floor operations with digital monitoring dashboards. Production data is captured at each stage of the manufacturing process and displayed in live dashboards accessible to supervisors and management teams.
@@ -353,15 +324,13 @@ export default function FactoryMonitoringPage() {
                                              `}} />
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 5. Unified Ecosystem Section */}
-                                {activeSection === 'ecosystem' && (
-                                    <section id="ecosystem" className="py-4 section-anchor section-fade-in mb-5">
+                                <section id="ecosystem" className="py-4 section-anchor section-fade-in mb-5">
                                         <div className="section-title text-center mb-5">
                                             <span className="text-uppercase letter-spacing-5 text-primary fw-900 mb-2 d-block" style={{ fontSize: '10px' }}>SYSTEM HARMONY</span>
                                             <AnimatedTitle>
-                                                <h2 className="section-title__title title-animation mb-4" style={{ lineHeight: '1.1' }}>The Micraft <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Unified Ecosystem</span></h2>
+                                                <h2 className="section-title__title title-animation mb-4" style={{ lineHeight: '1.1' }}>The Micraft <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Unified Ecosystem</span></h2>
                                             </AnimatedTitle>
                                             <p className="text-white opacity-80 mx-auto mt-4 px-xl-5" style={{ maxWidth: '850px', fontSize: '15px' }}>
                                                 Breaking the silos between IT and the shop floor. Our ecosystem creates a single source of truth where every machine, operator, and supervisor is synchronized in real-time.
@@ -425,17 +394,15 @@ export default function FactoryMonitoringPage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
                                 {/* 6. Integrated Capabilities Section */}
-                                {activeSection === 'capabilities' && (
-                                    <section id="capabilities" className="py-4 section-anchor section-fade-in mb-5">
+                                <section id="capabilities" className="py-4 section-anchor section-fade-in mb-5">
                                         <div className="p-4 p-xl-5 rounded-5 shadow-2xl position-relative overflow-hidden"
                                              style={{ background: 'rgba(7, 10, 15, 0.4)', border: '1px solid rgba(61, 114, 252, 0.15)', backdropFilter: 'blur(10px)' }}>
 
                                              <div className="section-title text-center mb-5">
                                                  <span className="text-uppercase letter-spacing-5 text-primary fw-900 mb-2 d-block" style={{ fontSize: '10px' }}>TECHNICAL PORTFOLIO</span>
                                                  <AnimatedTitle>
-                                                     <h2 className="section-title__title title-animation mb-4" style={{ lineHeight: '1.1' }}>Comprehensive <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Integrated Capabilities</span></h2>
+                                                     <h2 className="section-title__title title-animation mb-4" style={{ lineHeight: '1.1' }}>Comprehensive <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Integrated Capabilities</span></h2>
                                                  </AnimatedTitle>
                                              </div>
 
@@ -463,17 +430,15 @@ export default function FactoryMonitoringPage() {
                                              </div>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 5. Key Features Section */}
-                                {activeSection === 'key-features' && (
-                                    <section id="key-features" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="key-features" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="section-title text-left mb-4">
                                             <div className="section-title__tagline-box">
                                                 <span className="section-title__tagline text-primary">Core Toolkit</span>
                                             </div>
                                             <AnimatedTitle>
-                                                <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>System <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Capabilities</span></h3>
+                                                <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>System <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Capabilities</span></h3>
                                             </AnimatedTitle>
                                         </div>
                                         <div className="row g-4">
@@ -503,11 +468,9 @@ export default function FactoryMonitoringPage() {
                                             ))}
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 6. Benefits Section */}
-                                {activeSection === 'benefits' && (
-                                     <section id="benefits" className="py-4 section-anchor section-fade-in premium-flow-section">
+                                <section id="benefits" className="py-4 section-anchor section-fade-in premium-flow-section">
                                          <div className="p-xl-5 ps-3 pe-3 p-4 rounded-5 position-relative overflow-hidden" 
                                               style={{ background: 'rgba(7, 11, 20, 0.9)', border: '1px solid rgba(61, 114, 252, 0.25)' }}>
                                              
@@ -516,7 +479,7 @@ export default function FactoryMonitoringPage() {
                                                      <span className="section-title__tagline text-primary">STRATEGIC ADVANTAGES</span>
                                                  </div>
                                                  <AnimatedTitle>
-                                                     <h2 className="section-title__title title-animation mb-3" style={{ lineHeight: '1.1' }}>Impact of <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Factory Monitoring</span></h2>
+                                                     <h2 className="section-title__title title-animation mb-3" style={{ lineHeight: '1.1' }}>Impact of <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Factory Monitoring</span></h2>
                                                  </AnimatedTitle>
                                              </div>
  
@@ -527,7 +490,7 @@ export default function FactoryMonitoringPage() {
                                                               { t: "Complete production visibility", d: "Gain a clear view of all factory operations.", i: "fas fa-eye", c1: "#3D72FC", c2: "#00D2FF" },
                                                               { t: "Faster decision making", d: "Respond quickly using live operational data.", i: "fas fa-bolt", c1: "#00D261", c2: "#3D72FC" },
                                                               { t: "Improved production efficiency", d: "Identify and eliminate process inefficiencies.", i: "fas fa-chart-line", c1: "#FA5674", c2: "#FB923C" },
-                                                              { t: "Better resource utilization", d: "Optimize machine usage and workforce output.", i: "fas fa-sync", c1: "#8B5CF6", c2: "#EC4899" },
+                                                              { t: "Better resource utilization", d: "Optimize machine usage and workforce output.", i: "fas fa-sync", c1: "#8B7DEC", c2: "#7366CA" },
                                                               { t: "Accurate production reporting", d: "Reliable reports for strategic management reviews.", i: "fas fa-file-alt", c1: "#FFB01F", c2: "#FDE047" },
                                                               { t: "Improved delivery performance", d: "Align production with customer timelines.", i: "fas fa-truck-loading", c1: "#00D2FF", c2: "#3D72FC" }
                                                           ].map((item, i) => (
@@ -573,17 +536,15 @@ export default function FactoryMonitoringPage() {
                                              </div>
                                          </div>
                                      </section>
-                                )}
 
                                 {/* 7. Industries Section */}
-                                {activeSection === 'industries' && (
-                                    <section id="industries" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="industries" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="text-left mb-5">
                                             <div className="section-title__tagline-box mb-3">
                                                 <span className="section-title__tagline text-primary">Industry Application</span>
                                             </div>
                                             <AnimatedTitle>
-                                                <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>Industries That <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Benefit</span></h3>
+                                                <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>Industries That <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Benefit</span></h3>
                                             </AnimatedTitle>
                                             <p className="text-white-50 opacity-80 mt-3" style={{ maxWidth: '700px' }}>Micraft MES is widely used by manufacturing SMEs looking to digitize their operations without over-complication.</p>
                                         </div>
@@ -608,17 +569,15 @@ export default function FactoryMonitoringPage() {
                                             ))}
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 8. Integration Section */}
-                                {activeSection === 'integration' && (
-                                     <section id="integration" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="integration" className="pt-0 pb-4 section-anchor section-fade-in">
                                          <div className="section-title text-left mb-5">
                                              <div className="section-title__tagline-box mb-3">
                                                  <span className="section-title__tagline text-primary">ENTERPRISE CONNECTIVITY</span>
                                              </div>
                                              <AnimatedTitle>
-                                                 <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>System Integration <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Architecture</span></h3>
+                                                 <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>System Integration <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Architecture</span></h3>
                                              </AnimatedTitle>
                                          </div>
                                          <div className="p-4 p-xl-5 rounded-5 border-primary-glow bg-dark shadow-2xl">
@@ -661,11 +620,9 @@ export default function FactoryMonitoringPage() {
                                              </div>
                                          </div>
                                      </section>
-                                )}
 
                                 {/* 9. Why Micraft Section */}
-                                {activeSection === 'why-micraft' && (
-                                    <section id="why-micraft" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="why-micraft" className="pt-0 pb-4 section-anchor section-fade-in">
                                         <div className="p-3 p-xl-5 rounded-5 shadow-2xl position-relative overflow-hidden" style={{ background: 'rgba(15, 23, 42, 0.4)', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
                                             <div className="row g-5 align-items-center">
                                                 <div className="col-lg-6">
@@ -674,7 +631,7 @@ export default function FactoryMonitoringPage() {
                                                             <span className="section-title__tagline text-primary">THE MICRAFT EDGE</span>
                                                         </div>
                                                         <AnimatedTitle>
-                                                            <h2 className="section-title__title title-animation mb-4" style={{ lineHeight: '1.1', fontSize: '32px' }}>Why Choose <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Micraft MES?</span></h2>
+                                                            <h2 className="section-title__title title-animation mb-4" style={{ lineHeight: '1.1', fontSize: '32px' }}>Why Choose <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Micraft MES?</span></h2>
                                                         </AnimatedTitle>
                                                         <p className="text-white opacity-70" style={{ fontSize: '15px' }}>Micraft MES is built specifically for the complexities of modern manufacturing, blending enterprise power with SME simplicity.</p>
                                                     </div>
@@ -714,17 +671,15 @@ export default function FactoryMonitoringPage() {
                                             </div>
                                         </div>
                                     </section>
-                                )}
 
                                 {/* 10. Related Solutions - The Industry Ecosystem Carousel */}
-                                {activeSection === 'related' && (
-                                     <section id="related" className="pt-0 pb-4 section-anchor section-fade-in">
+                                <section id="related" className="pt-0 pb-4 section-anchor section-fade-in">
                                          <div className="section-title text-center mb-5">
                                              <div className="section-title__tagline-box mx-auto">
                                                  <span className="section-title__tagline text-primary">Related Ecosystem</span>
                                              </div>
                                              <AnimatedTitle>
-                                                 <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>Explore Related <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Micraft MES Solutions</span></h3>
+                                                 <h3 className="section-title__title title-animation responsive-h2" style={{ lineHeight: '1.1' }}>Explore Related <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Micraft MES Solutions</span></h3>
                                              </AnimatedTitle>
                                          </div>
                                          
@@ -777,7 +732,6 @@ export default function FactoryMonitoringPage() {
                                              </Swiper>
                                          </div>
                                      </section>
-                                 )}
 
                             </div>
                         </div>
@@ -804,7 +758,7 @@ export default function FactoryMonitoringPage() {
                                 <AnimatedTitle>
                                     <h2 className="newsletter-one__title text-white mb-20" style={{ lineHeight: '1.0', fontSize: '32px', fontWeight: '700' }}>
                                         Monitor Your Factory <br />
-                                        <span style={{ color: '#FFD25D', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Production in Real Time</span>
+                                        <span style={{ color: '#7366CA', fontFamily: 'var(--techguru-font-two)', fontWeight: '400' }}>Production in Real Time</span>
                                     </h2>
                                 </AnimatedTitle>
                                 <p className="newsletter-one__text text-white mb-40 mx-auto" style={{ maxWidth: '750px', fontSize: '16px', opacity: 0.9 }}>
@@ -834,7 +788,7 @@ export default function FactoryMonitoringPage() {
 
             <style dangerouslySetInnerHTML={{
                 __html: `
-                .services-details { overflow: hidden; position: relative; }
+                .services-details { overflow: visible !important; position: relative; }
                 .shadow-2xl { box-shadow: 0 40px 100px -20px rgba(0,0,0,0.9); }
                 .shadow-primary-light { box-shadow: 0 15px 45px -10px rgba(61, 114, 252, 0.5); }
                 .rounded-5 { border-radius: 32px !important; }

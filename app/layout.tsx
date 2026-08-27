@@ -8,6 +8,7 @@ import "@/public/assets/css/flaticon.css";
 import "@/public/assets/css/style.css";
 import "@/public/assets/css/responsive.css";
 import "@/public/assets/css/mes-resources-custom.css";
+import "@/public/assets/css/global-overrides.css";
 import "animate.css";
 
 import "swiper/css";
@@ -30,6 +31,7 @@ const marcellus = Marcellus({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://micraftsolutions.com'),
   title: "Micraft MES | Manufacturing Excellence System",
   description: "Advanced Manufacturing Execution System for real-time shop floor visibility and optimization.",
   icons: {
@@ -45,7 +47,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var storedTheme = localStorage.getItem('micraft-theme');
+                  var theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                  document.documentElement.setAttribute('data-theme', theme);
+                } catch (e) {
+                  document.documentElement.setAttribute('data-theme', 'dark');
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className={`custom-cursor ${spaceGrotesk.className}`}>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-YBGJKLKGFE"

@@ -199,7 +199,7 @@ export default function WhyMicraftPage() {
                                     </div>
                                     <div className="pulse-container mb-5">
                                         <div className="bg-accent p-4 rounded-5 shadow-accent-glow d-flex flex-column align-items-center justify-content-center" style={{ width: '220px', height: '120px' }}>
-                                            <Image src="/assets/images/logo/Micraftmeslogo.svg" alt="Micraft MES" width={160} height={50} className="brightness-0 invert mb-2" />
+                                            <Image src="/assets/images/logo/light.png" alt="Micraft MES" width={160} height={50} className="brightness-0 invert mb-2" />
                                             <span className="text-dark fw-bold small uppercase tracking-widest">Digital Hub</span>
                                         </div>
                                     </div>

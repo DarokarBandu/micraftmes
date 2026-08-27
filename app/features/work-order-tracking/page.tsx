@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 import { Fragment, useState, useEffect } from 'react'
 import Layout from "@/components/layout/Layout"
 import Breadcrumb from "@/components/layout/Breadcrumb"
@@ -83,7 +83,7 @@ export default function WorkOrderTrackingPage() {
               <div className="nav-links d-flex align-items-center justify-content-center gap-2 flex-wrap">
                 {[
                   { id: "step-1-release", label: "Order Release", icon: "paper-plane", color: "#FA5674" },
-                  { id: "step-2-stage", label: "Stage Routing", icon: "map-signs", color: "#FFD25D" },
+                  { id: "step-2-stage", label: "Stage Routing", icon: "map-signs", color: "#7366CA" },
                   { id: "step-3-progress", label: "Progress Capture", icon: "pencil-alt", color: "#6065D4" },
                   { id: "step-4-yield", label: "Yield Recording", icon: "calculator", color: "#3D72FC" },
                   { id: "step-5-inspection", label: "Quality Link", icon: "microscope", color: "#00D094" },
@@ -174,7 +174,7 @@ export default function WorkOrderTrackingPage() {
             {[
               { title: "Live Order Pipeline", desc: "View every active work order on a single, real-time map", icon: "stream", color: "#FA5674", gradient: "linear-gradient(135deg, rgba(250,86,116,0.12), rgba(250,86,116,0.04))" },
               { title: "Stage Tracking", desc: "Monitor job status across machining, assembly, and inspection", icon: "tasks", color: "#6065D4", gradient: "linear-gradient(135deg, rgba(96,101,212,0.12), rgba(96,101,212,0.04))" },
-              { title: "Operator Feedback", desc: "Direct progress updates from operator terminals for 100% accuracy", icon: "user-tag", color: "#FFD25D", gradient: "linear-gradient(135deg, rgba(255,210,93,0.12), rgba(255,210,93,0.04))" },
+              { title: "Operator Feedback", desc: "Direct progress updates from operator terminals for 100% accuracy", icon: "user-tag", color: "#7366CA", gradient: "linear-gradient(135deg, rgba(255,210,93,0.12), rgba(255,210,93,0.04))" },
               { title: "Output Analytics", desc: "Track planned vs actual output for every workstation and shift", icon: "chart-line", color: "#00D094", gradient: "linear-gradient(135deg, rgba(0,208,148,0.12), rgba(0,208,148,0.04))" }
             ].map((item, idx) => (
               <div key={idx} className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay={`${idx * 100 + 100}ms`}>
@@ -235,7 +235,7 @@ export default function WorkOrderTrackingPage() {
 
             {[
               { title: "Digital Order Release", icon: "paper-plane", color: "#3D72FC", desc: "Work orders are released to the shop floor with complete digital job travelers and specs." },
-              { title: "Workstation Check-In", icon: "map-signs", color: "#FFD25D", desc: "Operators log the start of a job at their station, providing instant visibility into job allocation." },
+              { title: "Workstation Check-In", icon: "map-signs", color: "#7366CA", desc: "Operators log the start of a job at their station, providing instant visibility into job allocation." },
               { title: "Real-Time Progress", icon: "pencil-alt", color: "#FA5674", desc: "Operators update completed quantities and time spent directly from workstation terminals." },
               { title: "Output Verification", icon: "calculator", color: "#6065D4", desc: "Finished quantities are verified against original order specs to ensure production accuracy." },
               { title: "Quality Integration", icon: "microscope", color: "#00D094", desc: "Inspection checkpoints are linked to the order history for complete technical traceability." },
@@ -385,7 +385,7 @@ export default function WorkOrderTrackingPage() {
           </div>
 
           {/* FEATURE 2: OPERATOR TERMINALS */}
-          <div className="meswork-step-detail mb-5 wow fadeInUp" id="step-3-progress" style={{ borderLeft: '4px solid #FFD25D' }}>
+          <div className="meswork-step-detail mb-5 wow fadeInUp" id="step-3-progress" style={{ borderLeft: '4px solid #7366CA' }}>
             <div style={{ position: 'absolute', top: 0, right: 0, width: 200, height: 200, background: 'rgba(255,210,93,0.06)', borderRadius: '50%', filter: 'blur(80px)', pointerEvents: 'none' }}></div>
             <div className="row align-items-center g-4">
               <div className="col-lg-5 order-2 order-lg-1">
@@ -394,7 +394,7 @@ export default function WorkOrderTrackingPage() {
                 </div>
               </div>
               <div className="col-lg-7 order-1 order-lg-2">
-                <div className="meswork-cycle-num mb-3" style={{ background: 'linear-gradient(135deg, #FFD25D, #FA5674)' }}>02</div>
+                <div className="meswork-cycle-num mb-3" style={{ background: 'linear-gradient(135deg, #7366CA, #FA5674)' }}>02</div>
                 <AnimatedTitle>
                   <h2 className="section-title__title text-white mb-3" style={{ fontSize: '30px' }}>Real-Time <span>Execution Feedback</span></h2>
                 </AnimatedTitle>
@@ -407,7 +407,7 @@ export default function WorkOrderTrackingPage() {
                   <li>Direct logging of scrap and rework at the source</li>
                   <li>Access to technical drawings and SOPs at the workstation</li>
                 </ul>
-                <Link href="/features/shop-floor-data-collection" className="meswork-link" style={{ color: '#FFD25D' }}>
+                <Link href="/features/shop-floor-data-collection" className="meswork-link" style={{ color: '#7366CA' }}>
                   Execution Data Analytics <i className="icon-right-arrow"></i>
                 </Link>
               </div>
@@ -461,7 +461,7 @@ export default function WorkOrderTrackingPage() {
           <div className="row g-4 justify-content-center">
             {[
               { title: "88% Throughput Increase", text: "Significant boost in orders processed per shift through optimized flow.", icon: "bolt", color: "#FA5674" },
-              { title: "95% Search Reduction", text: "Eliminate hours spent walking the floor to find specific work orders.", icon: "search-minus", color: "#FFD25D" },
+              { title: "95% Search Reduction", text: "Eliminate hours spent walking the floor to find specific work orders.", icon: "search-minus", color: "#7366CA" },
               { title: "Precise Lead Times", text: "Provide customers with accurate delivery dates based on live data.", icon: "history", color: "#6065D4" },
               { title: "Zero Data Gaps", text: "100% verifiable record of every operation and quality check.", icon: "database", color: "#3D72FC" },
               { title: "Total WIP Control", text: "Maintain lean inventory levels without risking stock-outs or delays.", icon: "cubes", color: "#00D094" }
@@ -495,13 +495,13 @@ export default function WorkOrderTrackingPage() {
           <div className="row g-3 justify-content-center">
             {[
               { name: "Digital Orders", path: "/features/production-order-management", icon: "file-invoice", color: "#FA5674" },
-              { name: "Smarter Scheduling", path: "/features/production-planning-scheduling", icon: "calendar-alt", color: "#FFD25D" },
+              { name: "Smarter Scheduling", path: "/features/production-planning-scheduling", icon: "calendar-alt", color: "#7366CA" },
               { name: "Operator Tablets", path: "/features/shop-floor-data-collection", icon: "tablet-alt", color: "#6065D4" },
               { name: "Live OEE Monitoring", path: "/features/machine-monitoring", icon: "chart-line", color: "#00D094" },
               { name: "Quality Gates", path: "/features/quality-inspection-management", icon: "shield-alt", color: "#3D72FC" },
               { name: "Shipment Tracking", path: "/features/dispatch-tracking", icon: "truck", color: "#00D094" },
               { name: "Factory Vision", path: "/solutions/shop-floor-visibility-software", icon: "eye", color: "#FA5674" },
-              { name: "Performance Reports", path: "/features/production-analytics-reports", icon: "file-chart-line", color: "#FFD25D" }
+              { name: "Performance Reports", path: "/features/production-analytics-reports", icon: "file-chart-line", color: "#7366CA" }
             ].map((solution, i) => (
               <div key={i} className="col-xl-3 col-lg-4 col-md-6">
                 <Link href={solution.path} className="d-block p-4 h-100 text-decoration-none"

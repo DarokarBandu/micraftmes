@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from 'react';
 import Layout from '@/components/layout/Layout';
@@ -140,12 +140,12 @@ export default function MicraftVsTraditionalMesPage() {
 
                             <div className="row g-4 justify-content-center">
                                 {[
-                                    { title: "Long Implementation Cycles", text: "Some MES deployments take several months or even years.", Icon: Clock, color: "#FFD25D" },
+                                    { title: "Long Implementation Cycles", text: "Some MES deployments take several months or even years.", Icon: Clock, color: "#7366CA" },
                                     { title: "High Implementation Costs", text: "Enterprise MES systems often require significant investment.", Icon: TrendingUp, color: "#FF5252" },
                                     { title: "Complex User Interfaces", text: "Shop floor teams may find traditional systems difficult to use.", Icon: UserCog, color: "#FF5252" },
                                     { title: "Heavy IT Infrastructure", text: "Many systems require extensive hardware and system integration.", Icon: HardDrive, color: "#00E5FF" },
                                     { title: "Low Adoption by Floor Teams", text: "Complex systems can lead to poor operator adoption.", Icon: XCircle, color: "#FF5252" },
-                                    { title: "Data Silos & Fragmentation", text: "Fragmented legacy modules lead to delayed reporting.", Icon: Layers, color: "#FFD25D" }
+                                    { title: "Data Silos & Fragmentation", text: "Fragmented legacy modules lead to delayed reporting.", Icon: Layers, color: "#7366CA" }
                                 ].map((card, i) => (
                                     <div key={i} className="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay={`${i * 100}ms`}>
                                         <div className="glass-card-innovative p-5 rounded-4 border-white-10 h-100 transition-all hover-translate-y group bg-white-02">
@@ -207,7 +207,7 @@ export default function MicraftVsTraditionalMesPage() {
                                 <div className="col-xl-6 wow slideInRight" data-wow-delay="200ms" data-wow-duration="1500ms">
                                     <div className="row g-3">
                                         {[
-                                            { title: "Deploy Quickly", text: "Get up and running in days, not months — minimal configuration required.", Icon: Zap, color: "#FFD25D" },
+                                            { title: "Deploy Quickly", text: "Get up and running in days, not months — minimal configuration required.", Icon: Zap, color: "#7366CA" },
                                             { title: "Real-Time Production Visibility", text: "Live dashboards and instant reporting across every workstation.", Icon: BarChart3, color: "#00E5FF" },
                                             { title: "Easy Integration", text: "Connect seamlessly with existing ERP, IoT, and shop floor environments.", Icon: Cpu, color: "#4CAF50" },
                                             { title: "Simple Floor Interface", text: "Intuitive designs built for operators — not just IT specialists.", Icon: Users, color: "#FF9800" }
@@ -373,7 +373,7 @@ export default function MicraftVsTraditionalMesPage() {
                                     <div className="versus-panel__header versus-panel__header--right py-4 px-4 d-flex align-items-center justify-content-end gap-3 text-end">
                                         <span className="text-gold fw-bold tracking-wider">Micraft MES</span>
                                         <div className="icon bg-gold-soft p-2 rounded-2 border border-gold-glow">
-                                            <Warehouse size={20} color="#FFD25D" strokeWidth={2} />
+                                            <Warehouse size={20} color="#7366CA" strokeWidth={2} />
                                         </div>
                                     </div>
                                 </div>
@@ -402,7 +402,7 @@ export default function MicraftVsTraditionalMesPage() {
                                         {/* Micraft Side */}
                                         <div className="versus-cell-right py-4 px-4 d-flex align-items-center gap-3">
                                             <div className="versus-row__icon versus-row__icon--green shrink-0">
-                                                <row.IconM size={22} color="#FFD25D" strokeWidth={1.5} />
+                                                <row.IconM size={22} color="#7366CA" strokeWidth={1.5} />
                                             </div>
                                             <span className="versus-row__label versus-row__label--micraft">{row.micraft}</span>
                                         </div>
@@ -526,7 +526,7 @@ export default function MicraftVsTraditionalMesPage() {
                         /* === Section 6: Versus Comparison === */
                         .versus-panel { max-width: 960px; margin: 0 auto; border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.01); backdrop-filter: blur(10px); }
                         .versus-panel__headers { display: grid; grid-template-columns: 1fr 80px 1fr; border-bottom: 1px solid rgba(255,255,255,0.1); }
-                        .versus-vs-badge { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Marcellus', serif; color: #FFD25D; background: rgba(255,210,93,0.15); border: 1px solid rgba(255,210,93,0.4); font-size: 14px; font-weight: 900; }
+                        .versus-vs-badge { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Marcellus', serif; color: #7366CA; background: rgba(255,210,93,0.15); border: 1px solid rgba(255,210,93,0.4); font-size: 14px; font-weight: 900; }
                         .versus-row { display: grid; grid-template-columns: 1fr 80px 1fr; border-bottom: 1px solid rgba(255,255,255,0.05); transition: all 0.3s ease; }
                         .versus-row:last-child { border-bottom: none; }
                         .versus-row:hover .versus-cell-left { background: rgba(255,82,82,0.04); }

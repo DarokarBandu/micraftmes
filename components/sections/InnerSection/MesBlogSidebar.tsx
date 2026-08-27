@@ -67,7 +67,7 @@ export default function MesBlogSidebar() {
             {/* Search — Updated High Fidelity */}
             <div className="sidebar__single sidebar__search bg-glass-dark border-0 p-4 rounded-5 mb-4 shadow-2xl" style={{ background: 'rgba(28, 31, 46, 0.95)' }}>
                 <div className="d-flex align-items-center gap-2 mb-3 pb-2 border-bottom border-white border-opacity-10">
-                    <div style={{ width: '8px', height: '8px', backgroundColor: '#6065D4', borderRadius: '50%', boxShadow: '0 0 10px #6065D4' }}></div>
+                    <div style={{ width: '8px', height: '8px', backgroundColor: '#7366CA', borderRadius: '50%', boxShadow: '0 0 10px #7366CA' }}></div>
                     <h3 className="text-white m-0 h4 fw-bold">Search</h3>
                 </div>
                 <p className="text-white-50 small mb-3 mt-2">Search MES blogs to discover manufacturing insights and best practices.</p>
@@ -84,12 +84,12 @@ export default function MesBlogSidebar() {
             {/* Recent Posts — Updated High Fidelity */}
             <div className="sidebar__single sidebar__post bg-glass-dark border-0 p-4 rounded-5 mb-4 shadow-2xl" style={{ background: 'rgba(28, 31, 46, 0.95)' }}>
                 <div className="d-flex align-items-center gap-2 mb-3 pb-2 border-bottom border-white border-opacity-10">
-                    <div style={{ width: '8px', height: '8px', backgroundColor: '#6065D4', borderRadius: '50%', boxShadow: '0 0 10px #6065D4' }}></div>
+                    <div style={{ width: '8px', height: '8px', backgroundColor: '#7366CA', borderRadius: '50%', boxShadow: '0 0 10px #7366CA' }}></div>
                     <h3 className="text-white m-0 h4 fw-bold">Recent Posts</h3>
                 </div>
                 <ul className="sidebar__post-list list-unstyled">
                     {mesBlogPosts.map((post, i) => (
-                        <li key={i} style={pathname === post.detailUrl ? { borderLeft: '3px solid #6065D4', paddingLeft: '10px', marginBottom: '20px' } : { marginBottom: '20px' }}>
+                        <li key={i} style={pathname === post.detailUrl ? { borderLeft: '3px solid #7366CA', paddingLeft: '10px', marginBottom: '20px' } : { marginBottom: '20px' }}>
                             <div className="sidebar__post-image">
                                 <div style={{ width: '80px', height: '80px', position: 'relative', borderRadius: '8px', overflow: 'hidden', flexShrink: 0 }}>
                                     <Image
@@ -116,7 +116,7 @@ export default function MesBlogSidebar() {
             {/* Tags — Updated High Fidelity */}
             <div className="sidebar__single sidebar__tags bg-glass-dark border-0 p-4 rounded-5 mb-4 shadow-2xl" style={{ background: 'rgba(28, 31, 46, 0.95)' }}>
                 <div className="d-flex align-items-center gap-2 mb-3 pb-2 border-bottom border-white border-opacity-10">
-                    <div style={{ width: '8px', height: '8px', backgroundColor: '#6065D4', borderRadius: '50%', boxShadow: '0 0 10px #6065D4' }}></div>
+                    <div style={{ width: '8px', height: '8px', backgroundColor: '#7366CA', borderRadius: '50%', boxShadow: '0 0 10px #7366CA' }}></div>
                     <h3 className="text-white m-0 h4 fw-bold">Keywords</h3>
                 </div>
                 <ul className="sidebar__tags-list clearfix list-unstyled">
@@ -129,7 +129,7 @@ export default function MesBlogSidebar() {
             {/* Newsletter — Updated High Fidelity */}
             <div className="sidebar__single sidebar__newsletter bg-glass-dark border-0 p-4 rounded-5 shadow-2xl" style={{ background: 'rgba(28, 31, 46, 0.95)' }}>
                 <div className="d-flex align-items-center gap-2 mb-3 pb-2 border-bottom border-white border-opacity-10">
-                    <div style={{ width: '8px', height: '8px', backgroundColor: '#6065D4', borderRadius: '50%', boxShadow: '0 0 10px #6065D4' }}></div>
+                    <div style={{ width: '8px', height: '8px', backgroundColor: '#7366CA', borderRadius: '50%', boxShadow: '0 0 10px #7366CA' }}></div>
                     <h3 className="text-white m-0 h4 fw-bold">Subscribe</h3>
                 </div>
                 
@@ -157,10 +157,11 @@ export default function MesBlogSidebar() {
                     <button type="submit" 
                             className="w-100 border-0 rounded-pill text-white fw-bold d-flex align-items-center justify-content-center gap-2 py-2"
                             style={{ 
-                                background: 'linear-gradient(90deg, #6065D4 0%, #F54A7E 100%)', 
+                                background: '#7366CA', 
                                 height: '48px', 
-                                transition: 'transform 0.3s ease',
-                                fontSize: '15px'
+                                transition: 'all 0.3s ease',
+                                fontSize: '15px',
+                                boxShadow: '0 4px 14px rgba(115, 102, 202, 0.35)'
                             }}>
                         Subscribe Now <i className="icon-right-arrow-1" style={{ fontSize: '12px' }}></i>
                     </button>

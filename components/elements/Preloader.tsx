@@ -8,7 +8,7 @@ export default function Preloader() {
   useEffect(() => {
     // 1. Force a minimum 2-second delay
     const minDelayPromise = new Promise(resolve => setTimeout(resolve, 2000));
-    
+
     // 2. Resolve when window is fully loaded
     const windowLoadPromise = new Promise(resolve => {
       if (document.readyState === "complete") {
@@ -34,14 +34,14 @@ export default function Preloader() {
     <>
       <div className={`mes-premium-preloader ${isFading ? "fade-out" : ""}`}>
         <div className="mes-preloader-inner">
-          
+
           {/* Animated High-Tech MES Loader */}
           <div className="mes-loader-container">
             <div className="mes-outer-ring"></div>
             <div className="mes-inner-ring"></div>
             <div className="mes-hexagon"></div>
           </div>
-          
+
           {/* Loading Subtext */}
           <div className="mes-loading-text">
             Initializing System<span>...</span>
@@ -49,7 +49,8 @@ export default function Preloader() {
         </div>
       </div>
 
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .mes-premium-preloader {
           position: fixed;
           inset: 0;
