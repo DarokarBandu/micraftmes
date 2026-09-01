@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/solutions/packing-dispatch-tracking',
+  },
   title: "Packing and Dispatch Tracking Software for Manufacturing | Micraft MES",
   description: "Track packing completion and dispatch readiness with Micraft MES manufacturing dispatch tracking software designed for production environments.",
   keywords: [

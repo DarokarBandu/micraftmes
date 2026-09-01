@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/features/production-dashboard',
+  },
   title: 'Manufacturing Production Dashboard Software | Micraft MES',
   description: 'View live production dashboards and factory performance metrics in one centralized view using Micraft MES dashboards.',
   keywords: [

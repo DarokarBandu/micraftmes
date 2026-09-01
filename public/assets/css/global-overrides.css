@@ -2736,23 +2736,57 @@ button.thm-btn:active {
 [data-theme="dark"] .site-footer-two__bottom {
     background-color: #070D18 !important;
     border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-    padding: 18px 0 !important;
+    padding: 8px 0 !important;
 }
 
 .site-footer-two__copyright-text,
-.site-footer-two__copyright-text a,
 [data-theme="light"] .site-footer-two__copyright-text,
-[data-theme="dark"] .site-footer-two__copyright-text,
-[data-theme="light"] .site-footer-two__copyright-text a,
-[data-theme="dark"] .site-footer-two__copyright-text a {
+[data-theme="dark"] .site-footer-two__copyright-text {
     color: #94A3B8 !important;
-    font-size: 14px !important;
+    font-size: 13px !important;
 }
 
-.site-footer-two__copyright-text a:hover,
-[data-theme="light"] .site-footer-two__copyright-text a:hover,
-[data-theme="dark"] .site-footer-two__copyright-text a:hover {
+.site-footer-two a.footer-copyright-brand,
+.site-footer-two a.footer-copyright-brand:link,
+.site-footer-two a.footer-copyright-brand:visited,
+[data-theme="light"] .site-footer-two a.footer-copyright-brand,
+[data-theme="dark"] .site-footer-two a.footer-copyright-brand {
     color: #7366CA !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    transition: all 0.25s ease !important;
+    display: inline !important;
+}
+
+.site-footer-two a.footer-copyright-brand:hover,
+[data-theme="light"] .site-footer-two a.footer-copyright-brand:hover,
+[data-theme="dark"] .site-footer-two a.footer-copyright-brand:hover {
+    color: #FFFFFF !important;
+    text-decoration: underline !important;
+}
+
+.site-footer-two a.footer-legal-link,
+.site-footer-two a.footer-legal-link:link,
+.site-footer-two a.footer-legal-link:visited,
+[data-theme="light"] .site-footer-two a.footer-legal-link,
+[data-theme="dark"] .site-footer-two a.footer-legal-link {
+    color: #94A3B8 !important;
+    font-size: 12.5px !important;
+    text-decoration: none !important;
+    transition: all 0.25s ease !important;
+}
+
+.site-footer-two a.footer-legal-link:hover,
+[data-theme="light"] .site-footer-two a.footer-legal-link:hover,
+[data-theme="dark"] .site-footer-two a.footer-legal-link:hover {
+    color: #7366CA !important;
+}
+
+.site-footer-two .footer-legal-divider,
+[data-theme="light"] .site-footer-two .footer-legal-divider,
+[data-theme="dark"] .site-footer-two .footer-legal-divider {
+    color: rgba(255, 255, 255, 0.3) !important;
+    font-size: 11px !important;
 }
 
 .site-footer-two__social-box-inner a,
@@ -2779,9 +2813,281 @@ button.thm-btn:active {
     transform: translateY(-2px);
 }
 
+/* ─── Footer "→ View All" Accent Links (Theme Color) ─── */
+.site-footer-two .footer-nav-list a.footer-view-all,
+.site-footer-two .footer-nav-list a.footer-view-all:link,
+.site-footer-two .footer-nav-list a.footer-view-all:visited,
+.site-footer-two .footer-col-nav a.footer-view-all,
+[data-theme="light"] .site-footer-two .footer-nav-list a.footer-view-all,
+[data-theme="dark"] .site-footer-two .footer-nav-list a.footer-view-all,
+[data-theme="light"] .site-footer-two .footer-col-nav a.footer-view-all,
+[data-theme="dark"] .site-footer-two .footer-col-nav a.footer-view-all {
+    color: #7366CA !important;
+    font-weight: 700 !important;
+    font-size: 12px !important;
+    letter-spacing: 0.3px !important;
+    transition: all 0.3s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+}
+
+.site-footer-two .footer-nav-list a.footer-view-all:hover,
+.site-footer-two .footer-col-nav a.footer-view-all:hover,
+[data-theme="light"] .site-footer-two .footer-nav-list a.footer-view-all:hover,
+[data-theme="dark"] .site-footer-two .footer-nav-list a.footer-view-all:hover,
+[data-theme="light"] .site-footer-two .footer-col-nav a.footer-view-all:hover,
+[data-theme="dark"] .site-footer-two .footer-col-nav a.footer-view-all:hover {
+    color: #5E50B6 !important;
+    transform: translateX(4px);
+}
+
+/* ─── Footer "Call Now" Accent Link ─── */
+.site-footer-two .footer-call-text,
+.site-footer-two .footer-call-text:link,
+.site-footer-two .footer-call-text:visited,
+[data-theme="light"] .site-footer-two .footer-call-text,
+[data-theme="dark"] .site-footer-two .footer-call-text {
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    text-decoration: none !important;
+}
+
+.site-footer-two .footer-call-text:hover,
+[data-theme="light"] .site-footer-two .footer-call-text:hover,
+[data-theme="dark"] .site-footer-two .footer-call-text:hover {
+    color: #7366CA !important;
+}
+
+/* ─── Footer Top Band Heading Labels ─── */
+.site-footer-two .footer-top-label,
+[data-theme="light"] .site-footer-two .footer-top-label,
+[data-theme="dark"] .site-footer-two .footer-top-label {
+    color: #7366CA !important;
+    font-weight: 700 !important;
+    font-size: 11px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.2px !important;
+    margin-bottom: 4px !important;
+    -webkit-text-fill-color: #7366CA !important;
+}
+
+/* ─── Footer Top Band Phone Number ─── */
+.site-footer-two .footer-top-phone,
+.site-footer-two .footer-top-phone:link,
+.site-footer-two .footer-top-phone:visited,
+[data-theme="light"] .site-footer-two .footer-top-phone,
+[data-theme="dark"] .site-footer-two .footer-top-phone {
+    color: #FFFFFF !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    text-decoration: none !important;
+}
+
+.site-footer-two .footer-top-phone:hover,
+[data-theme="light"] .site-footer-two .footer-top-phone:hover,
+[data-theme="dark"] .site-footer-two .footer-top-phone:hover {
+    color: #7366CA !important;
+}
+
+/* ─── Footer "Book a Live Demo" Button ─── */
+.site-footer-two .footer-demo-btn,
+.site-footer-two .footer-demo-btn:link,
+.site-footer-two .footer-demo-btn:visited,
+[data-theme="light"] .site-footer-two .footer-demo-btn,
+[data-theme="dark"] .site-footer-two .footer-demo-btn {
+    background: #7366CA !important;
+    color: #FFFFFF !important;
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    padding: 3px 12px !important;
+    border-radius: 6px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    text-decoration: none !important;
+    border: none !important;
+    box-shadow: 0 2px 8px rgba(115, 102, 202, 0.35) !important;
+    transition: all 0.25s ease !important;
+    line-height: 1.5 !important;
+}
+
+.site-footer-two .footer-demo-btn:hover,
+[data-theme="light"] .site-footer-two .footer-demo-btn:hover,
+[data-theme="dark"] .site-footer-two .footer-demo-btn:hover {
+    background: #5E50B6 !important;
+    color: #FFFFFF !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(115, 102, 202, 0.5) !important;
+}
+
+.site-footer-two .footer-demo-btn i,
+.site-footer-two .footer-demo-btn:hover i,
+[data-theme="light"] .site-footer-two .footer-demo-btn i,
+[data-theme="dark"] .site-footer-two .footer-demo-btn i {
+    color: #FFFFFF !important;
+    font-size: 10px !important;
+}
+
+/* ─── Footer Social Strip Icons ─── */
+.site-footer-two .footer-social-strip a,
+.site-footer-two .footer-social-strip a:link,
+.site-footer-two .footer-social-strip a:visited,
+[data-theme="light"] .site-footer-two .footer-social-strip a,
+[data-theme="dark"] .site-footer-two .footer-social-strip a {
+    color: #FFFFFF !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+}
+
+.site-footer-two .footer-social-strip a:hover,
+[data-theme="light"] .site-footer-two .footer-social-strip a:hover,
+[data-theme="dark"] .site-footer-two .footer-social-strip a:hover {
+    background: #7366CA !important;
+    color: #FFFFFF !important;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(115, 102, 202, 0.3) !important;
+}
+
+/* ─── Footer Column Titles ─── */
+.site-footer-two .footer-nav-title,
+[data-theme="light"] .site-footer-two .footer-nav-title,
+[data-theme="dark"] .site-footer-two .footer-nav-title {
+    color: #FFFFFF !important;
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+    margin-bottom: 12px !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+}
+
+/* ─── Footer Nav List Links ─── */
+.site-footer-two .footer-nav-list li a,
+[data-theme="light"] .site-footer-two .footer-nav-list li a,
+[data-theme="dark"] .site-footer-two .footer-nav-list li a {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 13.5px !important;
+    line-height: 1.4 !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+    display: inline-block !important;
+}
+
+.site-footer-two .footer-nav-list li a:hover,
+[data-theme="light"] .site-footer-two .footer-nav-list li a:hover,
+[data-theme="dark"] .site-footer-two .footer-nav-list li a:hover {
+    color: #7366CA !important;
+    transform: translateX(3px);
+}
+
+/* ─── Footer Top Band Description ─── */
+.site-footer-two .footer-brand-desc,
+[data-theme="light"] .site-footer-two .footer-brand-desc,
+[data-theme="dark"] .site-footer-two .footer-brand-desc {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+}
+
+/* ─── Footer Top Band Email Link ─── */
+.site-footer-two .footer-email-link,
+.site-footer-two .footer-email-link:link,
+.site-footer-two .footer-email-link:visited,
+[data-theme="light"] .site-footer-two .footer-email-link,
+[data-theme="dark"] .site-footer-two .footer-email-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 12.5px !important;
+    text-decoration: none !important;
+}
+
+.site-footer-two .footer-email-link:hover,
+[data-theme="light"] .site-footer-two .footer-email-link:hover,
+[data-theme="dark"] .site-footer-two .footer-email-link:hover {
+    color: #7366CA !important;
+}
+
+/* ─── Footer Top Band Address Text ─── */
+.site-footer-two .footer-address-text,
+[data-theme="light"] .site-footer-two .footer-address-text,
+[data-theme="dark"] .site-footer-two .footer-address-text {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+}
+
+/* ─── Footer "Let's work together?" Small Text ─── */
+.site-footer-two .footer-cta-label,
+[data-theme="light"] .site-footer-two .footer-cta-label,
+[data-theme="dark"] .site-footer-two .footer-cta-label {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 11px !important;
+}
+
+/* ─── Footer Call Icon Button ─── */
+.site-footer-two .footer-call-btn,
+[data-theme="light"] .site-footer-two .footer-call-btn,
+[data-theme="dark"] .site-footer-two .footer-call-btn {
+    background: #7366CA !important;
+    color: #FFFFFF !important;
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+}
+
+.site-footer-two .footer-call-btn:hover,
+[data-theme="light"] .site-footer-two .footer-call-btn:hover,
+[data-theme="dark"] .site-footer-two .footer-call-btn:hover {
+    background: #5E50B6 !important;
+    transform: scale(1.08);
+}
+
+.site-footer-two .footer-call-btn i,
+.site-footer-two .footer-call-btn span,
+.site-footer-two .footer-call-btn svg,
+[data-theme="light"] .site-footer-two .footer-call-btn i,
+[data-theme="dark"] .site-footer-two .footer-call-btn i,
+[data-theme="light"] .site-footer-two .footer-call-btn span,
+[data-theme="dark"] .site-footer-two .footer-call-btn span,
+[data-theme="light"] .site-footer-two .footer-call-btn svg,
+[data-theme="dark"] .site-footer-two .footer-call-btn svg {
+    color: #FFFFFF !important;
+    font-size: 16px !important;
+    fill: #FFFFFF !important;
+    display: inline-block !important;
+}
+
+
 /* ==========================================================================
    HOMEPAGE LIGHT MODE DESIGN EXCELLENCE (CARDS, BADGES & ELEVATION)
    ========================================================================== */
+
+/* Compact Heading Spacing Across Sections */
+.section-title {
+    margin-bottom: 24px !important;
+}
+.section-title__tagline-box {
+    margin-bottom: 10px !important;
+}
+.section-title__title {
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+    line-height: 1.25 !important;
+}
 
 /* 1. Global Light Taglines / Badges */
 [data-theme="light"] .section-title__tagline {
@@ -5250,3 +5556,190 @@ section#hero.section-fade-in,
 [data-theme="light"] .form-alert-error .form-alert-icon {
     color: #DC2626 !important;
 }
+
+/* ==========================================================================
+   MASTER DARK & LIGHT THEME CONSISTENCY & REFINEMENT
+   ========================================================================== */
+
+/* ─── Standard OS Cursor Enforcement ─── */
+*,
+*::before,
+*::after {
+    cursor: auto;
+}
+
+a,
+button,
+input[type="submit"],
+input[type="button"],
+select,
+.btn,
+.thm-btn,
+.dropdown-toggle,
+.accrodion-title,
+.nav-link,
+[role="button"] {
+    cursor: pointer !important;
+}
+
+/* ─── Light Mode Global Elevation, Cards & Borders ─── */
+[data-theme="light"] {
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F8FAFC;
+    --bg-card: #FFFFFF;
+    --bg-card-hover: #F1F5F9;
+    --bg-elevated: #FFFFFF;
+    --text-primary: #0F172A;
+    --text-secondary: #334155;
+    --text-muted: #64748B;
+    --border-color: #E2E8F0;
+    --border-subtle: #F1F5F9;
+    --shadow-card: 0 4px 20px rgba(15, 23, 42, 0.06);
+}
+
+[data-theme="light"] .card,
+[data-theme="light"] .glass-card,
+[data-theme="light"] .glass-card-innovative,
+[data-theme="light"] .feature-one__single,
+[data-theme="light"] .benefit-card,
+[data-theme="light"] .capability-card,
+[data-theme="light"] .pricing-card,
+[data-theme="light"] .diagnostic-marquee-card,
+[data-theme="light"] .product-mini-card,
+[data-theme="light"] .services-one__single,
+[data-theme="light"] .who-is-for__single,
+[data-theme="light"] .process-one__single,
+[data-theme="light"] .testimonial-one__single,
+[data-theme="light"] .testimonial-two__single {
+    background-color: #FFFFFF !important;
+    border: 1px solid #E2E8F0 !important;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05) !important;
+    color: #0F172A !important;
+}
+
+[data-theme="light"] .feature-one__single:hover,
+[data-theme="light"] .benefit-card:hover,
+[data-theme="light"] .capability-card:hover,
+[data-theme="light"] .diagnostic-marquee-card:hover {
+    background-color: #FFFFFF !important;
+    border-color: #7366CA !important;
+    box-shadow: 0 12px 30px rgba(115, 102, 202, 0.12) !important;
+}
+
+/* ─── Light Mode Comparison & Versus Panels ─── */
+[data-theme="light"] .versus-panel {
+    background: #FFFFFF !important;
+    border: 1px solid #E2E8F0 !important;
+    box-shadow: 0 10px 40px rgba(15, 23, 42, 0.06) !important;
+}
+
+[data-theme="light"] .versus-row__center {
+    background: #F8FAFC !important;
+    border-left: 1px solid #E2E8F0 !important;
+    border-right: 1px solid #E2E8F0 !important;
+}
+
+[data-theme="light"] .versus-row__icon {
+    background: #F1F5F9 !important;
+    border: 1px solid #E2E8F0 !important;
+    color: #7366CA !important;
+}
+
+[data-theme="light"] .versus-row:hover .versus-cell-left {
+    background: rgba(239, 68, 68, 0.04) !important;
+}
+
+[data-theme="light"] .versus-row:hover .versus-cell-right {
+    background: rgba(115, 102, 202, 0.04) !important;
+}
+
+/* ─── Light Mode Tables ─── */
+[data-theme="light"] table,
+[data-theme="light"] .table {
+    color: #0F172A !important;
+    border-color: #E2E8F0 !important;
+}
+
+[data-theme="light"] table th,
+[data-theme="light"] .table th {
+    background-color: #F8FAFC !important;
+    color: #0F172A !important;
+    border-bottom: 2px solid #E2E8F0 !important;
+}
+
+[data-theme="light"] table td,
+[data-theme="light"] .table td {
+    border-color: #E2E8F0 !important;
+    color: #334155 !important;
+}
+
+/* ─── Light Mode Form Controls ─── */
+[data-theme="light"] input[type="text"],
+[data-theme="light"] input[type="email"],
+[data-theme="light"] input[type="tel"],
+[data-theme="light"] input[type="number"],
+[data-theme="light"] input[type="password"],
+[data-theme="light"] textarea,
+[data-theme="light"] select,
+[data-theme="light"] .form-control {
+    background-color: #FFFFFF !important;
+    border: 1px solid #CBD5E1 !important;
+    color: #0F172A !important;
+}
+
+[data-theme="light"] input:focus,
+[data-theme="light"] textarea:focus,
+[data-theme="light"] select:focus,
+[data-theme="light"] .form-control:focus {
+    border-color: #7366CA !important;
+    box-shadow: 0 0 0 3px rgba(115, 102, 202, 0.15) !important;
+}
+
+[data-theme="light"] input::placeholder,
+[data-theme="light"] textarea::placeholder {
+    color: #94A3B8 !important;
+}
+
+/* ─── Light Mode Badges & Dividers ─── */
+[data-theme="light"] .badge {
+    color: #7366CA !important;
+    background-color: rgba(115, 102, 202, 0.1) !important;
+    border: 1px solid rgba(115, 102, 202, 0.2) !important;
+}
+
+[data-theme="light"] hr,
+[data-theme="light"] .divider {
+    border-color: #E2E8F0 !important;
+    opacity: 1 !important;
+}
+
+/* ─── Dark Mode Global Polish & Balance ─── */
+[data-theme="dark"] {
+    --bg-primary: #0B192C;
+    --bg-secondary: #08111F;
+    --bg-card: #101D30;
+    --bg-card-hover: #15253D;
+    --text-primary: #FFFFFF;
+    --text-secondary: #C5C8CD;
+    --text-muted: #8896A6;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --border-subtle: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .glass-card,
+[data-theme="dark"] .feature-one__single,
+[data-theme="dark"] .benefit-card,
+[data-theme="dark"] .capability-card,
+[data-theme="dark"] .pricing-card {
+    background-color: #101D30 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.35) !important;
+}
+
+[data-theme="dark"] .feature-one__single:hover,
+[data-theme="dark"] .benefit-card:hover,
+[data-theme="dark"] .capability-card:hover {
+    border-color: rgba(115, 102, 202, 0.5) !important;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(115, 102, 202, 0.15) !important;
+}

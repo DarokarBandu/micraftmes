@@ -8,6 +8,9 @@ import "@/public/assets/css/module-css/micraftmeswork.css"
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/product/mes-features',
+  },
     title: 'MES Software Features | Manufacturing Execution System Capabilities | Micraft MES',
     description: 'Explore Micraft MES features including production tracking, machine utilization monitoring, shop floor visibility, and real-time factory dashboards',
     keywords: ['MES Features', 'Manufacturing Execution System Capabilities', 'Production Tracking Software', 'Machine Utilization Tracking', 'Shop Floor Visibility', 'Factory Dashboards'],

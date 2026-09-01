@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/features/production-order-management',
+  },
   title: 'Production Order Management System | Micraft MES',
   description: 'Manage production orders and manufacturing activities from creation to completion with Micraft MES.',
   keywords: [

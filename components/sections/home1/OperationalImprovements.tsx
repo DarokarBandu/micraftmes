@@ -14,7 +14,7 @@ const OperationalImprovements = () => {
 
     return (
         <section className="operational-improvements" id="results" style={{
-            padding: '70px 0',
+            padding: '60px 0',
             position: 'relative',
             overflow: 'hidden'
         }}>
@@ -28,18 +28,18 @@ const OperationalImprovements = () => {
                 <div className="row align-items-center g-5">
                     {/* Left Side: Content */}
                     <div className="col-lg-6 wow fadeInLeft" data-wow-delay="100ms">
-                        <div className="section-title mb-4">
-                            <div className="section-title__tagline-box">
+                        <div className="section-title mb-3">
+                            <div className="section-title__tagline-box mb-2">
                                 <div className="section-title__tagline-shape-1"></div>
                                 <span className="section-title__tagline">BUSINESS IMPACT</span>
                                 <div className="section-title__tagline-shape-2"></div>
                             </div>
                             <AnimatedTitle>
-                                <h2 className="section-title__title mt-3">
+                                <h2 className="section-title__title mt-1 mb-2">
                                     Operational Improvements <br /> <span>with Micraft MES</span>
                                 </h2>
                             </AnimatedTitle>
-                            <p className="mt-3" style={{ color: 'rgba(255, 255, 255, 0.75)', fontSize: '16px', lineHeight: '1.6' }}>
+                            <p className="mt-2" style={{ color: 'rgba(255, 255, 255, 0.75)', fontSize: '16px', lineHeight: '1.6' }}>
                                 Manufacturers implementing real-time shop-floor visibility typically achieve improvements such as:
                             </p>
                         </div>

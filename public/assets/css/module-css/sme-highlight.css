@@ -1,0 +1,301 @@
+/*--------------------------------------------------------------
+# SME Highlight — Quick Credibility Strip
+# Supports both Light ([data-theme="light"]) and Dark ([data-theme="dark"]) themes
+--------------------------------------------------------------*/
+
+/* ─────────────────────────────────────────────────────────────
+   SECTION WRAPPER
+───────────────────────────────────────────────────────────── */
+.sme-credibility-strip {
+    position: relative;
+    overflow: hidden;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   TOP BANNER STRIP
+───────────────────────────────────────────────────────────── */
+.sme-credibility-strip__banner {
+    background: #0B192C;
+    border-top: 1px solid rgba(115, 102, 202, 0.25);
+    border-bottom: 1px solid rgba(115, 102, 202, 0.15);
+    padding: 14px 0;
+}
+
+[data-theme="light"] .sme-credibility-strip__banner {
+    background: #1a2e4a;
+    border-top-color: rgba(115, 102, 202, 0.3);
+    border-bottom-color: rgba(115, 102, 202, 0.2);
+}
+
+.sme-credibility-strip__banner .d-flex {
+    flex-wrap: wrap;
+    row-gap: 8px;
+}
+
+/* ─── Pulse Dot ─── */
+.banner-pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #7366CA;
+    box-shadow: 0 0 10px #7366CA;
+    flex-shrink: 0;
+    animation: sme-banner-pulse 2s infinite ease-in-out;
+}
+
+@keyframes sme-banner-pulse {
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.6;
+    }
+}
+
+/* ─── Banner Text ─── */
+.banner-label-text {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.banner-sep {
+    color: rgba(115, 102, 202, 0.6);
+    font-size: 14px;
+}
+
+.banner-tag {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   MAIN CONTENT AREA
+───────────────────────────────────────────────────────────── */
+.sme-credibility-strip__content {
+    background: var(--bg-secondary, #F8FAFC);
+    padding: 50px 0 60px;
+    position: relative;
+}
+
+/* Rainbow gradient top border */
+.sme-credibility-strip__content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #7366CA, #FFD25D, #00D261, #00D2FF);
+}
+
+[data-theme="dark"] .sme-credibility-strip__content {
+    background: #060B14;
+}
+
+[data-theme="light"] .sme-credibility-strip__content {
+    background: #F8FAFC;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   HEADING PILL LABEL
+───────────────────────────────────────────────────────────── */
+.sme-credibility-strip__heading {
+    margin-bottom: 40px;
+}
+
+.sme-credibility-strip__label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #7366CA;
+    background: rgba(115, 102, 202, 0.08);
+    border: 1px solid rgba(115, 102, 202, 0.2);
+    padding: 8px 24px;
+    border-radius: 100px;
+}
+
+[data-theme="dark"] .sme-credibility-strip__label {
+    color: #A78BFA;
+    background: rgba(115, 102, 202, 0.12);
+    border-color: rgba(115, 102, 202, 0.3);
+}
+
+[data-theme="light"] .sme-credibility-strip__label {
+    color: #5E50B6;
+    background: rgba(115, 102, 202, 0.08);
+    border-color: rgba(115, 102, 202, 0.25);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   CREDIBILITY CARDS
+───────────────────────────────────────────────────────────── */
+.sme-cred-card {
+    background: #ffffff;
+    border: 1px solid rgba(115, 102, 202, 0.12);
+    border-radius: 20px;
+    padding: 32px 24px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+                box-shadow 0.4s ease,
+                border-color 0.4s ease;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+}
+
+[data-theme="dark"] .sme-cred-card {
+    background: #0E1A2C;
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="light"] .sme-cred-card {
+    background: #ffffff;
+    border-color: #E2E8F0;
+    box-shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
+}
+
+.sme-cred-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+    border-color: rgba(115, 102, 202, 0.3);
+}
+
+[data-theme="dark"] .sme-cred-card:hover {
+    background: #112033;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    border-color: rgba(115, 102, 202, 0.4);
+}
+
+[data-theme="light"] .sme-cred-card:hover {
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.1);
+    border-color: rgba(115, 102, 202, 0.35);
+}
+
+/* ─── Icon Wrap ─── */
+/* --card-bg, --card-border, --card-bg-hover are set as inline CSS vars */
+/* in the component as pre-computed rgba() strings (no color-mix needed)  */
+.sme-cred-card__icon-wrap {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    background: var(--card-bg, rgba(115, 102, 202, 0.12));
+    border: 1px solid var(--card-border, rgba(115, 102, 202, 0.25));
+}
+
+.sme-cred-card:hover .sme-cred-card__icon-wrap {
+    background: var(--card-bg-hover, rgba(115, 102, 202, 0.22));
+}
+
+.sme-cred-card__icon {
+    font-size: 22px;
+    color: var(--card-color, #7366CA);
+}
+
+/* ─── Card Title ─── */
+.sme-cred-card__title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 10px;
+    line-height: 1.35;
+}
+
+[data-theme="dark"] .sme-cred-card__title {
+    color: #FFFFFF;
+}
+
+[data-theme="light"] .sme-cred-card__title {
+    color: #0F172A;
+}
+
+/* ─── Card Description ─── */
+.sme-cred-card__text {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #64748B;
+    margin: 0;
+}
+
+[data-theme="dark"] .sme-cred-card__text {
+    color: #94A3B8;
+}
+
+[data-theme="light"] .sme-cred-card__text {
+    color: #64748B;
+}
+
+/* ─── Bottom Accent Bar (revealed on hover) ─── */
+.sme-cred-card__bottom-accent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: 0 0 20px 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sme-cred-card:hover .sme-cred-card__bottom-accent {
+    opacity: 1;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   RESPONSIVE — Tablet
+───────────────────────────────────────────────────────────── */
+@media (max-width: 991px) {
+    .sme-credibility-strip__content {
+        padding: 44px 0 54px;
+    }
+    .sme-credibility-strip__heading {
+        margin-bottom: 30px;
+    }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   RESPONSIVE — Mobile
+───────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+    .sme-credibility-strip__content {
+        padding: 40px 0 50px;
+    }
+    .sme-cred-card {
+        padding: 24px 20px 20px;
+    }
+    .sme-cred-card__title {
+        font-size: 15px;
+    }
+    .banner-label-text {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+    .banner-tag {
+        font-size: 10px;
+    }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   RESPONSIVE — Small Mobile (hide separator tags)
+───────────────────────────────────────────────────────────── */
+@media (max-width: 575px) {
+    .banner-sep,
+    .banner-tag {
+        display: none;
+    }
+}

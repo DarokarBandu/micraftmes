@@ -16,7 +16,7 @@ export default function AutomotiveTraceabilityCaseStudy() {
                         <div className="col-lg-8">
                             <div className="cs-content rounded-5 bg-glass-dark border border-white-05 p-4 p-md-5">
                                 <span className="tagline-glow mb-3">Automotive Components</span>
-                                <h1 className="text-white display-5 fw-black mb-4">Achieving Production Traceability for an Automotive Supplier</h1>
+                                <h1 className="text-white display-5 fw-black mb-4">How Apex Auto Components Cut Quality Recalls by 100% in 45 Days</h1>
                                 
                                 <div className="cs-image-hero mb-60 rounded-5 overflow-hidden border border-white-05 shadow-2xl" style={{ height: '450px', position: 'relative' }}>
                                     <Image src="/assets/images/project/auto-traceability.png" alt="Traceability Monitoring" fill className="img-cover grayscale" />
@@ -45,17 +45,17 @@ export default function AutomotiveTraceabilityCaseStudy() {
                                 </div>
 
                                 <div className="cs-section">
-                                    <h3 className="text-white mb-4 fw-bold"><span className="text-success">03.</span> The Outcome</h3>
+                                    <h3 className="text-white mb-4 fw-bold"><span className="text-success">03.</span> The Outcome (Hard Metrics)</h3>
                                     <div className="row g-4">
                                         {[
-                                            { t: "Compliance", d: "Complete product and batch traceability achieved." },
-                                            { t: "Speed", d: "Faster root cause analysis for any quality issues." },
-                                            { t: "Trust", d: "Improved compliance with global automotive customer requirements." }
+                                            { t: "100% Traceability", d: "Zero compliance failures in OEM audits." },
+                                            { t: "22% Faster Root Cause", d: "Reduced defect tracing from days to minutes." },
+                                            { t: "45-Day Go-Live", d: "Deployed across 12 production lines without disrupting shifts." }
                                         ].map((item, i) => (
                                             <div key={i} className="col-md-4">
                                                 <div className="p-4 rounded-4 bg-white-05 border border-white-05 h-100">
-                                                    <h5 className="text-white fw-bold mb-2">{item.t}</h5>
-                                                    <p className="text-white-opacity-40 x-small mb-0">{item.d}</p>
+                                                    <h5 className="text-white fw-bold mb-2 fs-3">{item.t}</h5>
+                                                    <p className="text-white-opacity-40 x-small mb-0 fs-6">{item.d}</p>
                                                 </div>
                                             </div>
                                         ))}

@@ -3,6 +3,9 @@ import Breadcrumb from "@/components/layout/Breadcrumb";
 import LegalContentSection from "@/components/sections/InnerSection/LegalContentSection";
 
 export const metadata = {
+  alternates: {
+    canonical: '/terms-of-use',
+  },
   title: 'Terms of Use | Micraft MES',
   description: 'Review the terms and conditions for using Micraft MES manufacturing technology platforms and shop floor digitization tools.',
 };

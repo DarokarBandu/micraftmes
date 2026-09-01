@@ -61,6 +61,12 @@ export default function About() {
                     </div>
                 </div>
             </section>
+            <style jsx>{`
+                .about-two { padding: 60px 0 60px; }
+                :global(.about-two .section-title) { margin-bottom: 18px !important; }
+                :global(.about-two .section-title__tagline-box) { margin-bottom: 10px !important; }
+                :global(.about-two .section-title__title) { margin-bottom: 8px !important; }
+            `}</style>
         </>
     )
 }

@@ -1,6 +1,9 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/features',
+  },
   title: 'Manufacturing Execution System Features | Micraft MES',
   description: 'Explore Micraft MES features including production planning, shop floor tracking, quality management, machine monitoring, and dispatch management.',
   keywords: [

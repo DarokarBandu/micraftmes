@@ -6,7 +6,7 @@ const ImplementationApproach = () => {
     const phases = [
         {
             title: "Phase 1 — Process Assessment",
-            text: "Understand the production workflow and identify where real-time visibility is missing within your plant.",
+            text: "Understand the production workflow and identify where real-time visibility is missing.",
             icon: "fas fa-microscope",
             color: "#5CB0E9",
             delay: "100ms"
@@ -28,7 +28,7 @@ const ImplementationApproach = () => {
     ];
 
     return (
-        <section className="process-two implementation-approach" id="implementation" style={{ padding: '90px 0', position: 'relative' }}>
+        <section className="process-two implementation-approach" id="implementation" style={{ padding: '60px 0', position: 'relative' }}>
             <div className="process-two__bg" style={{
                 backgroundImage: "url(/assets/images/backgrounds/PracticalImplementation.jpg)",
                 backgroundAttachment: 'fixed',
@@ -45,19 +45,19 @@ const ImplementationApproach = () => {
             }}></div>
 
             <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-                <div className="section-title text-center sec-title-animation animation-style1 mb-5">
-                    <div className="section-title__tagline-box">
+                <div className="section-title text-center sec-title-animation animation-style1 mb-4">
+                    <div className="section-title__tagline-box mb-2">
                         <div className="section-title__tagline-shape-1"></div>
                         <span className="section-title__tagline text-uppercase" style={{ letterSpacing: '3px', fontWeight: '700' }}>IMPLEMENTATION APPROACH</span>
                         <div className="section-title__tagline-shape-2"></div>
                     </div>
                     <AnimatedTitle>
-                        <h2 className="section-title__title title-animation mt-2">
+                        <h2 className="section-title__title title-animation mt-1 mb-2">
                             A Practical Manufacturing Execution <br />
                             <span style={{ color: '#FFD25D' }}>System Implementation</span>
                         </h2>
                     </AnimatedTitle>
-                    <p className="mt-3 text-white opacity-75 mx-auto" style={{ maxWidth: '850px', fontSize: '17px', lineHeight: '1.7' }}>
+                    <p className="mt-2 text-white opacity-75 mx-auto" style={{ maxWidth: '850px', fontSize: '17px', lineHeight: '1.6' }}>
                         Traditional MES projects can take months to deploy. <strong style={{ color: '#FFD25D' }}>Micraft MES</strong> follows a focused and practical implementation approach specifically designed for mid-sized manufacturing plants.
                     </p>
                 </div>
@@ -141,7 +141,7 @@ const ImplementationApproach = () => {
                     }}>
                         <div className="pulse-icon" style={{ width: '10px', height: '10px', background: '#FFD25D', borderRadius: '50%', boxShadow: '0 0 10px #FFD25D' }}></div>
                         <p className="mb-0" style={{ color: '#fff', fontSize: '16px', fontWeight: '700', letterSpacing: '0.5px' }}>
-                            Typical Implementation Timeline: <span style={{ color: '#FFD25D', fontSize: '20px', marginLeft: '5px' }}>30–60 Days</span>
+                            Typical Implementation Timeline: <span style={{ color: '#FFD25D', fontSize: '20px', marginLeft: '5px' }}>30–60 Days</span> <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', fontWeight: '500', marginLeft: '5px' }}>depending on plant complexity</span>
                         </p>
                     </div>
                 </div>

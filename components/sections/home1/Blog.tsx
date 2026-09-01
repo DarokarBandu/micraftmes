@@ -14,7 +14,7 @@ const blogs = [
         author: "Jalindra Shinde",
         authorImage: "/assets/images/blog/jalindra-shinde.png",
         date: "April 6, 2026",
-        link: "/resources/shop-floor-visibility-guide"
+        link: "/mes-blog/shop-floor-visibility/how-to-improve-shop-floor-visibility"
     },
     {
         id: 2,
@@ -24,7 +24,7 @@ const blogs = [
         author: "Umesh Dahare",
         authorImage: "/assets/images/blog/umesh-dahare.png",
         date: "March 22, 2026",
-        link: "/resources/what-is-production-tracking"
+        link: "/mes-blog/production-tracking/what-is-production-tracking-in-manufacturing"
     },
     {
         id: 3,
@@ -33,22 +33,22 @@ const blogs = [
         author: "Bandhu Dorokar",
         authorImage: "/assets/images/blog/bandhu-dorokar.png",
         date: "February 28, 2026",
-        link: "/resources/improve-machine-utilization"
+        link: "/mes-blog/machine-utilization/how-to-improve-machine-utilization"
     }
 ];
 
 export default function Blog() {
     return (
-        <section className="blog-section" id="blog" style={{ padding: '50px 0 80px' }}>
+        <section className="blog-section" id="blog" style={{ padding: '50px 0 60px' }}>
             <div className="container">
-                <div className="section-title text-center mb-60">
-                    <div className="section-title__tagline-box justify-content-center">
+                <div className="section-title text-center mb-4">
+                    <div className="section-title__tagline-box justify-content-center mb-2">
                         <div className="section-title__tagline-shape-1"></div>
                         <span className="section-title__tagline">Manufacturing Insights &amp; Resources</span>
                         <div className="section-title__tagline-shape-2"></div>
                     </div>
                     <AnimatedTitle>
-                        <h2 className="section-title__title">Latest Manufacturing <br /> <span>Trends &amp; Expert Blogs</span></h2>
+                        <h2 className="section-title__title mt-1 mb-2">Latest Manufacturing <br /> <span>Trends &amp; Expert Blogs</span></h2>
                     </AnimatedTitle>
                 </div>
 

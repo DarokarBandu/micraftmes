@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/features/machine-monitoring',
+  },
   title: 'Real-Time Machine Monitoring & OEE Software | Micraft MES',
   description: 'Monitor machine activity, evaluate OEE, and reduce production downtime with Micraft MES machine monitoring.',
   keywords: [

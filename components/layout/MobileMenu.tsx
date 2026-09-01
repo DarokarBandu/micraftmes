@@ -159,14 +159,16 @@ export default function MobileMenu({ isSidebar, handleMobileMenu }: MobileMenuPr
               <li className="dropdown">
                 <Link href="/resources">Resources</Link>
                 <ul style={{ display: activeDropdown === 6 ? "block" : "none" }}>
-                  <li><Link href="/resources/what-is-mes" onClick={handleMobileMenu}>What is MES</Link></li>
+                  <li><Link href="/resources/what-is-mes" onClick={handleMobileMenu}>What is MES Guide</Link></li>
                   <li><Link href="/resources/shop-floor-digitization-benefits" onClick={handleMobileMenu}>Shop Floor Digitization</Link></li>
                   <li><Link href="/resources/manufacturing-productivity-guide" onClick={handleMobileMenu}>Productivity Guide</Link></li>
                   <li><Link href="/resources/mes-implementation-guide" onClick={handleMobileMenu}>Implementation Guide</Link></li>
                   <li><Link href="/resources/production-monitoring-guide" onClick={handleMobileMenu}>Production Monitoring Guide</Link></li>
+                  <li><Link href="/faq" onClick={handleMobileMenu}>Frequently Asked Questions (FAQ)</Link></li>
                   <li><Link href="/customers/case-studies" onClick={handleMobileMenu}>Case Studies</Link></li>
                   <li><Link href="/success-stories" onClick={handleMobileMenu}>Success Stories</Link></li>
-                  <li><Link href="/mes-blog" onClick={handleMobileMenu}>Blogs</Link></li>
+                  <li><Link href="/testimonials" onClick={handleMobileMenu}>Client Testimonials</Link></li>
+                  <li><Link href="/mes-blog" onClick={handleMobileMenu}>MES & Industry Blog</Link></li>
                 </ul>
                 <div className={`dropdown-btn ${activeDropdown === 6 ? "open" : ""}`} onClick={() => toggleDropdown(6)}>
                   <span className="fa fa-angle-down" />

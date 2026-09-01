@@ -11,6 +11,7 @@ export default function AboutMicraftPage() {
         <Layout headerStyle={1} footerStyle={2}>
             {/* Meta Tags handled by Layout or common head, but I will focus on content structure */}
             <Breadcrumb breadcrumbTitle="About Micraft" />
+
             {/* 1. Hero Section */}
             <section className="about-one pt-100 pb-100 overflow-hidden" id="about-hero" style={{ backgroundColor: '#070C14' }}>
                 <div className="about-one__shape-1"></div>

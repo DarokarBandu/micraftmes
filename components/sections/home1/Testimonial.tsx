@@ -100,14 +100,14 @@ export default function Testimonial() {
             <section className="testimonial-section-modern" id="testimonial">
                 <div className="testimonial-section-bg-glow"></div>
                 <div className="container">
-                    <div className="section-title text-center mb-50">
-                        <div className="section-title__tagline-box justify-content-center">
+                    <div className="section-title text-center mb-4">
+                        <div className="section-title__tagline-box justify-content-center mb-2">
                             <div className="section-title__tagline-shape-1"></div>
                             <span className="section-title__tagline">Customer Success Stories</span>
                             <div className="section-title__tagline-shape-2"></div>
                         </div>
                         <AnimatedTitle>
-                            <h2 className="section-title__title">
+                            <h2 className="section-title__title mt-1 mb-2">
                                 Customer Experiences <br />
                                 That <span>Speak Volumes</span>
                             </h2>
@@ -157,7 +157,7 @@ export default function Testimonial() {
             <style jsx>{`
             .testimonial-section-modern {
                 position: relative;
-                padding: 70px 0 35px;
+                padding: 55px 0 30px;
                 overflow: hidden;
             }
             .testimonial-section-bg-glow {

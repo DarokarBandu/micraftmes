@@ -111,6 +111,90 @@ export default function MesPricingPage() {
                 </div>
             </section>
 
+            {/* ═══════════════ 2.5. TRANSPARENT PRICING TIERS ═══════════════ */}
+            <section className="pricing-tiers-section position-relative pt-100 pb-100 bg-dark-deep-mes" id="pricing-tiers">
+                <div className="container">
+                    <div className="section-title text-center mb-50">
+                        <div className="section-title__tagline-box justify-content-center">
+                            <div className="section-title__tagline-shape-1"></div>
+                            <span className="section-title__tagline text-gold">Transparent Costs</span>
+                            <div className="section-title__tagline-shape-2"></div>
+                        </div>
+                        <AnimatedTitle>
+                            <h2 className="section-title__title text-white mt-2">
+                                Simple, Scalable <span>Pricing</span>
+                            </h2>
+                        </AnimatedTitle>
+                        <p className="mt-3 text-white-50 mx-auto" style={{ maxWidth: '780px', fontSize: '15px' }}>
+                            Unlike enterprise MES vendors that hide their costs and charge heavy upfront licensing fees, Micraft MES offers transparent, modular subscription tiers. 
+                            <br/><span className="text-warning small fst-italic">* The numbers below are baseline estimates. Final pricing depends on specific integration requirements.</span>
+                        </p>
+                    </div>
+
+                    <div className="row g-4 justify-content-center">
+                        {/* Tier 1: Starter */}
+                        <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                            <div className="glass-card-innovative p-5 border-white-10 h-100 transition-all hover-scale-3 text-center position-relative overflow-hidden group">
+                                <div className="absolute top-0 left-0 w-100 h-1 background-gradient-primary"></div>
+                                <h3 className="text-white h4 fw-bold mb-2">Starter</h3>
+                                <p className="text-white-50 small mb-4">Perfect for single-line operations</p>
+                                <div className="mb-4 pb-4 border-bottom border-white-10">
+                                    <span className="text-white h1 fw-900">₹15,000</span>
+                                    <span className="text-white-50"> / month</span>
+                                </div>
+                                <ul className="list-unstyled text-start text-white-80 mb-5 d-flex flex-column gap-3">
+                                    <li><i className="fas fa-check text-primary me-2"></i> Up to 5 Connected Machines</li>
+                                    <li><i className="fas fa-check text-primary me-2"></i> Basic Production Tracking</li>
+                                    <li><i className="fas fa-check text-primary me-2"></i> Standard OEE Dashboards</li>
+                                    <li><i className="fas fa-check text-primary me-2"></i> Email Support</li>
+                                </ul>
+                                <Link href="#request-pricing" className="thm-btn thm-btn-outline w-100">Get Started</Link>
+                            </div>
+                        </div>
+
+                        {/* Tier 2: Professional (Popular) */}
+                        <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                            <div className="glass-card-innovative p-5 border-gold border-opacity-30 h-100 transition-all hover-scale-3 text-center position-relative overflow-hidden group" style={{ background: 'rgba(240, 194, 41, 0.03)' }}>
+                                <div className="absolute top-0 right-0 px-3 py-1 bg-gold text-dark fw-bold small rounded-bottom-start shadow-sm">MOST POPULAR</div>
+                                <div className="absolute top-0 left-0 w-100 h-1 background-gradient-gold"></div>
+                                <h3 className="text-gold h4 fw-bold mb-2">Professional</h3>
+                                <p className="text-white-50 small mb-4">For growing mid-size factories</p>
+                                <div className="mb-4 pb-4 border-bottom border-white-10">
+                                    <span className="text-gold h1 fw-900">₹35,000</span>
+                                    <span className="text-white-50"> / month</span>
+                                </div>
+                                <ul className="list-unstyled text-start text-white-80 mb-5 d-flex flex-column gap-3">
+                                    <li><i className="fas fa-check text-gold me-2"></i> Up to 20 Connected Machines</li>
+                                    <li><i className="fas fa-check text-gold me-2"></i> Advanced Quality Control</li>
+                                    <li><i className="fas fa-check text-gold me-2"></i> ERP Integration API</li>
+                                    <li><i className="fas fa-check text-gold me-2"></i> 24/7 Priority Support</li>
+                                </ul>
+                                <Link href="#request-pricing" className="thm-btn w-100">Get Started <i className="fas fa-arrow-right ms-2"></i></Link>
+                            </div>
+                        </div>
+
+                        {/* Tier 3: Enterprise */}
+                        <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                            <div className="glass-card-innovative p-5 border-white-10 h-100 transition-all hover-scale-3 text-center position-relative overflow-hidden group">
+                                <div className="absolute top-0 left-0 w-100 h-1 bg-white opacity-25"></div>
+                                <h3 className="text-white h4 fw-bold mb-2">Enterprise</h3>
+                                <p className="text-white-50 small mb-4">For multi-plant operations</p>
+                                <div className="mb-4 pb-4 border-bottom border-white-10">
+                                    <span className="text-white h2 fw-900">Custom</span>
+                                </div>
+                                <ul className="list-unstyled text-start text-white-80 mb-5 d-flex flex-column gap-3">
+                                    <li><i className="fas fa-check text-white-50 me-2"></i> Unlimited Machines</li>
+                                    <li><i className="fas fa-check text-white-50 me-2"></i> Multi-Plant Rollup Dashboard</li>
+                                    <li><i className="fas fa-check text-white-50 me-2"></i> Custom Feature Development</li>
+                                    <li><i className="fas fa-check text-white-50 me-2"></i> Dedicated Account Manager</li>
+                                </ul>
+                                <Link href="#request-pricing" className="thm-btn thm-btn-outline w-100 text-white border-white-20 hover-bg-white hover-text-dark">Contact Sales</Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* ═══════════════ 3 & 4. FACTORS & STRUCTURE ═══════════════ */}
             <section className="pricing-details-section position-relative" id="pricing-details">
                 <div className="container position-relative" style={{ zIndex: 1 }}>

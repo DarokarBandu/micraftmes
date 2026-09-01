@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/solutions/real-time-production-monitoring',
+  },
   title: "Real-Time Production Monitoring Software | Factory Monitoring System | Micraft MES",
   description: "Monitor factory production performance live with Micraft MES real-time production monitoring software designed for manufacturing companies.",
   keywords: [

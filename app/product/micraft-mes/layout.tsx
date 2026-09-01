@@ -1,9 +1,12 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: "Micraft MES | Manufacturing Execution System for Production Monitoring",
-    description: "Micraft MES helps manufacturers monitor production, track machine utilization, and improve factory efficiency with real-time shop floor visibility.",
-    keywords: ["Micraft MES", "Manufacturing Execution System", "Production Monitoring", "Machine Utilization", "OEE Tracking", "Smart Factory"],
+  alternates: {
+    canonical: '/product/micraft-mes',
+  },
+    title: "Micraft MES | Manufacturing Execution System for Real-Time Factory Control",
+    description: "Micraft MES is a real-time manufacturing execution system that provides complete visibility across production, machines, quality, and dispatch operations.",
+    keywords: ["Manufacturing Execution System", "MES Software for Manufacturing", "Shop Floor Management System"],
 };
 
 export default function MicraftMesLayout({

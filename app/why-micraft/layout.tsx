@@ -1,6 +1,9 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/why-micraft',
+  },
   title: 'Micraft MES | Manufacturing Execution System for Real-Time Factory Control',
   description: 'Micraft MES is a real-time manufacturing execution system that provides complete visibility across production, machines, quality, and dispatch operations.',
   keywords: [

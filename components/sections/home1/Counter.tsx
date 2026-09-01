@@ -40,7 +40,7 @@ export default function Counter() {
             step: "03",
             code: "VERIFICATION",
             stageLabel: "STAGE 03",
-            title: "Inspection, Packing & Dispatch",
+            title: "Inspection, Packing & Dispatch Monitoring",
             desc: "Maintain clear visibility across quality checks, packing progress, and dispatch readiness.",
             icon: "icon-quality",
             tag: "QA_ACCURACY: 99.8%",

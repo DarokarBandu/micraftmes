@@ -31,11 +31,10 @@ const sitemapData: SitemapCategory[] = [
             { title: "Frequently Asked Questions", url: "/faq", desc: "Common questions regarding deployment, integrations, and pricing." },
             { title: "Website Sitemap", url: "/sitemap", desc: "Complete directory and navigation index of all website pages." },
             { title: "Success Stories", url: "/success-stories", desc: "Overview of customer success milestones and business impact." },
-            { title: "About Micraft Solutions", url: "/company/about", desc: "Our mission to bring digital excellence to manufacturing plants worldwide." },
+            { title: "About Micraft", url: "/company/about", desc: "Our mission to bring digital excellence to manufacturing plants worldwide." },
             { title: "Leadership Team", url: "/company/leadership", desc: "Meet the engineering and industry veterans behind Micraft MES." },
             { title: "Careers at Micraft", url: "/company/careers", desc: "Join our fast-growing smart manufacturing software engineering team.", badge: "Hiring" },
-            { title: "Our Team", url: "/team", desc: "Overview of our software development and implementation teams." },
-            { title: "Team Showcase Carousel", url: "/team-carousel", desc: "Visual gallery of the Micraft engineering & support talent." }
+            { title: "Our Team", url: "/team", desc: "Overview of our software development and implementation teams." }
         ]
     },
     {
@@ -136,8 +135,7 @@ const sitemapData: SitemapCategory[] = [
             { title: "CNC Machine Downtime Reduction Study", url: "/customers/case-studies/cnc-machine-downtime", desc: "24% improvement in spindle utilization within 60 days." },
             { title: "Engineering Visibility Case Study", url: "/customers/case-studies/engineering-visibility", desc: "Eliminating production status meetings with real-time dashboards." },
             { title: "Fabrication Dispatch Sync Study", url: "/customers/case-studies/fabrication-dispatch", desc: "Synchronizing heavy welding progress with customer shipping dates." },
-            { title: "Customer Testimonials", url: "/testimonials", desc: "Hear direct feedback from factory owners and plant heads." },
-            { title: "Testimonials Showcase Carousel", url: "/testimonials-carousel", desc: "Interactive carousel of plant manager feedback." }
+            { title: "Customer Testimonials", url: "/testimonials", desc: "Hear direct feedback from factory owners and plant heads." }
         ]
     },
     {
@@ -146,9 +144,6 @@ const sitemapData: SitemapCategory[] = [
         description: "Actionable manufacturing technology articles, shop floor tips, and industry trends.",
         links: [
             { title: "MES Blog Hub", url: "/mes-blog", desc: "Latest articles on Industry 4.0, smart manufacturing, and shop floor management." },
-            { title: "Blog Directory (List View)", url: "/mes-blog/blog-list", desc: "Chronological archive of all published blog posts." },
-            { title: "Blog Directory (Grid View)", url: "/mes-blog/blog-list-2", desc: "Visual grid layout of manufacturing articles." },
-            { title: "Featured Blog Carousel", url: "/mes-blog/blog-carousel", desc: "Curated carousel of trending manufacturing intelligence." },
             { title: "What is Production Tracking in Manufacturing?", url: "/mes-blog/production-tracking/what-is-production-tracking-in-manufacturing", desc: "Core principles of tracking jobs through complex plant workflows." },
             { title: "How to Improve Shop Floor Visibility", url: "/mes-blog/shop-floor-visibility/how-to-improve-shop-floor-visibility", desc: "7 practical steps to eliminate blind spots on your factory floor." },
             { title: "How to Improve Machine Utilization", url: "/mes-blog/machine-utilization/how-to-improve-machine-utilization", desc: "Proven techniques to increase OEE and reduce idle time." },
@@ -158,45 +153,12 @@ const sitemapData: SitemapCategory[] = [
         ]
     },
     {
-        category: "Technical Services & Infrastructure",
-        icon: "fas fa-server",
-        description: "Supporting cloud infrastructure, security protocols, and enterprise services.",
-        links: [
-            { title: "Enterprise Services", url: "/services", desc: "Overview of implementation, custom engineering, and integration services." },
-            { title: "Services Showcase Carousel", url: "/services-carousel", desc: "Carousel view of technical offerings." },
-            { title: "Cloud Managed Services", url: "/cloud-managed-services", desc: "Secure cloud hosting, high-availability backups, and managed uptime." },
-            { title: "Data Protection & Privacy", url: "/data-protection-privacy", desc: "Enterprise security architecture protecting plant proprietary formulas." },
-            { title: "Endpoint Device Security", url: "/endpoint-device-security", desc: "Hardened shop floor touchscreen kiosk security." },
-            { title: "Threat Detection & Prevention", url: "/threat-detection-prevention", desc: "Industrial IoT network isolation and cyber protection." },
-            { title: "Advanced Technology Hub", url: "/advanced-technology", desc: "Next-gen AI analytics and edge computing architecture." },
-            { title: "Backup & Disaster Recovery", url: "/backup-recovery", desc: "Zero-data-loss redundancy and continuous plant replication." },
-            { title: "Media Gallery", url: "/gallery", desc: "Visual media and shop floor deployment snapshots." },
-            { title: "Project Portfolio", url: "/portfolio", desc: "Highlights of successful manufacturing transformations." }
-        ]
-    },
-    {
         category: "Legal & Website Policies",
         icon: "fas fa-shield-alt",
         description: "Privacy terms, compliance frameworks, and conditions of service.",
         links: [
             { title: "Privacy Policy", url: "/privacy-policy", desc: "Data protection guidelines, compliance, and privacy terms." },
             { title: "Terms of Use", url: "/terms-of-use", desc: "Website legal policies and terms of software engagement." }
-        ]
-    },
-    {
-        category: "Utility, Auth & Template Pages",
-        icon: "fas fa-tools",
-        description: "Authentication portals, error handling, and component template blueprints.",
-        links: [
-            { title: "User Login Portal", url: "/login", desc: "Secure customer and operator login portal." },
-            { title: "Account Registration", url: "/sign-up", desc: "Sign up and create an account on Micraft MES." },
-            { title: "Saved Wishlist", url: "/wishlist", desc: "Saved solutions and bookmarked modules." },
-            { title: "404 Error Page", url: "/error", desc: "Custom error handler page." },
-            { title: "Coming Soon Notice", url: "/coming-soon", desc: "Upcoming feature and module roadmap preview." },
-            { title: "Portfolio Detail View", url: "/portfolio-details", desc: "Detailed case study template." },
-            { title: "Product Detail View", url: "/product-details", desc: "Individual product hardware template." },
-            { title: "Team Member Detail View", url: "/team-details", desc: "Individual specialist biography template." },
-            { title: "Blog Article Detail View", url: "/mes-blog/blog-details", desc: "Full article template page." }
         ]
     }
 ]
@@ -226,163 +188,152 @@ export default function SitemapPage() {
             <Breadcrumb breadcrumbTitle="Website Sitemap" />
 
             {/* Hero & Search Directory Section */}
-            <section className="sitemap-hero py-5 position-relative overflow-hidden" style={{ background: 'linear-gradient(180deg, rgba(115, 102, 202, 0.08) 0%, rgba(115, 102, 202, 0.02) 100%)' }}>
+            <section className="sitemap-hero py-5 position-relative overflow-hidden">
                 <div className="container py-3 position-relative z-2">
                     <div className="row justify-content-center text-center">
                         <div className="col-lg-9">
                             <span className="badge px-3 py-2 rounded-pill mb-3" style={{ background: 'rgba(115, 102, 202, 0.12)', color: '#7366CA', border: '1px solid rgba(115, 102, 202, 0.25)', fontWeight: '700', fontSize: '12px', letterSpacing: '1px' }}>
                                 <i className="fas fa-sitemap me-2"></i> COMPLETE WEBSITE DIRECTORY
                             </span>
-                            <h1 className="display-5 fw-bold mb-3">
+                            <h1 className="display-5 fw-bold mb-3 sitemap-main-title">
                                 Explore <span style={{ color: '#7366CA' }}>Micraft MES</span> Platform Sitemap
                             </h1>
-                            <p className="lead text-secondary mx-auto mb-4" style={{ maxWidth: '750px', fontSize: '16px' }}>
-                                A structured directory of all {totalUrls} pages across products, industry solutions, operational capabilities, case studies, guides, and services.
+                            <p className="lead sitemap-subtitle mx-auto mb-4" style={{ maxWidth: '750px', fontSize: '16px' }}>
+                                A structured directory of all {totalUrls} production pages across core products, industry solutions, operational capabilities, case studies, guides, and articles.
                             </p>
 
                             {/* Key Stats Bar */}
                             <div className="d-flex flex-wrap justify-content-center gap-3 mb-4">
-                                <div className="stat-pill px-3 py-2 rounded-3" style={{ background: 'rgba(115, 102, 202, 0.08)', border: '1px solid rgba(115, 102, 202, 0.2)' }}>
-                                    <strong className="text-primary me-1">{totalUrls}</strong> Total Pages
+                                <div className="stat-pill px-3 py-2 rounded-3 sitemap-stat-pill">
+                                    <strong className="text-primary me-1">{totalUrls}</strong> Core Pages
                                 </div>
-                                <div className="stat-pill px-3 py-2 rounded-3" style={{ background: 'rgba(115, 102, 202, 0.08)', border: '1px solid rgba(115, 102, 202, 0.2)' }}>
+                                <div className="stat-pill px-3 py-2 rounded-3 sitemap-stat-pill">
                                     <strong className="text-primary me-1">{sitemapData.length}</strong> Categories
                                 </div>
-                                <div className="stat-pill px-3 py-2 rounded-3" style={{ background: 'rgba(115, 102, 202, 0.08)', border: '1px solid rgba(115, 102, 202, 0.2)' }}>
-                                    <strong className="text-primary me-1">100%</strong> Canonical
-                                </div>
-                                <div className="stat-pill px-3 py-2 rounded-3" style={{ background: 'rgba(115, 102, 202, 0.08)', border: '1px solid rgba(115, 102, 202, 0.2)' }}>
-                                    <Link href="/sitemap.xml" className="text-primary text-decoration-none fw-bold" target="_blank">
-                                        <i className="fas fa-code me-1"></i> XML Sitemap
-                                    </Link>
-                                </div>
-                                <div className="stat-pill px-3 py-2 rounded-3" style={{ background: 'rgba(115, 102, 202, 0.08)', border: '1px solid rgba(115, 102, 202, 0.2)' }}>
-                                    <Link href="/robots.txt" className="text-primary text-decoration-none fw-bold" target="_blank">
-                                        <i className="fas fa-robot me-1"></i> robots.txt
-                                    </Link>
+                                <div className="stat-pill px-3 py-2 rounded-3 sitemap-stat-pill">
+                                    <strong className="text-primary me-1">100%</strong> Live & Indexable
                                 </div>
                             </div>
 
-                            {/* Search Box */}
-                            <div className="sitemap-search-box mx-auto position-relative" style={{ maxWidth: '600px' }}>
-                                <i className="fas fa-search position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary"></i>
-                                <input
-                                    type="text"
-                                    className="form-control form-control-lg ps-5 rounded-4 shadow-sm"
-                                    placeholder="Search across all 95 pages..."
-                                    value={searchTerm}
-                                    onChange={(e) => setSearchTerm(e.target.value)}
-                                    style={{ fontSize: '15px', border: '1.5px solid rgba(115, 102, 202, 0.3)' }}
-                                />
-                                {searchTerm && (
-                                    <button
-                                        type="button"
-                                        className="btn btn-link position-absolute top-50 end-0 translate-middle-y me-2 text-secondary"
-                                        onClick={() => setSearchTerm("")}
-                                    >
-                                        <i className="fas fa-times"></i>
-                                    </button>
-                                )}
+                            {/* Search & Category Filter Controls */}
+                            <div className="card border-0 shadow-lg p-3 mx-auto sitemap-search-card" style={{ maxWidth: '720px', borderRadius: '16px' }}>
+                                <div className="row g-2">
+                                    <div className="col-md-7">
+                                        <div className="input-group">
+                                            <span className="input-group-text bg-transparent border-0 text-muted ps-3">
+                                                <i className="fas fa-search"></i>
+                                            </span>
+                                            <input
+                                                type="text"
+                                                className="form-control border-0 shadow-none ps-2 sitemap-search-input"
+                                                placeholder="Search by keyword, page title, or URL path..."
+                                                value={searchTerm}
+                                                onChange={(e) => setSearchTerm(e.target.value)}
+                                                style={{ fontSize: '15px' }}
+                                            />
+                                            {searchTerm && (
+                                                <button className="btn btn-link text-muted pe-3 text-decoration-none" onClick={() => setSearchTerm("")}>
+                                                    <i className="fas fa-times"></i>
+                                                </button>
+                                            )}
+                                        </div>
+                                    </div>
+                                    <div className="col-md-5 border-start-md">
+                                        <select
+                                            className="form-select border-0 shadow-none rounded-3 sitemap-select"
+                                            value={selectedCategory}
+                                            onChange={(e) => setSelectedCategory(e.target.value)}
+                                            style={{ fontSize: '14px', fontWeight: '500' }}
+                                        >
+                                            <option value="All">All Categories ({totalUrls})</option>
+                                            {sitemapData.map((cat, idx) => (
+                                                <option key={idx} value={cat.category}>
+                                                    {cat.category} ({cat.links.length})
+                                                </option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Category Filter Pills */}
-            <section className="py-3 border-bottom border-top" style={{ background: 'rgba(115, 102, 202, 0.03)' }}>
-                <div className="container">
-                    <div className="d-flex flex-wrap gap-2 justify-content-center align-items-center">
-                        <span className="small text-muted me-2 fw-bold d-none d-md-inline">Filter:</span>
-                        <button
-                            type="button"
-                            className={`btn btn-sm rounded-pill px-3 ${selectedCategory === "All" ? "btn-primary" : "btn-outline-secondary"}`}
-                            onClick={() => setSelectedCategory("All")}
-                        >
-                            All ({totalUrls})
-                        </button>
-                        {sitemapData.map((cat, idx) => (
-                            <button
-                                key={idx}
-                                type="button"
-                                className={`btn btn-sm rounded-pill px-3 ${selectedCategory === cat.category ? "btn-primary" : "btn-outline-secondary"}`}
-                                onClick={() => setSelectedCategory(cat.category)}
-                            >
-                                <i className={`${cat.icon} me-1 small`}></i> {cat.category} ({cat.links.length})
-                            </button>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Sitemap Hierarchy & Listings */}
+            {/* Main Sitemap Content Grid */}
             <section className="sitemap-content py-5">
                 <div className="container">
                     {filteredCategories.length === 0 ? (
-                        <div className="text-center py-5">
-                            <i className="fas fa-search fs-1 text-muted mb-3"></i>
-                            <h3 className="h4 fw-bold">No matching pages found</h3>
-                            <p className="text-muted">Try a different keyword or reset the category filter.</p>
+                        <div className="text-center py-5 sitemap-empty-state rounded-4">
+                            <div className="mb-3 text-muted" style={{ fontSize: '48px' }}>
+                                <i className="fas fa-search-minus"></i>
+                            </div>
+                            <h4 className="fw-bold sitemap-card-title">No Pages Matching &quot;{searchTerm}&quot;</h4>
+                            <p className="text-muted mb-4">Try searching for different keywords such as &quot;Downtime&quot;, &quot;OEE&quot;, &quot;Automotive&quot;, or &quot;Planning&quot;.</p>
                             <button
-                                type="button"
-                                className="btn btn-primary rounded-pill px-4"
+                                className="thm-btn"
                                 onClick={() => { setSearchTerm(""); setSelectedCategory("All"); }}
                             >
-                                Reset Search
+                                Reset Search Filters
                             </button>
                         </div>
                     ) : (
                         <div className="row g-4">
-                            {filteredCategories.map((group, groupIdx) => (
-                                <div key={groupIdx} className="col-12">
-                                    <div className="sitemap-category-box p-4 p-lg-5 rounded-4 shadow-sm border" style={{ background: 'var(--bg-card, #FFFFFF)' }}>
-                                        {/* Category Title Header */}
-                                        <div className="d-flex flex-wrap align-items-center justify-content-between pb-3 mb-4 border-bottom">
+                            {filteredCategories.map((category, catIdx) => (
+                                <div key={catIdx} className="col-lg-6">
+                                    <div className="card h-100 border-0 shadow-sm rounded-4 overflow-hidden sitemap-category-card">
+                                        {/* Category Header */}
+                                        <div className="card-header border-bottom py-3 px-4 d-flex align-items-center justify-content-between sitemap-category-header">
                                             <div className="d-flex align-items-center gap-3">
-                                                <div className="category-icon-box rounded-3 d-flex align-items-center justify-content-center" style={{ width: '48px', height: '48px', background: 'linear-gradient(135deg, #8B7DEC 0%, #7366CA 100%)', color: '#FFFFFF' }}>
-                                                    <i className={`${group.icon} fs-5`}></i>
+                                                <div className="cat-icon-box rounded-circle d-flex align-items-center justify-content-center" style={{ width: '38px', height: '38px', background: 'rgba(115, 102, 202, 0.25)', color: '#7366CA' }}>
+                                                    <i className={category.icon}></i>
                                                 </div>
                                                 <div>
-                                                    <h2 className="h4 mb-1 fw-bold">{group.category}</h2>
-                                                    <p className="text-muted small mb-0">{group.description}</p>
+                                                    <h5 className="mb-0 fw-bold sitemap-cat-title" style={{ fontSize: '17px' }}>{category.category}</h5>
+                                                    <small className="sitemap-cat-desc" style={{ fontSize: '12px' }}>{category.description}</small>
                                                 </div>
                                             </div>
-                                            <span className="badge rounded-pill px-3 py-2 mt-2 mt-md-0" style={{ background: 'rgba(115, 102, 202, 0.1)', color: '#7366CA', fontWeight: '700' }}>
-                                                {group.links.length} {group.links.length === 1 ? 'Page' : 'Pages'}
+                                            <span className="badge rounded-pill px-2 py-1" style={{ background: 'rgba(255, 210, 93, 0.2)', color: '#FFD25D', fontSize: '11px' }}>
+                                                {category.links.length} URLs
                                             </span>
                                         </div>
 
-                                        {/* Category Link Grid */}
-                                        <div className="row g-3">
-                                            {group.links.map((link, linkIdx) => (
-                                                <div key={linkIdx} className="col-xl-4 col-lg-6 col-md-6">
-                                                    <Link
-                                                        href={link.url}
-                                                        className="sitemap-link-card d-block p-3 rounded-3 text-decoration-none h-100 border transition-all"
-                                                        style={{ background: 'rgba(115, 102, 202, 0.02)', borderColor: 'rgba(115, 102, 202, 0.15)' }}
-                                                    >
-                                                        <div className="d-flex align-items-start justify-content-between mb-2">
-                                                            <h3 className="h6 mb-0 fw-bold d-flex align-items-center gap-2 text-primary">
-                                                                <i className="fas fa-chevron-right small text-muted"></i>
-                                                                {link.title}
-                                                            </h3>
-                                                            {link.badge && (
-                                                                <span className="badge bg-primary rounded-pill extra-small px-2" style={{ fontSize: '10px' }}>
-                                                                    {link.badge}
-                                                                </span>
-                                                            )}
+                                        {/* Links List */}
+                                        <div className="card-body p-0">
+                                            <ul className="list-group list-group-flush">
+                                                {category.links.map((link, linkIdx) => (
+                                                    <li key={linkIdx} className="list-group-item px-4 py-3 sitemap-list-item transition-all">
+                                                        <div className="d-flex align-items-start justify-content-between">
+                                                            <div className="pe-2">
+                                                                <div className="d-flex align-items-center gap-2 mb-1">
+                                                                    <Link
+                                                                        href={link.url}
+                                                                        className="fw-bold text-decoration-none sitemap-link transition-all"
+                                                                        style={{ fontSize: '15px' }}
+                                                                    >
+                                                                        {link.title}
+                                                                    </Link>
+                                                                    {link.badge && (
+                                                                        <span className="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill" style={{ fontSize: '10px' }}>
+                                                                            {link.badge}
+                                                                        </span>
+                                                                    )}
+                                                                </div>
+                                                                <p className="mb-0 sitemap-link-desc" style={{ fontSize: '13px', lineHeight: '1.4' }}>
+                                                                    {link.desc}
+                                                                </p>
+                                                            </div>
+                                                            <Link
+                                                                href={link.url}
+                                                                className="btn btn-sm border-0 rounded-circle p-2 mt-1 flex-shrink-0 sitemap-arrow-btn"
+                                                                title={`Visit ${link.title}`}
+                                                            >
+                                                                <i className="fas fa-arrow-right" style={{ fontSize: '12px' }}></i>
+                                                            </Link>
                                                         </div>
-                                                        <p className="text-secondary small mb-2 lh-sm" style={{ fontSize: '12.5px' }}>
-                                                            {link.desc}
-                                                        </p>
-                                                        <div className="d-flex align-items-center gap-1 text-muted" style={{ fontSize: '11px' }}>
-                                                            <code className="text-muted px-1 py-0 rounded" style={{ background: 'rgba(115, 102, 202, 0.08)' }}>
-                                                                {link.url}
-                                                            </code>
-                                                        </div>
-                                                    </Link>
-                                                </div>
-                                            ))}
+                                                    </li>
+                                                ))}
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -392,8 +343,165 @@ export default function SitemapPage() {
                 </div>
             </section>
 
-            {/* Final CTA */}
             <FinalCTA />
+
+            <style jsx>{`
+                .transition-all {
+                    transition: all 0.2s ease-in-out;
+                }
+                @media (min-width: 768px) {
+                    .border-start-md {
+                        border-left: 1px solid rgba(128, 128, 128, 0.2);
+                    }
+                }
+
+                /* ════════════════════════════════════════════════════
+                   THEME ADAPTATION FOR SITEMAP PAGE
+                   ════════════════════════════════════════════════════ */
+                :global([data-theme="dark"]) .sitemap-hero {
+                    background: linear-gradient(180deg, rgba(115, 102, 202, 0.1) 0%, rgba(11, 25, 44, 0.2) 100%);
+                }
+                :global([data-theme="light"]) .sitemap-hero {
+                    background: linear-gradient(180deg, rgba(115, 102, 202, 0.08) 0%, rgba(248, 250, 252, 1) 100%);
+                }
+
+                :global([data-theme="dark"]) .sitemap-main-title {
+                    color: #FFFFFF;
+                }
+                :global([data-theme="light"]) .sitemap-main-title {
+                    color: #0F172A;
+                }
+
+                :global([data-theme="dark"]) .sitemap-subtitle {
+                    color: rgba(255, 255, 255, 0.65);
+                }
+                :global([data-theme="light"]) .sitemap-subtitle {
+                    color: #475569;
+                }
+
+                :global([data-theme="dark"]) .sitemap-stat-pill {
+                    background: rgba(115, 102, 202, 0.12);
+                    border: 1px solid rgba(115, 102, 202, 0.25);
+                    color: #FFFFFF;
+                }
+                :global([data-theme="light"]) .sitemap-stat-pill {
+                    background: #FFFFFF;
+                    border: 1px solid #E2E8F0;
+                    color: #0F172A;
+                    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+                }
+
+                :global([data-theme="dark"]) .sitemap-search-card {
+                    background: rgba(16, 29, 48, 0.95);
+                    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+                }
+                :global([data-theme="light"]) .sitemap-search-card {
+                    background: #FFFFFF;
+                    border: 1px solid #E2E8F0 !important;
+                    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+                }
+
+                :global([data-theme="dark"]) .sitemap-search-input {
+                    color: #FFFFFF;
+                }
+                :global([data-theme="light"]) .sitemap-search-input {
+                    color: #0F172A;
+                }
+
+                :global([data-theme="dark"]) .sitemap-select {
+                    background-color: rgba(255, 255, 255, 0.06);
+                    color: #FFFFFF;
+                }
+                :global([data-theme="light"]) .sitemap-select {
+                    background-color: #F8FAFC;
+                    color: #0F172A;
+                }
+
+                /* Category Cards */
+                :global([data-theme="dark"]) .sitemap-category-card {
+                    background: #101D30;
+                    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+                }
+                :global([data-theme="light"]) .sitemap-category-card {
+                    background: #FFFFFF;
+                    border: 1px solid #E2E8F0 !important;
+                    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+                }
+
+                :global([data-theme="dark"]) .sitemap-category-header {
+                    background: linear-gradient(90deg, #070D18 0%, #101D30 100%);
+                    border-color: rgba(255, 255, 255, 0.08) !important;
+                }
+                :global([data-theme="light"]) .sitemap-category-header {
+                    background: linear-gradient(90deg, #F8FAFC 0%, #F1F5F9 100%);
+                    border-color: #E2E8F0 !important;
+                }
+
+                :global([data-theme="dark"]) .sitemap-cat-title {
+                    color: #FFFFFF;
+                }
+                :global([data-theme="light"]) .sitemap-cat-title {
+                    color: #0F172A;
+                }
+
+                :global([data-theme="dark"]) .sitemap-cat-desc {
+                    color: rgba(255, 255, 255, 0.55);
+                }
+                :global([data-theme="light"]) .sitemap-cat-desc {
+                    color: #64748B;
+                }
+
+                /* List items */
+                :global([data-theme="dark"]) .sitemap-list-item {
+                    background: transparent;
+                    border-color: rgba(255, 255, 255, 0.05);
+                }
+                :global([data-theme="dark"]) .sitemap-list-item:hover {
+                    background: rgba(115, 102, 202, 0.06);
+                }
+                :global([data-theme="light"]) .sitemap-list-item {
+                    background: transparent;
+                    border-color: #F1F5F9;
+                }
+                :global([data-theme="light"]) .sitemap-list-item:hover {
+                    background: rgba(115, 102, 202, 0.04);
+                }
+
+                :global([data-theme="dark"]) .sitemap-link {
+                    color: #FFFFFF;
+                }
+                :global([data-theme="dark"]) .sitemap-link:hover {
+                    color: #7366CA;
+                }
+                :global([data-theme="light"]) .sitemap-link {
+                    color: #0F172A;
+                }
+                :global([data-theme="light"]) .sitemap-link:hover {
+                    color: #7366CA;
+                }
+
+                :global([data-theme="dark"]) .sitemap-link-desc {
+                    color: rgba(255, 255, 255, 0.6);
+                }
+                :global([data-theme="light"]) .sitemap-link-desc {
+                    color: #64748B;
+                }
+
+                :global([data-theme="dark"]) .sitemap-arrow-btn {
+                    color: rgba(255, 255, 255, 0.4);
+                }
+                :global([data-theme="dark"]) .sitemap-arrow-btn:hover {
+                    color: #7366CA;
+                    background: rgba(115, 102, 202, 0.1);
+                }
+                :global([data-theme="light"]) .sitemap-arrow-btn {
+                    color: #94A3B8;
+                }
+                :global([data-theme="light"]) .sitemap-arrow-btn:hover {
+                    color: #7366CA;
+                    background: rgba(115, 102, 202, 0.08);
+                }
+            `}</style>
         </Layout>
     )
 }

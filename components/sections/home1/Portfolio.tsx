@@ -174,6 +174,12 @@ export default function Portfolio() {
                     slides={slides}
                 />
             </section>
+            <style jsx>{`
+                .portfolio-two { padding: 60px 0 60px; }
+                :global(.portfolio-two .section-title) { margin-bottom: 25px !important; }
+                :global(.portfolio-two .section-title__tagline-box) { margin-bottom: 10px !important; }
+                :global(.portfolio-two .section-title__title) { margin-bottom: 6px !important; }
+            `}</style>
         </>
     )
 }

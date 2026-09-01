@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import AnimatedTitle from "@/components/elements/AnimatedTitle";
@@ -34,7 +35,7 @@ export default function Process() {
                                     Micraft MES captures operational data directly from the shop floor and converts it into real-time production insights.
                                 </p>
                                 <div className="process-one__btn-box">
-                                    <Link href="/about" className="thm-btn">Learn More<span
+                                    <Link href="/product/how-micraft-mes-works" className="thm-btn">Learn More<span
                                         className="icon-right-arrow"></span></Link>
                                 </div>
                             </div>
@@ -75,6 +76,12 @@ export default function Process() {
                     </div>
                 </div>
             </section>
+            <style jsx>{`
+                .process-one { padding: 60px 0 60px; }
+                :global(.process-one .section-title) { margin-bottom: 18px !important; }
+                :global(.process-one .section-title__tagline-box) { margin-bottom: 10px !important; }
+                :global(.process-one .section-title__title) { margin-bottom: 8px !important; }
+            `}</style>
         </>
     )
 }

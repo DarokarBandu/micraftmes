@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/solutions/quality-inspection-tracking',
+  },
   title: "Quality Inspection Tracking Software for Manufacturing | Micraft MES",
   description: "Track manufacturing quality inspections, monitor rejection trends, and maintain inspection records using Micraft MES quality inspection tracking software.",
   keywords: [

@@ -1,6 +1,9 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/customers/case-studies',
+  },
   title: 'Manufacturing Case Studies | Micraft MES Success Stories',
   description: 'Explore real manufacturing case studies using Micraft MES. See how factories improved production visibility, reduced downtime, and achieved operational efficiency.',
   keywords: [

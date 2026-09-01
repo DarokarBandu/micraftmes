@@ -66,9 +66,9 @@ export default function Banner() {
                                             <h1 className="main-slider-two__title banner-title-desktop">
                                                 Manufacturing Execution System for <br /> <span>Real-Time Shop Floor Visibility</span>
                                             </h1>
-                                            <h2 className="main-slider-two__h2 banner-h2-desktop mb-3" style={{ fontWeight: '700', fontSize: '32px', color: '#ffffff' }}>
+                                            <p className="main-slider-two__h2 banner-h2-desktop mb-3" style={{ fontWeight: '700', fontSize: '32px', color: '#ffffff' }}>
                                                 Track production, downtime, inspection, packing, and dispatch in real time.
-                                            </h2>
+                                            </p>
                                             <p className="main-slider-two__text fw-medium" style={{ fontWeight: '500', color: 'rgba(255, 255, 255, 0.9)' }}>
                                                 Micraft MES connects machines, operators, and processes to give <br />
                                                 manufacturing teams a clear and reliable view of what is happening on the shop floor.
@@ -129,22 +129,22 @@ export default function Banner() {
                                                 </div>
                                                 <p className="main-slider-two__sub-title fw-bold" style={{ fontWeight: '700' }}>PRODUCTION & DOWNTIME</p>
                                             </div>
-                                            <h1 className="main-slider-two__title banner-title-desktop">
-                                                Reduce Downtime with <br /> <span>Real-Time Monitoring</span>
-                                            </h1>
-                                            <h2 className="main-slider-two__h2 banner-h2-desktop mb-3" style={{ fontWeight: '700', fontSize: '32px', color: '#ffffff' }}>
-                                                Identify production losses faster and take corrective action during the shift.
+                                            <h2 className="main-slider-two__title banner-title-desktop">
+                                                Reduce Manufacturing Downtime with <br /> <span>Real-Time Production Monitoring</span>
                                             </h2>
+                                            <p className="main-slider-two__h2 banner-h2-desktop mb-3" style={{ fontWeight: '700', fontSize: '32px', color: '#ffffff' }}>
+                                                Identify production losses faster and take corrective action during the shift.
+                                            </p>
                                             <p className="main-slider-two__text fw-medium" style={{ fontWeight: '500', color: 'rgba(255, 255, 255, 0.9)' }}>
                                                 Micraft MES captures downtime reasons directly from the shop floor <br />
                                                 and shows production performance in real time so teams can quickly identify bottlenecks.
                                             </p>
                                             <div className="main-slider-two__btns-box">
                                                 <div className="main-slider-two__btn-box-1">
-                                                    <Link href="/solutions/production-tracking-software" className="thm-btn">Explore Downtime Tracking<span className="icon-right-arrow"></span></Link>
+                                                    <Link href="/solutions/machine-utilization-tracking" className="thm-btn">Explore Downtime Tracking<span className="icon-right-arrow"></span></Link>
                                                 </div>
                                                 <div className="main-slider-two__btn-box-2">
-                                                    <Link href="/contact" className="thm-btn">Book A Demo<span className="icon-right-arrow"></span></Link>
+                                                    <Link href="/contact" className="thm-btn">Book a Demo<span className="icon-right-arrow"></span></Link>
                                                 </div>
                                             </div>
                                         </div>
@@ -193,12 +193,12 @@ export default function Banner() {
                                                 </div>
                                                 <p className="main-slider-two__sub-title fw-bold" style={{ fontWeight: '700' }}>END-TO-END VISIBILITY</p>
                                             </div>
-                                            <h1 className="main-slider-two__title banner-title-desktop">
-                                                From Production to Dispatch <br /> <span>Complete Visibility</span>
-                                            </h1>
-                                            <h2 className="main-slider-two__h2 banner-h2-desktop mb-3" style={{ fontWeight: '700', fontSize: '32px', color: '#ffffff' }}>
-                                                Monitor work orders, inspection results, packing status, and dispatch readiness in one system.
+                                            <h2 className="main-slider-two__title banner-title-desktop">
+                                                From Production to Dispatch — <br /> <span>Complete Manufacturing Execution Visibility</span>
                                             </h2>
+                                            <p className="main-slider-two__h2 banner-h2-desktop mb-3" style={{ fontWeight: '700', fontSize: '32px', color: '#ffffff' }}>
+                                                Monitor work orders, inspection results, packing status, and dispatch readiness in one system.
+                                            </p>
                                             <p className="main-slider-two__text fw-medium" style={{ fontWeight: '500', color: 'rgba(255, 255, 255, 0.9)' }}>
                                                 Micraft MES connects production processes so manufacturing teams <br />
                                                 always know what is completed, what is pending, and what is ready to ship.
@@ -257,12 +257,12 @@ export default function Banner() {
                                                 </div>
                                                 <p className="main-slider-two__sub-title fw-bold" style={{ fontWeight: '700' }}>PRACTICAL IMPLEMENTATION</p>
                                             </div>
-                                            <h1 className="main-slider-two__title banner-title-desktop">
+                                            <h2 className="main-slider-two__title banner-title-desktop">
                                                 Deploy a Practical MES in <br /> <span>30–60 Days</span>
-                                            </h1>
-                                            <h2 className="main-slider-two__h2 banner-h2-desktop mb-3" style={{ fontWeight: '700', fontSize: '32px', color: '#ffffff' }}>
-                                                Improve shop-floor visibility without replacing ERP or disrupting operations.
                                             </h2>
+                                            <p className="main-slider-two__h2 banner-h2-desktop mb-3" style={{ fontWeight: '700', fontSize: '32px', color: '#ffffff' }}>
+                                                Improve shop-floor visibility without replacing ERP or disrupting operations.
+                                            </p>
                                             <p className="main-slider-two__text fw-medium" style={{ fontWeight: '500', color: 'rgba(255, 255, 255, 0.9)' }}>
                                                 Micraft MES works alongside your existing systems and focuses on <br />
                                                 solving the execution visibility gaps most manufacturing plants face.

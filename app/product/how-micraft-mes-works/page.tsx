@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 import { Fragment } from 'react'
 import Layout from "@/components/layout/Layout"
 import Breadcrumb from "@/components/layout/Breadcrumb"
@@ -42,19 +42,19 @@ export default function HowMicraftMesWorksPage() {
                             </div>
 
                             {/* Subheading */}
-                            <p className="wow fadeInUp mx-auto mb-4" data-wow-delay="200ms" style={{ color: 'rgba(255,255,255,0.7)', lineHeight: '1.8', fontSize: '18px', maxWidth: '720px', fontWeight: 500 }}>
+                            <p className="meswork-hero-lead wow fadeInUp mx-auto mb-4" data-wow-delay="200ms" style={{ lineHeight: '1.8', fontSize: '18px', maxWidth: '720px', fontWeight: 500 }}>
                                 Understand how Micraft MES connects shop floor operations with real-time production monitoring to give manufacturers complete visibility of factory performance.
                             </p>
 
                             {/* Supporting Text */}
-                            <p className="wow fadeInUp mx-auto mb-5" data-wow-delay="300ms" style={{ color: 'rgba(255,255,255,0.45)', lineHeight: '1.7', fontSize: '15px', maxWidth: '780px' }}>
+                            <p className="meswork-hero-subtext wow fadeInUp mx-auto mb-5" data-wow-delay="300ms" style={{ lineHeight: '1.7', fontSize: '15px', maxWidth: '780px' }}>
                                 Micraft MES captures production data directly from shop floor activities and transforms it into real-time operational insights. The system helps manufacturers track production orders, monitor machine utilization, record inspections, and analyze factory performance through centralized dashboards.
                             </p>
 
                             {/* CTAs */}
                             <div className="d-flex flex-wrap justify-content-center gap-3 wow fadeInUp mb-5 pb-4" data-wow-delay="400ms">
                                 <Link href="/book-demo" className="thm-btn">Book a Live Demo<span className="icon-right-arrow"></span></Link>
-                                <Link href="/features" className="thm-btn" style={{ background: 'rgba(255,255,255,0.04)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.08)' }}>Explore MES Features<span className="icon-right-arrow"></span></Link>
+                                <Link href="/features" className="thm-btn meswork-hero-btn-secondary">Explore MES Features<span className="icon-right-arrow"></span></Link>
                             </div>
                         </div>
                     </div>
@@ -65,16 +65,7 @@ export default function HowMicraftMesWorksPage() {
             <div className="meswork-quick-nav d-none d-lg-block">
                 <div className="container">
                     <div className="nav-wrapper" style={{ position: 'relative', top: '-30px', zIndex: 100 }}>
-                        <div className="meswork-nav-inner d-flex align-items-center justify-content-center" 
-                             style={{ 
-                                background: 'rgba(13, 19, 31, 0.85)', 
-                                padding: '12px 30px', 
-                                borderRadius: '100px', 
-                                border: '1px solid rgba(255, 255, 255, 0.12)', 
-                                backdropFilter: 'blur(12px)',
-                                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 20px rgba(250, 86, 116, 0.05)'
-                             }}>
-                            
+                        <div className="meswork-nav-inner d-flex align-items-center justify-content-center">
                             <div className="nav-links d-flex align-items-center justify-content-center gap-2 flex-wrap">
                                 {[
                                     { id: "step-1-orders", label: "Production Orders", icon: "clipboard-list", color: "#FA5674" },
@@ -94,55 +85,27 @@ export default function HowMicraftMesWorksPage() {
                                                 background: `${nav.color}15`, 
                                                 display: 'flex', 
                                                 alignItems: 'center', 
-                                                justifyContent: 'center',
+                                                justifyContent: 'center', 
                                                 border: `1px solid ${nav.color}30`,
                                                 transition: 'all 0.3s ease'
                                             }}>
                                                 <i className={`fas fa-${nav.icon}`} style={{ fontSize: '14px', color: nav.color }}></i>
                                             </div>
-                                            <span style={{ fontSize: '13px', fontWeight: '600', color: 'rgba(255, 255, 255, 0.65)', transition: 'all 0.3s ease', whiteSpace: 'nowrap' }}>
+                                            <span style={{ fontSize: '13px', fontWeight: '600', transition: 'all 0.3s ease', whiteSpace: 'nowrap' }}>
                                                 {nav.label}
                                             </span>
                                         </Link>
-                                        {i < 6 && <div style={{ width: '1px', height: '20px', background: 'rgba(255,255,255,0.08)' }}></div>}
+                                        {i < 6 && <div className="meswork-nav-divider" style={{ width: '1px', height: '20px' }}></div>}
                                     </Fragment>
                                 ))}
                             </div>
                         </div>
                     </div>
                 </div>
-                <style jsx>{`
-                    .meswork-nav-inner {
-                        animation: floatingNav 3s ease-in-out infinite;
-                    }
-                    @keyframes floatingNav {
-                        0%, 100% { transform: translateY(0); }
-                        50% { transform: translateY(-5px); }
-                    }
-                    .nav-item-link {
-                        text-decoration: none;
-                        transition: all 0.3s ease;
-                        position: relative;
-                        border-radius: 50px;
-                    }
-                    .nav-item-link:hover {
-                        background: rgba(255, 255, 255, 0.04);
-                    }
-                    .nav-item-link:hover span {
-                        color: #ffffff !important;
-                    }
-                    .nav-item-link:hover .icon-wrap {
-                        transform: scale(1.1);
-                        background: #FA5674 !important;
-                        border-color: transparent !important;
-                        box-shadow: 0 0 15px rgba(250, 86, 116, 0.4);
-                    }
-                    .nav-item-link:hover .icon-wrap i {
-                        color: #ffffff !important;
-                    }
-                `}</style>
             </div>
-            <section className="py-5 position-relative" style={{ background: '#08111F' }}>
+
+            {/* ═══════════════ CONNECTS FACTORY OPERATIONS ═══════════════ */}
+            <section className="py-5 position-relative meswork-connects-section">
                 <div className="position-absolute" style={{ top: 0, left: 0, right: 0, bottom: 0, backgroundImage: 'url(/assets/images/shapes/process-one-bg-shape.png)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.03, zIndex: 0 }}></div>
                 <div className="container py-4 position-relative z-1">
                     {/* Centered Title */}
@@ -155,10 +118,10 @@ export default function HowMicraftMesWorksPage() {
                                     <div className="section-title__tagline-shape-2"></div>
                                 </div>
                                 <AnimatedTitle>
-                                    <h2 className="section-title__title text-white" style={{ fontSize: '36px' }}>How Micraft MES Connects <span>Factory Operations</span></h2>
+                                    <h2 className="section-title__title" style={{ fontSize: '36px' }}>How Micraft MES Connects <span>Factory Operations</span></h2>
                                 </AnimatedTitle>
                             </div>
-                            <p className="mx-auto" style={{ color: 'rgba(255,255,255,0.55)', lineHeight: '1.8', fontSize: '16px', maxWidth: '680px' }}>
+                            <p className="mx-auto meswork-section-subtext" style={{ lineHeight: '1.8', fontSize: '16px', maxWidth: '680px' }}>
                                 Micraft MES acts as a digital platform that connects production operations with real-time monitoring dashboards. The system collects production data from:
                             </p>
                         </div>
@@ -177,8 +140,8 @@ export default function HowMicraftMesWorksPage() {
                                     <div className="d-inline-flex align-items-center justify-content-center mb-4" style={{ width: 64, height: 64, borderRadius: 18, background: item.gradient, boxShadow: `0 8px 24px ${item.color}20` }}>
                                         <i className={`fas fa-${item.icon}`} style={{ fontSize: '24px', color: item.color }}></i>
                                     </div>
-                                    <h4 className="text-white mb-2" style={{ fontSize: '18px', fontWeight: 700 }}>{item.title}</h4>
-                                    <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '14px', lineHeight: '1.6', marginBottom: 0 }}>{item.desc}</p>
+                                    <h4 className="mb-2" style={{ fontSize: '18px', fontWeight: 700 }}>{item.title}</h4>
+                                    <p style={{ fontSize: '14px', lineHeight: '1.6', marginBottom: 0 }}>{item.desc}</p>
                                 </div>
                             </div>
                         ))}
@@ -187,13 +150,13 @@ export default function HowMicraftMesWorksPage() {
                     {/* Bottom Summary */}
                     <div className="row justify-content-center wow fadeInUp" data-wow-delay="500ms">
                         <div className="col-lg-8">
-                            <div className="meswork-glass text-center" style={{ padding: '28px 40px', borderRadius: '20px', background: 'linear-gradient(135deg, rgba(250,86,116,0.04), rgba(96,101,212,0.04))' }}>
+                            <div className="meswork-summary-box text-center" style={{ padding: '28px 40px' }}>
                                 <div className="d-flex align-items-center justify-content-center gap-3">
-                                    <div className="d-flex align-items-center justify-content-center" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(250,86,116,0.1)' }}>
+                                    <div className="d-flex align-items-center justify-content-center flex-shrink-0" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(250,86,116,0.1)' }}>
                                         <i className="fas fa-chart-bar" style={{ color: '#FA5674', fontSize: '18px' }}></i>
                                     </div>
-                                    <p className="mb-0" style={{ color: 'rgba(255,255,255,0.6)', fontSize: '15px', lineHeight: '1.6', textAlign: 'left' }}>
-                                        This information is processed and displayed through <strong className="text-white">real-time production dashboards</strong>, enabling managers to monitor factory operations instantly.
+                                    <p className="mb-0" style={{ fontSize: '15px', lineHeight: '1.6', textAlign: 'left' }}>
+                                        This information is processed and displayed through <strong>real-time production dashboards</strong>, enabling managers to monitor factory operations instantly.
                                     </p>
                                 </div>
                             </div>
@@ -203,7 +166,7 @@ export default function HowMicraftMesWorksPage() {
             </section>
 
             {/* ═══════════════ CYCLE ARCHITECTURE — VISUAL HUB ═══════════════ */}
-            <section className="py-5 position-relative" style={{ background: '#0B1320' }}>
+            <section className="py-5 position-relative meswork-cycle-section">
                 <div className="position-absolute float-bob-y" style={{ top: '5%', right: '3%', opacity: 0.04, zIndex: 0 }}>
                     <Image src="/assets/images/shapes/main-slider-two-shape-2.png" alt="shape" width={400} height={350} />
                 </div>
@@ -217,10 +180,10 @@ export default function HowMicraftMesWorksPage() {
                                     <div className="section-title__tagline-shape-2"></div>
                                 </div>
                                 <AnimatedTitle>
-                                    <h2 className="section-title__title text-white" style={{ fontSize: '36px' }}>The 7-Step <span>Manufacturing Execution Cycle</span></h2>
+                                    <h2 className="section-title__title" style={{ fontSize: '36px' }}>The 7-Step <span>Manufacturing Execution Cycle</span></h2>
                                 </AnimatedTitle>
                             </div>
-                            <p className="mx-auto" style={{ color: 'rgba(255,255,255,0.5)', fontSize: '16px', maxWidth: '650px', lineHeight: '1.7' }}>
+                            <p className="mx-auto meswork-section-subtext" style={{ fontSize: '16px', maxWidth: '650px', lineHeight: '1.7' }}>
                                 Each step in Micraft MES is interconnected — creating a continuous, real-time cycle of production visibility from order creation to dispatch.
                             </p>
                         </div>
@@ -231,16 +194,16 @@ export default function HowMicraftMesWorksPage() {
                         
                         {/* THE HUB - Micraft MES Inc */}
                         <div className="text-center position-relative w-100 mb-5 wow zoomIn" style={{ zIndex: 10 }}>
-                            <div className="d-inline-flex flex-column align-items-center justify-content-center mes-timeline-hub" style={{ width: '150px', height: '150px', borderRadius: '50%', background: 'linear-gradient(135deg, #070C14 0%, #1a2a40 100%)', border: '2px solid rgba(61, 114, 252, 0.4)', boxShadow: '0 0 40px rgba(61, 114, 252, 0.3), inset 0 0 20px rgba(61, 114, 252, 0.2)' }}>
+                            <div className="d-inline-flex flex-column align-items-center justify-content-center mes-timeline-hub" style={{ width: '150px', height: '150px', borderRadius: '50%' }}>
                                 <div className="mb-2">
                                     <i className="fas fa-microchip" style={{ fontSize: '28px', color: '#3D72FC' }}></i>
                                 </div>
-                                <h3 className="text-white fw-bold mb-0" style={{ fontSize: '20px', letterSpacing: '1px' }}>Micraft</h3>
-                                <div style={{ color: '#3D72FC', fontSize: '11px', fontWeight: '800', letterSpacing: '2px' }}>MES INC</div>
+                                <h3 className="fw-bold mb-0" style={{ fontSize: '20px', letterSpacing: '1px' }}>Micraft</h3>
+                                <div className="mes-hub-tag">MES INC</div>
                             </div>
                         </div>
 
-                        {/* Main Vertical Center glowing line */}
+                        {/* Main Vertical Center line */}
                         <div className="mes-timeline-center-line"></div>
                         <div className="mes-timeline-arrow-bottom"></div>
 
@@ -256,23 +219,23 @@ export default function HowMicraftMesWorksPage() {
                             const isRight = idx % 2 === 0;
 
                             return (
-                                <div className={`mes-timeline-item row align-items-center position-relative wow fadeInUp`} data-wow-delay={`${(idx * 100) + 100}ms`} key={idx} style={{ marginBottom: '30px', minHeight: '120px' }}>
+                                <div className="mes-timeline-item row align-items-center position-relative wow fadeInUp" data-wow-delay={`${(idx * 100) + 100}ms`} key={idx} style={{ marginBottom: '30px', minHeight: '120px' }}>
                                     
                                     {/* Left Spacer / Right Content */}
                                     <div className="col-lg-6 col-12 position-relative text-end pe-4 pe-lg-5 d-flex flex-row-reverse align-items-center justify-content-start mes-mobile-row">
                                         {!isRight && (
                                             <>
                                                 {/* Left Side Content */}
-                                                <div className="mes-step-square d-flex align-items-center justify-content-center flex-shrink-0 ms-4" style={{ background: step.color, boxShadow: `0 8px 30px ${step.color}66` }}>
+                                                <div className="mes-step-square d-flex align-items-center justify-content-center flex-shrink-0 ms-4" style={{ background: step.color }}>
                                                     STEP 0{idx + 1}
                                                 </div>
-                                                <div className="mes-step-info d-flex align-items-center gap-4 flex-grow-1 py-3 text-end" style={{ borderTop: '1px solid rgba(255,255,255,0.4)', borderBottom: '1px solid rgba(255,255,255,0.4)' }}>
-                                                    <div className="mes-step-info-icon" style={{ color: step.color, fontSize: '38px', minWidth: '45px', textAlign: 'center' }}>
+                                                <div className="mes-timeline-card d-flex align-items-center gap-3 flex-grow-1 text-end">
+                                                    <div className="mes-step-info-icon" style={{ color: step.color, fontSize: '32px', minWidth: '40px', textAlign: 'center' }}>
                                                         <i className={`fas fa-${step.icon}`}></i>
                                                     </div>
                                                     <div className="mes-step-info-text flex-grow-1">
-                                                        <h4 style={{ color: step.color, fontSize: '18px', fontWeight: '700', marginBottom: '6px' }}>{step.title}</h4>
-                                                        <p className="text-white-50 mb-0" style={{ fontSize: '12px', lineHeight: '1.6' }}>
+                                                        <h4 style={{ color: step.color, fontSize: '17px', fontWeight: '700', marginBottom: '6px' }}>{step.title}</h4>
+                                                        <p className="mb-0" style={{ fontSize: '13px', lineHeight: '1.6' }}>
                                                             {step.desc}
                                                         </p>
                                                     </div>
@@ -284,22 +247,22 @@ export default function HowMicraftMesWorksPage() {
                                     {/* Right Spacer / Left Content */}
                                     <div className="col-lg-6 col-12 position-relative ps-4 ps-lg-5 d-flex align-items-center justify-content-start mes-mobile-row">
                                         {/* Connector Lines */}
-                                        <div className={`mes-connector-line ${isRight ? 'connector-line-right' : 'connector-line-left'}`} style={{ borderColor: 'rgba(255,255,255,0.5)' }}></div>
+                                        <div className={`mes-connector-line ${isRight ? 'connector-line-right' : 'connector-line-left'}`}></div>
                                         
                                         {isRight && (
                                             <>
                                                 {/* Right Side Content */}
-                                                <div className="mes-step-square d-flex align-items-center justify-content-center flex-shrink-0 me-4" style={{ background: step.color, boxShadow: `0 8px 30px ${step.color}66` }}>
+                                                <div className="mes-step-square d-flex align-items-center justify-content-center flex-shrink-0 me-4" style={{ background: step.color }}>
                                                     STEP 0{idx + 1}
                                                 </div>
-                                                <div className="mes-step-info d-flex align-items-center gap-4 flex-grow-1 py-3 text-start" style={{ borderTop: '1px solid rgba(255,255,255,0.4)', borderBottom: '1px solid rgba(255,255,255,0.4)' }}>
+                                                <div className="mes-timeline-card d-flex align-items-center gap-3 flex-grow-1 text-start">
                                                     <div className="mes-step-info-text flex-grow-1">
-                                                        <h4 style={{ color: step.color, fontSize: '18px', fontWeight: '700', marginBottom: '6px' }}>{step.title}</h4>
-                                                        <p className="text-white-50 mb-0" style={{ fontSize: '12px', lineHeight: '1.6' }}>
+                                                        <h4 style={{ color: step.color, fontSize: '17px', fontWeight: '700', marginBottom: '6px' }}>{step.title}</h4>
+                                                        <p className="mb-0" style={{ fontSize: '13px', lineHeight: '1.6' }}>
                                                             {step.desc}
                                                         </p>
                                                     </div>
-                                                    <div className="mes-step-info-icon" style={{ color: step.color, fontSize: '38px', minWidth: '45px', textAlign: 'center' }}>
+                                                    <div className="mes-step-info-icon" style={{ color: step.color, fontSize: '32px', minWidth: '40px', textAlign: 'center' }}>
                                                         <i className={`fas fa-${step.icon}`}></i>
                                                     </div>
                                                 </div>
@@ -311,111 +274,6 @@ export default function HowMicraftMesWorksPage() {
                             );
                         })}
                     </div>
-
-                    {/* Infographic Scoped Styles */}
-                    <style dangerouslySetInnerHTML={{__html: `
-                        .mes-timeline-hub:hover {
-                            transform: scale(1.05);
-                            box-shadow: 0 0 60px rgba(61, 114, 252, 0.5), inset 0 0 30px rgba(61, 114, 252, 0.3) !important;
-                            transition: all 0.4s ease;
-                        }
-                        .mes-timeline-center-line {
-                            position: absolute;
-                            top: 170px; /* Accounts for 20px padding + 150px hub */
-                            bottom: 0;
-                            left: 50%;
-                            width: 2px;
-                            background: linear-gradient(to bottom, rgba(61, 114, 252, 0.6), rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.1));
-                            transform: translateX(-50%);
-                            z-index: 0;
-                            box-shadow: 0 0 15px rgba(61, 114, 252, 0.3);
-                        }
-                        .mes-timeline-arrow-bottom {
-                            position: absolute;
-                            bottom: -15px; /* stick out from bottom */
-                            left: 50%;
-                            width: 0; 
-                            height: 0; 
-                            border-left: 10px solid transparent;
-                            border-right: 10px solid transparent;
-                            border-top: 14px solid rgba(255,255,255,0.4);
-                            transform: translateX(-50%);
-                            z-index: 1;
-                        }
-                        .mes-connector-line {
-                            position: absolute;
-                            top: 50%;
-                            width: 32px;  /* Span exact padding from box to center */
-                            border-top: 2px solid;
-                            z-index: 0;
-                        }
-                        .connector-line-right {
-                            left: 0; /* from the boundary of the col-6 */
-                        }
-                        .connector-line-left {
-                            right: 0;
-                        }
-                        /* We make an L shape line step by connecting vertical lines */
-                        .connector-line-right::before {
-                            content: ''; position: absolute; left: 0; bottom: 0; width: 2px; height: 35px; background: rgba(255,255,255,0.5);
-                        }
-                        .connector-line-left::before {
-                            content: ''; position: absolute; right: 0; bottom: 0; width: 2px; height: 35px; background: rgba(255,255,255,0.5);
-                        }
-                        .mes-step-square {
-                            width: 110px;
-                            height: 100px;
-                            border-radius: 18px;
-                            color: #fff;
-                            font-weight: 800;
-                            font-size: 15px;
-                            letter-spacing: 0.5px;
-                            z-index: 2;
-                            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                            position: relative;
-                        }
-                        .mes-timeline-item:hover .mes-step-square {
-                            transform: scale(1.08) translateY(-4px);
-                        }
-
-                        
-                        @media (max-width: 991px) {
-                            .mes-timeline-center-line, .mes-timeline-arrow-bottom, .mes-connector-line {
-                                display: none;
-                            }
-                            .mes-timeline-item {
-                                padding: 0 15px;
-                                flex-direction: column !important;
-                                align-items: flex-start !important;
-                            }
-                            .mes-timeline-item .mes-mobile-row {
-                                width: 100%;
-                                padding: 0 !important;
-                                text-align: left !important;
-                                flex-direction: row !important;
-                                justify-content: flex-start !important;
-                                margin-bottom: 20px;
-                            }
-                            /* Reset visual order for mobile so Box is always first */
-                            .mes-timeline-item .mes-mobile-row > .mes-step-square {
-                                margin: 0 20px 0 0 !important;
-                                width: 80px; height: 80px; font-size: 13px;
-                            }
-                            .mes-timeline-item .mes-mobile-row > .mes-step-info {
-                                flex-direction: column !important;
-                                text-align: left !important;
-                                align-items: flex-start !important;
-                                padding: 15px 0 !important;
-                            }
-                            /* Hide the extra large icons on mobile to save space */
-                            .mes-step-info-icon {
-                                display: none !important;
-                            }
-                            .mes-step-info-text h4 {
-                                font-size: 16px !important;
-                            }
-                        }
-                    `}} />
                 </div>
             </section>
 

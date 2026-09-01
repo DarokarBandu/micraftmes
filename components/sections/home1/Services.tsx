@@ -12,67 +12,67 @@ export default function Services() {
           <Image src="/assets/images/shapes/services-one-shape-3.png" alt="Image" width={693} height={1328} priority />
         </div>
         <div className="container">
-          <div className="servces-one__top text-center mb-5 pb-3">
-            <div className="section-title text-center mb-4">
-              <div className="section-title__tagline-box justify-content-center">
+          <div className="servces-one__top text-center mb-4">
+            <div className="section-title text-center mb-2">
+              <div className="section-title__tagline-box justify-content-center mb-2">
                 <div className="section-title__tagline-shape-1"></div>
-                <span className="section-title__tagline">Manufacturing Solutions</span>
+                <span className="section-title__tagline">KEY CAPABILITIES</span>
                 <div className="section-title__tagline-shape-2"></div>
               </div>
               <AnimatedTitle>
-                <h2 className="section-title__title title-animation">
-                  Digital Solutions for Real-Time <br /> <span>Manufacturing Visibility</span>
+                <h2 className="section-title__title title-animation mb-2">
+                  Key Capabilities of <br /> <span>Micraft MES</span>
                 </h2>
               </AnimatedTitle>
             </div>
-            <p className="mx-auto" style={{ color: 'rgba(255,255,255,0.6)', maxWidth: '850px', fontSize: '18px', lineHeight: '1.8' }}>
-              Micraft MES provides a comprehensive set of solutions designed to help manufacturing companies gain complete control over shop floor operations, production performance, and delivery timelines.
+            <p className="mx-auto mt-2" style={{ color: 'rgba(255,255,255,0.6)', maxWidth: '850px', fontSize: '17px', lineHeight: '1.6' }}>
+              Micraft MES helps manufacturing teams monitor, control, and improve shop-floor execution with practical digital tools.
             </p>
           </div>
 
           <div className="row g-4 justify-content-center">
             {[
               {
-                title: "Production Tracking Software",
-                text: "Digitize your production tracking process and monitor work order progress in real time across multiple production stages.",
-                href: "/solutions/production-tracking-software",
+                title: "Real-Time Production Monitoring",
+                text: "Track production performance, machine utilization, and shift output using live dashboards.",
+                href: "/solutions/real-time-production-monitoring",
                 icon: "fas fa-chart-line",
                 color: "#3D72FC"
               },
               {
-                title: "Shop Floor Visibility Software",
-                text: "Gain real-time visibility of shop floor operations, production progress, and operator activities from a centralized dashboard.",
-                href: "/solutions/shop-floor-visibility-software",
-                icon: "fas fa-eye",
+                title: "Manufacturing Downtime Tracking",
+                text: "Capture downtime events directly from operators or machines to identify the root causes of production loss.",
+                href: "/solutions/machine-utilization-tracking",
+                icon: "fas fa-clock",
                 color: "#7366CA"
               },
               {
-                title: "Factory Production Monitoring System",
-                text: "Monitor production performance across machines, workstations, and production lines with live factory monitoring dashboards.",
-                href: "/solutions/factory-production-monitoring-system",
-                icon: "fas fa-industry",
+                title: "Work Order Execution Management",
+                text: "Track planned versus actual production and monitor work order progress throughout the manufacturing process.",
+                href: "/solutions/production-tracking-software",
+                icon: "fas fa-tasks",
                 color: "#00D261"
               },
               {
-                title: "Digital Production Dashboard",
-                text: "Access live visual dashboards displaying real-time production data, work order status, and factory performance metrics.",
-                href: "/solutions/digital-production-dashboard",
-                icon: "fas fa-tachometer-alt",
-                color: "#FFD25D"
-              },
-              {
-                title: "Machine Utilization Tracking Software",
-                text: "Track machine usage, idle time, and productivity to maximize equipment efficiency and reduce production delays.",
-                href: "/solutions/machine-utilization-tracking",
-                icon: "fas fa-microchip",
-                color: "#7366CA"
-              },
-              {
-                title: "Quality Inspection Tracking System",
-                text: "Digitally record inspection results, monitor quality performance, and track rejection trends across production processes.",
+                title: "Inspection and Quality Management",
+                text: "Record quality checks during production and maintain accurate inspection records for compliance and traceability.",
                 href: "/solutions/quality-inspection-tracking",
                 icon: "fas fa-vial",
                 color: "#00D2FF"
+              },
+              {
+                title: "Packing and Dispatch Visibility",
+                text: "Understand which orders are completed, packed, and ready for shipment to improve coordination between production and dispatch.",
+                href: "/solutions/packing-dispatch-tracking",
+                icon: "fas fa-shipping-fast",
+                color: "#FFD25D"
+              },
+              {
+                title: "Manufacturing Reports and Insights",
+                text: "Generate shift-wise, daily, and monthly reports automatically to support operational decision-making.",
+                href: "/features/production-analytics-reports",
+                icon: "fas fa-file-alt",
+                color: "#FA5674"
               }
             ].map((sol, index) => (
               <div key={index} className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay={`${index * 100}ms`}>
@@ -92,10 +92,10 @@ export default function Services() {
             ))}
           </div>
 
-          <div className="homepage-section-cta mt-5 pt-5 text-center wow fadeInUp" data-wow-delay="700ms">
-            <div className="px-4 py-5 rounded-5 shadow-2xl border-primary-glow mx-auto" style={{ background: '#101D30', border: '1px solid rgba(115, 102, 202, 0.35)', maxWidth: '1000px', boxShadow: '0 20px 50px rgba(0, 0, 0, 0.4)' }}>
-              <h3 className="text-white h4 mb-3 fw-bold">Transform Your Factory with Real-Time Production Visibility</h3>
-              <p className="text-white-50 mb-4 mx-auto" style={{ maxWidth: '700px' }}>Discover how Micraft MES helps manufacturing companies digitize shop floor operations and gain complete production visibility.</p>
+          <div className="homepage-section-cta mt-5 pt-4 text-center wow fadeInUp" data-wow-delay="700ms">
+            <div className="px-4 py-4 rounded-5 shadow-2xl border-primary-glow mx-auto" style={{ background: '#101D30', border: '1px solid rgba(115, 102, 202, 0.35)', maxWidth: '1000px', boxShadow: '0 20px 50px rgba(0, 0, 0, 0.4)' }}>
+              <h3 className="text-white h4 mb-2 fw-bold">Transform Your Factory with Real-Time Production Visibility</h3>
+              <p className="text-white-50 mb-3 mx-auto" style={{ maxWidth: '700px', fontSize: '15px' }}>Discover how Micraft MES helps manufacturing companies digitize shop floor operations and gain complete production visibility.</p>
               <Link href="/book-demo" className="thm-btn" style={{ background: '#FFD25D', color: '#0B192C' }}>
                 Schedule a Live Demo <span className="icon-right-arrow-1"></span>
               </Link>
@@ -104,7 +104,11 @@ export default function Services() {
         </div>
 
         <style jsx>{`
-          .servces-one { padding: 120px 0 100px; }
+          .servces-one { padding: 60px 0 60px; }
+          .servces-one__top { margin-bottom: 30px !important; }
+          :global(.servces-one .section-title) { margin-bottom: 12px !important; }
+          :global(.servces-one .section-title__tagline-box) { margin-bottom: 10px !important; }
+          :global(.servces-one .section-title__title) { margin-bottom: 6px !important; }
           .hover-translate-y { transition: all 0.4s ease; transition-delay: 0.1s; }
           .hover-translate-y:hover { transform: translateY(-10px); border-color: rgba(255,255,255,0.15) !important; box-shadow: 0 30px 60px rgba(0,0,0,0.4); }
           .shadow-glow { box-shadow: 0 10px 20px rgba(0,0,0,0.2); }

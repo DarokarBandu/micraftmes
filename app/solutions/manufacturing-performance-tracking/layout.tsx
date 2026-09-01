@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/solutions/manufacturing-performance-tracking',
+  },
   title: "Manufacturing Performance Tracking Software | Production Analytics | Micraft MES",
   description: "Analyze production performance with real-time dashboards and manufacturing analytics using Micraft MES. Monitor KPIs and improve factory efficiency.",
   keywords: [

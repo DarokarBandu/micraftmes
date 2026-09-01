@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/solutions/manufacturing-process-tracking',
+  },
   title: "Manufacturing Process Tracking Software | Production Workflow Monitoring | Micraft MES",
   description: "Track every stage of your manufacturing workflow with Micraft MES process tracking software. Monitor production stages, inspections, and dispatch in real time.",
   keywords: [

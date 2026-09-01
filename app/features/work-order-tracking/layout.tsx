@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/features/work-order-tracking',
+  },
   title: 'Work Order Tracking Software | Micraft MES',
   description: 'Track work order progress and operational statuses across your factory floor in real-time with Micraft MES.',
   keywords: [

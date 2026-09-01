@@ -7,6 +7,9 @@ import "@/public/assets/css/module-css/micraftmeswork.css"
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/solutions',
+  },
     title: 'Manufacturing Execution Solutions | Shop Floor Visibility | Micraft MES',
     description: 'Explore Micraft MES solutions including production tracking software, shop floor visibility, and factory monitoring systems designed for manufacturing SMEs.',
     keywords: ['Production Tracking Software', 'Shop Floor Visibility Software', 'Factory Production Monitoring System', 'Digital Production Dashboard', 'Machine Utilization Tracking', 'Manufacturing Execution System'],

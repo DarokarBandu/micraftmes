@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/solutions/digital-production-dashboard',
+  },
   title: "Digital Production Dashboard for Manufacturing | Factory Dashboard Software | Micraft MES",
   description: "Monitor factory performance with Micraft MES digital production dashboards. Track production, machines, work orders, and inspections in real time.",
   keywords: [

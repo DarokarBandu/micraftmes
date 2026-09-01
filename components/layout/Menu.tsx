@@ -422,7 +422,7 @@ export default function MainMenu() {
 
           {/* Column 2: Implementation Playbooks */}
           <li className="mega-menu-column">
-            <span className="mega-menu-suite-title">Implementation</span>
+            <span className="mega-menu-suite-title">Implementation & FAQ</span>
             <Link href="/resources/manufacturing-productivity-guide" className={`mega-menu-item-link ${isActive("/resources/manufacturing-productivity-guide") ? "active-page" : ""}`}>
               <div className="mega-menu-item-name">Productivity Playbook</div>
               <p className="mega-menu-item-sub">Strategies to eliminate shift bottlenecks.</p>
@@ -431,22 +431,22 @@ export default function MainMenu() {
               <div className="mega-menu-item-name">Implementation Guide</div>
               <p className="mega-menu-item-sub">Step-by-step checklist from audit to go-live.</p>
             </Link>
-            <Link href="/resources/what-is-mes" className={`mega-menu-item-link ${isActive("/resources/what-is-mes") ? "active-page" : ""}`}>
-              <div className="mega-menu-item-name">ROI Calculator</div>
-              <p className="mega-menu-item-sub">Calculate cost savings from paperless tracking.</p>
+            <Link href="/faq" className={`mega-menu-item-link ${isActive("/faq") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Frequently Asked Questions</div>
+              <p className="mega-menu-item-sub">Common questions on features, ERP sync & pricing.</p>
             </Link>
           </li>
 
           {/* Column 3: Case Studies & Articles */}
           <li className="mega-menu-column">
-            <span className="mega-menu-suite-title">Stories & Articles</span>
+            <span className="mega-menu-suite-title">Stories & Insights</span>
             <Link href="/customers/case-studies" className={`mega-menu-item-link ${isActive("/customers/case-studies") ? "active-page" : ""}`}>
               <div className="mega-menu-item-name">Customer Case Studies</div>
               <p className="mega-menu-item-sub">Real turnaround numbers from client factories.</p>
             </Link>
-            <Link href="/success-stories" className={`mega-menu-item-link ${isActive("/success-stories") ? "active-page" : ""}`}>
-              <div className="mega-menu-item-name">Success Stories</div>
-              <p className="mega-menu-item-sub">Transformational journeys of plant leaders.</p>
+            <Link href="/testimonials" className={`mega-menu-item-link ${isActive("/testimonials") ? "active-page" : ""}`}>
+              <div className="mega-menu-item-name">Client Testimonials</div>
+              <p className="mega-menu-item-sub">Direct feedback from plant managers & directors.</p>
             </Link>
             <Link href="/mes-blog" className={`mega-menu-item-link ${isActive("/mes-blog") ? "active-page" : ""}`}>
               <div className="mega-menu-item-name">MES & Industry Blog</div>

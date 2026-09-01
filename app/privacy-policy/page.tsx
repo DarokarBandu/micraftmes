@@ -3,6 +3,9 @@ import Breadcrumb from "@/components/layout/Breadcrumb";
 import LegalContentSection from "@/components/sections/InnerSection/LegalContentSection";
 
 export const metadata = {
+  alternates: {
+    canonical: '/privacy-policy',
+  },
   title: 'Privacy Policy | Micraft MES',
   description: 'Learn how Micraft MES handles manufacturing data, shop floor insights, and plant operational privacy.',
 };

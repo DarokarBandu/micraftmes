@@ -8,7 +8,7 @@ import AnimatedTitle from "@/components/elements/AnimatedTitle"
 const industries = [
     {
         title: "Automotive Components",
-        image: "DowntimeTracking",
+        image: "/assets/images/project/DowntimeTracking.jpg",
         link: "/industries/automotive-component-manufacturing",
         desc: "Precision tracking for high-volume automotive parts manufacturing with full traceability and recall ready logs.",
         icon: "car-side",
@@ -16,7 +16,7 @@ const industries = [
     },
     {
         title: "CNC & Precision Engineering",
-        image: "WorkOrderExecution",
+        image: "/assets/images/project/WorkOrderExecution.jpg",
         link: "/industries/cnc-machining-engineering",
         desc: "Advanced monitoring for CNC shops, ensuring high machine utilization and tool-life tracking.",
         icon: "cogs",
@@ -24,7 +24,7 @@ const industries = [
     },
     {
         title: "Electronics & PCB Assembly",
-        image: "InspectionQualityRecording",
+        image: "/assets/images/project/InspectionQualityRecording.jpg",
         link: "/industries/electronics-manufacturing",
         desc: "High-speed assembly line tracking with microscopic precision and digital quality logs.",
         icon: "microchip",
@@ -32,7 +32,7 @@ const industries = [
     },
     {
         title: "Plastic Injection Molding",
-        image: "ProductionMonitoring.png",
+        image: "/assets/images/project/ProductionMonitoring.png",
         link: "/industries/plastic-injection-molding",
         desc: "Real-time cycle time monitoring and rejection analytics for high-volume molding operations.",
         icon: "vial",
@@ -40,7 +40,7 @@ const industries = [
     },
     {
         title: "Metal Fabrication",
-        image: "DispatchTracking",
+        image: "/assets/images/project/DispatchTracking.jpg",
         link: "/industries/fabrication-industry",
         desc: "Streamlined inventory and process tracking for complex fabrication and assembly workflows.",
         icon: "hammer",
@@ -48,7 +48,7 @@ const industries = [
     },
     {
         title: "General Manufacturing SMEs",
-        image: "ShopFloor.png",
+        image: "/assets/images/project/ShopFloor.png",
         link: "/industries/general-manufacturing-smes",
         desc: "Modular MES solutions designed specifically for the agility of growing manufacturing SMEs.",
         icon: "industry",
@@ -81,7 +81,7 @@ export default function IndustriesPage() {
                                 <div className="case-card-premium h-100 rounded-5 overflow-hidden bg-glass-dark border border-white border-opacity-05 group transition-5s shadow-2xl">
                                     <div className="case-card__image-wrap position-relative" style={{ height: '260px' }}>
                                         <Image
-                                            src={ind.image.includes('/') ? ind.image : `/assets/images/project/${ind.image}.jpg`}
+                                            src={ind.image}
                                             alt={ind.title}
                                             fill
                                             className="img-cover group-hover:scale-105 transition-5s"

@@ -1,6 +1,9 @@
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/resources/what-is-mes',
+  },
     title: "What is Manufacturing Execution System (MES)? Complete Guide | Micraft MES",
     description: "Learn what a Manufacturing Execution System (MES) is, how it works, and how MES software helps manufacturers monitor production and improve factory efficiency",
 }

@@ -228,42 +228,11 @@ ul {
 
 
 /*--------------------------------------------------------------
-# Custom Cursor
+# Custom Cursor (Disabled for standard OS cursor)
 --------------------------------------------------------------*/
-.custom-cursor__cursor {
-  width: 25px;
-  height: 25px;
-  border-radius: 100%;
-  border: 1px solid var(--techguru-base);
-  -webkit-transition: all 200ms ease-out;
-  transition: all 200ms ease-out;
-  position: fixed;
-  pointer-events: none;
-  left: -12px;
-  top: -12px;
-  -webkit-transform: translate(calc(-50% + 5px), -50%);
-  transform: translate(calc(-50% + 5px), -50%);
-  z-index: 999991;
-}
-
+.custom-cursor__cursor,
 .custom-cursor__cursor-two {
-  width: 10px;
-  height: 10px;
-  border-radius: 100%;
-  background-color: var(--techguru-base);
-  opacity: .3;
-  position: fixed;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 999991;
-  left: -5px;
-  top: -5px;
-}
-
-.custom-cursor__cursor.hover {
-  background-color: var(--techguru-base);
-  opacity: 0.4;
+  display: none !important;
 }
 
 /* Section Title Css */

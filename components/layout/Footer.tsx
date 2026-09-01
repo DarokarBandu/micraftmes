@@ -1,5 +1,5 @@
 // components/layout/Footer.tsx
-// ✅ Server Component (no "use client" needed)
+'use client';
 
 import Footer2 from "./footer/Footer2";
 

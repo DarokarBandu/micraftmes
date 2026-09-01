@@ -34,8 +34,31 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ breadcrumbTitle }) => {
     };
   });
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://www.micraftmes.com/',
+      },
+      ...crumbs.map((crumb, index) => ({
+        '@type': 'ListItem',
+        position: index + 2,
+        name: crumb.label,
+        item: `https://www.micraftmes.com${crumb.href}`,
+      })),
+    ],
+  };
+
   return (
     <section className="page-header">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="page-header__bg" style={{ backgroundImage: "url(/assets/images/backgrounds/breadcrumb.jpg)" }}>
       </div>
       <div className="container">

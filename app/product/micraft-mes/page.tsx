@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -30,15 +30,15 @@ export default function MicraftMesOverviewPage() {
                                     </div>
                                     <AnimatedTitle>
                                         <h1 className="section-title__title title-animation">
-                                            Micraft MES – <span>Real-Time Production Visibility</span>
+                                            Control Your Factory <span>in Real Time</span>
                                         </h1>
                                     </AnimatedTitle>
                                 </div>
-                                <p className="about-one__text-1 mb-4 fw-bold text-white">Digitize shop floor operations, monitor production in real time, and improve manufacturing efficiency with Micraft MES.</p>
-                                <p className="about-one__text-2 mb-4">Micraft MES is a modern Manufacturing Execution System designed for manufacturing companies that need real-time visibility of factory operations. It enables manufacturers to track production orders, monitor machine utilization, manage inspections, and analyze production performance through centralized digital dashboards.</p>
+                                <p className="about-one__text-1 mb-4 fw-bold text-white">Micraft MES gives manufacturers complete visibility and control across production, machines, quality, materials, and dispatch — all in one connected system.</p>
+                                <p className="about-one__text-2 mb-4">Move from manual tracking to real-time decision-making.</p>
                                 <div className="about-one__btn-box d-flex flex-wrap gap-3 mt-4">
-                                    <Link href="/book-demo" className="thm-btn">Book a Live Demo<span className="icon-right-arrow"></span></Link>
-                                    <Link href="/features" className="thm-btn thm-btn--two">Explore MES Features<span className="icon-right-arrow"></span></Link>
+                                    <Link href="/book-demo" className="thm-btn">Request a Demo<span className="icon-right-arrow"></span></Link>
+                                    <Link href="/features" className="thm-btn thm-btn--two">See Features<span className="icon-right-arrow"></span></Link>
                                 </div>
                             </div>
                         </div>
@@ -60,7 +60,127 @@ export default function MicraftMesOverviewPage() {
                         </div>
                     </div>
                 </div>
-            </section>            {/* What is Micraft MES Section - Clean & Professional Enterprise Layout */}
+            </section>
+
+            {/* Problem Section */}
+            <section className="why-choose-one py-5 bg-dark-theme-adjusted" id="problem-section" style={{ padding: '90px 0' }}>
+                <div className="container" style={{ maxWidth: '1200px' }}>
+                    <div className="section-title text-center mb-5">
+                        <div className="section-title__tagline-box">
+                            <div className="section-title__tagline-shape-1"></div>
+                            <span className="section-title__tagline">The Challenge</span>
+                            <div className="section-title__tagline-shape-2"></div>
+                        </div>
+                        <AnimatedTitle>
+                            <h2 className="section-title__title">
+                                Most Factories Operate <span>Without Real Visibility</span>
+                            </h2>
+                        </AnimatedTitle>
+                        <p className="mt-3 opacity-75" style={{ maxWidth: '800px', margin: '0 auto' }}>
+                            Manufacturing operations often rely on manual processes, disconnected systems, and delayed reporting.
+                        </p>
+                    </div>
+
+                    <div className="row justify-content-center">
+                        {[
+                            { title: 'Production status is unclear', icon: 'icon-clock' },
+                            { title: 'Machine downtime is not tracked', icon: 'icon-pin' },
+                            { title: 'Quality issues are detected late', icon: 'icon-quality' },
+                            { title: 'Material visibility is limited', icon: 'icon-strategy' },
+                            { title: 'Dispatch coordination is manual', icon: 'icon-truck' }
+                        ].map((item, index) => (
+                            <div key={index} className="col-xl-4 col-lg-4 col-md-6 mb-30 wow fadeInUp" data-wow-delay={`${index * 100}ms`}>
+                                <div className="feature-two__single h-100 p-4">
+                                    <div className="feature-two__icon mb-3">
+                                        <span className={item.icon}></span>
+                                    </div>
+                                    <h3 className="feature-two__title" style={{ fontSize: '18px' }}>{item.title}</h3>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="text-center mt-5">
+                        <div className="conclusion-reveal d-inline-block p-4 rounded-4" style={{ background: 'rgba(255,0,0,0.05)', border: '1px solid rgba(255,0,0,0.1)' }}>
+                            <h4 className="mb-0" style={{ fontSize: '18px', fontWeight: '600' }}>
+                                Without real-time data, managing production becomes reactive.
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Transformation Section */}
+            <section className="transformation-section py-5 meswork-gray-section" style={{ padding: '90px 0' }}>
+                <div className="container">
+                    <div className="section-title text-center mb-5">
+                        <div className="section-title__tagline-box justify-content-center mb-3">
+                            <div className="section-title__tagline-shape-1"></div>
+                            <span className="section-title__tagline text-primary">The Solution</span>
+                            <div className="section-title__tagline-shape-2"></div>
+                        </div>
+                        <AnimatedTitle>
+                            <h2 className="section-title__title" style={{ fontSize: '42px', fontWeight: 800 }}>
+                                From Disconnected Operations to a <span className="text-primary">Connected Factory</span>
+                            </h2>
+                        </AnimatedTitle>
+                    </div>
+                    
+                    <div className="row g-4 align-items-stretch">
+                        {/* BEFORE CARD */}
+                        <div className="col-lg-6">
+                            <div className="meswork-glass before-card p-5 h-100 rounded-4" style={{ border: '1px solid rgba(255, 99, 71, 0.15)', borderTop: '6px solid #FF6347' }}>
+                                <h4 className="mb-4 d-flex align-items-center gap-3" style={{ borderBottom: '1px dashed rgba(255, 99, 71, 0.2)', paddingBottom: '15px' }}>
+                                    <div className="position-relative d-flex align-items-center justify-content-center" style={{ width: '40px', height: '40px', background: 'rgba(255, 99, 71, 0.1)', borderRadius: '50%' }}>
+                                        <div style={{ width: 12, height: 12, borderRadius: '50%', background: '#FF6347', boxShadow: '0 0 10px #FF6347' }}></div>
+                                    </div>
+                                    Before Micraft MES
+                                </h4>
+                                <ul className="list-unstyled mb-0 d-flex flex-column gap-3">
+                                    {[
+                                        'Manual tracking',
+                                        'No real-time visibility',
+                                        'Delayed issue detection',
+                                        'Poor coordination'
+                                    ].map((point, i) => (
+                                        <li key={i} className="d-flex align-items-center">
+                                            <i className="fas fa-times-circle me-3" style={{ color: '#FF6347' }}></i>
+                                            <p className="mb-0" style={{ fontSize: '16px', fontWeight: '500' }}>{point}</p>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+
+                        {/* AFTER CARD */}
+                        <div className="col-lg-6">
+                            <div className="meswork-glass after-card p-5 h-100 rounded-4" style={{ border: '1px solid rgba(0, 208, 148, 0.15)', borderTop: '6px solid #00D094' }}>
+                                <h4 className="mb-4 d-flex align-items-center gap-3" style={{ borderBottom: '1px dashed rgba(0, 208, 148, 0.2)', paddingBottom: '15px' }}>
+                                    <div className="position-relative d-flex align-items-center justify-content-center" style={{ width: '40px', height: '40px', background: 'rgba(0, 208, 148, 0.1)', borderRadius: '50%' }}>
+                                        <div style={{ width: 12, height: 12, borderRadius: '50%', background: '#00D094', boxShadow: '0 0 10px #00D094' }}></div>
+                                    </div>
+                                    After Micraft MES
+                                </h4>
+                                <ul className="list-unstyled mb-0 d-flex flex-column gap-3">
+                                    {[
+                                        'Live production tracking',
+                                        'Complete shop floor visibility',
+                                        'Faster decision-making',
+                                        'Controlled dispatch'
+                                    ].map((point, i) => (
+                                        <li key={i} className="d-flex align-items-center">
+                                            <i className="fas fa-check-circle me-3" style={{ color: '#00D094' }}></i>
+                                            <p className="mb-0" style={{ fontSize: '16px', fontWeight: '500' }}>{point}</p>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* What is Micraft MES Section - Clean & Professional Enterprise Layout */}
             <section className="about-two py-5 bg-light-soft what-is-mes-section" id="detailed-overview" style={{ padding: '90px 0', backgroundColor: '#F8FAFC' }}>
                 <div className="container">
                     <div className="row align-items-center g-5">
@@ -75,15 +195,15 @@ export default function MicraftMesOverviewPage() {
                                     </div>
                                     <AnimatedTitle>
                                         <h2 className="section-title__title title-animation mb-0" style={{ marginBottom: '0' }}>
-                                            Manufacturing Execution System <span>for Real-Time Production Visibility</span>
+                                            A Real-Time <span>Manufacturing Execution System</span>
                                         </h2>
                                     </AnimatedTitle>
                                 </div>
                                 <p className="about-two__text-1 mb-3" style={{ marginTop: '0' }}>
-                                    Micraft MES is an enterprise-grade Manufacturing Execution System designed to bridge the gap between enterprise planning (ERP) and physical factory shop floor execution.
+                                    Micraft MES connects all critical manufacturing operations into a single platform.
                                 </p>
                                 <p className="about-two__text-2 mb-4">
-                                    By connecting operators, machines, and inspection gates into a unified digital platform, Micraft MES delivers real-time operational clarity to eliminate downtime, eliminate paper registers, and enforce quality compliance across your factory floor.
+                                    It captures real-time data from the shop floor and provides visibility across production processes, enabling better planning, execution, and control. Micraft MES acts as a central system for managing factory operations.
                                 </p>
 
                                 <ul className="about-two__points-list list-unstyled mb-4">
@@ -183,73 +303,7 @@ export default function MicraftMesOverviewPage() {
                 `}</style>
             </section>
 
-            {/* Why Manufacturers Need MES Section - Re-designed with Feature Two UI */}
-            <section className="why-choose-one py-5" id="why-mes" style={{ padding: '90px 0' }}>
-                <div className="container" style={{ maxWidth: '1200px' }}>
-                    <div className="section-title text-center mb-20">
-                        <div className="section-title__tagline-box">
-                            <div className="section-title__tagline-shape-1"></div>
-                            <span className="section-title__tagline">Why Manufacturers Need MES</span>
-                            <div className="section-title__tagline-shape-2"></div>
-                        </div>
-                        <AnimatedTitle>
-                            <h2 className="section-title__title">
-                                Why Manufacturers Need <span>Micraft MES?</span>
-                            </h2>
-                        </AnimatedTitle>
-                        <p className="mt-3 opacity-75" style={{ maxWidth: '800px', margin: '0 auto' }}>
-                            Many factories still rely on manual methods to track production operations, including paper production registers, spreadsheets, and verbal updates from supervisors. These methods create operational blind spots and lack real-time visibility.
-                        </p>
-                    </div>
 
-                    <div className="row justify-content-center">
-                        <div className="col-xl-3 col-lg-6 col-md-12 mb-30 wow fadeInUp" data-wow-delay="100ms">
-                            <div className="feature-two__single h-100">
-                                <div className="feature-two__icon">
-                                    <span className="icon-clock"></span>
-                                </div>
-                                <h3 className="feature-two__title">No Real-Time Visibility</h3>
-                                <p className="feature-two__text">Struggle to see what&apos;s happening on the production floor in real-time.</p>
-                            </div>
-                        </div>
-                        <div className="col-xl-3 col-lg-6 col-md-12 mb-30 wow fadeInUp" data-wow-delay="200ms">
-                            <div className="feature-two__single h-100">
-                                <div className="feature-two__icon">
-                                    <span className="icon-pin"></span>
-                                </div>
-                                <h3 className="feature-two__title">Delayed Reporting</h3>
-                                <p className="feature-two__text">Compiling reports take hours or days, making them outdated instantly.</p>
-                            </div>
-                        </div>
-                        <div className="col-xl-3 col-lg-6 col-md-12 mb-30 wow fadeInUp" data-wow-delay="300ms">
-                            <div className="feature-two__single h-100">
-                                <div className="feature-two__icon">
-                                    <span className="icon-strategy"></span>
-                                </div>
-                                <h3 className="feature-two__title">Hidden Bottlenecks</h3>
-                                <p className="feature-two__text">Inability to pinpoint exactly where production stops or slows down.</p>
-                            </div>
-                        </div>
-                        <div className="col-xl-3 col-lg-6 col-md-12 mb-30 wow fadeInUp" data-wow-delay="400ms">
-                            <div className="feature-two__single h-100">
-                                <div className="feature-two__icon">
-                                    <span className="icon-quality"></span>
-                                </div>
-                                <h3 className="feature-two__title">Poor Machine Utility</h3>
-                                <p className="feature-two__text">Guessing machine performance instead of using sensor-based data.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="text-center mt-5">
-                        <div className="conclusion-reveal d-inline-block p-4 rounded-4">
-                            <h4 className="mb-0" style={{ fontSize: '18px', fontWeight: '600' }}>
-                                Micraft MES eliminates these challenges by providing real-time monitoring of factory operations.
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             {/* Key Capabilities Section */}
             <section className="capabilities-section who-is-for" id="capabilities" style={{ position: 'relative', overflow: 'hidden', padding: '90px 0' }}>
